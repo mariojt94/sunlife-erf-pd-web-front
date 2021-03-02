@@ -1,0 +1,126 @@
+/* Team */
+.bg-team {
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/bg-team.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 0;
+    opacity:0.5
+}
+.team-list {
+    text-align:center;
+}
+.team-list ul li {width:100%;padding:10px;background:rgba(255,255,255,0.5);border-bottom:1px solid $yellow;list-style:none;}
+.team-list .circle {
+  border-radius:50%;
+  background:rgba(255,255,255,0.5);
+  width:90px;
+  height:90px;
+  margin:auto;
+}
+.team-list .circle i {
+  font-size:45px;
+  color:$blue90;
+  margin:20px auto;
+}
+.btn-team {
+  margin:30px auto;
+}
+.btn-team i {
+  font-size:30px;
+  color:#fff;
+  position:absolute;
+  margin:-5px 10px;
+}
+.team-name {
+  float:left;
+  text-align:left;
+}
+.team-name h2 {
+  font-size:26px;
+  color:$blue90;
+}
+.team-name p {
+  color:$blue90;
+}
+.team-detil {
+  text-align:center;
+  padding:30px 20px 0px 20px;
+  border-bottom:1px solid $blue90;
+  width:50%;
+  margin:auto;
+}
+.team-detil .circle {
+  border-radius:50%;
+  background:rgba(255,255,255,0.5);
+  width:90px;
+  height:90px;
+  margin:auto;
+  text-align:center;
+}
+.team-detil .circle i {
+  font-size:45px;
+  color:$blue90;
+  margin:20px auto;
+}
+.team-detil h2 {
+  font-size:26px;
+  color:$blue90;
+}
+.team-detil p {
+  font-size:18px;
+  color:$blue90;
+}
+.list-training {
+  padding: 50px 30px 0px 30px;
+}
+.label-yellow {
+  position:absolute;
+  top:-185px;
+  bottom:0;
+  left:0;
+  right:0;
+  width: 100%;
+  height: 54px;
+  margin: auto;
+  background:url(../img/label-ribon-yellow.png)center top no-repeat;
+  padding-bottom: 70px;
+}
+.label-yellow h2 {
+  color: #fff;
+  font-size: 23px;
+  padding: 8px 0px;
+  text-align: center;
+  position: relative;
+  margin:auto !important;
+}
+.training-item {
+  background:rgb(255,255,255);
+  padding:60px 10px 10px 10px;
+  margin-bottom:30px;
+}
+.training-item ul li {
+  list-style:none;
+  width:100%;
+}
+.training-item ul li p {
+  color:$blue90;
+  font-size:18px;
+
+}
+.team-detil p.last-login {
+  color:$dark-gray2;
+  font-size:14px;
+}
+.team-wrap h2 {
+  text-align:center;
+  color:$blue90;
+  margin:30px auto;
+}

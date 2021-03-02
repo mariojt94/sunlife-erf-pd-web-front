@@ -1,0 +1,199 @@
+﻿<div class="col-12 p-0 mt-7">
+    <div class="card br0 shadow h-100">
+        <div class="card-body nav-card-fix p-0">
+            <div class="container no-pad">
+                <div class="form-row erf-menu pl-5 pr-5 pt-4 pb-0">
+                    <a href="#!/data-pribadi" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-data-pribadi.svg" class="img-fluid">
+                        <br>
+                        <label>
+                            <strong>Data Pribadi</strong>
+                        </label>
+                        <!--<i class="m-error"></i>-->
+                        <i ng-show="statusDataPribadi" class="m-done"></i>
+                    </a>
+                    <a href="#!/data-kontak" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-kontak.svg" class="img-fluid">
+                        <br>
+                        <label>
+                            <strong>Kontak</strong>
+                        </label>
+                        <i ng-show="statusKontak" class=" m-done"></i>
+                        <!--                       <div ng-if="statusKontak=='true'">
+            <i class="m-done" ></i>
+        </div>-->
+                    </a>
+                    <a href="#!/data-keluarga" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-keluarga.svg" class="img-fluid">
+                        <br>
+                        <label>
+                            <strong>Data Keluarga</strong>
+                        </label>
+                        <i ng-show="statusDataKeluarga" class="m-done"></i>
+                    </a>
+                    <a href="#!/data-pendidikan" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-pendidikan.svg" class="img-fluid">
+                        <br>
+                        <label>
+                            <strong>Pendidikan</strong>
+                        </label>
+                        <i ng-show="statusDataPendidikan" class="m-done"></i>
+                    </a>
+                    <a href="#!/data-pekerjaan" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-pekerjaan.svg" class="img-fluid">
+                        <br>
+                        <label>
+                            <strong>Riwayat Pekerjaan</strong>
+                        </label>
+                        <i ng-show="statusDataPekerjaan" class="m-done"></i>
+                    </a>
+                    <a href="#!/data-dokumen" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-dokumen.svg" class="img-fluid">
+                        <br>
+                        <label>
+                            <strong>Dokumen</strong>
+                        </label>
+                        <i ng-show="statusDataDokumen" class="m-done"></i>
+                    </a>
+                    <a href="#!/data-ptkp" class="form-group col text-center img-nav-v2 menu-aktif">
+                        <img src="Content/assets/img/ic-ak-ptkp.svg" class="img-fluid menu-aktif">
+                        <br>
+                        <label>
+                            <strong>PTKP</strong>
+                        </label>
+                        <i ng-show="" class="m-done"></i>
+                    </a>
+                    <!--<a class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-psikotes.svg" class="img-fluid" ng-click="ToPsikotes()">
+                        <br>
+                        <label>
+                            <strong>Psikotes</strong>
+                        </label>
+                        <i ng-show="statusDataPsikotes" class="m-done"></i>
+                    </a>-->
+                    <a class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-papikostick-1.svg" class="img-fluid" ng-click="ToPapikostik()">
+                        <br><label><strong>Papikostik</strong></label>
+                        <i ng-show="statusDataPapikostik" class="m-done"></i>
+                    </a>
+                    <a href="#!/data-review" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-review.svg" class="img-fluid">
+                        <br>
+                        <label>
+                            <strong>Review</strong>
+                        </label>
+                        <i ng-show="statusDataReview" class="m-done"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid d-menu h-100 nopad-340px">
+    <div class="container h-100 nopad-340px">
+
+
+        <div class="row h-100">
+            <div class="col-12 mb-4 d-link" style="height: 65%">
+                <div class="card br10 shadow h-100">
+                    <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4">
+
+                        <!--========================================================================PTKP================================================-->
+                        <label class="mt-4">
+                            <strong>Pernyataan Pemungutan Penghasilan Tidak Kena Pajak (PTKP)</strong>
+                        </label>
+                        <label class="mt-1">
+                            Implementasi Peraturan Menteri Keuangan RI Nomor 101/PMK.010/2016
+                            tentang penyesuaian besarnya Penghasilan Tidak Kena Pajak yang ditetapkan pada tanggal
+                            22 Juni 2016
+                        </label>
+                        <div class="form-row mt-4">
+                            <label class="col-md-12">
+                                <strong>
+                                    Saya menyatakan bahwa berkaitan dengan hubungan kerja:
+                                    (pilih salah satu)
+                                </strong>
+                            </label>
+                            <div class="custom-control custom-radio col-md-6 col-sm-12 pl-5">
+                                <input type="radio" class="custom-control-input" id="hanyaSunLife"
+                                       name="pilihpernyataan" value="PTKPdiSunLife "
+                                       ng-model="field.hubunganKerjaPTKP">
+                                <label class="custom-control-label" for="hanyaSunLife">
+                                    Hanya dikenakan PTKP di PT
+                                    Sun Life Financial Indonesia
+                                </label>
+                            </div>
+                            <div class="custom-control custom-radio col-md-6 col-sm-12 pl-5">
+                                <input type="radio" class="custom-control-input" id="selainSunLife"
+                                       name="pilihpernyataan" value="PTKPdiPerusahaanLain"
+                                       ng-model="field.hubunganKerjaPTKP">
+                                <label class="custom-control-label" for="selainSunLife">
+                                    Telah dikenakan PTKP
+                                    sehubungan dengan pekerjaan di perusahaan lain
+                                </label>
+                            </div>
+                        </div>
+                        <label class="mt-4">
+                            <strong>
+                                Pilih satu status PTKP sesuai dengan Kartu
+                                Keluarga<br>PRIA-WANITA<br>Untuk Wanita dengan status perkawinan Tidak Kawin dan
+                                Kawin status PTKP-nya adalah sama yaitu TK
+                            </strong>
+                        </label>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <div>
+                                    <select class="form-control" ng-model="field.jenisKelaminPtkp"
+                                            ng-options="res.GenderCode as res.Gender for res in listGender" required>
+                                        <option value="" selected="selected">--Pilih Jenis Kelamin--</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card scrol-y">
+                            <table class="card-table table text-center mb-0">
+                                <thead class="card-header">
+                                    <tr>
+                                        <!-- <th scope="col">ID</th>-->
+                                        <th scope="col">Pilihan</th>
+                                        <th scope="col">Status Perkawinan</th>
+                                        <th scope="col">Tertanggung</th>
+                                        <th scope="col">Status PTKP</th>
+                                        <th scope="col">PTKP Sebulan (Rp)</th>
+                                        <th scope="col">PTKP Setahun (Rp)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in listPTKP | filter:{ Gender: field.jenisKelaminPtkp }">
+                                        <td>
+                                            <input type="checkbox" ng-model="pilihan[item.ID]"
+                                                   ng-click="checkPTKP(item.ID)">
+                                        </td>
+                                        <td hidden>{{ item.ID }}</td>
+                                        <td>{{ item.MaritalStatus }}</td>
+                                        <td>{{ item.Dependencies }}</td>
+                                        <td>{{ item.PTKPStatus }}</td>
+                                        <td>{{ item.PTKPPerMonth }}</td>
+                                        <td>{{ item.PTKPPerYear }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="form-row mt-4">
+                            <div class="form-group col-md-4">
+                                <button onclick="window.location.href='#!/data-dokumen';" class="btn-secondary shadow-sm btn-blue btn-block">Kembali</button>
+                            </div>
+                            <div class="form-group col-md-4 ml-auto">
+                                <button ng-click="submitPTKP()" class="btn-primary shadow-sm btn-blue btn-block">Simpan</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,252 @@
+
+  <div class="col-12 p-0 mt-7">
+    <div class="card br0 shadow h-100">
+      <div class="card-body nav-card-fix p-0">
+        <div class="container no-pad">
+			<div class="form-row erf-menu pl-5 pr-5 pt-4 pb-0">
+				<a href="#!/data-pribadi" class="form-group col text-center img-nav-v2">
+					<img src="Content/assets/img/ic-data-pribadi.svg" class="img-fluid menu-aktif">
+					<br><label><strong>Data Pribadi</strong></label>
+					<i ng-show="statusDataPribadi" class="m-done"></i>
+				</a>
+				<a href="#!/data-kontak" class="form-group col text-center img-nav-v2">
+					<img src="Content/assets/img/ic-kontak.svg" class="img-fluid">
+					<br><label><strong>Kontak</strong></label>
+					<i ng-show="statusKontak" class="m-done"></i>
+				</a>
+				<a href="#!/data-keluarga" class="form-group col text-center img-nav-v2 menu-aktif">
+					<img src="Content/assets/img/ic-ak-keluarga.svg" class="img-fluid">
+					<br><label><strong>Data Keluarga</strong></label>
+					<i ng-show="statusDataKeluarga" class="m-done"></i>
+				</a>
+				<a href="#!/data-pendidikan" class="form-group col text-center img-nav-v2">
+					<img src="Content/assets/img/ic-pendidikan.svg" class="img-fluid">
+					<br><label><strong>Pendidikan</strong></label>
+					<i ng-show="statusDataPendidikan" class="m-done"></i>
+				</a>
+				<a href="#!/data-pekerjaan" class="form-group col text-center img-nav-v2">
+					<img src="Content/assets/img/ic-pekerjaan.svg" class="img-fluid">
+					<br><label><strong>Riwayat Pekerjaan</strong></label>
+					<i ng-show="statusDataPekerjaan" class="m-done"></i>
+				</a>
+				<a href="#!/data-dokumen" class="form-group col text-center img-nav-v2">
+					<img src="Content/assets/img/ic-dokumen.svg" class="img-fluid">
+					<br><label><strong>Dokumen</strong></label>
+					<i ng-show="statusDataDokumen" class="m-done"></i>
+				</a>
+				<a href="#!/data-ptkp" class="form-group col text-center img-nav-v2">
+					<img src="Content/assets/img/ic-ptkp.svg" class="img-fluid">
+					<br><label><strong>PTKP</strong></label>
+					<i ng-show="statusDataPtkp" class="m-done"></i>
+				</a>
+				<!--<a class="form-group col text-center img-nav-v2">
+					<img src="Content/assets/img/ic-psikotes.svg" class="img-fluid" ng-click="ToPsikotes()">
+					<br><label><strong>Psikotes</strong></label>
+					<i ng-show="statusDataPsikotes" class="m-done"></i>
+				</a>-->
+				<a class="form-group col text-center img-nav-v2">
+					<img src="Content/assets/img/ic-papikostick-1.svg" class="img-fluid" ng-click="ToPapikostik()">
+					<br><label><strong>Papikostik</strong></label>
+					<i ng-show="statusDataPapikostik" class="m-done"></i>
+				</a>
+				<a href="#!/data-review" class="form-group col text-center img-nav-v2">
+					<img src="Content/assets/img/ic-review.svg" class="img-fluid">
+					<br><label><strong>Review</strong></label>
+					<i ng-show="statusDataReview" class="m-done"></i>
+				</a>
+			</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container-fluid d-menu h-100 nopad-340px">
+	<div class="container h-100 nopad-340px">
+
+	  <div class="row h-100">
+	    <div class="col-12 mb-4 d-link" style="height:65%">
+	      <div class="card br10 shadow h-100">
+	        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4"style="overflow-y: scroll;">
+	          		          	
+		        <form>
+		          <label><strong>Ayah</strong></label>
+		          <div class="form-row">
+		              <div class="form-group col-md-4">
+                      <input type="text" id="nama" class="form-control" ng-model="ayah.NamaLengkap" placeholder="Nama Lengkap" required>
+		              </div>
+		              <div class="form-group col-md-4">
+		                  <div class="input-group mb-2 ">
+		                      <div class="input-group-prepend">
+		                          <div class="input-group-text">Tgl Lahir</div>
+		                      </div>
+                          <input type="date" class="form-control" id="datePickerDad"  ng-model="ayah.TanggalLahir" min='1899-01-01' max='2100-01-01' placeholder="Tanggal Lahir" required>
+		                  </div>
+		              </div>
+		              <div class="form-group col-md-4">
+                      <input type="text" id="pendidikan" class="form-control" ng-model="ayah.PendidikanTerakhir" placeholder="Pendidikan Terakhir" required>
+		              </div>
+			      </div>
+		          <div class="form-row">
+			          <div class="form-group col-md-4">
+                    <input type="text" id="pekerjaan" class="form-control" ng-model="ayah.Pekerjaan" placeholder="Pekerjaan" required>
+			          </div>
+			      </div>
+		          <label class="mt-3"><strong>Ibu</strong></label>
+		          <div class="form-row">
+			          <div class="form-group col-md-4">
+                    <input type="text" id="namaIbu" class="form-control" ng-model="ibu.NamaLengkap" placeholder="Nama Lengkap" required>
+			          </div>
+		                <div class="form-group col-md-4">
+		                    <div class="input-group mb-2 ">
+		                        <div class="input-group-prepend">
+		                            <div class="input-group-text">Tgl Lahir</div>
+		                        </div>
+                                <input type="date" class="form-control" id="datePickerMom" ng-model="ibu.TanggalLahir" min='1899-01-01' max='2100-01-01' placeholder="Tanggal Lahir" required>
+		                    </div>
+		                </div>
+		                <div class="form-group col-md-4">
+		                    <input type="text" id="pendidikanIbu" class="form-control" ng-model="ibu.PendidikanTerakhir" placeholder="Pendidikan Terakhir" required>
+		                </div>
+		            </div>
+		            <div class="form-row">
+		                <div class="form-group col-md-4">
+		                    <input type="text" id="pekerjaanIbu" class="form-control" ng-model="ibu.Pekerjaan" placeholder="Pekerjaan" required>
+		                </div>
+		            </div>
+                    
+		            <!--saudara-->
+		            <div class="saudara" ng-if="!saudaraForm" ng-repeat="saudara in listDataSaudara">
+		            <div class="d-flex justify-content-lg-between">
+		                <label class="mt-3"><strong>Saudara {{$index + 1}}</strong></label>
+		                <div class="form-group col-md-1">
+                            <button ng-click="deleteDataSaudara($index)" class="fa fa-trash btn-data shadow-sm btn-blue btn-block btn-del-orange"></button>
+		                </div>
+		            </div>
+		                <div class="form-row">
+		                    <div class="form-group col-md-4">
+                                <input type="text" id="namaSdr{{$index}}" class="form-control" ng-model="saudara.NamaLengkap" placeholder="Nama Lengkap" required>
+		                    </div>
+		                    <div class="form-group col-md-4">
+		                        <div class="input-group mb-2 ">
+		                            <div class="input-group-prepend">
+		                                <div class="input-group-text">Tgl Lahir</div>
+		                            </div>
+                                    <input type="date" class="form-control" ng-click="noFutureDateSdr()" id="datePickerSdr{{$index}}" ng-model="saudara.TanggalLahir" min='1899-01-01' max='2100-01-01' placeholder="Tanggal Lahir" required>
+		                        </div>
+		                    </div>
+		                    <div class="form-group col-md-4">
+		                        <input type="text" id="pendidikanSdr{{$index}}" class="form-control" ng-model="saudara.PendidikanTerakhir" placeholder="Pendidikan Terakhir" required>
+		                    </div>
+		                </div>
+		                <div class="form-row">
+		                    <div class="form-group col-md-4">
+                                <input type="text" id="pekerjaanSdr{{$index}}" class="form-control" ng-model="saudara.Pekerjaan" placeholder="Pekerjaan" required>
+		                    </div>
+		                </div>
+		            </div>
+
+		            <div class="form-row mt-2">
+			          <div class="form-group col-md-4">
+		            	<button ng-click="tambahSaudara()" class="btn-data shadow-sm btn-blue btn-block">+ Tambah Data Saudara</button>
+			          </div>
+			      </div>
+		            <!--KELUARGA ENDS HERE-->
+
+		            <!--<label class="mt-4"><strong>Tambah Data Menikah</strong></label>
+		            <div class="form-group form-check">
+		                <label class="form-check-label">
+		                    <input class="form-check-input" id="dataSpouseID" type="checkbox" name="remember" ng-model="spouseFormcheck" ng-checked="spouseFormDisplay()"> Jika Anda sudah menikah
+		                </label>
+		            </div>-->
+                    
+                    <!--suami istri-->
+                    <div  ng-if="StatusPernikahan == 'ME'">
+                        <label><strong>Suami/ Istri</strong></label>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <select class="form-control" id="hubunganSpouse" ng-model="spouse.Hubungan">
+                                    <option value="" selected="selected">--Hubungan--</option>
+                                    <option value="SUAMI">SUAMI</option>
+                                    <option value="ISTRI">ISTRI</option>
+                                </select>
+		                    </div>
+		                    <div class="form-group col-md-4">
+                                <input type="text" id="namaSpouse" class="form-control" ng-model="spouse.NamaLengkap" placeholder="Nama Lengkap" required>
+		                    </div>
+                            <div class="form-group col-md-4">
+                                <div class="input-group mb-2 ">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">Tgl Lahir</div>
+                                    </div>
+                                    <input type="date" class="form-control" ng-click="noFutureDateSpouse()"  id="datePickerSpouse" ng-model="spouse.TanggalLahir" min='1899-01-01' max='2100-01-01' placeholder="Tanggal Lahir" required>
+                                </div>
+                            </div>
+		                </div>
+		                <div class="form-row">
+		                    <div class="form-group col-md-4">
+		                        <input type="text" id="pendidikanSpouse" class="form-control" ng-model="spouse.PendidikanTerakhir" placeholder=" pendidikan terakhir" required>
+		                    </div>
+		                    <div class="form-group col-md-4">
+		                        <input type="text" id="pekerjaanSpouse" class="form-control" ng-model="spouse.Pekerjaan" placeholder="Pekerjaan" required>
+		                    </div>
+		                </div>
+                        </div>
+                <!--   </div>-->
+                    <!-- spouse ends here--> 
+
+                    <!--anak nya-->
+                    <div  ng-if="StatusPernikahan == 'ME' || StatusPernikahan == 'JA' || StatusPernikahan == 'DA'">
+		                <div ng-repeat="anak in listDataAnak">
+                            <div class="d-flex justify-content-lg-between">
+                                <label class="mt-3"><strong>Anak (Optional) {{$index+1}}</strong></label>
+                                <div class="form-group col-md-1">
+                                    <button ng-click="deleteDataAnak($index)" class="fa fa-trash btn-data shadow-sm btn-blue btn-block btn-del-orange"></button>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <input type="text" id="namaAnak{{$index}}" class="form-control" ng-model="anak.NamaLengkap" placeholder="Nama Lengkap" required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <div class="input-group mb-2 ">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">Tgl Lahir</div>
+                                        </div>
+                                        <input type="date" class="form-control" ng-click="noFutureDateKid()" id="datePickerKid{{$index}}" ng-model="anak.TanggalLahir" min='1899-01-01' max='2100-01-01' placeholder="Tanggal Lahir" required>
+		                            </div>
+		                        </div>
+                                <div class="form-group col-md-4">
+                                    <input type="text" id="pendidikanAnak{{$index}}" class="form-control" ng-model="anak.PendidikanTerakhir" placeholder="Pendidikan Terakhir" required>
+                                </div>
+                            </div>
+                            <!--                            <div class="form-row">
+            <div class="form-group col-md-4">
+                <input type="text" class="form-control" ng-model="anak.Pekerjaan" placeholder="Pekerjaan" required>
+            </div>
+        </div>-->
+                        </div>
+		                <!--anak nya-->
+		                <div class="form-row mt-2">
+		                    <div class="form-group col-md-4">
+		                        <button ng-click="tambahAnak()" class="btn-data shadow-sm btn-blue btn-block">+ Tambah Data Anak</button>
+		                    </div>
+		                </div>
+		            </div>
+
+		          <div class="form-row mt-5">
+			          <div class="form-group col-md-4">
+		            	<button onclick="window.location.href='#!/data-kontak';" type="submit" class="btn-secondary shadow-sm btn-blue btn-block">Kembali</button>
+			          </div>
+			          <div class="form-group col-md-4 ml-auto">
+                    <button ng-click='submitDataKeluarga()' type="submit" class="btn-primary shadow-sm btn-blue btn-block">Simpan</button>
+			          </div>
+			      </div>
+		        </form>
+	        </div>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+
+</div>

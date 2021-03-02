@@ -1,0 +1,110 @@
+Candidate ID : 2088
+======================= Pertanyaan =======================
+ID: 22 - Pertanyaan: kompetensi verbal, presentasi tatap muka dan kontak berbicara, serta kemampuan koresponden sederhana - ID Jawaban: 17
+===== Jawaban =====
+ID: 14 - Description: Rendah - Point: 1
+ID: 15 - Description: Cukup - Point: 2
+ID: 16 - Description: Tinggi - Point: 3
+ID: 17 - Description: Lebih Tinggi - Point: 4
+ID: 23 - Pertanyaan: Mendengar orang lain secara aktif dan mampu meyakinkan orang lain untuk melakukan suatu tindakan - ID Jawaban: 20
+===== Jawaban =====
+ID: 18 - Description: Rendah - Point: 1
+ID: 19 - Description: Cukup - Point: 2
+ID: 20 - Description: Tinggi - Point: 3
+ID: 21 - Description: Lebih Tinggi - Point: 4
+ID: 24 - Pertanyaan: Kemampuan membina hubungan dengan semua orang ; membangun hubungan yang dilandasi integritas ; mendahulukan klien, tulus dan empati terhadap kebutuhan klien - ID Jawaban: 24
+===== Jawaban =====
+ID: 22 - Description: Rendah - Point: 1
+ID: 23 - Description: Cukup - Point: 2
+ID: 24 - Description: Tinggi - Point: 3
+ID: 25 - Description: Lebih Tinggi - Point: 4
+ID: 25 - Pertanyaan: Mengelola waktu sendiri untuk memaksimalkan efektifitas ; Menangani administrasi dengan baik dan teliti ; Merencanakan dan membuat prioritas kerja - ID Jawaban: 29
+===== Jawaban =====
+ID: 26 - Description: Rendah - Point: 1
+ID: 27 - Description: Cukup - Point: 2
+ID: 28 - Description: Tinggi - Point: 3
+ID: 29 - Description: Lebih Tinggi - Point: 4
+ID: 26 - Pertanyaan: Secara yakin membuat keputusan berdasarkan penilaian yang benar sesuai dengan wewenangnya - ID Jawaban: 33
+===== Jawaban =====
+ID: 30 - Description: Rendah - Point: 1
+ID: 31 - Description: Cukup - Point: 2
+ID: 32 - Description: Tinggi - Point: 3
+ID: 33 - Description: Lebih Tinggi - Point: 4
+ID: 27 - Pertanyaan: Secara terus menerus meningkatkan performa penjualan, belajar dari kesalahan dan berkomitmen untuk meningkatkan diri - ID Jawaban: 37
+===== Jawaban =====
+ID: 34 - Description: Rendah - Point: 1
+ID: 35 - Description: Cukup - Point: 2
+ID: 36 - Description: Tinggi - Point: 3
+ID: 37 - Description: Lebih Tinggi - Point: 4
+ID: 28 - Pertanyaan: Menciptakan peluang bisnis - ID Jawaban: 42
+===== Jawaban =====
+ID: 38 - Description: Rendah - Point: 1
+ID: 39 - Description: Cukup - Point: 2
+ID: 41 - Description: Tinggi - Point: 3
+ID: 42 - Description: Lebih Tinggi - Point: 4
+ID: 29 - Pertanyaan: Beradaptasi dengan tipe klien yang berbeda-beda dan menanggapi positif ide-ide baru - ID Jawaban: 46
+===== Jawaban =====
+ID: 43 - Description: Rendah - Point: 1
+ID: 44 - Description: Cukup - Point: 2
+ID: 45 - Description: Tinggi - Point: 3
+ID: 46 - Description: Lebih Tinggi - Point: 4
+ID: 30 - Pertanyaan: Mengambil inisiatif untuk belajar - ID Jawaban: 50
+===== Jawaban =====
+ID: 47 - Description: Rendah - Point: 1
+ID: 48 - Description: Cukup - Point: 1
+ID: 49 - Description: Tinggi - Point: 3
+ID: 50 - Description: Lebih Tinggi - Point: 4
+ID: 31 - Pertanyaan: Menganalisis informasi dan menggunakannya sebagai dasar untuk mencapai solusi - ID Jawaban: 54
+===== Jawaban =====
+ID: 51 - Description: Rendah - Point: 1
+ID: 52 - Description: Cukup - Point: 2
+ID: 53 - Description: Tinggi - Point: 3
+ID: 54 - Description: Lebih Tinggi - Point: 4
+ID: 32 - Pertanyaan: Berpikir luas untuk mencapai solusi dan merekomendasikan manajemen peningkatan dalam standar solusi - ID Jawaban: 58
+===== Jawaban =====
+ID: 55 - Description: Rendah - Point: 1
+ID: 56 - Description: Cukup - Point: 2
+ID: 57 - Description: Tinggi - Point: 3
+ID: 58 - Description: Lebih Tinggi - Point: 4
+ID: 33 - Pertanyaan: Mengukur secara realistis setiap pendekatan dan dalam menilai setiap tindakan/kegiatan ; tidak berprasangka - ID Jawaban: 62
+===== Jawaban =====
+ID: 59 - Description: Rendah - Point: 1
+ID: 60 - Description: Cukup - Point: 2
+ID: 61 - Description: Tinggi - Point: 3
+ID: 62 - Description: Lebih Tinggi - Point: 4
+ID: 35 - Pertanyaan: Melihat masa depan secara bijaksana untuk mengidentifikasi dan mengantisipasi solusi - ID Jawaban: 65
+===== Jawaban =====
+ID: 63 - Description: Rendah - Point: 1
+ID: 64 - Description: Cukup - Point: 2
+ID: 65 - Description: Tinggi - Point: 3
+ID: 66 - Description: Lebih Tinggi - Point: 4
+ID: 36 - Pertanyaan: Melihat dan menemukan masalah yang sebenarnya dan mencari solusi yang praktis dan realistis - ID Jawaban: 70
+===== Jawaban =====
+ID: 67 - Description: Rendah - Point: 1
+ID: 68 - Description: Cukup - Point: 2
+ID: 69 - Description: Tinggi - Point: 3
+ID: 70 - Description: Lebih Tinggi - Point: 4
+ID: 37 - Pertanyaan: Memahami dengan baik produk yang ditawarkan ; prinsip-prinsip perencanaan keuangan dan dapat menerjemahkan keinginan dan kebutuhan klien berdasarkan data keuangan kalian - ID Jawaban: 74
+===== Jawaban =====
+ID: 71 - Description: Rendah - Point: 1
+ID: 72 - Description: Cukup - Point: 2
+ID: 73 - Description: Tinggi - Point: 3
+ID: 74 - Description: Lebih Tinggi - Point: 4
+ID: 38 - Pertanyaan: Memiliki pengetahuan teknis mengenai pasar, trennya dan aktivitas kompetitor - ID Jawaban: 78
+===== Jawaban =====
+ID: 75 - Description: Rendah - Point: 1
+ID: 76 - Description: Cukup - Point: 2
+ID: 77 - Description: Tinggi - Point: 3
+ID: 78 - Description: Lebih Tinggi - Point: 4
+ID: 39 - Pertanyaan: Memahami secara keseluruhan mengenai organisasi perusahaan, kebijaksanaannya, prosedur, dan proses penjualan - ID Jawaban: 82
+===== Jawaban =====
+ID: 79 - Description: Rendah - Point: 1
+ID: 80 - Description: Cukup - Point: 2
+ID: 81 - Description: Tinggi - Point: 3
+ID: 82 - Description: Lebih Tinggi - Point: 4
+ID: 40 - Pertanyaan: Pengetahuan yang cukup mengenai persyaratan hukum dan peraturan yang berhubungan dengan industri asuransi untuk memastikan standard compliance dan memahami dengan baik persyaratan lisensi keagenan - ID Jawaban: 86
+===== Jawaban =====
+ID: 83 - Description: Rendah - Point: 1
+ID: 84 - Description: Cukup - Point: 2
+ID: 85 - Description: Tinggi - Point: 3
+ID: 86 - Description: Lebih Tinggi - Point: 4

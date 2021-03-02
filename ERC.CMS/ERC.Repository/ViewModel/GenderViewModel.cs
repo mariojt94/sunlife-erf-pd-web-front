@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ERC.Repository.ViewModel
+{
+    public class GenderViewModel
+    {
+        public int ID { get; set; }
+        public string GenderCode { get; set; }
+        public string Gender { get; set; }
+    }
+}

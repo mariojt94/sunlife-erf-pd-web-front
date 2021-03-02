@@ -1,0 +1,44 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html id="ng-app" ng-app="SunLifeApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <title>Sunlife Way</title>
+
+    <!-- Bootstrap -->
+    <link href="~/Content/css/ionic.min.css" rel="stylesheet">
+    <link href="~/Content/css/style.css" rel="stylesheet">
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-ui-router.min.js"></script>
+    <script src="~/Scripts/angular-animate.min.js"></script>
+    <script src="~/Scripts/angular-sanitize.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Content/js/ionic.min.js"></script>
+</head>
+<body>
+    <section ui-view="header"></section>
+    <section ui-view="content"></section>
+    <section ui-view="footer"></section>
+
+    <!-- Load app main script -->
+    <script src="~/ClientApp/app.js"></script>
+
+    <!-- directives -->
+    @*<script src="~/ClientApp/directives/directive.js"></script>*@
+
+    <!-- Load services -->
+    @*<script src="~/ClientApp/services/authInterceptorService.js"></script>
+        <script src="~/ClientApp/services/authService.js"></script>*@
+
+    <!-- Load controllers -->
+    @*<script src="~/ClientApp/controllers/rootCtrl.js"></script>*@
+</body>
+</html>

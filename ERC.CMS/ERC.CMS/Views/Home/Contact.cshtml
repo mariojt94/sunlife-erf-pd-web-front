@@ -1,0 +1,148 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    Layout = null;
+}
+
+<html ng-app="Sunlife">
+    <head>
+
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+        
+    </head>
+    <body class="container" ng-controller="faqController">
+        <div class="modal-demo">
+            <h3>Master FAQ</h3>
+            <hr />
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Sequence : {{ Sequence }}</label>
+                        <input type="text" class="form-control" data-ng-model="Sequence" />
+                    </div>
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" class="form-control" data-ng-model="Title" />
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <input type="text" class="form-control" data-ng-model="Description" />
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>IsActive</label>
+                                <input type="checkbox" data-ng-model="Is Active" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>IsDelete</label>
+                                <input type="checkbox" data-ng-model="Is Delete" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!-- Trigger the modal with a button -->
+                        <button class="btn btn-primary">Pencarian</button>
+                        <button class="btn btn-danger">Hapus Pencarian</button>
+                        <button class="btn btn-success" data-toggle="modal" data-target="#myModal">Tambah Data</button> <br />
+                        <button class="btn btn-warning">Unggah Data</button>
+                        <button class="btn btn-warning">Unduh Template</button>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Sequence</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Is Active</th>
+                            <th>Is Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr></tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Master FAQ</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Sequence : </label>
+                                        <input type="text" class="form-control" data-ng-model="Sequence" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Title</label>
+                                        <input type="text" class="form-control" data-ng-model="Title" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <input type="text" class="form-control" data-ng-model="Description" />
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>IsActive</label>
+                                                <input type="checkbox" data-ng-model="Is Active" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>IsDelete</label>
+                                                <input type="checkbox" data-ng-model="Is Delete" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- Trigger the modal with a button -->
+
+
+                                        <button class="btn btn-primary" ng-click="saveFaq()">Save</button>
+
+                                        
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        <script>
+
+            angular.module("Sunlife", [])
+
+                .controller("faqController", function ($scope) {
+                    $scope.test = "ini test";
+                    $scope.saveFaq = function () {
+                        alert('test');
+                    }
+                });
+
+            
+        </script>
+    </body>
+</html>

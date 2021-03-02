@@ -1,0 +1,429 @@
+﻿<div class="content-container content-container-cms">
+    <div class="sl-title">
+        <h2>Akun Pengguna</h2>
+    </div>
+    <div class="general-layoutfixed-container body-cms">
+        <div class="general-layoutfixed">
+            <script type="text/ng-template" id="accountContent.html">
+                <div class="modal-content" style="width: 1100px; right: 58px;">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="modal-title">Akun Pengguna</h3>
+                    </div>
+                    <br />
+                    <div class="modal-body" id="modal-body">
+                        <div class="form-horizontal">
+                            <form name="formSubmit">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <!--<div class="form-group">
+                                                <label for="lname" class="col-md-3 control-label">Nama Pengguna</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" ng-disabled="$ctrl.isEdit" ng-model="$ctrl.account.LoginName" id="loginName" class="form-control" required="true">
+                                                </div>
+                                            </div>-->
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">AgentCode</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" ng-model="$ctrl.account.AgentCode" id="AgentCode" class="form-control" ng-disabled="isEdit" required="true">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="dName" class="col-md-3 control-label">Tampilan Nama</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" ng-model="$ctrl.account.DisplayName" id="dName" class="form-control" required="true">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Email</label>
+                                                <div class="col-md-9">
+                                                    <input type="email" ng-model="$ctrl.account.Email" id="Email" class="form-control" required="true">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="roleid" class="col-md-3 control-label">Akses</label>
+                                                <div class="col-md-9">
+                                                    <select ng-model="$ctrl.account.RoleID" ng-options="c.Id as c.RoleName for c in $ctrl.account.RoleList" class="form-control" required="true"></select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Phone No</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" format-number ng-model="$ctrl.account.PhoneNo" id="PhoneNo" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="gender" class="col-md-3 control-label">Gender</label>
+                                                <div class="col-md-9">
+                                                    <select ng-model="$ctrl.account.Gender" id="Gender" class="form-control">
+                                                        <option value="">-- Pilih --</option>
+                                                        <option value="L" selected>Laki-Laki</option>
+                                                        <option value="P" selected>Perempuan</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!--<div class="form-group">
+                                                <label for="managerLoginName" class="col-md-3 control-label">Manager</label>
+                                                <div class="col-md-5">
+                                                    <input type="text" ng-model="$ctrl.account.ManagerLoginName" id="managerId" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <button class="btn btn-primary" id="managerBtn" ng-click="lookup()">Pilih</button>
+                                                    <button class="btn btn-danger" id="managerBtnHapus" ng-click="$ctrl.account.ManagerLoginName = null">Hapus</button>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="managerLoginName" class="col-md-3 control-label">Senior Manager</label>
+                                                <div class="col-md-5">
+                                                    <input type="text" ng-model="$ctrl.account.SeniorManagerLoginName" id="seniormanagerId" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <button class="btn btn-primary" id="seniormanagerBtn" ng-click="lookupSenior()">Pilih</button>
+                                                    <button class="btn btn-danger" id="seniormanagerBtnHapus" ng-click="$ctrl.account.SeniorManagerLoginName = null">Hapus</button>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="managerLoginName" class="col-md-3 control-label">Director</label>
+                                                <div class="col-md-5">
+                                                    <input type="text" ng-model="$ctrl.account.DirectorLoginName" id="directorId" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <button class="btn btn-primary" id="directorBtn" ng-click="lookupDirector()">Pilih</button>
+                                                    <button class="btn btn-danger" id="directorBtnHapus" ng-click="$ctrl.account.DirectorLoginName = null">Hapus</button>
+                                                </div>
+                                            </div>-->
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Password</label>
+                                                <div class="col-md-9">
+                                                    <input type="password" ng-model="$ctrl.account.Password" id="Password" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Team</label>
+                                                <div class="col-md-7">
+                                                    <input type="hidden" class="form-control" ng-model="$ctrl.account.TeamCode" />
+                                                    <input type="text" ng-model="$ctrl.account.TeamName" id="TeamName" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <button class="btn btn-primary" ng-click="openLookupTeam()">Pilih</button>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Lokasi</label>
+                                                <div class="col-md-7">
+                                                    <input type="hidden" class="form-control" ng-model="$ctrl.account.LocationCode" />
+                                                    <input type="text" ng-model="$ctrl.account.LocationName" id="LocationName" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <button class="btn btn-primary" ng-click="openLookupLokasi()">Pilih</button>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="lblActive" class="col-md-3 control-label"></label>
+                                                <div class="col-md-9">
+                                                    <input type="checkbox" ng-model="$ctrl.account.IsActive"> Aktif
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="form-group" style="margin-left:auto">
+                            <!--<button class="btn btn-primary" id="unlockBtn" ng-click="$ctrl.unlock($ctrl.account)">Reset Lock</button>-->
+                            <button class="btn btn-primary" id="submitBtn" ng-disabled="formSubmit.$invalid" ng-click="$ctrl.ok($ctrl.account)">Simpan</button>
+                            <button class="btn btn-danger" id="cancelBtn" ng-click="$ctrl.cancel()">Batal</button>
+                        </div>
+                    </div>
+                </div>
+            </script>
+
+            <!--Pop Up Team Lookup-->
+            <script type="text/ng-template" id="teamPopup.html">
+                <div class="modal-header">
+                    <h3 class="modal-title">Team Look Up</h3>
+                </div>
+
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="lblName" class="col-md-4 control-label">Team Name</label>
+                            <div class="col-md-8">
+                                <input type="text" ng-model="filterOptionsTeam.teamName" id="agentcode" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <button class="btn btn-primary" id="SearchBtn" ng-click="searchTeam(filterOptionsTeam.teamName)">Pencarian</button>
+                                <button class="btn btn-danger" id="SearchBtn" ng-click="clearFilterTeam(10,1)">Hapus Pencarian</button>
+                            </div>
+                        </div>
+                        <div class="gridStyle" ng-grid="gridTeamOptions"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <button class="btn btn-primary" id="chooseteam" ng-click="chooseTeam()">Pilih</button>
+                        <button class="btn btn-danger" id="cancelteam" ng-click="cancelLookupTeam()">Batal</button>
+                    </div>
+                </div>
+            </script>
+
+            <!--Pop Up Lokasi Lookup-->
+            <script type="text/ng-template" id="lokasiPopup.html">
+                <div class="modal-header">
+                    <h3 class="modal-title">Look Up Lokasi</h3>
+                </div>
+
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="lblName" class="col-md-4 control-label">Team Name</label>
+                            <div class="col-md-8">
+                                <input type="text" ng-model="filterOptionsLocation.locationName" id="locationName" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <button class="btn btn-primary" id="SearchBtn" ng-click="searchLocation(filterOptionsLocation.locationName)">Pencarian</button>
+                                <button class="btn btn-danger" id="SearchBtn" ng-click="clearFilterLocation(10,1)">Hapus Pencarian</button>
+                            </div>
+                        </div>
+                        <div class="gridStyle" ng-grid="gridLocationOptions"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <button class="btn btn-primary" id="chooseteam" ng-click="chooseLocation()">Pilih</button>
+                        <button class="btn btn-danger" id="cancelteam" ng-click="cancelLookupLocation()">Batal</button>
+                    </div>
+                </div>
+            </script>
+
+            <!--Change Password-->
+            <script type="text/ng-template" id="changePasswordContent.html">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modal-title">Ganti Kata Sandi</h3>
+                </div>
+                <br />
+                <div class="modal-body" id="modal-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="lname" class="col-md-2 control-label">Kata Sandi Baru</label>
+                            <div class="col-md-10">
+                                <input type="hidden" readonly ng-model="$ctrl.account.LoginName" id="loginName" class="form-control">
+                                <input type="password" ng-model="$ctrl.account.InputNewPassword" id="Password" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="dName" class="col-md-2 control-label">Konfirmasi</label>
+                            <div class="col-md-10">
+                                <input type="password" ng-model="$ctrl.account.InputConfirmationNewPassword" id="CPassword" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left:auto">
+                            <button class="btn btn-primary" id="submitPasswordBtn" ng-click="$ctrl.savePassword($ctrl.account)">Simpan</button>
+                            <button class="btn btn-danger" id="cancelPasswordBtn" ng-click="$ctrl.cancelPassword()">Batal</button>
+                        </div>
+                    </div>
+                </div>
+            </script>
+
+            <!--Upload User-->
+            <script type="text/ng-template" id="uploadUser.html">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modal-title">Unggah User</h3>
+                </div>
+                <br />
+                <div class="modal-body" id="modal-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="ltPath" class="col-md-2 control-label">File</label>
+                            <div class="col-md-10">
+                                <input type="file" file-model="myFile" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" type="button" ng-click="$ctrl.uploadUser()">Unggah</button>
+                    <button class="btn btn-danger" type="button" ng-click="$ctrl.cancelUploadUser()">Batal</button>
+                </div>
+            </script>
+
+            <!--Pop Up Manager-->
+            <script type="text/ng-template" id="managerPopUp.html">
+                <div class="modal-header">
+                    <h3 class="modal-title">Nama Manager</h3>
+                </div>
+
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="lblName" class="col-md-1 control-label">Nama</label>
+                            <div class="col-md-8">
+                                <input type="text" ng-model="filterOptions2.filterText" id="txtSearch" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <button class="btn btn-primary" id="SearchBtn" ng-click="search2(filterOptions2.filterText)">Pencarian</button>
+                                <button class="btn btn-danger" id="SearchBtn" ng-click="clearFilter2(10,1)">Hapus Pencarian</button>
+                            </div>
+                        </div>
+                        <div class="gridStyle" ng-grid="grid2Options"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <button class="btn btn-primary" id="submitManagerBtn" ng-click="okManager()">Pilih</button>
+                        <button class="btn btn-danger" id="cancelManagerBtn" ng-click="cancelManager()">Batal</button>
+                    </div>
+                </div>
+
+            </script>
+
+            <!--Pop Up SeniorManager-->
+            <script type="text/ng-template" id="seniormanagerPopUp.html">
+                <div class="modal-header">
+                    <h3 class="modal-title">Nama Senior Manager</h3>
+                </div>
+
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="lblName" class="col-md-1 control-label">Nama</label>
+                            <div class="col-md-8">
+                                <input type="text" ng-model="filterOptions2.filterText" id="txtSearch" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <button class="btn btn-primary" id="SearchBtn" ng-click="search2(filterOptions2.filterText)">Pencarian</button>
+                                <button class="btn btn-danger" id="SearchBtn" ng-click="clearFilter2(10,1)">Hapus Pencarian</button>
+                            </div>
+                        </div>
+                        <div class="gridStyle" ng-grid="grid3Options"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <button class="btn btn-primary" id="submitSeniorManagerBtn" ng-click="okSeniorManager()">Pilih</button>
+                        <button class="btn btn-danger" id="cancelSeniorManagerBtn" ng-click="cancelSeniorManager()">Batal</button>
+                    </div>
+                </div>
+
+            </script>
+
+            <!--Pop Up Director -->
+            <script type="text/ng-template" id="directorPopUp.html">
+                <div class="modal-header">
+                    <h3 class="modal-title">Nama Director</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="lblName" class="col-md-1 control-label">Nama</label>
+                            <div class="col-md-8">
+                                <input type="text" ng-model="filterOptions2.filterText" id="txtSearch" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <button class="btn btn-primary" id="SearchBtn" ng-click="search2(filterOptions2.filterText)">Pencarian</button>
+                                <button class="btn btn-danger" id="SearchBtn" ng-click="clearFilter2(10,1)">Hapus Pencarian</button>
+                            </div>
+                        </div>
+                        <div class="gridStyle" ng-grid="grid4Options"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <button class="btn btn-primary" id="submitDirectorBtn" ng-click="okDirector()">Pilih</button>
+                        <button class="btn btn-danger" id="cancelDirectorBtn" ng-click="cancelDirector()">Batal</button>
+                    </div>
+                </div>
+
+            </script>
+
+            <!-- <div class="col-md-12">
+               <div class="form-horizontal col-md-6">
+                    <div class="form-group">
+                        <label for="loginName1">Nama</label>
+                        <input type="text" ng-model="filterOptions.DisplayName" id="DisplayName" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="roleids">Peran</label>
+                        <select ng-model="filterOptions.filterRoleID" id="roleids" ng-options="c.Id as c.RoleName for c in RoleList" class="form-control" required="true"></select>
+                    </div>
+
+                    <div class="form-group" style="height: auto">
+                        <div class="col-md-14">
+                            <button class="btn btn-primary" id="SearchBtn" ng-click="search(filterOptions.DisplayName, filterOptions.filterTypeID, filterOptions.filterRoleID, filterOptions.filterManagerLoginName)">Pencarian</button>
+                            <button class="btn btn-danger" id="ClearBtn" ng-click="clearFilter(10,1)">Hapus Pencarian</button>
+                            <button class="btn btn-success" id="CreateBtn" ng-click="openPopUp()">Tambah Data</button>
+                            <button class="btn btn-warning" ng-click="downloadTemplateXls()">Unduh Template XLS</button>
+                            <button class="btn btn-warning" id="CreateBtn" ng-click="openPopUpUploadUser()">Upload  User</button>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            <div class="row">
+                <div id="uploadCms" ng-include="'ClientApp/views/uploadCms/index.html'"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="inputUpload" class="control-label">Dokumen</label>
+                        <input type="file" id="inputUpload" file-model="myFile" class="form-control" />
+                    </div>
+
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <button class="btn btn-success" id="btnUpload" ng-disabled="!myFile" ng-click="ImportXls()">Upload</button>
+                        <button class="btn btn-warning" ng-click="downloadTemplateXls()">Unduh Template</button>
+                        <div class="form-inline pull-right">
+                            <label for="loginName">Search : </label>
+                            <input type="search" placeholder="enter keyword here" style="width:200px" ng-model="filterOptions.DisplayName" id="inputSearch" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Primary Grid-->
+            <div class="col-md-14">
+                <div class="gridStyle" ng-grid="gridOptions"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#cbJenisUpload').val(3)
+    })
+</script>
+<style>
+    .gridStyle {
+        border: 1px solid rgb(212,212,212);
+        width: 100%;
+        height: 560px;
+    }
+
+    .modal-dialog {
+        width: 1000px;
+        height: 700px;
+    }
+
+    .app-modal-window .modal-dialog {
+        width: 500px;
+        height: 200px;
+    }
+</style>

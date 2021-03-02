@@ -1,0 +1,132 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun Advisor</title>
+    <style type="text/css">
+        table {
+            display: table;
+            border-collapse: separate;
+            border-spacing: 0px;
+            border-color: grey;
+        }
+        html {
+            font-size: 25px;
+        }
+        .logn-wrap {
+            width:250px;
+            margin:auto !important;
+            border:4px solid #eee;
+            padding:20px;
+            border-radius:6px;
+
+        }
+        table.table-wrap {
+            width:100%;
+            text-align:center;
+        }
+        table.table-wrap tr td input  {
+            height:35px;
+            border:1px solid #ddd;
+            width:100%;
+            margin:auto
+
+        }
+        table.table-wrap tr td lable {
+            font-size:16px !important;
+        }
+        table.table-wrap tr td {
+            padding:10px 0px;
+            text-align:left!important;
+        }
+        a.button-open {
+            padding: 5px 0px;
+            border: 2px solid rgb(0, 57, 70);
+            color: rgb(0, 57, 70);
+            font-size: 16px;
+            border-radius: 6px;
+            text-align: center;
+            width: 100%;
+            display: inline-block;
+        }
+
+
+        a {
+            text-decoration:none;
+            margin:10px auto;
+        }
+        .clearfix {
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+    <div class="logn-wrap">
+        <table class="table-wrap">
+            <tr>
+                <td width="50%"><label for="token" style="font-size: 16px;">Token</label> </td>
+                <td width="50%"><input type="" id="token" name="" onkeyup="keyupEvent('token', this)"></td>
+            </tr>
+            <tr>
+                <td width="50%"><label for="authKey" style="font-size: 16px;">Auth Key</label> </td>
+                <td width="50%"><input type="" id="authKey" name="" onkeyup="keyupEvent('authKey', this)"></td>
+            </tr>
+            <tr>
+                <td width="50%"><label for="authKey" style="font-size: 16px;">User Login</label> </td>
+                <td width="50%"><input id="authKey"  onkeyup="keyupEvent('userId', this)"></td>
+            </tr>
+            <tr>
+                <td width="50%"><label for="userId" style="font-size: 16px;">Level</label></td>
+                <td width="50%"><select id="userId" onchange="keyupEvent('userId', this)">
+                        <option disabled>- User -</option>
+                        <option value="S58695">FC (Anak agung bagus)</option>
+                        <option value="S54436">AM (A A Ayu)</option>
+                        <option value="F07493">SAM (Ida Ayu Indrani)</option>
+                        <option value="F02433">AD (I Made Sukertayasa)</option>
+                        <option value="C06261">NAD (Ida Ayu Putu Dekiawati</option>
+                        <option disabled>- Management -</option>
+                        <option value="SDM">SDM</option>
+                        <option value="RSDH">RSDH</option>
+                        <option value="SDM513">SDM513</option>
+                        <option value="REG051">REG051</option>
+                        <option value="CONV02">CONV02</option>
+                        <option value="CONV01">CONV01</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <div class="clearfix"></div>
+        <a class="button-open" id="link" href="sunrecruit://erf?">Buka Sun Recruit</a>
+        <a class="button-open" href="sunrecruit://erf?appId=way">Buka Sunlife Way</a>
+        <!-- <a class="button-open" id="link" href="sunrecruit://erf?appId=way">Buka Sunlife Way</a>
+        <label id="preview"></label> -->
+    </div>
+    <script type="text/javascript">
+		var param = {
+			token: "",
+			authKey: ""
+		}
+		function keyupEvent(id, self){
+			param[id] = self.value;
+			str = "";
+			for (var key in param) {
+				if (str != "") {
+					str += "&";
+				}
+				str += key + "=" + param[key];
+			}
+			var link = "sunrecruit://erf?" + str;
+			document.getElementById("link").href = link;
+			// document.getElementById("preview").innerHTML = link;
+		}
+		keyupEvent('userId', {
+			value: "S58695"
+		});
+    </script>
+</body>
+</html>

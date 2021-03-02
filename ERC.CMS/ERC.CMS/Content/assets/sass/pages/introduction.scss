@@ -1,0 +1,80 @@
+/* Introduction */
+.introduction {
+  height:100%;
+}
+.swipe-introduction {
+  height:600px;
+}
+.swipe-introduction .swiper-container .swiper-wrapper .swiper-slide {
+  background:none;
+}
+.swipe-introduction .swiper-container {
+}
+.introduction-wrap {
+  width: 100%;
+  height: 500px;
+  /* margin-bottom: 30px; */
+  top: 0px;
+  position: absolute;
+
+}
+.introduction-wrap-video {
+  width: 100%;
+  height:500px;
+  top:0;
+  position:absolute;
+  padding:0px 20px;
+  margin-bottom: 30px;
+  text-align:center
+}
+.overflow-hidden {
+  overflow:hidden;
+}
+.overlayPlayContainer {
+  width:auto !important;
+}
+videogular {
+  height:500px;
+    margin-bottom: 30px;
+}
+.introduction-page {
+  height:600px;
+}
+.swipe-introduction {
+  text-align:center
+}
+.swipe-introduction h2 {
+  margin:15px auto;
+  text-align:center;
+  color:$blue90;
+
+}
+.img-chapter {
+  width:100%;
+  height:500px;
+  position:relative;
+
+}
+.img-chapter img {
+  height: 450px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.chapter-description {
+
+}
+.chapter-description h2 {
+  font-size: 30px;
+  color: #1a4e59;
+  text-align: left;
+  margin: 40px auto 20px auto;
+}
+.chapter-description p {
+  font-size:18px;
+  color:#000;
+  text-align:left;
+  line-height:30px;
+}

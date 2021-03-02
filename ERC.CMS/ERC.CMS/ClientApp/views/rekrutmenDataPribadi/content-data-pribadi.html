@@ -1,0 +1,535 @@
+
+<div class="col-12 p-0 mt-7">
+    <div class="card br0 shadow h-100">
+        <div class="card-body nav-card-fix p-0">
+            <div class="container no-pad">
+                <div class="form-row erf-menu pl-5 pr-5 pt-4 pb-0">
+                    <a href="#!/data-pribadi" class="form-group col text-center img-nav-v2 menu-aktif">
+                        <img src="Content/assets/img/ic-ak-data-pribadi.svg" class="img-fluid menu-aktif">
+                        <br><label><strong>Data Pribadi</strong></label>
+                        <!--<i class="m-error"></i>-->
+                        <!--  <i ng-show="statusDataPribadi" class="m-done"></i>-->
+                    </a>
+                    <a href="#!/data-kontak" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-kontak.svg" class="img-fluid">
+                        <br><label><strong>Kontak</strong></label>
+                        <i ng-show="statusKontak" class=" m-done"></i>
+                        <!--                       <div ng-if="statusKontak=='true'">
+                                   <i class="m-done" ></i>
+                               </div>-->
+                    </a>
+                    <a href="#!/data-keluarga" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-keluarga.svg" class="img-fluid">
+                        <br><label><strong>Data Keluarga</strong></label>
+                        <i ng-show="statusDataKeluarga" class="m-done"></i>
+                    </a>
+                    <a href="#!/data-pendidikan" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-pendidikan.svg" class="img-fluid">
+                        <br><label><strong>Pendidikan</strong></label>
+                        <i ng-show="statusDataPendidikan" class="m-done"></i>
+                    </a>
+                    <a href="#!/data-pekerjaan" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-pekerjaan.svg" class="img-fluid">
+                        <br><label><strong>Riwayat Pekerjaan</strong></label>
+                        <i ng-show="statusDataPekerjaan" class="m-done"></i>
+                    </a>
+                    <a href="#!/data-dokumen" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-dokumen.svg" class="img-fluid">
+                        <br><label><strong>Dokumen</strong></label>
+                        <i ng-show="statusDataDokumen" class="m-done"></i>
+                    </a>
+                    <a href="#!/data-ptkp" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-ptkp.svg" class="img-fluid">
+                        <br><label><strong>PTKP</strong></label>
+                        <i ng-show="statusDataPtkp" class="m-done"></i>
+                    </a>
+                    <!--<a class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-psikotes.svg" class="img-fluid" ng-click="ToPsikotes()">
+                        <br><label><strong>Psikotes</strong></label>
+                        <i ng-show="statusDataPsikotes" class="m-done"></i>
+                    </a>-->
+                    <a class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-papikostick-1.svg" class="img-fluid" ng-click="ToPapikostik()">
+                        <br><label><strong>Papikostik</strong></label>
+                        <i ng-show="statusDataPapikostik" class="m-done"></i>
+                    </a>
+                    <a href="#!/data-review" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-review.svg" class="img-fluid">
+                        <br><label><strong>Review</strong></label>
+                        <i ng-show="statusDataReview" class="m-done"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid d-body d-menu h-100 nopad-340px">
+    <div class="container h-100 nopad-340px">
+
+
+        <div class="row h-100">
+            <div class="col-12 mb-4 d-link" style="height:65%">
+                <div class="card br10 shadow h-100">
+                    <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+
+                        <form name="myForm">
+                            <label><strong>Data Pribadi Sesuai KTP</strong></label>
+                            <div class="form-row">
+                                <div class="form-group col-md-8">
+                                    <input name="NamaLengkap" type="text" ng-model="field.namaLengkap" ng-class="warnaMerahNM" class="form-control" placeholder="Nama Lengkap" required>
+                                    <!--<label style="color: red" ng-show="myForm.NamaLengkap.$error.required">*</label>-->
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <select ng-class="warnaMerahKel" class="form-control" id="recruitment" ng-model="field.jenisKelamin" ng-options="res.GenderCode as res.Gender for res in listGender" required>
+                                        <option value="" selected="selected">--Pilih Jenis Kelamin--</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" ng-class="warnaMerahAl" ng-model="field.alamat" class="form-control" placeholder="Alamat" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-2">
+                                    <input type="text" ng-class="warnaMerahRt" ng-model="field.rt" class="form-control" placeholder="RT" min="0" maxlength="3" format-number required>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <input type="text" ng-class="warnaMerahRw" ng-model="field.rw" class="form-control" placeholder="RW" min="0" maxlength="3" format-number required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <select class="form-control" ng-class="warnaMerahProv"  id="recruitment" ng-model="field.provinsi" ng-options="res.ProvinceCode as res.ProvinceName for res in listProvince" ng-change="changeProvince()" required>
+                                        <option value="" selected="selected">--Pilih Provinsi--</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <select class="form-control" ng-class="warnaMerahKot" id="recruitment" ng-model="field.kota" ng-options="res.CityCode as res.Name for res in listCity" required>
+                                        <option value="" selected="selected">--Pilih Kota--</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <input type="text" ng-class="warnaMerahKP" ng-model="field.kodePos" class="form-control" placeholder="Kode Pos" min="0" maxlength="5" format-number required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="text" ng-class="warnaMerahTeL" ng-model="field.tempatLahir" class="form-control" placeholder="tempat lahir" required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <div class="input-group mb-2 ">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">Tgl Lahir</div>
+                                        </div>
+                                        <input type="date" ng-class="warnaMerahTaL" id="datePickerId" class="form-control" ng-model="field.tanggalLahir" min='1899-01-01' max='2100-01-01' placeholder="Tanggal Lahir" required>
+                                    </div>
+                                </div>
+                                <!--   <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">+62</div>
+                                    </div>
+                                    <input type="number" ng-model="account.PhoneNo" class="form-control" min="0" placeholder="Nomor Telepon" required>
+                                </div>-->
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <select class="form-control" ng-class="warnaMerahAg" id="recruitment" ng-model="field.agama" ng-options="res.IDAgama as res.Agama for res in listAgama" required>
+                                        <option value="" selected="selected">--Pilih agama--</option>
+                                    </select>
+                                </div>
+                                <!-- <input type="" class="form-control" ng-model="field.agama" list="agama">
+                                <datalist id="agama" ng-model="field.agama" required>
+                                    <option value="" selected="selected">--Pilih agama--</option>
+                                    <option ng-repeat="res in listAgama | filter:search" value="{{res.Agama}}"></option>
+                                </datalist>-->
+                                <!--   this is the working code--> <!--<input class="form-control" typeahead-min-length="0" type="text" ng-model="field.agama" uib-typeahead="res as res.Agama for res in listAgama  | filter:$viewValue ">-->
+
+                                <div class="form-group col-md-4">
+                                    <select class="form-control" ng-class="warnaMerahSP" id="recruitment" ng-model="field.statusPernikahan" ng-options="res.MarriageStatusCode as res.StatusPernikahan for res in listStatusPerkawinan" required>
+                                        <option value="" selected="selected">--Pilih Status Pernikahan--</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <input type="text" ng-class="warnaMerahTB" ng-model="field.tinggiBadan" class="form-control" placeholder="tinggi Badan" maxlength="3" min="0" format-number required>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <input type="text" ng-class="warnaMerahBB" ng-model="field.beratBadan" class="form-control" placeholder="Berat Badan" maxlength="3" min="0" format-number required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <input type="text" ng-class="warnaMerahKtp" ng-model="field.NoKtp" format-number class="form-control" placeholder="No KTP" maxlength="16" required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">+62</div>
+                                        </div>
+                                        <input type="text" ng-class="warnaMerahTelp" ng-model="field.PhoneNo" class="form-control" min="0" maxlength="12" ng-keyup="hapusNol()" format-number placeholder="Nomor Telepon" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <input type="email" ng-class="warnaMerahEmail" ng-model="field.Email" class="form-control" placeholder="Email" maxlength="50" required>
+                                </div>
+                            </div>
+                            <!--gone in CR CHARGES 22/10-->
+                            <!--  <div class="form-row">
+        <div class="form-group col-md-4">
+            <select class="form-control" id="recruitment" ng-model="field.bank" ng-options="res.BankCode as res.BankName for res in listBank" required>
+                <option value="" selected="selected">--Pilih bank--</option>
+            </select>
+        </div>
+    </div>-->
+                            <label class="mt-4"><strong>Data Domisili</strong></label>
+                            <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" ng-model="sameData" ng-checked="getSameData()" type="checkbox" name="remember"> Jika Data sama dengan data di KTP
+                                </label>
+                            </div>
+                            <div ng-show="domisiliForm">
+                                <div class="form-group">
+                                    <input type="text" ng-class="warnaMerahFSAl"  ng-model="fieldSama.alamat" class="form-control" placeholder="Alamat">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-2">
+                                        <input type="text" ng-class="warnaMerahFSRT" ng-model="fieldSama.rt" class="form-control" placeholder="RT" min="0" maxlength="3" format-number required>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <input type="text" ng-class="warnaMerahFSRW" ng-model="fieldSama.rw" class="form-control" placeholder="RW" min="0" maxlength="3" format-number required>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <select class="form-control" ng-class="warnaMerahFSProv" id="recruitment" ng-model="fieldSama.provinsi" ng-options="res.ProvinceCode as res.ProvinceName for res in listProvince" ng-change="changeProvince2()" required>
+                                            <option value="" selected="selected">Pilih Provinsi</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <select class="form-control" ng-class="warnaMerahFSKot" id="recruitment" ng-model="fieldSama.kota" ng-options="res.CityCode as res.Name for res in listCity2" required>
+                                            <option value="" selected="selected">Pilih Kota</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <input type="text" ng-class="warnaMerahFSKP" ng-model="fieldSama.kodePos" class="form-control" placeholder="Kode Pos" min="0" min="0" maxlength="5" format-number required>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="form-row">
+        <div class="form-group col-md-8">
+            <input name="NamaLengkap" type="text" ng-model="fieldSama.namaLengkap" class="form-control" placeholder="Nama Lengkap" required>
+            $1$<label style="color: red" ng-show="myForm.NamaLengkap.$error.required">*</label>#1#
+        </div>
+        <div class="form-group col-md-4">
+            <select class="form-control" id="recruitment" ng-model="fieldSama.jenisKelamin" ng-options="res.GenderCode as res.Gender for res in listGender" required>
+                <option value="" selected="selected">Jenis Kelamin</option>
+            </select>
+        </div>
+    </div>
+
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <input type="number" ng-model="fieldSama.kodePos" class="form-control" placeholder="Kode Pos" required>
+        </div>
+        <div class="form-group col-md-4">
+            <input type="text" ng-model="fieldSama.tempatLahir" class="form-control" placeholder="tempat lahir" required>
+        </div>
+        <div class="form-group col-md-4">
+            <div class="input-group mb-2 ">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Tgl Lahir</div>
+                </div>
+                <input type="date" class="form-control" ng-model="fieldSama.tanggalLahir" placeholder="Tanggal Lahir" required>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <select class="form-control" id="recruitment" ng-model="fieldSama.agama" ng-options="res.IDAgama as res.Agama for res in listAgama" required>
+                <option value="" selected="selected">agama</option>
+            </select>
+        </div>
+        <div class="form-group col-md-4">
+            <select class="form-control" id="recruitment" ng-model="fieldSama.statusPernikahan" ng-options="res.MarriageStatusCode as res.StatusPernikahan for res in listStatusPerkawinan" required>
+                <option value="" selected="selected">statusPernikahan</option>
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            <input type="number" ng-model="fieldSama.tinggiBadan" class="form-control" placeholder="tinggi Badan" required>
+        </div>
+        <div class="form-group col-md-2">
+            <input type="number" ng-model="fieldSama.beratBadan" class="form-control" placeholder="Berat Badan" required>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <select class="form-control" id="recruitment" ng-model="fieldSama.bank" ng-options="res.BankCode as res.BankName for res in listBank" required>
+                <option value="" selected="selected">bank</option>
+            </select>
+        </div>
+    </div>-->
+                            <!--  DATA REKENING DAN NPWP-->
+                            <label class="mt-4"><strong>Data Rekening & NPWP</strong></label>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <select class="form-control" id="recruitment" ng-class="warnaMerahBank" ng-model="fieldRekNpwp.namaBank"
+                                            ng-options="res.BankCode as res.BankName for res in listBank" required>
+                                        <option value="" selected="selected">--Pilih Bank--</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="text" class="form-control" ng-class="warnaMerahCB" placeholder="Cabang Bank" ng-model="fieldRekNpwp.cabangBank" required />
+
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="text" ng-class="warnaMerahNR" class="form-control" placeholder="Nomor Rekening" format-number placeholder="nomor rekening" min="0" maxlength="20" oninput="validity.valid||(value='');"
+                                           ng-model="fieldRekNpwp.nomorRekening" required />
+
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <span class="text-danger penting">*</span>
+                                    <input type="text" ng-class="warnaMerahNmR" class="form-control pl-5" placeholder="Nama di Rekening"
+                                           ng-model="fieldRekNpwp.namaDiRekening" required />
+
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <span class="text-danger penting">**</span>
+                                    <input type="text" ng-class="warnaMerahNoNPWP" class="form-control pl-5" placeholder="Nomor NPWP"
+                                           ng-model="fieldRekNpwp.nomorNPWP" ui-mask="99.999.999.9-999.999" min="0" maxlength="20" ui-mask-placeholder required />
+
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="text" ng-class="warnaMerahNmPajak" class="form-control" placeholder="Nama Wajib Pajak"
+                                           ng-model="fieldRekNpwp.namaWajibPajak" required />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <input type="text" ng-class="warnaMerahHubPajak" class="form-control" placeholder="Hubungan Dengan Wajib Pajak"
+                                           ng-model="fieldRekNpwp.hubunganDgWajibPajak" required />
+                                </div>
+                                <div class="form-group col-md-8">
+                                    <input type="text" ng-class="warnaMerahAlNPWP" class="form-control" placeholder="Alamat Sesuai NPWP"
+                                           ng-model="fieldRekNpwp.alamatNpwp" required />
+                                </div>
+                            </div>
+                            <small class="text-danger">
+                                <i>
+                                    * Nama di rekening harus atas nama pribadi. Kesalahan penulis
+                                    nomor rekening akan berakhir pada proses pembayaran kompensasi.<br>
+                                </i>
+                            </small>
+                            <small class="text-danger">
+                                <i>
+                                    ** Bila Anda tidak memiliki NPWP, maka Anda tidak dikenakan
+                                    pajak penghasilan tidak kena pajak (PTKP).
+                                </i>
+                            </small>
+                            <br />
+                            <!--   KONDISI KESEHATAN-->
+                            <label class="mt-4"><strong>Kondisi Kesehatan</strong></label>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label>
+                                        1. Bagaimana kondisi Kesehatan Anda saat ini?
+                                    </label>
+                                </div>
+                                <div class="custom-control custom-radio col-md-2">
+                                    <input type="radio" class="custom-control-input" id="Sehat" name="kondisi"
+                                           ng-model="fieldKesehatan.isSehat" value="Ya" ng-change="fieldKesehatan.kondisiKesehatan = fieldKesehatan.isSehat ? '' : fieldKesehatan.kondisiKesehatan">
+                                    <label class="custom-control-label" for="Sehat">Sehat</label>
+                                </div>
+                                <div class="custom-control custom-radio col-md-2">
+                                    <input type="radio" class="custom-control-input" id="TidakSehat" name="kondisi"
+                                           ng-model="fieldKesehatan.isSehat"
+                                           value="Tidak">
+                                    <label class="custom-control-label" for="TidakSehat">Tidak Sehat, Jelaskan</label>
+                                </div>
+                                <div class="col top-2">
+                                    <input type="text" ng-disabled="fieldKesehatan.isSehat == 'Ya'" ng-model="fieldKesehatan.kondisiKesehatan" ng-class="warnaMerahKondisi" class="form-control-plaintext">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <label class="col-md-12">
+                                    2. Apakah Anda pernah dirawat di Rumah Sakit atau menderita
+                                    sakit keras dalam 5 tahun terakhir ?
+                                </label>
+                                <div class="custom-control custom-radio col-md-3 offset-md-1">
+                                    <input type="radio" class="custom-control-input" id="BelumPernah"
+                                           name="pengalamanSakit" ng-model="fieldKesehatan.isPernahDirawat" value="Tidak" ng-change="clearDataSakit()">
+                                    <label class="custom-control-label" for="BelumPernah">Belum Pernah</label>
+                                </div>
+                                <div class="custom-control custom-radio col-md-5">
+                                    <input type="radio" class="custom-control-input" id="Pernah" name="pengalamanSakit"
+                                           ng-model="fieldKesehatan.isPernahDirawat" ng-checked="formPenyakitcheck()" value="Ya">
+                                    <label class="custom-control-label" for="Pernah">
+                                        Pernah (jika pernah lengkapi pertanyaan dibawah ini)
+                                    </label>
+                                </div>
+                            </div>
+                            <!--<div ng-if="fieldKesehatan.isPernahDirawat=='Ya'">-->
+                            <div ng-show="formPenyakit">
+                                <div class="form-row">
+                                    <label class="col-form-label offset-md-4">a. Penyakit yang diderita</label>
+                                    <div class="col">
+                                        <input type="text" ng-model="fieldKesehatan.penyakit" class="form-control-plaintext">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <label class="col-form-label offset-md-4">b. Kapan (sebutkan bulan/tahun)?</label>
+                                    <div class="col">
+                                        <input type="month" ng-model="fieldKesehatan.tanggalSakit" oninput="validity.valid||(value='');" class="form-control-plaintext" min="0001-01" max="{{tanggalSekarang | date:'yyyy-MM-dd'}}">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <label class="col-form-label offset-md-4">c. Dirawat di RS</label>
+                                    <div class="col">
+                                        <input type="text" ng-model="fieldKesehatan.rs" class="form-control-plaintext">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <label class="col-form-label offset-md-4">d. Lama dirawat</label>
+                                    <div class="col-md-1">
+                                        <input type="text" class="form-control-plaintext" format-number ng-model="fieldKesehatan.lamaDirawat">
+                                    </div>
+                                    <label class="col-form-label">Hari</label>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-5 offset-md-4">
+                                        <label>
+                                            e. Apakah penyakit tersebut masih
+                                            sering kambuh?
+                                        </label>
+                                    </div>
+                                    <div class="custom-control custom-radio col-md-1">
+                                        <input type="radio" class="custom-control-input" id="YaKambuh" name="penyakitKambuh"
+                                               ng-model="fieldKesehatan.isKambuh" value="Ya">
+                                        <label class="custom-control-label" for="YaKambuh">Ya</label>
+                                    </div>
+                                    <div class="custom-control custom-radio col-md-2">
+                                        <input type="radio" class="custom-control-input" id="TidakKambuh"
+                                               name="penyakitKambuh" ng-model="fieldKesehatan.isKambuh" value="Tidak">
+                                        <label class="custom-control-label" for="TidakKambuh">Tidak</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label>3. Apakah anda sedang hamil saat ini?</label>
+                                </div>
+                                <div class="custom-control custom-radio col-md-2">
+                                    <input type="radio" class="custom-control-input" id="YaHamil" name="hamil"
+                                           ng-model="fieldKesehatan.isHamil" value="Ya">
+                                    <label class="custom-control-label" for="YaHamil">Ya</label>
+                                </div>
+                                <div class="custom-control custom-radio col-md-6">
+                                    <input type="radio" class="custom-control-input" id="TidakHamil" name="hamil"
+                                           ng-model="fieldKesehatan.isHamil" value="Tidak">
+                                    <label class="custom-control-label" for="TidakHamil">Tidak</label>
+                                </div>
+                            </div>
+                            <br />
+                            <!--INFORMASI RENCANA PRIBADI-->
+                            <label class="mt-4"><strong>Informasi Rencana Pribadi</strong></label>
+                            <div class="form-row mb-30 this-relatif">
+                                <div class="form-group col-md-6 mb-0">
+                                    <label>
+                                        1. Apakah anda memiliki rencana menikah dalam waktu 1 tahun ke-depan?
+                                    </label>
+                                </div>
+                                <div class="custom-control custom-radio col-md-2 pl-4">
+                                    <input type="radio" class="custom-control-input" id="YaNikah" name="rencanaMenikah"
+                                           ng-model="fieldrencana.rencanaMenikah" value="Ya">
+                                    <label class="custom-control-label" for="YaNikah">Ya, kapan (bln/thn)</label>
+                                </div>
+                                <div class="col-md-2.5 col top-2">
+                                    <input type="month" ng-model="fieldrencana.tanggalRencanaMenikah" max='9999-01' min="{{tanggalSekarang | date:'yyyy-MM'}}" oninput="validity.valid||(value='');" ng-disabled="fieldrencana.rencanamenikah= ='Tidak'" class=" form-control-plaintext">
+                                </div>
+                                <div class="custom-control custom-radio col-md-1 offset-md-6 this-rel-radio">
+                                    <input type="radio" class="custom-control-input" id="GaNikah" name="rencanaMenikah"
+                                           ng-model="fieldrencana.rencanaMenikah" value="Tidak" ng-change="clearTglNikah()">
+                                    <label class="custom-control-label" for="GaNikah">Tidak</label>
+                                </div>
+                            </div>
+                            <div class="form-row mb-30 this-relatif">
+                                <div class="form-group col-md-6 mb-0">
+                                    <label>
+                                        2. Jika Anda sudah menikah, apakah Anda memiliki rencana untuk memiliki anak dalam waktu dekat?
+                                    </label>
+                                </div>
+                                <div class="custom-control custom-radio col-md-2 pl-4">
+                                    <input type="radio" class="custom-control-input" id="YaAnak"
+                                           name="rencanaMemilikiAnak" ng-model="fieldrencana.rencanaPunyaAnak" value="Ya">
+                                    <label class="custom-control-label" for="YaAnak">Ya, kapan (bln/thn)</label>
+                                </div>
+                                <div class="col-md-2.5 col top-2">
+                                    <input type="month" ng-model="fieldrencana.tanggalRencanaPunyaAnak" max='9999-01' min="{{tanggalSekarang | date:'yyyy-MM-dd'}}" oninput="validity.valid||(value='');" ng-disabled="fieldrencana.rencanaPunyaAnak == 'Tidak'" class="form-control-plaintext">
+                                </div>
+                                <div class="custom-control custom-radio col-md-1 offset-md-6 this-rel-radio">
+                                    <input type="radio" class="custom-control-input" id="GaAnak"
+                                           name="rencanaMemilikiAnak" ng-model="fieldrencana.rencanaPunyaAnak" value="Tidak" ng-change="clearTglPunyaAnak()">
+                                    <label class="custom-control-label" for="GaAnak">Tidak</label>
+                                </div>
+                            </div>
+                            <div class="form-row mb-30 this-relatif">
+                                <div class="form-group col-md-6 mb-0">
+                                    <label>
+                                        3. Apakah Anda memiliki rencana untuk melanjutkan kuliah dalam kurun waktu 1 tahun ke depan?
+                                    </label>
+                                </div>
+                                <div class="custom-control custom-radio col-md-2 pl-4">
+                                    <input type="radio" class="custom-control-input" id="YaKuliah" name="rencanaKuliah"
+                                           ng-model="fieldrencana.rencanaLanjutKuliah" value="Ya">
+                                    <label class="custom-control-label" for="YaKuliah">Ya, kapan (bln/thn)</label>
+                                </div>
+                                <div class="col col-md-2.5 top-2">
+                                    <input type="month" ng-model="fieldrencana.tanggalRencanaKuliah" max='9999-01' min="{{tanggalSekarang | date:'yyyy-MM-dd'}}" oninput="validity.valid||(value='');" ng-disabled="fieldrencana.rencanaLanjutKuliah == 'Tidak'" class="form-control-plaintext">
+                                </div>
+                                <div class="custom-control custom-radio col-md-1 offset-md-6 this-rel-radio">
+                                    <input type="radio" class="custom-control-input" id="GaKuliah" name="rencanaKuliah"
+                                           ng-model="fieldrencana.rencanaLanjutKuliah" value="Tidak" ng-change="clearTglKuliah()">
+                                    <label class="custom-control-label" for="GaKuliah">Tidak</label>
+                                </div>
+                            </div>
+                            <div class="form-row mb-30 this-relatif">
+                                <div class="form-group col-md-6 mb-0">
+                                    <label>
+                                        4. Apakah Anda memiliki rencana untuk menunaikan ibadah haji dalam 1 tahun ke depan?
+                                    </label>
+                                </div>
+                                <div class="custom-control custom-radio col-md-2 pl-4">
+                                    <input type="radio" class="custom-control-input" id="YaHaji" name="rencanaHaji"
+                                           ng-model="fieldrencana.rencanaNaikHaji" value="Ya">
+                                    <label class="custom-control-label" for="YaHaji">Ya, kapan (bln/thn)</label>
+                                </div>
+                                <div class="col-md-2.5 col top-2">
+                                    <input type="month" ng-model="fieldrencana.tanggalRencanaNaikHaji" max='9999-01' min="{{tanggalSekarang | date:'yyyy-MM-dd'}}" oninput="validity.valid||(value='');" ng-disabled="fieldrencana.rencanaNaikHaji == 'Tidak'" class="form-control-plaintext">
+                                </div>
+                                <div class="custom-control custom-radio col-md-1 offset-md-6 this-rel-radio">
+                                    <input type="radio" class="custom-control-input" id="GaHaji" name="rencanaHaji"
+                                           ng-model="fieldrencana.rencanaNaikHaji" value="Tidak" ng-change="clearTglHaji()">
+                                    <label class="custom-control-label" for="GaHaji">Tidak</label>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-4 ml-auto">
+                                    <button ng-click="submitDataPribadi()" type="submit" class="btn-primary shadow-sm btn-blue btn-block">Simpan</button>
+                                    <!--ng-disabled="myForm.$invalid"-->
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

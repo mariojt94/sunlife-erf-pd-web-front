@@ -1,0 +1,118 @@
+﻿<section class="content-container" ng-class="{'sidenav-open': tgState}">
+    <div class="sl-title">
+        <h2>Beranda</h2>
+    </div>
+    <script type="text/ng-template" id="photoUpload.html">
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-title">Unggah Profile Picture</h4>
+        </div>
+        <div class="modal-body" id="modal-body">
+            <div class="form-horizontal">
+                <input readonly type="hidden" ng-model="$ctrl.imageUpload.ID" class="form-control">
+                <div class="form-group">
+                    <label for="ltFile" class="col-md-2 control-label">File</label>
+                    <div class="col-md-10">
+                        <input type="file" ng-model="photoFile" id="photoFile" name="photoFile" accept="image/*" style="display: none;" onchange="setfilename(this.value)" base-sixty-four-input />
+                        <input type="button" value="Browse..." onclick="document.getElementById('photoFile').click();" />
+                        <label id="namafile" name="namafile"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="$ctrl.uploadFile()">Unggah</button>
+            <button class="btn btn-danger" type="button" ng-click="$ctrl.cancel()">Batal</button>
+        </div>
+    </script>
+    <div class="arrow-left"></div>
+    <div class="bg-yellow-transparent"></div>
+    <div class="bg-dashboard"></div>
+
+    <div class="dashboard-container">
+        <div class="dashboard-content">
+            <div class="content-title">
+                <h2>{{businessType}}</h2>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content-left">
+                <div class="left-wrap">
+                    <h2>Pencapaian</h2>
+                    <div class="clearfix"></div>
+                    <div class="progress-content progress-content-sementara">
+                        <div ng-show="photo==null" class="avatar" style="cursor:pointer;"><i class="fa fa-user" ng-click="openPhotoPopUp()" aria-hidden="true"></i></div>
+                        <div ng-show="photo!=null" class="avatar" style="cursor:pointer;"><img data-ng-src="{{photo}}" ng-click="openPhotoPopUp()" height="100" width="100" style="border-radius: 50%;" /></div>
+                        <p class="dashboard-nama">{{userData.DisplayName}}</p>
+                        <p class="dashboard-join">Bergabung sejak {{[userData.JoinDateDisplay]}}</p>
+                        <p class="dashboard-total">Total sesi belajar anda : {{userStudyHour.StudyHour}}</p>
+                        <p class="dashboard-latest">Tanggal terakhir login :{{userData.LastLoginDateDisplay}} </p>
+                        <div class="clearfix"></div>
+                        <div class="dashboard-status">
+                            <p>Pencapaian anda saat ini <span class="size-50"> {{userProgress.CurrentProgressPercentage}}</span></p>
+                            <div class="clear-fix"></div>
+                        </div>
+                        <div class="dashboard-sertifikat">
+                            <h2>Sertifikat</h2>
+                            <ul>
+                                <li class="active" ng-repeat="cert in userCertificate">
+                                    <a ng-disabled="cert.IsGraduate != 1" ng-click="cert.IsGraduate == 1 && downloadCertificate(cert)">
+                                        <div class="circle-dashboard"><i class="fa" ng-class="cert.IsGraduate == 1 ? 'fa fa-check' : 'fa fa-lock'" aria-hidden="true"></i></div>
+                                        <p>{{cert.LearningTypeName}}</p>
+                                        <span class="float-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                                        <div class="clearfix"></div>
+                                    </a>
+                                </li>
+                                <div class="border-bottom"></div>
+                            </ul>
+                        </div>
+                        <div class="next-step">
+                            <p>Materi Berikutnya : {{userNextCourse.NextCourse}}</p>
+                        </div>
+                        <a ng-click="navigateELearning()" class="btn btn-blue-50">{{buttonText}}</a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 content-right">
+                <div class="right-wrap">
+                    <h2>Peringkat</h2>
+                    <div class="clearfix"></div>
+                    <div class="halloffame-content" ng-controller="dashboardController">
+                        <section class="swipe sementara-swipe">
+                            <swiper>
+                                <slides>
+                                    <slide ng-repeat="learningType in LearningTypeList">
+                                        <div class="slide1">
+                                            <h2>5 Terbaik {{learningType.Name}}</h2>
+                                            <table class="slide-table">
+                                                <tbody>
+                                                    <tr ng-repeat="chapterAnswer in learningType.ChapterAnswerHeaders">
+                                                        <th scope="row">{{chapterAnswer.DisplayName}}</th>
+                                                        <td>{{chapterAnswer.TotalScore}}</td>
+                                                        <td>{{chapterAnswer.TimeElapsedDisplay}} menit</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </slide>
+                                </slides>
+                                <pagination class="swiper-sementara"></pagination>
+                                <div class="nextbtnright">
+                                    <a ng-click="navigateDashboardFame()" class="btn btn-blue-50 sementara-btn">Lihat Semua</a>
+                                </div>
+                            </swiper>
+                        </section>
+                    </div>
+                    <!-- <a ng-click="navigateDashboardFame()" class="btn btn-blue-50 sementara-btn">Lihat Semua</a> -->
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+</section>
+
+<script>
+    function setfilename(val) {
+        filename = val.split('\\').pop().split('/').pop();
+        $("#namafile").text(filename);
+    }
+</script>

@@ -1,0 +1,78 @@
+/* Answer */
+.wrap-answer-first {
+  position:relative;
+  width:70%;
+  margin:auto;
+  text-align:center;
+}
+.content-ribon-big {
+  position: relative;
+  width: 100%;
+  height: 90px;
+  margin: auto;
+  padding-bottom: 70px;
+  background: url(../../assets/img/label-ribon-big.png) no-repeat top center;
+  z-index: 2;
+}
+.content-ribon-big h2 {
+  color: #fff;
+  font-size: 34px;
+  padding: 16px 0px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.answer-description {
+  padding: 60px 30px 30px 30px;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  top: -43px;
+  height: auto;
+}
+.answer-description p {
+  color:$blue90;
+  font-size:22px;
+}
+
+.total-answer  span.circle-white {
+  width: 50px;
+  height: 50px;
+  padding: 9px 10px;
+  border-radius: 50%;
+  background: #fff;
+  color: #1a4e59;
+  margin: 0px 10px;
+  display: inline-block;
+  font-weight:bold;
+  font-family:'agenda-bold',sans-serif;
+}
+.total-answer {
+  color:$blue90;
+  font-size:22px;
+  margin-bottom:20px;
+
+}
+.level {
+  padding:10px 30px;
+  background:$slate-blue;
+  color:#fff;
+  font-size:25px;
+  text-transform:uppercase;
+  display: inline-block;
+  position:relative;
+  z-index:1;
+  font-family:'agenda-bold',sans-serif;
+}
+
+.category {
+      padding: 10px 40px 10px 40px;
+      background: #fff;
+      color: $blue90;
+      font-size: 25px;
+      text-transform: uppercase;
+      display: inline-block;
+      position: relative;
+      top: -10px;
+      z-index: 0;
+      margin:0px auto 20px auto;
+      font-family:'agenda-medium',sans-serif;
+}

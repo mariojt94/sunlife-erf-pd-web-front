@@ -1,0 +1,386 @@
+
+  <div class="col-12 p-0 mt-7">
+    <div class="card br0 shadow h-100">
+      <div class="card-body nav-card-fix p-0">
+        <div class="container no-pad">
+            <div class="form-row erf-menu pl-5 pr-5 pt-4 pb-0">
+                <a href="#!/data-pribadi" class="form-group col text-center img-nav-v2">
+                    <img src="Content/assets/img/ic-data-pribadi.svg" class="img-fluid menu-aktif">
+                    <br><label><strong>Data Pribadi</strong></label>
+                    <i ng-show="statusDataPribadi" class="m-done"></i>
+                </a>
+                <a href="#!/data-kontak" class="form-group col text-center img-nav-v2">
+                    <img src="Content/assets/img/ic-kontak.svg" class="img-fluid">
+                    <br><label><strong>Kontak</strong></label>
+                    <i ng-show="statusKontak" class="m-done"></i>
+                </a>
+                <a href="#!/data-keluarga" class="form-group col text-center img-nav-v2">
+                    <img src="Content/assets/img/ic-keluarga.svg" class="img-fluid">
+                    <br><label><strong>Data Keluarga</strong></label>
+                    <i ng-show="statusDataKeluarga" class="m-done"></i>
+                </a>
+                <a href="#!/data-pendidikan" class="form-group col text-center img-nav-v2">
+                    <img src="Content/assets/img/ic-pendidikan.svg" class="img-fluid">
+                    <br><label><strong>Pendidikan</strong></label>
+                    <i ng-show="statusDataPendidikan" class="m-done"></i>
+                </a>
+                <a href="#!/data-pekerjaan" class="form-group col text-center img-nav-v2 menu-aktif">
+                    <img src="Content/assets/img/ic-ak-pekerjaan.svg" class="img-fluid">
+                    <br><label><strong>Riwayat Pekerjaan</strong></label>
+                    <!-- <i ng-show="statusDataPekerjaan" class="m-done"></i>-->
+                </a>
+                <a href="#!/data-dokumen" class="form-group col text-center img-nav-v2">
+                    <img src="Content/assets/img/ic-dokumen.svg" class="img-fluid">
+                    <br><label><strong>Dokumen</strong></label>
+                    <i ng-show="statusDataDokumen" class="m-done"></i>
+                </a>
+                <a href="#!/data-ptkp" class="form-group col text-center img-nav-v2">
+                    <img src="Content/assets/img/ic-ptkp.svg" class="img-fluid">
+                    <br><label><strong>PTKP</strong></label>
+                    <i ng-show="statusDataPtkp" class="m-done"></i>
+                </a>
+                <!--<a class="form-group col text-center img-nav-v2">
+                    <img src="Content/assets/img/ic-psikotes.svg" class="img-fluid" ng-click="ToPsikotes()">
+                    <br><label><strong>Psikotes</strong></label>
+                    <i ng-show="statusDataPsikotes" class="m-done"></i>
+                </a>-->
+                <a class="form-group col text-center img-nav-v2">
+                    <img src="Content/assets/img/ic-papikostick-1.svg" class="img-fluid" ng-click="ToPapikostik()">
+                    <br><label><strong>Papikostik</strong></label>
+                    <i ng-show="statusDataPapikostik" class="m-done"></i>
+                </a>
+                <a href="#!/data-review" class="form-group col text-center img-nav-v2">
+                    <img src="Content/assets/img/ic-review.svg" class="img-fluid">
+                    <br><label><strong>Review</strong></label>
+                    <i ng-show="statusDataReview" class="m-done"></i>
+                </a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container-fluid d-menu h-100 nopad-340px">
+	<div class="container h-100 nopad-340px">
+
+	  <div class="row h-100">
+	    <div class="col-12 mb-4 d-link" style="height:65%">
+	      <div class="card br10 shadow h-100">
+	        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4"style="overflow-y: scroll;">
+	          		          	
+                <form>
+                    <!-- pekerjaan starts-->
+                    <div ng-repeat="kerjaan in listDataPekerjaan">
+                        <div class="d-flex justify-content-between">
+                            <label><strong>Riwayat Pekerjaan (Cantumkan mulai dari pekerjaan sekarang / pekerjaan terakhir Anda)</strong></label>
+                            <div class="form-group col-md-1" ng-if="$index > 0">
+                                <button ng-click="deletePekerjaan($index)" class="fa fa-trash btn-data shadow-sm btn-blue btn-block btn-orng-del"></button>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <input type="text" id="nmPerusahaan{{$index}}" ng-model="kerjaan.NamaPerusahaan" class="form-control" placeholder="Nama Perusahaan" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <input type="text" id="jenisUsaha{{$index}}" ng-model="kerjaan.JenisUsaha" class="form-control" placeholder="Jenis Usaha" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <input type="text" id="posisi{{$index}}" ng-model="kerjaan.Posisi" class="form-control" placeholder="Posisi/Jabatan" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <input type="number" id="thnMasuk{{$index}}" ng-model="kerjaan.TanggalMasuk" class="form-control" placeholder="Tahun Masuk" max="{{tahunSekarang}}" min="1" oninput="validity.valid||(value='');" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <input type="number" id="thnKeluar{{$index}}" ng-model="kerjaan.TanggalResign" class="form-control" placeholder="Tahun Keluar" max="{{tahunSekarang}}" min="1" oninput="validity.valid||(value='');" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <input type="text" id="telp{{$index}}" format-number ng-model="kerjaan.TelpKantor" class="form-control" placeholder="Telepon Kantor" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <input type="text" id="gaji{{$index}}" ng-model="kerjaan.Gaji" class="form-control money" placeholder="Gaji Terakhir" ui-number-mask="0" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="tugas{{$index}}" ng-model="kerjaan.Tugas" placeholder="Tugas dan Tanggung Jawab" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="alasan{{$index}}" ng-model="kerjaan.AlasanBerhenti" placeholder="Alasan Berhenti" rows="3"></textarea>
+                        </div>
+                        <br /><br />
+                    </div>
+
+                    <div class="form-row mt-2">
+                        <div class="form-group col-md-4">
+                            <button ng-click="tambahPekerjaan()" class="btn-data shadow-sm btn-blue btn-block">+ Tambah Data Pekerjaan</button>
+                        </div>
+                    </div>
+                    <!-- pekerjaan ends-->
+                    <!--organisasi starts-->
+                    <div ng-repeat="organisasi in listDataOrganisasi">
+                        <div class="d-flex justify-content-between">
+                            <label class="mt-3"><strong>Riwayat Organisasi (Optional, Cantumkan mulai dari pekerjaan sekarang / pekerjaan terakhir Anda)</strong></label>
+                            <div class="form-group col-md-1">
+                                <button ng-click="deleteOrganisasi($index)" class="fa fa-trash btn-data shadow-sm btn-blue btn-block btn-orng-del"></button>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" id="namaOrg{{$index}}" ng-model="organisasi.NamaOrganisasi" class="form-control" placeholder="Nama Organisasi">
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" id="tglMasukOrg{{$index}}" ng-model="organisasi.TanggalMasuk" class="form-control" max="{{tahunSekarang}}" min="1" oninput="validity.valid||(value='');" placeholder="Tahun Masuk">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" id="jabatan{{$index}}" ng-model="organisasi.Jabatan" class="form-control" placeholder="Jabatan/Posisi">
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" id="tglKeluarOrg{{$index}}" ng-model="organisasi.TanggalBerhenti" class="form-control" max="{{tahunSekarang}}" min="1" oninput="validity.valid||(value='');" placeholder="Tahun Keluar">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <textarea ng-model="organisasi.Kegiatan" id="kegiatan{{$index}}" class="form-control" placeholder="Kegiatan" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row mt-2">
+                        <div class="form-group col-md-4">
+                            <button ng-click="tambahOrganisasi()" class="btn-data shadow-sm btn-blue btn-block">+ Tambah Data Organisasi</button>
+                        </div>
+                    </div>
+                    <!--organisasi ends-->
+                    <!--penghargaan starts-->
+                    <div ng-repeat="penghargaan in listDataPenghargaan">
+                        <div class="d-flex justify-content-lg-between">
+                            <label class="mt-3  w-100"><strong>Penghargaan / Prestasi (Optional)</strong></label>
+                            <div class="form-group col-md-1">
+                                <button ng-click="deletePenghargaan($index)" class="fa fa-trash btn-data shadow-sm btn-blue btn-block btn-orng-del"></button>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <input type="text" id="nmPenghargaan{{$index}}" ng-model="penghargaan.NamaPenghargaan" class="form-control" placeholder="Nama Penghargaan">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <input type="text" id="pemberi{{$index}}" ng-model="penghargaan.PemberiPenghargaan" class="form-control" placeholder="Pemberi Penghargaan">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <input type="Date" id="tglTerima{{$index}}" ng-model="penghargaan.TanggalTerima" class="form-control" min='1899-01-01' max='2100-01-01' placeholder="Tanggal Terima">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row mt-2">
+                        <div class="form-group col-md-4">
+                            <button ng-click="tambahPenghargaan()" class="btn-data shadow-sm btn-blue btn-block">+ Tambah Data Penghargaan</button>
+                        </div>
+                    </div>
+                    <!--penghargaan ends-->
+                    <!--bhasa starts-->
+                    <div ng-repeat="bahasa in listDataBahasa">
+                        <label class="mt-3"><strong>Penguasaan Bahasa Asing</strong></label>
+                        <div class="form-row d-flex justify-content-between">
+                            <div class="form-group col-md-4">
+                                <input type="text" id="nmBahasa{{$index}}" ng-model="bahasa.Bahasa" class="form-control" placeholder="Bahasa" required>
+                            </div>
+                            <div class="form-group col-md-1">
+                                <button ng-click="deleteBahasa($index)" ng-if="$index > 0" class="fa fa-trash btn-data shadow-sm btn-blue btn-block btn-orng-del"></button>
+                            </div>
+                        </div>
+                        <!--better version with repeat-->
+                        <div class="form-row mb-20">
+                            <div class="form-group col-md-2 col-12"><label>Membaca</label></div>
+                            <div class="col ng-scope col-md-2 col-sm-6 col-12" ng-repeat="kemampuan in KemampuanBahasa">
+                                <div class="custom-control custom-radio">
+                                    <input ng-model="bahasa.Membaca" value="{{kemampuan}}" type="radio" class="custom-control-input" id="bc{{$index}}{{$parent.$index}}"> <!--name="input{{$index}}{{$parent.$index}}"-->
+                                    <label class="custom-control-label" for="bc{{$index}}{{$parent.$index}}">{{kemampuan}}</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row mb-20">
+                            <div class="form-group col-md-2 col-12"><label>Berbicara</label></div>
+                            <div class="col ng-scope col-md-2 col-sm-6 col-12" ng-repeat="kemampuan in KemampuanBahasa">
+                                <div class="custom-control custom-radio">
+                                    <input ng-model="bahasa.Berbicara" value="{{kemampuan}}" type="radio" class="custom-control-input" id="bb{{$index}}{{$parent.$index}}"> <!--name="input{{$index}}{{$parent.$index}}"-->
+                                    <label class="custom-control-label" for="bb{{$index}}{{$parent.$index}}">{{kemampuan}}</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row mb-20">
+                            <div class="form-group col-md-2 col-12"><label>Menulis</label></div>
+                            <div class="col ng-scope col-md-2 col-sm-6 col-12" ng-repeat="kemampuan in KemampuanBahasa">
+                                <div class="custom-control custom-radio">
+                                    <input ng-model="bahasa.Menulis" value="{{kemampuan}}" type="radio" class="custom-control-input" id="ml{{$index}}{{$parent.$index}}"> <!--name="input{{$index}}{{$parent.$index}}"-->
+                                    <label class="custom-control-label" for="ml{{$index}}{{$parent.$index}}">{{kemampuan}}</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                        </div>
+                    </div>
+                    <div class="form-row mt-3">
+                        <div class="form-group col-md-4">
+                            <button ng-click="tambahBahasa()" class="btn-data shadow-sm btn-blue btn-block">+ Tambah Data Bahasa</button>
+                        </div>
+                    </div>
+                    <!--bhasa ends-->
+                    <!--keahlian starts-->
+                    <div ng-repeat="keahlian in listDataKeahlian">
+                        <div class="d-flex justify-content-lg-between">
+                            <label class="mt-3"><strong>Keahlian Khusus (Optional, Cantumkan keahlian khusus yang relevan, misal keahlian komputer)</strong></label>
+                            <div class="form-group col-md-1">
+                                <button ng-click="deleteKeahlian($index)" class="fa fa-trash btn-data shadow-sm btn-blue btn-block btn-orng-del"></button>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" id="keahlian{{$index}}" ng-model="keahlian.NamaKeahlian" class="form-control" placeholder="Keahlian Khusus">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" id="sertifikasi{{$index}}" ng-model="keahlian.Sertifikasi" class="form-control" placeholder="Kualifikasi/Sertifikasi">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form-row mt-2">
+                        <div class="form-group col-md-4">
+                            <button ng-click="tambahKeahlian()" class="btn-data shadow-sm btn-blue btn-block">+ Tambah Data Keahlian</button>
+                        </div>
+                    </div>
+                    <!--keahlian ends-->
+
+
+                    <label class="mt-3"><strong>Minat Kerja</strong></label>
+                    <label class="mt-1">Tuliskan prioritas di bidang kerja yang Anda minati, dengan menulis kan angka 1 s.d 5 pada kotak di sebelah kiri di bidang kerja (angka 1 menunjukan prioritas yang paling diminati)</label>
+                    <div class="form-row mb-3 col-md-12 col-sm-12">
+                        <div class="form-group col-md-1 col-sm-2 col-3 mb-0">
+                            <input id="sales" ng-disabled="jumlahMinat.length >= maxMinat && !minat.Sales" ng-blur="changeMinat('Sales',minat.Sales)" type="text" ng-model="minat.Sales" type="text" maxlength="1" oninput="this.value=this.value.replace(/[^1-5]/g,'');" class="form-control">
+                        </div>
+                        <label class="col-md-10 col-sm-9 col-9 mt-1 mb-0">Sales/Marketing</label>
+
+                        <!--                    <div class="form-group col-1 mb-0">
+            <input ng-disabled="jumlahMinat.length >= maxMinat && !minat.computer" ng-blur="changeMinat('computer',minat.computer)" type="number" ng-model="minat.computer" min="1" max="5" class="form-control">
+        </div>
+        <label class="col-3 mt-1 mb-0">Computer/IT</label>-->
+
+                        <!--                    <div class="form-group col-1 mb-0">
+            <input ng-disabled="jumlahMinat.length >= maxMinat && !minat.training" ng-blur="changeMinat('training',minat.training)" type="number" ng-model="minat.training" min="1" max="5" class="form-control">
+        </div>
+        <label class="col-3 mt-1 mb-0">Pendidikan/Training</label>-->
+                    </div>
+
+                    <div class="form-row mb-3 col-md-12 col-sm-12">
+                        <div class="form-group col-md-1 col-sm-2 col-3 mb-0">
+                            <input id="accounting" ng-disabled="jumlahMinat.length >= maxMinat && !minat.Accounting" ng-blur="changeMinat('Accounting',minat.Accounting)" type="text" ng-model="minat.Accounting" maxlength="1" oninput="this.value=this.value.replace(/[^1-5]/g,'');" class="form-control">
+                        </div>
+                        <label class="col-md-10 col-sm-9 col-9 mt-1 mb-0">Keuangan/Akunting/Pajak/Audit</label>
+
+                        <!-- <div class="form-group col-1 mb-0">
+            <input ng-disabled="jumlahMinat.length >= maxMinat && !minat.engineering" ng-blur="changeMinat('engineering',minat.engineering)" type="number" ng-model="minat.engineering" min="1" max="5" class="form-control">
+        </div>
+        <label class="col-3 mt-1 mb-0">Teknik/Engineering/Konstruksi</label>
+
+        <div class="form-group col-1 mb-0">
+            <input ng-disabled="jumlahMinat.length >= maxMinat && !minat.law" ng-blur="changeMinat('law',minat.law)" type="number" ng-model="minat.law" min="1" max="5" class="form-control">
+        </div>
+        <label class="col-3 mt-1 mb-0">Hukum</label>-->
+                    </div>
+
+                    <div class="form-row mb-3 col-md-12 col-sm-12">
+                        <div class="form-group col-md-1 col-sm-2 col-3 mb-0">
+                            <input id="admin" ng-disabled="jumlahMinat.length >= maxMinat && !minat.Administration" ng-blur="changeMinat('Administration',minat.Administration)" type="text" ng-model="minat.Administration" maxlength="1" oninput="this.value=this.value.replace(/[^1-5]/g,'');" class="form-control">
+                        </div>
+                        <label class="col-md-10 col-sm-9 col-9 mt-1 mb-0">Administrasi/Klerikal/Kesekretariatan</label>
+
+                        <!--<div class="form-group col-1 mb-0">
+            <input ng-disabled="jumlahMinat.length >= maxMinat && !minat.manufacture" ng-blur="changeMinat('manufacture',minat.manufacture)" type="number" ng-model="minat.manufacture" min="1" max="5" class="form-control">
+        </div>
+        <label class="col-3 mt-1 mb-0">Manufaktur/Logistik/Produksi</label>
+
+        <div class="form-group col-1 mb-0">
+            <input ng-disabled="jumlahMinat.length >= maxMinat && !minat.sdm" ng-blur="changeMinat('sdm',minat.sdm)" type="number" ng-model="minat.sdm" min="1" max="5" class="form-control">
+        </div>
+        <label class="col-3 mt-1 mb-0">SDM/Personalia</label>-->
+                    </div>
+
+                    <div class="form-row mb-3 col-md-12 col-sm-12">
+                        <div class="form-group col-md-1 col-sm-2 col-3 mb-0">
+                            <input id="frontLine" ng-disabled="jumlahMinat.length >= maxMinat && !minat.FrontLiners" ng-blur="changeMinat('FrontLiners',minat.FrontLiners)" type="text" ng-model="minat.FrontLiners" maxlength="1" oninput="this.value=this.value.replace(/[^1-5]/g,'');" class="form-control">
+                        </div>
+                        <label class="col-md-10 col-sm-9 col-9 mt-1 mb-0">Customer Service/Front Liners</label>
+
+                        <!--  <div class="form-group col-1 mb-0">
+            <input ng-disabled="jumlahMinat.length >= maxMinat && !minat.advertising" ng-blur="changeMinat('advertising',minat.advertising)" type="number" ng-model="minat.advertising" min="1" max="maxMinat" class="form-control">
+        </div>
+        <label class="col-3 mt-1 mb-0">Media/Advertising/Broadcast/Seni</label>
+
+        <div class="form-group col-1 mb-0">
+            <input ng-disabled="jumlahMinat.length >= maxMinat && !minat.research" ng-blur="changeMinat('research',minat.research)" type="number" ng-model="minat.research" min="1" max="maxMinat" class="form-control">
+        </div>
+        <label class="col-3 mt-1 mb-0">Riset/Penelitian</label>-->
+                    </div>
+
+                    <div class="form-row mb-3 col-md-12 col-sm-12">
+                        <div class="form-group col-md-1 col-sm-2 col-3 mb-0">
+                            <input id="other" ng-disabled="jumlahMinat.length >= maxMinat && !minat.computer" ng-blur="changeMinat('computer',minat.computer)" type="text" ng-model="minat.Other" maxlength="1" oninput="this.value=this.value.replace(/[^1-5]/g,'');" class="form-control">
+                        </div>
+                        <label class="col-md-10 col-sm-9 col-9 mt-1 mb-0">dan Lain - Lain</label>
+
+                        <!--                    <div class="form-group col-1 mb-0">
+            <input ng-disabled="jumlahMinat.length >= maxMinat && !minat.training" ng-blur="changeMinat('training',minat.training)" type="number" ng-model="minat.training" min="1" max="5" class="form-control">
+        </div>
+        <label class="col-3 mt-1 mb-0">Pendidikan/Training</label>-->
+                    </div>
+
+                    <!--kelebihan kekurangan start-->
+                    <div ng-repeat="plusMin in listDataPlusMin">
+                        <div class="d-flex justify-content-lg-between">
+                            <label class="title-pad mt-3"><strong>Kelebihan & Kekurangan (Sebutkan kelebihan dan kekurangan yang Anda miliki)</strong></label>
+                            <div class="form-group col-md-1">
+                                <button ng-click="deletePlusMin($index)" ng-if="$index > 0" class=" fa fa-trash btn-data shadow-sm btn-blue btn-block btn-orng-del"></button>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" id="plus" ng-model="plusMin.Kelebihan" class="form-control" maxlength="50" placeholder="Kelebihan">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" id="min" ng-model="plusMin.Kekurangan" class="form-control" maxlength="50" placeholder="Kekurangan">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form-row mt-2">
+                        <div class="form-group col-md-4">
+                            <button ng-click="tambahPlusMin()" class="btn-data shadow-sm btn-blue btn-block">+ Tambah Data Kelebihan Kekurangan</button>
+                        </div>
+                    </div>
+                    <!--kelebihan kekurangan end-->
+
+                    <div class="form-row mt-5">
+                        <div class="form-group col-md-4">
+                            <button onclick="window.location.href = '#!/data-keluarga';" type="submit" class="btn-secondary shadow-sm btn-blue btn-block">Kembali</button>
+                        </div>
+                        <div class="form-group col-md-4 ml-auto">
+                            <button ng-click="submitPekerjaan()" type="submit" class="btn-primary shadow-sm btn-blue btn-block">Simpan</button>
+                        </div>
+                    </div>
+                </form>
+
+	        </div>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+
+</div>

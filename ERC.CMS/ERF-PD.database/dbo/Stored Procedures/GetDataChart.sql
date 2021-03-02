@@ -1,0 +1,65 @@
+﻿CREATE PROCEDURE [dbo].[GetDataChart]
+	@Flag INT, -- 0=Total Kandidat,1=Kandidat Yang Sudah Submit, 2=Kandidat Sudah Aktif
+	@FlagCMS INT, -- Flag dari CMS atau Bukan
+	@LoginName NVARCHAR(MAX)
+AS 
+
+DECLARE @Columns1 VARCHAR(10)
+DECLARE @Columns2 VARCHAR(10)
+DECLARE @Columns3 VARCHAR(10)
+DECLARE @Columns4 VARCHAR(10)
+DECLARE @Columns5 VARCHAR(10)
+DECLARE @Columns6 VARCHAR(10)
+DECLARE @Columns7 VARCHAR(10)
+
+DECLARE @sSQL NVARCHAR(MAX)
+--SET @Columns1=CONVERT(VARCHAR(10), GETDATE(),111)
+--SET @Columns2=CONVERT(VARCHAR(10), DATEADD(DAY,-1,GETDATE()),111)
+--SET @Columns3=CONVERT(VARCHAR(10), DATEADD(DAY,-2,GETDATE()),111)
+--SET @Columns4=CONVERT(VARCHAR(10), DATEADD(DAY,-3,GETDATE()),111)
+--SET @Columns5=CONVERT(VARCHAR(10), DATEADD(DAY,-4,GETDATE()),111)
+--SET @Columns6=CONVERT(VARCHAR(10), DATEADD(DAY,-5,GETDATE()),111)
+--SET @Columns7=CONVERT(VARCHAR(10), DATEADD(DAY,-6,GETDATE()),111)
+
+SET @Columns7=CONVERT(VARCHAR(10), GETDATE(),111)
+SET @Columns6=CONVERT(VARCHAR(10), DATEADD(DAY,-1,GETDATE()),111)
+SET @Columns5=CONVERT(VARCHAR(10), DATEADD(DAY,-2,GETDATE()),111)
+SET @Columns4=CONVERT(VARCHAR(10), DATEADD(DAY,-3,GETDATE()),111)
+SET @Columns3=CONVERT(VARCHAR(10), DATEADD(DAY,-4,GETDATE()),111)
+SET @Columns2=CONVERT(VARCHAR(10), DATEADD(DAY,-5,GETDATE()),111)
+SET @Columns1=CONVERT(VARCHAR(10), DATEADD(DAY,-6,GETDATE()),111)
+
+
+SET @sSQL='SELECT ISNULL(['+ @Columns1 +'],0) AS H,
+	ISNULL(['+ @Columns2 +'],0) AS HM1,ISNULL(['+ @Columns3 +'],0) AS HM2,ISNULL(['+ @Columns4 +'],0) AS HM3,ISNULL(['+ @Columns5 +'],0) AS 
+	HM4,ISNULL(['+ @Columns6 +'],0) AS HM5,ISNULL(['+ @Columns7 +'],0) AS HM6 FROM(
+	SELECT COUNT(*) Jumlah,A.CreatedWhen FROM Candidate A '
+IF(@FlagCMS=0)
+BEGIN
+SET @sSQL+=' INNER JOIN Account B ON A.RecruiterAgentCode=B.AgentCode '	
+END	 
+SET @sSQL+='WHERE 1=1 '
+IF(@FlagCMS=0)
+BEGIN
+SET @sSQL+=' AND B.LoginName='''+ @LoginName +''' ' 	
+END
+IF(@Flag=1)
+BEGIN
+SET @sSQL+=' AND STATUS=''SUBMIT'' '
+END
+IF(@Flag=2)
+BEGIN
+SET @sSQL+=' AND A.AgentCode IS NOT NULL OR A.AgentCode<>'''' '
+END
+SET @sSQL+=	'GROUP BY A.CreatedWhen
+	) TotalCandidate PIVOT
+	(
+		SUM(JUMLAH) FOR [CREATEDWHEN] IN 
+		( 
+			['+@Columns1+'],['+@Columns2+'],['+@Columns3+'],['+@Columns4+'],['+@Columns5+'],['+@Columns6+'],['+@Columns7+']
+		) 
+	) AS P'
+print @sSQL
+EXEC SP_EXECUTESQL @sSQL
+
+

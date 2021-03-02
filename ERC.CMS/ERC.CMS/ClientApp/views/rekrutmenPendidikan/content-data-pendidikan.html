@@ -1,0 +1,183 @@
+
+  <div class="col-12 p-0 mt-7">
+    <div class="card br0 shadow h-100">
+      <div class="card-body nav-card-fix p-0">
+        <div class="container no-pad">
+			<div class="form-row erf-menu pl-5 pr-5 pt-4 pb-0">
+				<a href="#!/data-pribadi" class="form-group col text-center img-nav-v2">
+					<img src="Content/assets/img/ic-data-pribadi.svg" class="img-fluid menu-aktif">
+					<br><label><strong>Data Pribadi</strong></label>
+					<i ng-show="statusDataPribadi" class="m-done"></i>
+				</a>
+				<a href="#!/data-kontak" class="form-group col text-center img-nav-v2">
+					<img src="Content/assets/img/ic-kontak.svg" class="img-fluid">
+					<br><label><strong>Kontak</strong></label>
+					<i ng-show="statusKontak" class="m-done"></i>
+				</a>
+				<a href="#!/data-keluarga" class="form-group col text-center img-nav-v2">
+					<img src="Content/assets/img/ic-keluarga.svg" class="img-fluid">
+					<br><label><strong>Data Keluarga</strong></label>
+					<i ng-show="statusDataKeluarga" class="m-done"></i>
+				</a>
+				<a href="#!/data-pendidikan" class="form-group col text-center img-nav-v2 menu-aktif">
+					<img src="Content/assets/img/ic-ak-pendidikan.svg" class="img-fluid">
+					<br><label><strong>Pendidikan</strong></label>
+					<i ng-show="statusDataPendidikan" class="m-done"></i>
+				</a>
+				<a href="#!/data-pekerjaan" class="form-group col text-center img-nav-v2">
+					<img src="Content/assets/img/ic-pekerjaan.svg" class="img-fluid">
+					<br><label><strong>Riwayat Pekerjaan</strong></label>
+					<i ng-show="statusDataPekerjaan" class="m-done"></i>
+				</a>
+				<a href="#!/data-dokumen" class="form-group col text-center img-nav-v2">
+					<img src="Content/assets/img/ic-dokumen.svg" class="img-fluid">
+					<br><label><strong>Dokumen</strong></label>
+					<i ng-show="statusDataDokumen" class="m-done"></i>
+				</a>
+				<a href="#!/data-ptkp" class="form-group col text-center img-nav-v2">
+					<img src="Content/assets/img/ic-ptkp.svg" class="img-fluid">
+					<br><label><strong>PTKP</strong></label>
+					<i ng-show="statusDataPtkp" class="m-done"></i>
+				</a>
+				<!--<a class="form-group col text-center img-nav-v2">
+					<img src="Content/assets/img/ic-psikotes.svg" class="img-fluid" ng-click="ToPsikotes()">
+					<br><label><strong>Psikotes</strong></label>
+					<i ng-show="statusDataPsikotes" class="m-done"></i>
+				</a>-->
+				<a class="form-group col text-center img-nav-v2">
+					<img src="Content/assets/img/ic-papikostick-1.svg" class="img-fluid" ng-click="ToPapikostik()">
+					<br><label><strong>Papikostik</strong></label>
+					<i ng-show="statusDataPapikostik" class="m-done"></i>
+				</a>
+				<a href="#!/data-review" class="form-group col text-center img-nav-v2">
+					<img src="Content/assets/img/ic-review.svg" class="img-fluid">
+					<br><label><strong>Review</strong></label>
+					<i ng-show="statusDataReview" class="m-done"></i>
+				</a>
+			</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container-fluid d-menu h-100 nopad-340px">
+	<div class="container h-100 nopad-340px">
+
+	  <div class="row h-100">
+	    <div class="col-12 mb-4 d-link" style="height:65%">
+	      <div class="card br10 shadow h-100">
+	        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4"style="overflow-y: scroll;">
+	          		          	
+	            <form>
+                  <!--pendidikan formal starts-->  
+	                <div ng-repeat="pendidikan in listDatapendidikan">
+	                <div class="d-flex justify-content-lg-between">
+	                    <label><strong>Pendidikan Formal (Cantumkan mulai dari pendidikan tertinggi/terakhir)</strong></label>
+	                    <div class="form-group col-md-1" ng-if="$index > 0">
+	                        <button ng-click="deletePendidikanFormal($index)" class="fa fa-trash btn-data shadow-sm btn-blue btn-block btn-orng-del"></button>
+	                    </div>
+                        </div>
+	                    <div class="form-row">
+	                        <div class="form-group col-md-4">
+                                <select class="form-control" id="level{{$index}}" ng-model="pendidikan.LevelPendidikan" ng-options="res.TingkatPendidikan as res.TingkatPendidikan for res in listLevelPendidikan" required>
+                                    <option value="" selected="selected">--Pilih level--</option>
+                                </select>
+	                        </div>
+	                        <div class="form-group col-md-4">
+                                <input type="text" id="nmFormal{{$index}}" ng-model="pendidikan.NamaInstitusi" class="form-control" placeholder="Nama Sekolah" required>
+	                        </div>
+	                        <div class="form-group col-md-4">
+                                <input type="text" id="kota{{$index}}" ng-model="pendidikan.Kota" class="form-control" placeholder="Kota" required>
+	                        </div>
+	                    </div>
+	                    <div class="form-row">
+	                        <div class="form-group col-md-4">
+                                <input type="text" id="jurusan{{$index}}" ng-model="pendidikan.Jurusan" class="form-control" maxlength="50" placeholder="Jurusan" required>
+	                        </div>
+	                        <div class="form-group col-md-4">
+                                <input type="text" id="gelar{{$index}}" ng-model="pendidikan.Gelar" class="form-control" placeholder="Gelar" required>
+	                        </div>
+	                        <div class="form-group col-md-4">
+                                <input type="text" id="ipk{{$index}}" format-nilai ng-model="pendidikan.IPK" class="form-control" placeholder="IPK/Nilai" min="0" maxlength="4" required>
+	                        </div>
+	                    </div>
+	                    <div class="form-row">
+	                        <div class="form-group col-md-4">
+                                <input type="number" id="tglMasuk{{$index}}" ng-model="pendidikan.TanggalMasuk" class="form-control" placeholder="Tahun Masuk" max="{{tahunSekarang}}" min="1" oninput="validity.valid||(value='');" required>
+	                        </div>
+	                        <div class="form-group col-md-4">
+                                <input type="number" id="tglLulus{{$index}}" ng-model="pendidikan.TanggalLulus" class="form-control" placeholder="Tahun Lulus" max="{{tahunSekarang}}" min="1" oninput="validity.valid||(value='');" required>
+	                        </div>
+	                    </div>
+
+	                </div>
+	                
+	                <div class="form-row mt-2">
+	                    <div class="form-group col-md-4">
+                            <button ng-click="tambahPendidikanFormal()" class="btn-data shadow-sm btn-blue btn-block">+ Tambah Data Pendidikan</button>
+	                    </div>
+	                </div>
+	                <!--pendidikan formal ends--> 
+                    
+	                <!--  pendidikan non formal starts-->
+	                <div ng-repeat="pendidikanNon in listDatapendidikanNonFormal">
+	                <div class="d-flex justify-content-lg-between">
+	                    <label class="mt-3"><strong>Pendidikan Non Formal (Optional - Termasuk pelatihan, workshop, kursus, dan sertifikasi keahlian)</strong></label>
+                        <div class="form-group col-md-1"> <!--ng-if="$index > 0"-->
+                            <button ng-click="deletePendidikanNonFormal($index)" class="fa fa-trash btn-data shadow-sm btn-blue btn-block btn-orng-del"></button>
+                        </div>
+	                </div>
+	                    <div class="form-row">
+	                        <div class="form-group col-md-4">
+                                <input type="text" id="topik{{$index}}" ng-model="pendidikanNon.TopikPelatihan" class="form-control" placeholder="Topik Pelatihan/Workshop" required>
+	                        </div>
+	                        <div class="form-group col-md-4">
+                                <input type="text" id="kotaNon{{$index}}" ng-model="pendidikanNon.Kota" class="form-control" placeholder="Kota" required>
+	                        </div>
+	                        <div class="form-group col-md-4">
+                                <input type="text" id="lembaga{{$index}}" ng-model="pendidikanNon.Lembaga" class="form-control" placeholder="Lembaga/Institusi" required>
+	                        </div>
+	                    </div>
+	                    <div class="form-row">
+	                        <div class="form-group col-md-4">
+                                <input type="text" id="sertifikasi{{$index}}" ng-model="pendidikanNon.Sertifikasi" class="form-control" placeholder="Kualifikasi/Sertifikasi Kelulusan">
+	                        </div>
+	                        <div class="form-group col-md-4">
+                                <input type="text" id="nilaiNon{{$index}}" format-nilai ng-model="pendidikanNon.IPK" class="form-control" min="0" maxlength="4" placeholder="IPK/Nilai">
+	                        </div>
+	                        <div class="form-group col-md-4">
+                                <input type="number" id="tglMasukNon{{$index}}" ng-model="pendidikanNon.TanggalMasuk" class="form-control" max="{{tahunSekarang}}" min="1" oninput="validity.valid||(value='');" placeholder="Tahun Masuk">
+	                        </div>
+	                    </div>
+	                    <div class="form-row">
+	                        <div class="form-group col-md-4">
+                                <input type="number" id="tglLulusNon{{$index}}" ng-model="pendidikanNon.TanggalLulus" class="form-control" max="{{tahunSekarang}}" min="1" oninput="validity.valid||(value='');" placeholder="Tahun Lulus">
+	                        </div>
+	                    </div>
+	                </div>
+
+	                <div class="form-row mt-2">
+	                    <div class="form-group col-md-4">
+                            <button ng-click="tambahPendidikanNonFormal()" class="btn-data shadow-sm btn-blue btn-block">+ Tambah Data Pendidikan Nonformal</button>
+	                    </div>
+	                </div>
+	                <!--  pendidikan non formal ends-->
+
+	                <div class="form-row mt-5">
+	                    <div class="form-group col-md-4">
+	                        <button onclick="window.location.href = '#!/data-keluarga';" type="submit" class="btn-secondary shadow-sm btn-blue btn-block">Kembali</button>
+	                    </div>
+	                    <div class="form-group col-md-4 ml-auto">
+	                        <button ng-click="submitPendidikan()" type="submit" class="btn-primary shadow-sm btn-blue btn-block">Simpan</button>
+	                    </div>
+	                </div>
+	            </form>
+
+	        </div>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+
+</div>

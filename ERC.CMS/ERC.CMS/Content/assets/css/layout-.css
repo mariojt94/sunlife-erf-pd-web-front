@@ -1,0 +1,33 @@
+
+.slnavbar {
+  border-top:0px solid rgb(234, 171, 0);
+}
+
+/*.slnavbar { 
+  border-top:3px solid rgb(234, 171, 0);
+}*/
+.sl-title {
+  /* background: rgba(253, 231, 173, 0.97); */
+  background: rgb(234, 171, 0);
+}
+.sl-title h2 {
+  /* color:#1a4e59; */
+  color:#fff;
+}
+.progress-content p {
+  margin:auto;
+  text-align:center;
+}
+.content-title {
+  background:url(../../assets/img/konvensional-ribbon.png) no-repeat top center;
+}
+.test {
+	width:100%;
+	height:30px;
+	background-color:pink;
+	position:absolute;
+	left:0;
+	right:0
+	top:0;
+	z-index:99999;
+}

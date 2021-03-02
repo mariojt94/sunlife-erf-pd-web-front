@@ -1,0 +1,1445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddCandidateBasicInfo" xml:space="preserve">
+    <value>update candidate 
+set 
+	Name = @Name,
+	Gender = @Gender,
+	HomeAddress = @HomeAddress,
+	CurrentCityCode = @CurrentCityCode,
+	CurrentAddress= @CurrentAddress,
+	PostalCode = @PostalCode,
+	NPWPNo = @NPWPNo,
+	NPWPName = @NPWPName,
+	BankAccountNo = @BankAccountNo,
+	BankAccountName = @BankAccountName,
+	ChangedWhen = @ChangedWhen,
+	ChangedBy = @ChangedBy,
+	[Status] = @Status,
+	BirthDate = @BirthDate,
+	TemporaryAgentCode = @TemporaryAgentCode,
+	Email = @Email, 
+	PTKPHeader = @PTKPHeader, 
+	PTKPDetail = @PTKPDetail,
+	KTPNo = @KTPNo,
+	[Level] = @Level,
+	PropertyOwnershipStatus = @PropertyOwnershpStatus,
+	CurrentPostalCode = @CurrentPostalCode,
+	MaritalStatus = @MaritalStatus,
+	NPWPRelationWith = @NPWPRelationWith,
+	Religion = @Religion,
+	BirthPlace = @BirthPlace,
+	HomePhone = @HomePhone,
+	CityCode = @CityCode,
+	Income = @Income,
+	CandidateSignature = @CandidateSignature,
+	RecruiterSignature = @RecruiterSignature,
+	Branch = @Branch,
+	BankCode = @BankCode,
+	SubmitDate = @SubmitDate,
+	LocationCode = @LocationCode,
+	AgentDirectorLocation = @AgentDirectorLocation
+where id=@CandidateId</value>
+  </data>
+  <data name="AddCandidateDependencies" xml:space="preserve">
+    <value>Insert into CandidateDependencies values (@CandidateId, @Status, @Name, @BirthDate)</value>
+  </data>
+  <data name="AddCandidateProfilePhoto" xml:space="preserve">
+    <value>insert into CandidateFile values (@CandidateId,@Type,@FileId,@CreatedBy,@CreatedWhen,@ChangedWhen,@ChangedBy)</value>
+  </data>
+  <data name="AddCandidateReference" xml:space="preserve">
+    <value>insert into CandidateReference values (@CandidateId, @Name, @Organization, @Relation, @PhoneNumber, @HasKnownFor)</value>
+  </data>
+  <data name="AddCandidateRelationInInsurance" xml:space="preserve">
+    <value>insert into CandidateRelationInInsurance values (@CandidateId,@Name,@Relation, @CompanyName, @Position, @Year)</value>
+  </data>
+  <data name="AddCandidateWorkExperienceInInsurance" xml:space="preserve">
+    <value>insert into CandidateWorkExperienceInInsurance 
+values (@CandidateId,@CompanyName,@LastPosition,@MainOfficeAddress,@HasBeenJoinFor,@TerminateDate,@OldAgentCode)</value>
+  </data>
+  <data name="AddElearningAccount" xml:space="preserve">
+    <value>insert into Account (LoginName, Password, RoleID, TypeID, ManagerLoginName,Email, IsActive, IsDeleted, JoinDate, DisplayName, CreatedWhen, CreatedWho, ChangedWhen, ChangedWho, BirthDate, NoKTP) 
+Values (@LoginName, @Password,  @RoleID, @TypeID, @ManagerLoginName,@Email, @IsActive, @IsDeleted, @JoinDate, @DisplayName, @CreatedWhen, @CreatedWho, @ChangedWhen, @ChangedWho, @BirthDate, @Ktp)</value>
+  </data>
+  <data name="AddQuickContact" xml:space="preserve">
+    <value>insert into Candidate (RecruiterAgentCode,Level,Name, BirthDate, CityCode, Gender, PhoneNo, Profession,JoinDate,GroupLevel, IsDeleted, CreatedWhen, CreatedBy, ChangedWhen, ChangedBy,IDFromMobile)  
+               values (@RecruiterAgentCode,0,@Name, @BirthDate, @CityCode, @Gender, @PhoneNo, @Profession,@JoinDate,@GroupLevel,0, @CreatedWhen, @CreatedBy, @ChangedWhen, @ChangedBy,@IDFromMobile) SELECT SCOPE_IDENTITY() as int</value>
+  </data>
+  <data name="CekCandidateFlag" xml:space="preserve">
+    <value>SELECT DocumentCheckingFlag, AllLeaderApproveFlag, AajiPassedFlag, ELearningPassedFlag 
+FROM Candidate WHERE ID = @ID</value>
+  </data>
+  <data name="DeleteCandidateDependencies" xml:space="preserve">
+    <value>Delete from candidatedependencies where Id = @Id</value>
+  </data>
+  <data name="DeleteCandidateReference" xml:space="preserve">
+    <value>delete from CandidateReference where id = @Id</value>
+  </data>
+  <data name="DeleteCandidateRelationInInsurance" xml:space="preserve">
+    <value>delete from CandidateRelationInInsurance where id=@Id</value>
+  </data>
+  <data name="DeleteCandidateWorkExperienceInInsurance" xml:space="preserve">
+    <value>delete from CandidateWorkExperienceInInsurance where id = @Id</value>
+  </data>
+  <data name="GetAajiByCandidateId" xml:space="preserve">
+    <value>select top 1 Aed.AajiExamId as Id,AED.CandidateId,C.Name as CandidateName,AE.ExamDate, AED.Status,CONVERT(varchar(10), Year(ExamDate)) + '/' + CONVERT(varchar(10), Month(ExamDate))+ '/' +CONVERT(varchar(10), Day(ExamDate))  as [start],'Jadwal Anda' as [title], EL.Name as ExamLocationName, AE.RegisteredUser
+from AajiExamDetail AED
+left join AajiExam AE on AED.AajiExamId = AE.ID
+left join Candidate C on C.ID = AED.CandidateId
+left join ExamLocation EL on EL.ID = AE.ExamLocationId
+where AED.CandidateId = @CandidateId</value>
+  </data>
+  <data name="GetAajiExamCandidate" xml:space="preserve">
+    <value>SELECT top 1 AE.ID as AajiExamId,CDT.Id as CandidateId,AE.ExamDate as AajiExamDate,EL.ExamType,AED.ProductType, El.Name +'. '+ C.Name as ExamLocationName, EL.ID as ExamLocationId
+FROM AajiExamDetail AED
+JOIN AajiExam AE on AED.AajiExamId = AE.Id
+JOIN ExamLocation EL on EL.Id = AE.ExamLocationId
+JOIN City C on C.CityCode = EL.CityCode
+JOIN Candidate CDT on CDT.Id = AED.CandidateId
+WHERE CDT.Id = @CandidateId</value>
+    <comment>digunakan di recruitment form</comment>
+  </data>
+  <data name="GetAgentCodeByLoginName" xml:space="preserve">
+    <value>select AgentCode from Account where LoginName = @LoginName</value>
+  </data>
+  <data name="GetApprovalProgress" xml:space="preserve">
+    <value>SELECT * FROM (
+	SELECT ROW_NUMBER() OVER(ORDER BY a.ID) AS NUMBER,
+		a.ID, a.CandidateId, d.Name CandidateName, a.RecruiterCode, b.DisplayName RecruiterName,
+		a.ApproverCode, c.DisplayName ApproverName, a.StatusApproval, a.Reason, a.ApprovalDate, r.RoleName,
+		(
+			SELECT COUNT(*)
+			FROM ApprovalList a JOIN Account b ON a.RecruiterCode = b.AgentCode
+			JOIN Account c ON a.ApproverCode = c.AgentCode JOIN Candidate d ON a.CandidateId = d.ID
+			JOIN [Role] r ON c.RoleID = r.ID
+			WHERE a.IsActive = 1 and a.CandidateId = @CandidateId
+		) [Length]
+	FROM ApprovalList a JOIN Account b ON a.RecruiterCode = b.AgentCode
+	JOIN Account c ON a.ApproverCode = c.AgentCode JOIN Candidate d ON a.CandidateId = d.ID
+	JOIN [Role] r ON c.RoleID = r.ID
+	WHERE  a.IsActive = 1 and a.CandidateId = @CandidateId
+) AS TBL
+WHERE NUMBER BETWEEN ((@PageNumber - 1) * @RowsPage + 1) AND (@PageNumber * @RowsPage)
+ORDER BY NUMBER</value>
+  </data>
+  <data name="GetCandidateold" xml:space="preserve">
+    <value>--agency director digunakan ketika level hirarki kandidat di bawah level hirarki rekruiter dan menyebabkan agency director - data direct manager menggunakan data si recruiter
+--last update tambah tbl1.*
+declare @RecomendedPosition int = (select top 1 RecommendedPosition 
+from CandidateProfilingHeader 
+where CandidateId = @CandidateId and IsComplete = 1 and RecommendedPosition != '-' and RecommendedPosition !=0)
+
+select r.RoleName as LevelName,*, tbl1.RoleID,GroupLevel,DisplayName as RecruiterName, rh.HierarkiLevel, l.AgentLocation as AgencyDirector, r.RoleName as RecruiterPosition, ct2.Name as CurrentCityName, @RecomendedPosition as RecommendedPosition from (
+select 
+	cdt.Id, 
+	cdt.AgentCode, 
+	cdt.Name as AgentName,
+	cdt.Gender, 
+	cdt.BirthPlace,
+	cdt.MaritalStatus,
+	cdt.SpouseName, case when cdt.SpouseBirthDate IS NULL THEN GETDATE() ELSE cdt.SpouseBirthDate end as SpouseBirthDate ,cdt.PTKPHeader,cdt.PTKPDetail,
+	case cdt.Gender when 'L' then 'Laki-Laki' else 'Perempuan' end as GenderName, 
+	HomeAddress,
+	CurrentAddress,
+	ct.Id as CityId,
+	ct.Name as CityName, 
+	PostalCode, 
+	NPWPNo, 
+	NPWPName, 
+	NPWPRelationWith,
+	PropertyOwnershipStatus,
+	BirthDate, 
+	KTPNo, 
+	TemporaryAgentCode, 
+	BankAccountName, 
+	BankAccountNo, 
+	Branch,  
+	cdt.RecruiterAgentCode, 
+	cdt.Level, 
+	cdt.Email ,
+	cdt.GroupLevel,
+	acc.RoleID,
+	cdt.[location],
+	cdt.Income,
+	cdt.CurrentPostalCode,
+	cdt.CurrentCityId,
+	cdt.Homephone,
+	Religion,
+	cdt.CandidateSignature,
+	cdt.RecruiterSignature,
+	cdt.BankCode,
+	ct.CityCode,
+	cdt.CurrentCityCode
+from candidate cdt 
+join account acc on cdt.RecruiterAgentCode = acc.AgentCode
+left join profilingmatrix pm on pm.[roleid] = cdt.[level]  
+left join city ct on cdt.CityCode = ct.CityCode where cdt.Id = @CandidateId
+) as tbl1 
+join account a on a.AgentCode = tbl1.RecruiterAgentCode 
+left join team t on a.TeamCode = t.TeamCode
+left join RoleHierarki rh on rh.RoleId = tbl1.roleid
+left join Location l on l.AgentLocation = t.LocationCode
+left join role r on r.ID = a.RoleID
+left join city ct2 on tbl1.CurrentCityCode = ct2.CityCode</value>
+  </data>
+  <data name="GetCandidateDependencies" xml:space="preserve">
+    <value>select id, candidateid, status, name, birthdate from candidatedependencies where CandidateId = @CandidateId</value>
+  </data>
+  <data name="GetCandidateReference" xml:space="preserve">
+    <value>select Id,CandidateId, [Name], Organization, Relation, PhoneNumber, HasKnownFor
+from CandidateReference
+where CandidateId=@CandidateId</value>
+  </data>
+  <data name="GetCandidateRelationInInsurance" xml:space="preserve">
+    <value>select Id, CandidateId,Name, Relation, CompanyName, Position, Year 
+from CandidateRelationInInsurance 
+where CandidateId=@CandidateId</value>
+  </data>
+  <data name="GetCandidateWorkExperienceInInsurance" xml:space="preserve">
+    <value>select id,candidateid,companyname, lastposition, mainofficeaddress, hasbeenjoinfor,terminatedate,oldagentcode 
+from CandidateWorkExperienceInInsurance
+where candidateid=@CandidateId</value>
+  </data>
+  <data name="GetContact" xml:space="preserve">
+    <value>select Id, Name, Gender, City, PhoneNo, Birthdate, Profession, case when SubmitDate IS NULL then 'Pengisian RF' 
+		when AllLeaderApproveFlag = 0 then 'Menunggu Persetujuan' 
+		when DocumentCheckingFlag = 0 Then 'Menunggu Proses Dokumen Cek' 
+		when ElearningPassedFlag = 0 then 'Menunggu Hasil Elearning' 
+		when AajiPassedFlag = 0 then 'Menunggu Hasil Ujian AAJI'
+		when submitdate is not null and AllLeaderApproveFlag=1 and DocumentCheckingFlag = 1 and AajiPassedFlag = 1 then 'Agen Aktif'
+		end as Status,Photo,JoinDate,CreatedWhen
+from Candidate 
+where RecruiterAgentCode = @AgentCode
+And IsDeleted = 0 order by id desc</value>
+  </data>
+  <data name="GetContactAsc" xml:space="preserve">
+    <value>SELECT * FROM (
+	SELECT ROW_NUMBER() OVER(ORDER BY C.ID desc) AS NUMBER,
+		C.ID, C.Name, C.Gender, C.City, C.PhoneNo, C.Birthdate, C.Profession, 
+		case when SubmitDate IS NULL then 'Pengisian RF' 
+		when AllLeaderApproveFlag = 0 then 'Menunggu Persetujuan' 
+		when DocumentCheckingFlag = 0 Then 'Menunggu Proses Dokumen Cek' 
+		when ElearningPassedFlag = 0 then 'Menunggu Hasil Elearning' 
+		when AajiPassedFlag = 0 then 'Menunggu Hasil Ujian AAJI'
+		when submitdate is not null and AllLeaderApproveFlag=1 and DocumentCheckingFlag = 1 and AajiPassedFlag = 1 then 'Agen Aktif'
+		end as Status		
+		, FU.Path Photo,
+		(
+			SELECT COUNT(*)
+			FROM Candidate C
+			LEFT JOIN CandidateFile CF ON CF.CandidateID = C.ID AND CF.Type = 'FotoDiri'
+			LEFT JOIN FileUpload FU ON CF.FileID = FU.ID
+			WHERE 
+				(C.RecruiterAgentCode like @AgentCode or @AgentCode is null)
+				AND (C.Name like @Name or @Name is null) AND C.IsDeleted != 1
+		) [Length]
+	FROM Candidate C
+	LEFT JOIN CandidateFile CF ON CF.CandidateID = C.ID AND CF.Type = 'FotoDiri'
+	LEFT JOIN FileUpload FU ON CF.FileID = FU.ID
+	WHERE 
+		(C.RecruiterAgentCode like @AgentCode or @AgentCode is null)
+		AND (C.Name like @Name or @Name is null) AND C.IsDeleted != 1
+) AS TBL
+WHERE NUMBER BETWEEN ((@PageNumber - 1) * @RowsPage + 1) AND (@PageNumber * @RowsPage)
+ORDER BY NUMBER</value>
+  </data>
+  <data name="GetContactDesc" xml:space="preserve">
+    <value>SELECT * FROM (
+	SELECT ROW_NUMBER() OVER(ORDER BY C.ID desc) AS NUMBER,
+		C.ID, C.Name, C.Gender, C.City, C.PhoneNo, C.Birthdate, C.Profession, 
+		case when SubmitDate IS NULL then 'Pengisian RF' 
+		when AllLeaderApproveFlag = 0 then 'Menunggu Persetujuan' 
+		when DocumentCheckingFlag = 0 Then 'Menunggu Proses Dokumen Cek' 
+		when ElearningPassedFlag = 0 then 'Menunggu Hasil Elearning' 
+		when AajiPassedFlag = 0 then 'Menunggu Hasil Ujian AAJI'
+		when submitdate is not null and AllLeaderApproveFlag=1 and DocumentCheckingFlag = 1 and AajiPassedFlag = 1 then 'Agen Aktif'
+		end as Status
+		, FU.Path Photo,
+		(
+			SELECT COUNT(*)
+			FROM Candidate C
+			LEFT JOIN CandidateFile CF ON CF.CandidateID = C.ID AND CF.Type = 'FotoDiri'
+			LEFT JOIN FileUpload FU ON CF.FileID = FU.ID
+			WHERE 
+				(C.RecruiterAgentCode like @AgentCode or @AgentCode is null)
+				AND (C.Name like @Name or @Name is null) AND C.IsDeleted != 1
+		) [Length]
+	FROM Candidate C
+	LEFT JOIN CandidateFile CF ON CF.CandidateID = C.ID AND CF.Type = 'FotoDiri'
+	LEFT JOIN FileUpload FU ON CF.FileID = FU.ID
+	WHERE 
+		(C.RecruiterAgentCode like @AgentCode or @AgentCode is null)
+		AND (C.Name like @Name or @Name is null) AND C.IsDeleted != 1
+) AS TBL
+WHERE NUMBER BETWEEN ((@PageNumber - 1) * @RowsPage + 1) AND (@PageNumber * @RowsPage)
+ORDER BY NUMBER</value>
+  </data>
+  <data name="GetContactDetail" xml:space="preserve">
+    <value>exec GetContactDetail @CandidateId</value>
+    <comment>// pindah ke stored procedure. digunakan di contact detail untku menentukan dia tidak bisa masuk recruitment form ketika belum melakukan profiling agent</comment>
+  </data>
+  <data name="GetContactDetail2" xml:space="preserve">
+    <value>select * from(
+select  Id,
+		JoinDate as SubmitDate, 
+		[Name], 
+		RoleName as [Level], 
+		case when Tbl3.ApprovalDate is null then 'Pengisian RF' else 'Menunggu Approval' end as StatusAgency,
+		AgentLocation as [Location],
+		Status
+		from(
+select * from (
+	select C.Id,[Name], R.RoleName, C.ChangedWhen, [Level], C.JoinDate, L.AgentLocation, C.Status
+	from Candidate C 
+	left join [Role] R on R.ID = [Level]
+	left join [Location] L on L.Id = C.Location
+	where C.IsDeleted != 1 
+) as Tbl1 left join(select top 1 CandidateId,ApprovalDate from ApprovalList where IsActive = 1 order by ApprovalDate desc) as Tbl2 on Tbl1.ID = Tbl2.CandidateId 
+) as Tbl3) as Tbl4
+where Id = @CandidateId</value>
+    <comment>//update wildan karena ini di butuhkan untuk menampilkan data detail contact setelah lihat detail di list contact</comment>
+  </data>
+  <data name="GetContactListLevel" xml:space="preserve">
+    <value>select Id,GroupId, GroupName
+from GroupLevel
+where GroupID in (2,3)</value>
+    <comment>//digunakan di contact</comment>
+  </data>
+  <data name="GetDashboardListCandidateProses" xml:space="preserve">
+    <value>SELECT * FROM (
+select 
+	ROW_NUMBER() OVER(ORDER BY c.Name asc) AS NUMBER,
+	c.Id,
+	c.Name, 
+	r.RoleName,
+	c.ChangedWhen as LastUpdate,
+	case when SubmitDate IS NULL then 'Pengisian RF' 
+		when AllLeaderApproveFlag = 0 then 'Menunggu Persetujuan' 
+		when DocumentCheckingFlag = 0 Then 'Menunggu Proses Dokumen Cek' 
+		when ElearningPassedFlag = 0 then 'Menunggu Hasil Elearning' 
+		when AajiPassedFlag = 0 then 'Menunggu Hasil Ujian AAJI'
+		when submitdate is not null and AllLeaderApproveFlag=1 and DocumentCheckingFlag = 1 and AajiPassedFlag = 1 then 'Agen Aktif'
+		end as Status,
+		(
+			select count(*)
+			from candidate c
+			join Account a on a.agentcode = c.RecruiterAgentCode 
+			join Role r on r.id = a.RoleID 
+			where Status!='REJECT' and c.IsDeleted != 1 and PermanentAgentCode is null AND RecruiterAgentCode=@RecruiterAgentCode 
+		) as Length
+	from candidate c
+	join Account a on a.agentcode = c.RecruiterAgentCode 
+	join Role r on r.id = a.RoleID 
+	where Status!='REJECT' and c.IsDeleted != 1 and PermanentAgentCode is null AND RecruiterAgentCode=@RecruiterAgentCode
+) as tbl
+WHERE NUMBER BETWEEN ((@PageNumber - 1) * @RowsPage + 1) AND (@PageNumber * @RowsPage)
+ORDER BY NUMBER</value>
+  </data>
+  <data name="GetDashboardListCandidateProsesMobile" xml:space="preserve">
+    <value>SELECT * FROM (
+select 
+	ROW_NUMBER() OVER(ORDER BY c.Name asc) AS NUMBER,
+	c.Id,
+	c.Name, 
+	r.RoleName,
+	c.ChangedWhen as LastUpdate,
+	case when SubmitDate IS NULL then 'Pengisian RF' 
+		when AllLeaderApproveFlag = 0 then 'Menunggu Persetujuan' 
+		when DocumentCheckingFlag = 0 Then 'Menunggu Proses Dokumen Cek' 
+		when ElearningPassedFlag = 0 then 'Menunggu Hasil Elearning' 
+		when AajiPassedFlag = 0 then 'Menunggu Hasil Ujian AAJI'
+		when submitdate is not null and AllLeaderApproveFlag=1 and DocumentCheckingFlag = 1 and AajiPassedFlag = 1 then 'Agen Aktif'
+		end as Status,
+		(
+			select count(*)
+			from candidate c
+			join Account a on a.agentcode = c.RecruiterAgentCode 
+			join Role r on r.id = a.RoleID 
+			where Status!='REJECT' and c.IsDeleted != 1 and PermanentAgentCode is null AND RecruiterAgentCode=@RecruiterAgentCode 
+		) as Length
+	from candidate c
+	join Account a on a.agentcode = c.RecruiterAgentCode 
+	join Role r on r.id = a.RoleID 
+	where Status!='REJECT' and c.IsDeleted != 1 and PermanentAgentCode is null AND RecruiterAgentCode=@RecruiterAgentCode
+) as tbl
+WHERE NUMBER BETWEEN ((@PageNumber - 1) * @RowsPage + 1) AND (@PageNumber * @RowsPage)
+ORDER BY NUMBER</value>
+  </data>
+  <data name="GetDetailApproval" xml:space="preserve">
+    <value>select C.TemporaryAgentCode, C.Name, r.RoleName Level, tim.TeamName, loc.AgentLocation Location, dm.DisplayName Manager, 
+rec.DisplayName RecruiterName, FU.Path Photo
+from Candidate C
+left join [Role] r ON c.Level = r.ID
+left join Account rec ON c.RecruiterAgentCode = rec.AgentCode
+left join Team tim ON rec.TeamCode = tim.TeamCode
+left join Location loc ON c.LocationCode = loc.AgentLocationCode
+left join Account dm ON C.DirectManagerCode = dm.AgentCode
+left join CandidateFile CF ON C.ID = CF.CandidateID AND CF.Type = 'FotoDiri'
+left join FileUpload FU ON CF.FileID = FU.ID
+where C.Id = @CandidateId</value>
+  </data>
+  <data name="GetGroupByCandidate" xml:space="preserve">
+    <value>SELECT c.GroupLevel FROM Candidate c where c.ID = @CandidateId</value>
+  </data>
+  <data name="GetInbox" xml:space="preserve">
+    <value>SELECT * FROM (
+	SELECT ROW_NUMBER() OVER(ORDER BY i.id desc) AS NUMBER, i.*, al.Reason,
+		(
+			SELECT COUNT(*) FROM Inbox where (ToMail like @ToMail or @ToMail is null)
+		) [Length]
+	FROM Inbox i 
+	left join ApprovalList al on i.ForeignKey = al.ID
+	WHERE (ToMail like @ToMail or @ToMail is null) 
+) AS TBL
+WHERE NUMBER BETWEEN ((@PageNumber - 1) * @RowsPage + 1) AND (@PageNumber * @RowsPage)
+ORDER BY NUMBER</value>
+    <comment>beefore SELECT * FROM (
+	SELECT ROW_NUMBER() OVER(ORDER BY id desc) AS NUMBER, *,
+		(
+			SELECT COUNT(*) FROM Inbox where ToMail = @ToMail
+		) [Length]
+	FROM Inbox
+	WHERE (ToMail like @ToMail or @ToMail is null)
+) AS TBL
+WHERE NUMBER BETWEEN ((@PageNumber - 1) * @RowsPage + 1) AND (@PageNumber * @RowsPage)
+ORDER BY NUMBER</comment>
+  </data>
+  <data name="GetListApproval" xml:space="preserve">
+    <value>SELECT a.*, re.DisplayName RecruiterName, b.Name, r.RoleName as 'Level', loc.AgentLocation Location, b.Status CandidateStatus
+FROM ApprovalList a
+JOIN Candidate b ON a.CandidateId = b.ID
+LEFT JOIN Location loc on loc.AgentLocationCode = b.LocationCode
+LEFT JOIN Account re ON a.RecruiterCode = re.AgentCode
+LEFT JOIN Account ap ON a.ApproverCode = ap.AgentCode
+LEFT JOIN [Role] r on b.Level = r.ID
+LEFT JOIN CandidateFile CF ON CF.CandidateID = b.ID AND CF.Type = 'FotoDiri'
+LEFT JOIN FileUpload FU ON CF.FileID = FU.ID
+WHERE (a.ApproverCode like @ApproverCode or @ApproverCode is null) and a.StatusApproval Is Null and a.IsActive = 1 order by id desc</value>
+  </data>
+  <data name="GetListExamLocation" xml:space="preserve">
+    <value>SELECT * FROM (
+	SELECT ROW_NUMBER() OVER(ORDER BY el.id) AS NUMBER,
+		el.Id,
+		el.Name,c.Id as CityId,
+		el.CityCode,
+		c.Name as CityName,
+		el.ExamType,
+		el.IsActive,
+		(
+			SELECT COUNT(*)
+			FROM ExamLocation ell
+			join City cc on ell.CityCode = cc.CityCode
+			WHERE 
+				(ell.[Name] like @Name or @Name is null)
+				AND (C.Name like @CityName or @CityName is null)
+				AND (ExamType like @ExamType or @ExamType is null)
+				AND c.IsDelete != 1
+		) [Length]
+	FROM ExamLocation el
+	join City c on c.CityCode = el.CityCode
+	WHERE 
+		(el.[Name] like @Name or @Name is null)
+		AND (C.Name like @CityName or @CityName is null)
+		AND (ExamType like @ExamType or @ExamType is null)
+		AND el.IsDelete != 1
+) AS TBL
+WHERE NUMBER BETWEEN ((@PageNumber - 1) * @RowsPage + 1) AND (@PageNumber * @RowsPage)
+ORDER BY NUMBER</value>
+    <comment>digunakan ketika memilih kota berdasarkan jenis ujian</comment>
+  </data>
+  <data name="GetListIdCandidateDependencies" xml:space="preserve">
+    <value>select id from CandidateDependencies where CandidateId = @CandidateId</value>
+  </data>
+  <data name="GetListIdCandidateEducation" xml:space="preserve">
+    <value>select id from candidateeducation where candidateid = @CandidateId</value>
+  </data>
+  <data name="GetListIdCandidateExperience" xml:space="preserve">
+    <value>select id from candidateexperience where candidateid = @CandidateId</value>
+  </data>
+  <data name="GetListIdCandidateReference" xml:space="preserve">
+    <value>select id from CandidateReference where CandidateID = @CandidateId</value>
+  </data>
+  <data name="GetListIdCandidateRelationInInsurance" xml:space="preserve">
+    <value>select id from CandidateRelationInInsurance where CandidateID = @CandidateId</value>
+  </data>
+  <data name="GetListIdCandidateWorkExperienceInInsurance" xml:space="preserve">
+    <value>select id from CandidateWorkExperienceInInsurance where CandidateID = @CandidateId</value>
+  </data>
+  <data name="GetLocationByCandidate" xml:space="preserve">
+    <value>select l.ID, l.AgentLocationCode 
+from Candidate c 
+join Location l on c.Location = l.ID
+where c.ID = @CandidateId</value>
+  </data>
+  <data name="GetManager" xml:space="preserve">
+    <value>exec GetManager @RecruiterLoginName, @CandidateRoleId</value>
+  </data>
+  <data name="GetPendingDocument" xml:space="preserve">
+    <value>select C.ID,C.[Name], C.JoinDate,[DC].[Status], DC.Reason,F.Path as Photo
+from DocumentCheck DC 
+join Candidate C on DC.CandidateId = C.ID
+join Account A on C.RecruiterAgentCode = A.AgentCode
+left join CandidateFile CF on CF.CandidateID = C.ID and CF.Type = 'FotoDiri'
+left join FileUpload F on F.ID = CF.FileID
+where A.LoginName = @LoginName and DC.Status = 'NEED REVISION'
+order by c.ChangedWhen desc</value>
+    <comment>//Mengambail data candidate yang masih blum lengkap (butuh revisi dari admin)</comment>
+  </data>
+  <data name="GetProfillingHeaderScore" xml:space="preserve">
+    <value>select top 1 TotalScore  
+from CandidateProfilingHeader
+where CandidateID=@CandidateId
+order by TotalScore desc</value>
+    <comment>order by score desc</comment>
+  </data>
+  <data name="GetPTKP" xml:space="preserve">
+    <value>select Id,Gender, MaritalStatus, Dependencies, PTKPStatus, PTKPPerMonth, PTKPPeryear
+from PTKP</value>
+  </data>
+  <data name="GetQuestion" xml:space="preserve">
+    <value>SELECT ROW_NUMBER() OVER(ORDER BY P.ID) AS Number, P.* FROM ProfilingQuestion P WHERE IsActive = 1 AND IsDelete = 0 AND GroupID = @GroupID</value>
+  </data>
+  <data name="GetQuestionMobile" xml:space="preserve">
+    <value>SELECT ROW_NUMBER() OVER(ORDER BY P.ID) AS Number, P.* FROM ProfilingQuestion P WHERE IsActive = 1 AND IsDelete = 0</value>
+  </data>
+  <data name="GetScheduleAajiExamold" xml:space="preserve">
+    <value>select A.ID as id, ExamDate,CONVERT(varchar(10), Year(ExamDate)) + '/' + CONVERT(varchar(10), Month(ExamDate))+ '/' +CONVERT(varchar(10), Day(ExamDate))  as [start], RegisteredUser,c.ID AS CityId,C.[Name] as CityName,EL.ID as ExamLocationId, EL.[Name] as ExamLocationName,A.Note, A.Note as title, EL.ExamType
+from AajiExam A
+join ExamLocation EL on A.ExamLocationId = EL.ID
+join City C on EL.CityCode = C.CityCode
+where Year(A.ExamDate) = @Year and A.IsDelete != 1 and el.CityCode = c.CityCode AND C.ID = @CityId and ExamType=@ExamType</value>
+  </data>
+  <data name="GetSyariahFlagByCandidateId" xml:space="preserve">
+    <value>SELECT T.Syariah FROM Candidate C
+JOIN Account A ON C.RecruiterAgentCode = A.AgentCode
+JOIN Team T ON A.TeamCode = T.TeamCode
+WHERE C.ID = @CandidateId</value>
+  </data>
+  <data name="GetUser" xml:space="preserve">
+    <value>select top 1 acc.Loginname, acc.[Password], acc.Displayname, acc.Email,acc.IsActive,  acc.RoleId, rol.RoleName, 
+acc.AgentCode, acc.PhoneNo,c.Photo
+from account acc 
+join role rol on acc.RoleID = rol.id
+left join Candidate c on c.AgentCode = acc.AgentCode
+where acc.loginname=@loginName</value>
+  </data>
+  <data name="GetUserPhoto" xml:space="preserve">
+    <value>SELECT F.Path FROM Candidate C JOIN FileUpload F ON C.Photo = F.ID
+WHERE C.ID = @ID</value>
+  </data>
+  <data name="GetValueGlobalConfiguration" xml:space="preserve">
+    <value>SELECT Value FROM GlobalConfiguration WHERE Keyword = @Keyword</value>
+  </data>
+  <data name="SetApprovalAction" xml:space="preserve">
+    <value>UPDATE ApprovalList SET StatusApproval = @StatusApproval,
+Reason = @Reason, ApprovalDate = @ApprovalDate WHERE ID = @ID</value>
+  </data>
+  <data name="Testing" xml:space="preserve">
+    <value>SELECT tipe.TypeID BusinessTypeId, business.Name BusinessTypeName, acc2.*
+FROM eLearning.dbo.Account acc1
+join eRecruit.dbo.Account acc2
+ON acc1.LoginName = acc2.LoginName
+JOIN eLearning.dbo.LearningType tipe ON acc1.TypeID = tipe.ID
+JOIN eLearning.dbo.BusinessType business ON tipe.TypeID = business.ID</value>
+  </data>
+  <data name="UpdateCandidateLocation" xml:space="preserve">
+    <value>declare @LocationId int = (select location from Candidate where id = @CandidateId )
+update Location 
+set AgentLocation='test'
+where id = @LocationId;
+select @LocationId as locationid</value>
+  </data>
+  <data name="UpdateIsReadInbox" xml:space="preserve">
+    <value>UPDATE Inbox SET IsRead = 1 WHERE ID = @ID</value>
+  </data>
+  <data name="UpdateUserPhoto" xml:space="preserve">
+    <value>UPDATE Candidate SET Photo = @PhotoId WHERE ID = @ID</value>
+  </data>
+  <data name="CekCandidateFlagByTempAgentCode" xml:space="preserve">
+    <value>SELECT DocumentCheckingFlag, AllLeaderApproveFlag, AajiPassedFlag, ELearningPassedFlag 
+FROM Candidate WHERE TemporaryAgentCode=@TemporaryAgentCode</value>
+  </data>
+  <data name="GetApprovalProgressMobile" xml:space="preserve">
+    <value>select a.ID, a.CandidateId, d.Name CandidateName, a.RecruiterCode, b.DisplayName RecruiterName,
+a.ApproverCode, c.DisplayName ApproverName, a.StatusApproval, a.Reason, a.ApprovalDate, r.RoleName
+FROM ApprovalList a JOIN Account b ON a.RecruiterCode = b.AgentCode
+JOIN Account c ON a.ApproverCode = c.AgentCode JOIN Candidate d ON a.CandidateId = d.ID
+JOIN [Role] r ON c.RoleID = r.ID
+WHERE a.IsActive = 1 and a.CandidateId = @CandidateId</value>
+  </data>
+  <data name="GetInboxMobile" xml:space="preserve">
+    <value>select * FROM Inbox
+WHERE (ToMail like @ToMail or @ToMail is null)
+order by id desc</value>
+  </data>
+  <data name="GetListExamLocationMobile" xml:space="preserve">
+    <value>select el.Id,
+el.Name,c.Id as CityId,
+el.CityCode,
+c.Name as CityName,
+el.ExamType,
+el.IsActive
+FROM ExamLocation el join City c on c.CityCode = el.CityCode
+where el.IsDelete != 1 AND ExamType = @ExamType</value>
+  </data>
+  <data name="GetPTKPMobile" xml:space="preserve">
+    <value>select Id,Gender, MaritalStatus, Dependencies, PTKPStatus, PTKPPerMonth, PTKPPeryear
+from PTKP</value>
+  </data>
+  <data name="GetNotifPendingDocument" xml:space="preserve">
+    <value>select top 1 Reason from DocumentCheck where CandidateId=@CandidateId order by id desc</value>
+  </data>
+  <data name="CountDocumentCheckByCandidateId" xml:space="preserve">
+    <value>select COUNT(ID) from DocumentCheck where CandidateId = @CandidateId and Status = 'NEED REVISION'</value>
+  </data>
+  <data name="GetUserMobile" xml:space="preserve">
+    <value>select top 1 acc.Loginname, acc.[Password], acc.Displayname, acc.Email, acc.RoleId, rol.RoleName, 
+acc.AgentCode, acc.PhoneNo,c.Photo
+from account acc 
+join role rol on acc.RoleID = rol.id
+left join Candidate c on c.AgentCode = acc.AgentCode
+where acc.AgentCode=@AgentCode</value>
+  </data>
+  <data name="GetDashboardActivitySummaryPerMonth" xml:space="preserve">
+    <value>select TblSubmit.RfSubmit, TblProses.RfProses, TblActive.AgentActivated
+	from(
+		--sudah submit
+		select Count(id) as RfSubmit from candidate 
+		where SubmitDate is not NULL AND IsDeleted != 1 AND RecruiterAgentCode=@RecruiterAgentCode and Month(submitdate) = @Month and Year(submitdate) = @Year
+
+	) as TblSubmit,
+	(
+		select Count(id) as RfProses from candidate 
+		where  permanentagentcode is null and Status!='REJECT' and IsDeleted != 1 AND RecruiterAgentCode=@RecruiterAgentCode and Month(submitdate) = @Month and Year(submitdate) = @Year 		
+	) as TblProses,
+	(
+		select Count(id) as AgentActivated from candidate 
+		where PermanentAgentCode is not null and IsDeleted != 1 AND RecruiterAgentCode=@RecruiterAgentCode  and Month(ChangedWhen) = @Month and Year(ChangedWhen) = @Year
+	) as TblActive</value>
+  </data>
+  <data name="GetDashboardActivitySummaryPerMonthMobile" xml:space="preserve">
+    <value>select TblSubmit.RfSubmit, TblProses.RfProses, TblActive.AgentActivated
+	from(
+		--sudah submit
+		select Count(id) as RfSubmit from candidate 
+		where SubmitDate is not NULL AND IsDeleted != 1 AND RecruiterAgentCode=@RecruiterAgentCode and Month(submitdate) = @Month and Year(submitdate) = @Year
+
+	) as TblSubmit,
+	(
+		select Count(id) as RfProses from candidate 
+		where  permanentagentcode is null and Status!='REJECT' and IsDeleted != 1 AND RecruiterAgentCode=@RecruiterAgentCode and Month(submitdate) = @Month and Year(submitdate) = @Year 		
+	) as TblProses,
+	(
+		select Count(id) as AgentActivated from candidate 
+		where PermanentAgentCode is not null and IsDeleted != 1 AND RecruiterAgentCode=@RecruiterAgentCode  and Month(ChangedWhen) = @Month and Year(ChangedWhen) = @Year
+	) as TblActive</value>
+  </data>
+  <data name="GetManagerMobile" xml:space="preserve">
+    <value>exec GetManager @RecruiterLoginName, @CandidateRoleId</value>
+  </data>
+  <data name="AddCandidateBasicInfoMobile" xml:space="preserve">
+    <value>update candidate 
+set 
+	Name = @Name,
+	Gender = @Gender,
+	HomeAddress = @HomeAddress,
+	CurrentCityCode = @CurrentCityCode,
+	CurrentAddress= @CurrentAddress,
+	PostalCode = @PostalCode,
+	NPWPNo = @NPWPNo,
+	NPWPName = @NPWPName,
+	BankAccountNo = @BankAccountNo,
+	BankAccountName = @BankAccountName,
+	ChangedWhen = @ChangedWhen,
+	ChangedBy = @ChangedBy,
+	[Status] = @Status,
+	BirthDate = @BirthDate,
+	TemporaryAgentCode = @TemporaryAgentCode,
+	Email = @Email, 
+	PTKPHeader = @PTKPHeader, 
+	PTKPDetail = @PTKPDetail,
+	KTPNo = @KTPNo,
+	[Level] = @Level,
+	PropertyOwnershipStatus = @PropertyOwnershpStatus,
+	CurrentPostalCode = @CurrentPostalCode,
+	MaritalStatus = @MaritalStatus,
+	NPWPRelationWith = @NPWPRelationWith,
+	Religion = @Religion,
+	BirthPlace = @BirthPlace,
+	HomePhone = @HomePhone,
+	CityCode = @CityCode,
+	Income = @Income,
+	CandidateSignature = @CandidateSignature,
+	RecruiterSignature = @RecruiterSignature,
+	Branch = @Branch,
+	BankCode = @BankCode,
+	SubmitDate = @SubmitDate,
+	LocationCode = @LocationCode,
+	AgentDirectorLocation = @AgentDirectorLocation
+where id=@CandidateId</value>
+  </data>
+  <data name="GetAccount" xml:space="preserve">
+    <value>SELECT top 1 [LoginName]
+      ,[Password]
+      ,[Email]
+      ,[RoleID]
+      ,[DisplayName]
+      ,[AgentCode]
+      ,[Gender]
+      ,[PhoneNo]
+      ,[IsActive]
+      ,[IsDeleted]
+      ,[CreatedWhen]
+      ,[CreatedBy]
+      ,[ChangedWhen]
+      ,[ChangedBy]
+      ,[TeamCode]
+      ,[LocationCode]
+      ,[HiringDate]
+      ,[StatusEffective]
+  FROM [Account] WHERE AgentCode = @AgentCode</value>
+  </data>
+  <data name="GetCandidateold2" xml:space="preserve">
+    <value>declare @RecomendedPosition int = (select top 1 RecommendedPosition 
+from CandidateProfilingHeader 
+where CandidateId = @CandidateId and IsComplete = 1 and RecommendedPosition != '-' and RecommendedPosition !=0)
+select tbl3.*,r.RoleName as LevelName from (
+select T.TeamCode,T.TeamName,tbl1.*,DisplayName as RecruiterName, rh.HierarkiLevel, l.AgentLocation as AgencyDirector, r.RoleName as RecruiterPosition, ct2.Name as CurrentCityName, @RecomendedPosition as RecommendedPosition from (
+select 
+	cdt.Id, 
+	cdt.AgentCode, 
+	cdt.Name as AgentName,
+	cdt.Gender, 
+	cdt.BirthPlace,
+	cdt.MaritalStatus,
+	cdt.SpouseName, case when cdt.SpouseBirthDate IS NULL THEN GETDATE() ELSE cdt.SpouseBirthDate end as SpouseBirthDate ,cdt.PTKPHeader,cdt.PTKPDetail,
+	case cdt.Gender when 'L' then 'Laki-Laki' else 'Perempuan' end as GenderName, 
+	HomeAddress,
+	CurrentAddress,
+	ct.Id as CityId,
+	ct.Name as CityName, 
+	PostalCode, 
+	NPWPNo, 
+	NPWPName, 
+	NPWPRelationWith,
+	PropertyOwnershipStatus,
+	BirthDate, 
+	KTPNo, 
+	TemporaryAgentCode, 
+	BankAccountName, 
+	BankAccountNo, 
+	Branch,  
+	cdt.RecruiterAgentCode, 
+	cdt.Level, 
+	acc.RoleID,
+	cdt.[location],
+	cdt.Income,
+	cdt.CurrentPostalCode,
+	cdt.CurrentCityId,
+	cdt.Homephone,
+	Religion,
+	cdt.CandidateSignature,
+	cdt.RecruiterSignature,
+	cdt.BankCode,
+	ct.CityCode,
+	cdt.CurrentCityCode,
+	cdt.Email
+from candidate cdt 
+join account acc on cdt.RecruiterAgentCode = acc.AgentCode
+left join profilingmatrix pm on pm.[roleid] = cdt.[level]  
+left join city ct on cdt.CityCode = ct.CityCode where cdt.Id = @CandidateId
+) as tbl1 
+join account a on a.AgentCode = tbl1.RecruiterAgentCode 
+left join team t on a.TeamCode = t.TeamCode
+left join RoleHierarki rh on rh.RoleId = tbl1.roleid
+left join Location l on l.AgentLocation = t.LocationCode
+left join role r on r.ID = a.RoleID
+left join city ct2 on tbl1.CurrentCityCode = ct2.CityCode
+) as tbl3
+left join Role R on tbl3.Level = R.id</value>
+  </data>
+  <data name="AddCandidateProfilingAnswer" xml:space="preserve">
+    <value>INSERT INTO CandidateProfilingAnswer(HeaderId, QuestionID, Description, Answer, Point)
+values(@HeaderId, @QuestionID, @Description, @Answer, @Point);
+SELECT CAST(SCOPE_IDENTITY() as int);</value>
+  </data>
+  <data name="UpdateCandidateProfilingAnswer" xml:space="preserve">
+    <value>UPDATE CandidateProfilingAnswer SET Answer = @Answer, Point = @Point, Description = @Description
+WHERE HeaderID = @HeaderID AND QuestionID = @QuestionID</value>
+  </data>
+  <data name="GetCandidate" xml:space="preserve">
+    <value>declare @RecomendedPosition int = (select top 1 RecommendedPosition 
+from CandidateProfilingHeader 
+where CandidateId = @CandidateId and IsComplete = 1 and RecommendedPosition != '-' and RecommendedPosition !=0)
+
+declare @true bit = 1
+declare @false bit = 0
+
+select tbl3.*,r.RoleName as LevelName from (
+select T.TeamCode,T.TeamName,tbl1.*,DisplayName as RecruiterName,a.Email RecruiterMail,a.LocationCode RecruiterLocationCode, rh.HierarkiLevel, l.AgentLocation as AgencyDirector, r.RoleName as RecruiterPosition, ct2.Name as CurrentCityName, @RecomendedPosition as RecommendedPosition from (
+select 
+	cdt.Id, 
+	cdt.Status,
+	cdt.LocationCode,
+	L.AgentLocation as LocationName,
+	cdt.AgentCode, 
+	cdt.Name as AgentName,
+	cdt.Gender, 
+	case cdt.Gender WHEN 'L' THEN @true ELSE @false END as isLaki, 
+	case cdt.Gender when 'L' then 'Laki-Laki' else 'Perempuan' end as GenderName, 
+	cdt.BirthPlace,
+	cdt.AgentDirectorLocation,
+	cdt.MaritalStatus,
+	cdt.SpouseName, 
+  case when cdt.SpouseBirthDate IS NULL THEN GETDATE() ELSE cdt.SpouseBirthDate end as SpouseBirthDate,
+  cdt.PTKPHeader,cdt.PTKPDetail,
+	HomeAddress,
+	CurrentAddress,
+	ct.Id as CityId,
+	ct.Name as CityName, 
+	PostalCode, 
+	NPWPNo, 
+	NPWPName, 
+	NPWPRelationWith,
+	PropertyOwnershipStatus,
+	BirthDate, 
+	KTPNo, 
+	TemporaryAgentCode, 
+	BankAccountName, 
+	BankAccountNo, 
+	Branch,  
+	cdt.RecruiterAgentCode, 
+	cdt.Level, 
+	acc.RoleID,
+	cdt.[location],
+	cdt.Income,
+	cdt.CurrentPostalCode,
+	cdt.CurrentCityId,
+	cdt.Homephone,
+	Religion,
+	cdt.CandidateSignature,
+	cdt.RecruiterSignature,
+	cdt.BankCode,
+	ct.CityCode,
+	cdt.CurrentCityCode,
+	cdt.Email,
+	cdt.GroupLevel,
+	cdt.VirtualAccount,
+	info.Pertanyaan1,info.Pertanyaan2,info.Pertanyaan3,info.Pertanyaan4,
+	B.BankName,
+	cdt.PhoneNo,
+	cdt.SubmitDate
+from candidate cdt 
+join account acc on cdt.RecruiterAgentCode = acc.AgentCode
+left join profilingmatrix pm on pm.[roleid] = cdt.[level]  
+left join city ct on cdt.CityCode = ct.CityCode 
+left join Location L on L.AgentLocationCode = cdt.LocationCode
+left join CandidateInformasiPribadi info ON cdt.ID = info.CandidateId
+left join Bank B on B.BankCode = cdt.BankCode
+where cdt.Id = @CandidateId
+) as tbl1 
+join account a on a.AgentCode = tbl1.RecruiterAgentCode 
+left join team t on a.TeamCode = t.TeamCode
+left join RoleHierarki rh on rh.RoleId = tbl1.roleid
+left join role r on r.ID = a.RoleID
+left join city ct2 on tbl1.CurrentCityCode = ct2.CityCode
+left join Location L on a.LocationCode = L.AgentLocationCode
+) as tbl3
+left join Role R on tbl3.Level = R.id</value>
+    <comment>declare @RecomendedPosition int = (select top 1 RecommendedPosition 
+from CandidateProfilingHeader 
+where CandidateId = @CandidateId and IsComplete = 1 and RecommendedPosition != '-' and RecommendedPosition !=0)
+select tbl3.*,r.RoleName as LevelName from (
+select T.TeamCode,T.TeamName,tbl1.*,DisplayName as RecruiterName, rh.HierarkiLevel, l.AgentLocation as AgencyDirector, r.RoleName as RecruiterPosition, ct2.Name as CurrentCityName, @RecomendedPosition as RecommendedPosition from (
+select 
+	cdt.Id, 
+	cdt.LocationCode,
+	L.AgentLocation as LocationName,
+	cdt.AgentCode, 
+	cdt.Name as AgentName,
+	cdt.Gender, 
+	cdt.BirthPlace,
+	cdt.AgentDirectorLocation,
+	cdt.MaritalStatus,
+	cdt.SpouseName, case when cdt.SpouseBirthDate IS NULL THEN GETDATE() ELSE cdt.SpouseBirthDate end as SpouseBirthDate ,cdt.PTKPHeader,cdt.PTKPDetail,
+	case cdt.Gender when 'L' then 'Laki-Laki' else 'Perempuan' end as GenderName, 
+	HomeAddress,
+	CurrentAddress,
+	ct.Id as CityId,
+	ct.Name as CityName, 
+	PostalCode, 
+	NPWPNo, 
+	NPWPName, 
+	NPWPRelationWith,
+	PropertyOwnershipStatus,
+	BirthDate, 
+	KTPNo, 
+	TemporaryAgentCode, 
+	BankAccountName, 
+	BankAccountNo, 
+	Branch,  
+	cdt.RecruiterAgentCode, 
+	cdt.Level, 
+	acc.RoleID,
+	cdt.[location],
+	cdt.Income,
+	cdt.CurrentPostalCode,
+	cdt.CurrentCityId,
+	cdt.Homephone,
+	Religion,
+	cdt.CandidateSignature,
+	cdt.RecruiterSignature,
+	cdt.BankCode,
+	ct.CityCode,
+	cdt.CurrentCityCode,
+	cdt.Email,
+	cdt.GroupLevel,
+	cdt.VirtualAccount,
+	info.Pertanyaan1,info.Pertanyaan2,info.Pertanyaan3,info.Pertanyaan4,
+	B.BankName,
+	cdt.PhoneNo,
+	cdt.SubmitDate
+from candidate cdt 
+join account acc on cdt.RecruiterAgentCode = acc.AgentCode
+left join profilingmatrix pm on pm.[roleid] = cdt.[level]  
+left join city ct on cdt.CityCode = ct.CityCode 
+left join Location L on L.AgentLocationCode = cdt.LocationCode
+left join CandidateInformasiPribadi info ON cdt.ID = info.CandidateId
+left join Bank B on B.BankCode = cdt.BankCode
+where cdt.Id = @CandidateId
+) as tbl1 
+join account a on a.AgentCode = tbl1.RecruiterAgentCode 
+left join team t on a.TeamCode = t.TeamCode
+left join RoleHierarki rh on rh.RoleId = tbl1.roleid
+left join role r on r.ID = a.RoleID
+left join city ct2 on tbl1.CurrentCityCode = ct2.CityCode
+left join Location L on a.LocationCode = L.AgentLocationCode
+) as tbl3
+left join Role R on tbl3.Level = R.id</comment>
+  </data>
+  <data name="GetScheduleAajiExam" xml:space="preserve">
+    <value>select A.ID as id, ExamDate,CONVERT(varchar(10), Year(ExamDate)) + '/' + CONVERT(varchar(10), Month(ExamDate))+ '/' +CONVERT(varchar(10), Day(ExamDate))  as [start], RegisteredUser,c.ID AS CityId,C.[Name] as CityName,EL.ID as ExamLocationId, EL.[Name] as ExamLocationName,A.Note, A.Note as title, EL.ExamType
+from AajiExam A
+left join ExamLocation EL on A.ExamLocationId = EL.ID
+left join City C on EL.CityCode = C.CityCode
+where ( ExamDate Between getdate() and DATEADD(month,3,GETDATE()))  and A.IsDelete != 1 and el.CityCode = c.CityCode AND C.ID = @CityId and ExamType=@ExamType</value>
+  </data>
+  <data name="GetScheduleAajiExamMobile" xml:space="preserve">
+    <value>select A.ID as id, ExamDate,CONVERT(varchar(10), Year(ExamDate)) + '/' + CONVERT(varchar(10), Month(ExamDate))+ '/' +CONVERT(varchar(10), Day(ExamDate))  as [start], RegisteredUser,c.ID AS CityId,C.[Name] as CityName,EL.ID as ExamLocationId, EL.[Name] as ExamLocationName,A.Note, A.Note as title, EL.ExamType
+from AajiExam A
+left join ExamLocation EL on A.ExamLocationId = EL.ID
+left join City C on EL.CityCode = C.CityCode
+where ( ExamDate Between getdate() and DATEADD(month,3,GETDATE()))  and A.IsDelete != 1 and el.CityCode = c.CityCode AND C.ID = @CityId and ExamType=@ExamType</value>
+  </data>
+  <data name="AddCandidateFamily" xml:space="preserve">
+    <value>update Candidate set SpouseName=@SpouseName, SpouseBirthDate=@SpouseBirthDate where id = @CandidateId</value>
+  </data>
+  <data name="AddCandidateFamilyMobile" xml:space="preserve">
+    <value>update Candidate set SpouseName=@SpouseName, SpouseBirthDate=@SpouseBirthDate where id = @CandidateId</value>
+  </data>
+  <data name="GetLocation" xml:space="preserve">
+    <value>select * from Location where IsDelete != 1 order by AgentLocation asc</value>
+    <comment>//get all location for dropdownlist</comment>
+  </data>
+  <data name="GetLocationMobile" xml:space="preserve">
+    <value>select * from Location where IsDelete != 1</value>
+  </data>
+  <data name="GetListApprovalWeb" xml:space="preserve">
+    <value>SELECT * FROM (
+	SELECT ROW_NUMBER() OVER(ORDER BY a.ID desc) AS NUMBER,a.ID, a.CandidateId, a.RecruiterCode, a.ApproverCode, re.DisplayName RecruiterName, b.Name, r.RoleName as 'Level', 
+	loc.AgentLocation Location, b.Status CandidateStatus, FU.Path Photo,
+		(
+			SELECT COUNT(*)
+			FROM ApprovalList a 
+			JOIN Candidate b ON a.CandidateId = b.ID
+			LEFT JOIN Location loc on loc.AgentLocationCode = b.LocationCode
+			LEFT JOIN Account re ON a.RecruiterCode = re.AgentCode
+			--LEFT JOIN Account ap ON a.ApproverCode = ap.AgentCode
+			LEFT JOIN [Role] r on b.Level = r.ID
+			LEFT JOIN CandidateFile CF ON CF.CandidateID = b.ID AND CF.Type = 'FotoDiri'
+			LEFT JOIN FileUpload FU ON CF.FileID = FU.ID
+			WHERE (a.ApproverCode like @ApproverCode or @ApproverCode is null)
+			AND StatusApproval Is Null  and b.IsDeleted = 0 and a.IsActive= 1  and b.Status != 'REJECT'
+		) [Length]
+	FROM ApprovalList a
+			JOIN Candidate b ON a.CandidateId = b.ID
+			LEFT JOIN Location loc on loc.AgentLocationCode = b.LocationCode
+			LEFT JOIN Account re ON a.RecruiterCode = re.AgentCode
+			--LEFT JOIN Account ap ON a.ApproverCode = ap.AgentCode
+			LEFT JOIN [Role] r on b.Level = r.ID
+			LEFT JOIN CandidateFile CF ON CF.CandidateID = b.ID AND CF.Type = 'FotoDiri'
+			LEFT JOIN FileUpload FU ON CF.FileID = FU.ID
+	WHERE (a.ApproverCode like @ApproverCode or @ApproverCode is null)
+	AND StatusApproval Is Null and b.IsDeleted = 0 and a.IsActive= 1 and b.Status != 'REJECT'
+) AS TBL
+WHERE NUMBER BETWEEN ((@PageNumber - 1) * @RowsPage + 1) AND (@PageNumber * @RowsPage)
+ORDER BY NUMBER</value>
+    <comment>SELECT * FROM (
+	SELECT ROW_NUMBER() OVER(ORDER BY a.ID desc) AS NUMBER, a.*, re.DisplayName RecruiterName, b.Name, r.RoleName as 'Level', 
+	loc.AgentLocation Location, b.Status CandidateStatus, FU.Path Photo,
+		(
+			SELECT COUNT(*)
+			FROM ApprovalList a 
+			JOIN Candidate b ON a.CandidateId = b.ID
+			LEFT JOIN Location loc on loc.AgentLocationCode = b.LocationCode
+			LEFT JOIN Account re ON a.RecruiterCode = re.AgentCode
+			LEFT JOIN Account ap ON a.ApproverCode = ap.AgentCode
+			LEFT JOIN [Role] r on b.Level = r.ID
+			LEFT JOIN CandidateFile CF ON CF.CandidateID = b.ID AND CF.Type = 'FotoDiri'
+			LEFT JOIN FileUpload FU ON CF.FileID = FU.ID
+			WHERE (a.ApproverCode like @ApproverCode or @ApproverCode is null)
+			AND StatusApproval Is Null  and b.IsDeleted = 0 and a.IsActive= 1  and b.Status != 'REJECT'
+		) [Length]
+	FROM ApprovalList a
+			JOIN Candidate b ON a.CandidateId = b.ID
+			LEFT JOIN Location loc on loc.AgentLocationCode = b.LocationCode
+			LEFT JOIN Account re ON a.RecruiterCode = re.AgentCode
+			LEFT JOIN Account ap ON a.ApproverCode = ap.AgentCode
+			LEFT JOIN [Role] r on b.Level = r.ID
+			LEFT JOIN CandidateFile CF ON CF.CandidateID = b.ID AND CF.Type = 'FotoDiri'
+			LEFT JOIN FileUpload FU ON CF.FileID = FU.ID
+	WHERE (a.ApproverCode like @ApproverCode or @ApproverCode is null)
+	AND StatusApproval Is Null and b.IsDeleted = 0 and a.IsActive= 1 and b.Status != 'REJECT'
+) AS TBL
+WHERE NUMBER BETWEEN ((@PageNumber - 1) * @RowsPage + 1) AND (@PageNumber * @RowsPage)
+ORDER BY NUMBER</comment>
+  </data>
+  <data name="GetPendingDocumentMobile" xml:space="preserve">
+    <value>select C.ID,C.[Name], C.JoinDate,[DC].[Status], DC.Reason,F.Path as Photo
+from DocumentCheck DC 
+join Candidate C on DC.CandidateId = C.ID
+join Account A on C.RecruiterAgentCode = A.AgentCode
+left join CandidateFile CF on CF.CandidateID = C.ID and CF.Type = 'FotoDiri'
+left join FileUpload F on F.ID = CF.FileID
+where A.LoginName = @LoginName and DC.Status = 'NEED REVISION'
+order by c.ChangedWhen desc</value>
+  </data>
+  <data name="GetCandidateMobile" xml:space="preserve">
+    <value>declare @RecomendedPosition int = (select top 1 RecommendedPosition 
+from CandidateProfilingHeader 
+where CandidateId = @CandidateId and IsComplete = 1 and RecommendedPosition != '-' and RecommendedPosition !=0)
+print @RecomendedPosition
+select tbl3.*,r.RoleName as LevelName from (
+select T.TeamCode,T.TeamName,tbl1.*,DisplayName as RecruiterName, rh.HierarkiLevel, l.AgentLocation as AgencyDirector, r.RoleName as RecruiterPosition, ct2.Name as CurrentCityName, @RecomendedPosition as RecommendedPosition from (
+select 
+	cdt.Id, 
+	cdt.LocationCode,
+	L.AgentLocation as LocationName,
+	cdt.AgentCode, 
+	cdt.Name as AgentName,
+	cdt.Gender, 
+	cdt.BirthPlace,
+	cdt.MaritalStatus,
+	cdt.SpouseName, case when cdt.SpouseBirthDate IS NULL THEN GETDATE() ELSE cdt.SpouseBirthDate end as SpouseBirthDate ,cdt.PTKPHeader,cdt.PTKPDetail,
+	case cdt.Gender when 'L' then 'Laki-Laki' else 'Perempuan' end as GenderName, 
+	HomeAddress,
+	CurrentAddress,
+	ct.Id as CityId,
+	ct.Name as CityName, 
+	PostalCode, 
+	NPWPNo, 
+	NPWPName, 
+	NPWPRelationWith,
+	PropertyOwnershipStatus,
+	BirthDate, 
+	KTPNo, 
+	TemporaryAgentCode, 
+	BankAccountName, 
+	BankAccountNo, 
+	Branch,  
+	cdt.RecruiterAgentCode, 
+	cdt.Level, 
+	acc.RoleID,
+	cdt.[location],
+	cdt.Income,
+	cdt.CurrentPostalCode,
+	cdt.CurrentCityId,
+	cdt.Homephone,
+	Religion,
+	cdt.CandidateSignature,
+	cdt.RecruiterSignature,
+	cdt.BankCode,
+	ct.CityCode,
+	cdt.CurrentCityCode,
+	cdt.Email,
+	cdt.GroupLevel,
+	cdt.VirtualAccount,
+	cdt.Status,
+	info.Pertanyaan1,info.Pertanyaan2,info.Pertanyaan3,info.Pertanyaan4
+from candidate cdt 
+join account acc on cdt.RecruiterAgentCode = acc.AgentCode
+left join profilingmatrix pm on pm.[roleid] = cdt.[level]  
+left join city ct on cdt.CityCode = ct.CityCode 
+left join Location L on L.AgentLocationCode = cdt.LocationCode
+left join CandidateInformasiPribadi info ON cdt.ID = info.CandidateId
+where cdt.Id = @CandidateId
+) as tbl1 
+join account a on a.AgentCode = tbl1.RecruiterAgentCode 
+left join team t on a.TeamCode = t.TeamCode
+left join RoleHierarki rh on rh.RoleId = tbl1.roleid
+left join role r on r.ID = a.RoleID
+left join city ct2 on tbl1.CurrentCityCode = ct2.CityCode
+left join Location L on a.LocationCode = L.AgentLocationCode
+) as tbl3
+left join Role R on tbl3.Level = R.id</value>
+  </data>
+  <data name="GetContactFilteredActiveAgent" xml:space="preserve">
+    <value>--cari agent aktif
+SELECT * FROM (
+	SELECT ROW_NUMBER() OVER(ORDER BY C.ID desc) AS NUMBER,
+		C.ID, C.Name, C.Gender, C.City, C.PhoneNo, C.Birthdate, C.Profession,
+			case when SubmitDate IS NULL then 'Pengisian RF' 
+		when AllLeaderApproveFlag = 0 then 'Menunggu Persetujuan' 
+		when DocumentCheckingFlag = 0 Then 'Menunggu Proses Dokumen Cek' 
+		when ElearningPassedFlag = 0 then 'Menunggu Hasil Elearning' 
+		when AajiPassedFlag = 0 then 'Menunggu Hasil Ujian AAJI'
+		when submitdate is not null and AllLeaderApproveFlag=1 and DocumentCheckingFlag = 1 and AajiPassedFlag = 1 then 'Agen Aktif'
+		end as Status,
+		 FU.Path Photo,
+		(
+			SELECT COUNT(*)
+			FROM Candidate C
+			LEFT JOIN CandidateFile CF ON CF.CandidateID = C.ID AND CF.Type = 'FotoDiri'
+			LEFT JOIN FileUpload FU ON CF.FileID = FU.ID
+			WHERE 
+				(C.RecruiterAgentCode like @AgentCode or @AgentCode is null)
+				AND (C.Name like @Name or @Name is null) and(C.SubmitDate is not null) and(C.AllLeaderApproveFlag = 1) and(C.DocumentCheckingFlag = 1) and (C.ELearningPassedFlag = 1) and (C.AajiPassedFlag = 1)  AND C.IsDeleted != 1
+		) [Length]
+	FROM Candidate C
+	LEFT JOIN CandidateFile CF ON CF.CandidateID = C.ID AND CF.Type = 'FotoDiri'
+	LEFT JOIN FileUpload FU ON CF.FileID = FU.ID
+	WHERE 
+		(C.RecruiterAgentCode like @AgentCode or @AgentCode is null)
+		AND (C.Name like @Name or @Name is null) and(C.SubmitDate is not null) and(C.AllLeaderApproveFlag = 1) and(C.DocumentCheckingFlag = 1) and (C.ELearningPassedFlag = 1) and (C.AajiPassedFlag = 1) AND C.IsDeleted != 1
+) AS TBL
+WHERE NUMBER BETWEEN ((@PageNumber - 1) * @RowsPage + 1) AND (@PageNumber * @RowsPage)
+ORDER BY NUMBER</value>
+  </data>
+  <data name="GetContactFilteredRFForm" xml:space="preserve">
+    <value>--cari pengisian rf
+SELECT * FROM (
+	SELECT ROW_NUMBER() OVER(ORDER BY C.ID desc) AS NUMBER,
+		C.ID, C.Name, C.Gender, C.City, C.PhoneNo, C.Birthdate, C.Profession,
+			case when SubmitDate IS NULL then 'Pengisian RF' 
+		when AllLeaderApproveFlag = 0 then 'Menunggu Persetujuan' 
+		when DocumentCheckingFlag = 0 Then 'Menunggu Proses Dokumen Cek' 
+		when ElearningPassedFlag = 0 then 'Menunggu Hasil Elearning' 
+		when AajiPassedFlag = 0 then 'Menunggu Hasil Ujian AAJI'
+		when submitdate is not null and AllLeaderApproveFlag=1 and DocumentCheckingFlag = 1 and AajiPassedFlag = 1 then 'Agen Aktif'
+		end as Status,
+		 FU.Path Photo,
+		(
+			SELECT COUNT(*)
+			FROM Candidate C
+			LEFT JOIN CandidateFile CF ON CF.CandidateID = C.ID AND CF.Type = 'FotoDiri'
+			LEFT JOIN FileUpload FU ON CF.FileID = FU.ID
+			WHERE 
+				(C.RecruiterAgentCode like @AgentCode or @AgentCode is null)
+				AND (C.Name like @Name or @Name is null) and(C.SubmitDate is null) AND C.IsDeleted != 1
+		) [Length]
+	FROM Candidate C
+	LEFT JOIN CandidateFile CF ON CF.CandidateID = C.ID AND CF.Type = 'FotoDiri'
+	LEFT JOIN FileUpload FU ON CF.FileID = FU.ID
+	WHERE 
+		(C.RecruiterAgentCode like @AgentCode or @AgentCode is null)
+		AND (C.Name like @Name or @Name is null) and(C.SubmitDate is null) AND C.IsDeleted != 1
+) AS TBL
+WHERE NUMBER BETWEEN ((@PageNumber - 1) * @RowsPage + 1) AND (@PageNumber * @RowsPage)
+ORDER BY NUMBER</value>
+  </data>
+  <data name="GetContactFilteredWaitingAAJIExam" xml:space="preserve">
+    <value>--cari menunggu hasil ujian aaji
+SELECT * FROM (
+	SELECT ROW_NUMBER() OVER(ORDER BY C.ID desc) AS NUMBER,
+		C.ID, C.Name, C.Gender, C.City, C.PhoneNo, C.Birthdate, C.Profession,
+			case when SubmitDate IS NULL then 'Pengisian RF' 
+		when AllLeaderApproveFlag = 0 then 'Menunggu Persetujuan' 
+		when DocumentCheckingFlag = 0 Then 'Menunggu Proses Dokumen Cek' 
+		when ElearningPassedFlag = 0 then 'Menunggu Hasil Elearning' 
+		when AajiPassedFlag = 0 then 'Menunggu Hasil Ujian AAJI'
+		when submitdate is not null and AllLeaderApproveFlag=1 and DocumentCheckingFlag = 1 and AajiPassedFlag = 1 then 'Agen Aktif'
+		end as Status,
+		 FU.Path Photo,
+		(
+			SELECT COUNT(*)
+			FROM Candidate C
+			LEFT JOIN CandidateFile CF ON CF.CandidateID = C.ID AND CF.Type = 'FotoDiri'
+			LEFT JOIN FileUpload FU ON CF.FileID = FU.ID
+			WHERE 
+				(C.RecruiterAgentCode like @AgentCode or @AgentCode is null)
+				AND (C.Name like @Name or @Name is null) and(C.SubmitDate is not null) and(C.AllLeaderApproveFlag = 1) and(C.DocumentCheckingFlag = 1) and (C.ELearningPassedFlag = 1) and (C.AajiPassedFlag = 0) AND C.IsDeleted != 1
+		) [Length]
+	FROM Candidate C
+	LEFT JOIN CandidateFile CF ON CF.CandidateID = C.ID AND CF.Type = 'FotoDiri'
+	LEFT JOIN FileUpload FU ON CF.FileID = FU.ID
+	WHERE 
+		(C.RecruiterAgentCode like @AgentCode or @AgentCode is null)
+		AND (C.Name like @Name or @Name is null) and(C.SubmitDate is not null) and(C.AllLeaderApproveFlag = 1) and(C.DocumentCheckingFlag = 1) and (C.ELearningPassedFlag = 1) and (C.AajiPassedFlag = 0) AND C.IsDeleted != 1
+) AS TBL
+WHERE NUMBER BETWEEN ((@PageNumber - 1) * @RowsPage + 1) AND (@PageNumber * @RowsPage)
+ORDER BY NUMBER</value>
+  </data>
+  <data name="GetContactFilteredWaitingApproval" xml:space="preserve">
+    <value>--cari menunggu persetujuan
+SELECT * FROM (
+	SELECT ROW_NUMBER() OVER(ORDER BY C.ID desc) AS NUMBER,
+		C.ID, C.Name, C.Gender, C.City, C.PhoneNo, C.Birthdate, C.Profession,
+			case when SubmitDate IS NULL then 'Pengisian RF' 
+		when AllLeaderApproveFlag = 0 then 'Menunggu Persetujuan' 
+		when DocumentCheckingFlag = 0 Then 'Menunggu Proses Dokumen Cek' 
+		when ElearningPassedFlag = 0 then 'Menunggu Hasil Elearning' 
+		when AajiPassedFlag = 0 then 'Menunggu Hasil Ujian AAJI'
+		when submitdate is not null and AllLeaderApproveFlag=1 and DocumentCheckingFlag = 1 and AajiPassedFlag = 1 then 'Agen Aktif'
+		end as Status,
+		 FU.Path Photo,
+		(
+			SELECT COUNT(*)
+			FROM Candidate C
+			LEFT JOIN CandidateFile CF ON CF.CandidateID = C.ID AND CF.Type = 'FotoDiri'
+			LEFT JOIN FileUpload FU ON CF.FileID = FU.ID
+			WHERE 
+				(C.RecruiterAgentCode like @AgentCode or @AgentCode is null)
+				AND (C.Name like @Name or @Name is null) and(C.SubmitDate is not null) and(C.AllLeaderApproveFlag = 0) AND C.IsDeleted != 1
+		) [Length]
+	FROM Candidate C
+	LEFT JOIN CandidateFile CF ON CF.CandidateID = C.ID AND CF.Type = 'FotoDiri'
+	LEFT JOIN FileUpload FU ON CF.FileID = FU.ID
+	WHERE 
+		(C.RecruiterAgentCode like @AgentCode or @AgentCode is null)
+		AND (C.Name like @Name or @Name is null) and(C.SubmitDate is not null) and(C.AllLeaderApproveFlag = 0) AND C.IsDeleted != 1
+) AS TBL
+WHERE NUMBER BETWEEN ((@PageNumber - 1) * @RowsPage + 1) AND (@PageNumber * @RowsPage)
+ORDER BY NUMBER</value>
+  </data>
+  <data name="GetContactFilteredWaitingDocumentCheck" xml:space="preserve">
+    <value>--cari menunggu proses document check
+SELECT * FROM (
+	SELECT ROW_NUMBER() OVER(ORDER BY C.ID desc) AS NUMBER,
+		C.ID, C.Name, C.Gender, C.City, C.PhoneNo, C.Birthdate, C.Profession,
+			case when SubmitDate IS NULL then 'Pengisian RF' 
+		when AllLeaderApproveFlag = 0 then 'Menunggu Persetujuan' 
+		when DocumentCheckingFlag = 0 Then 'Menunggu Proses Dokumen Cek' 
+		when ElearningPassedFlag = 0 then 'Menunggu Hasil Elearning' 
+		when AajiPassedFlag = 0 then 'Menunggu Hasil Ujian AAJI'
+		when submitdate is not null and AllLeaderApproveFlag=1 and DocumentCheckingFlag = 1 and AajiPassedFlag = 1 then 'Agen Aktif'
+		end as Status,
+		 FU.Path Photo,
+		(
+			SELECT COUNT(*)
+			FROM Candidate C
+			LEFT JOIN CandidateFile CF ON CF.CandidateID = C.ID AND CF.Type = 'FotoDiri'
+			LEFT JOIN FileUpload FU ON CF.FileID = FU.ID
+			WHERE 
+				(C.RecruiterAgentCode like @AgentCode or @AgentCode is null)
+				AND (C.Name like @Name or @Name is null) and(C.SubmitDate is not null) and(C.AllLeaderApproveFlag = 1) and(C.DocumentCheckingFlag = 0) AND C.IsDeleted != 1
+		) [Length]
+	FROM Candidate C
+	LEFT JOIN CandidateFile CF ON CF.CandidateID = C.ID AND CF.Type = 'FotoDiri'
+	LEFT JOIN FileUpload FU ON CF.FileID = FU.ID
+	WHERE 
+		(C.RecruiterAgentCode like @AgentCode or @AgentCode is null)
+		AND (C.Name like @Name or @Name is null) and(C.SubmitDate is not null) and(C.AllLeaderApproveFlag = 1) and(C.DocumentCheckingFlag = 0) AND C.IsDeleted != 1
+) AS TBL
+WHERE NUMBER BETWEEN ((@PageNumber - 1) * @RowsPage + 1) AND (@PageNumber * @RowsPage)
+ORDER BY NUMBER</value>
+  </data>
+  <data name="GetContactFilteredWaitingElearning" xml:space="preserve">
+    <value>--cari menunggu hasil elearning
+SELECT * FROM (
+	SELECT ROW_NUMBER() OVER(ORDER BY C.ID desc) AS NUMBER,
+		C.ID, C.Name, C.Gender, C.City, C.PhoneNo, C.Birthdate, C.Profession,
+			case when SubmitDate IS NULL then 'Pengisian RF' 
+		when AllLeaderApproveFlag = 0 then 'Menunggu Persetujuan' 
+		when DocumentCheckingFlag = 0 Then 'Menunggu Proses Dokumen Cek' 
+		when ElearningPassedFlag = 0 then 'Menunggu Hasil Elearning' 
+		when AajiPassedFlag = 0 then 'Menunggu Hasil Ujian AAJI'
+		when submitdate is not null and AllLeaderApproveFlag=1 and DocumentCheckingFlag = 1 and AajiPassedFlag = 1 then 'Agen Aktif'
+		end as Status,
+		 FU.Path Photo,
+		(
+			SELECT COUNT(*)
+			FROM Candidate C
+			LEFT JOIN CandidateFile CF ON CF.CandidateID = C.ID AND CF.Type = 'FotoDiri'
+			LEFT JOIN FileUpload FU ON CF.FileID = FU.ID
+			WHERE 
+				(C.RecruiterAgentCode like @AgentCode or @AgentCode is null)
+				AND (C.Name like @Name or @Name is null) and(C.SubmitDate is not null) and(C.AllLeaderApproveFlag = 1) and(C.DocumentCheckingFlag = 1) and (C.ELearningPassedFlag = 0) AND C.IsDeleted != 1
+		) [Length]
+	FROM Candidate C
+	LEFT JOIN CandidateFile CF ON CF.CandidateID = C.ID AND CF.Type = 'FotoDiri'
+	LEFT JOIN FileUpload FU ON CF.FileID = FU.ID
+	WHERE 
+		(C.RecruiterAgentCode like @AgentCode or @AgentCode is null)
+		AND (C.Name like @Name or @Name is null) and(C.SubmitDate is not null) and(C.AllLeaderApproveFlag = 1) and(C.DocumentCheckingFlag = 1) and (C.ELearningPassedFlag = 0) AND C.IsDeleted != 1
+) AS TBL
+WHERE NUMBER BETWEEN ((@PageNumber - 1) * @RowsPage + 1) AND (@PageNumber * @RowsPage)
+ORDER BY NUMBER</value>
+  </data>
+  <data name="AddCandidateInformasiPribadi" xml:space="preserve">
+    <value>INSERT INTO CandidateInformasiPribadi (CandidateId, Pertanyaan1, Pertanyaan2, Pertanyaan3, Pertanyaan4)
+VALUES(@CandidateId, @Pertanyaan1, @Pertanyaan2, @Pertanyaan3, @Pertanyaan4)</value>
+  </data>
+  <data name="GetAllListExamLocation" xml:space="preserve">
+    <value>SELECT ROW_NUMBER() OVER(ORDER BY el.id) AS NUMBER,
+		el.Id,
+		el.Name,c.Id as CityId,
+		el.CityCode,
+		c.Name as CityName,
+		el.ExamType,
+		el.IsActive
+	FROM ExamLocation el
+	join City c on c.CityCode = el.CityCode
+	WHERE  el.IsDelete != 1</value>
+    <comment>digunakan ut auto complete combox ketika pilih jadwal ujian</comment>
+  </data>
+  <data name="GetDashboardActivitySummaryCMS" xml:space="preserve">
+    <value>select TblSubmit.RfSubmit, TblProses.RfProses, TblActive.AgentActivated
+	from(
+		--sudah submit
+		select Count(id) as RfSubmit from candidate 
+		where SubmitDate is not NULL AND IsDeleted != 1 and Month(submitdate) = @Month and Year(submitdate) = @Year
+
+	) as TblSubmit,
+	(
+		select Count(id) as RfProses from candidate 
+		where  permanentagentcode is null and Status!='REJECT' and IsDeleted != 1  and Month(submitdate) = @Month and Year(submitdate) = @Year 		
+	) as TblProses,
+	(
+		select Count(id) as AgentActivated from candidate 
+		where PermanentAgentCode is not null and IsDeleted != 1  and Month(ChangedWhen) = @Month and Year(ChangedWhen) = @Year
+	) as TblActive</value>
+  </data>
+  <data name="GetContactMobileNew" xml:space="preserve">
+    <value>select Id, Name, Gender, City, PhoneNo, Birthdate, Profession, case when SubmitDate IS NULL then 'Pengisian RF' 
+		when AllLeaderApproveFlag = 0 then 'Menunggu Persetujuan' 
+		when DocumentCheckingFlag = 0 Then 'Menunggu Proses Dokumen Cek' 
+		when ElearningPassedFlag = 0 then 'Menunggu Hasil Elearning' 
+		when AajiPassedFlag = 0 then 'Menunggu Hasil Ujian AAJI'
+		when submitdate is not null and AllLeaderApproveFlag=1 and DocumentCheckingFlag = 1 and AajiPassedFlag = 1 then 'Agen Aktif'
+		end as Status,Photo,JoinDate,CreatedWhen
+from Candidate 
+where RecruiterAgentCode = @AgentCode
+And IsDeleted = 0 AND (ID NOT IN @excludeContact)
+ order by id desc</value>
+  </data>
+  <data name="GetLoginNameFromForgot" xml:space="preserve">
+    <value>SELECT LoginName FROM ForgotPassword WHERE Link = @link</value>
+  </data>
+</root>

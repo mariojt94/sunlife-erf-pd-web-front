@@ -1,0 +1,54 @@
+﻿<header class="header-login">
+    <section class="container">
+        <center>
+            <div class="logo-login">
+                <img src="Content/Images/logo-sunlife.svg" class="img-responsive">
+                <div class="clearfix"></div>
+            </div>
+        </center>
+    </section>
+</header>
+
+
+<section>
+    <div class="login-container">
+        <div class="login-wrap">
+            <div class="login-content">
+                <center><h2>Login {{ test }}</h2></center>
+                <!-- Login Form -->
+                <form ng-submit="login()">
+                    <h3>Login</h3>
+                    <div class="form-group">
+                        <label for="inputUsername">Nama Akun</label>
+                        <input type="text" id="inputUsername" name="inputUsername" class="form-control" ng-model="loginData.userName" placeholder="Nama Akun"
+                               required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword">Kata Sandi</label>
+                        <input type="password" id="inputPassword" name="inputPassword" class="form-control" ng-model="loginData.password" placeholder="Kata Sandi" required>
+                        <button type="button" id="eye" onclick="if (inputPassword.type == 'text') inputPassword.type = 'password'; else inputPassword.type = 'text';"
+                                style="position: absolute; top: 258px; right: 20px; background: transparent; border: none;">
+                            <i class="fa fa-eye" aria-hidden="true"
+                               style="font-size: 25px; margin-top: -5px; color: #1a4e59;">
+                            </i>
+                        </button>
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+                    <div class="pull-right">
+                        <!--<a ng-href="#/register" class="control-label">Register</a>-->
+                    </div>
+                </form>
+                <div class="clearfix"></div>
+                <div class="forget-href"><a href="#!/forgotPassword">Lupa Kata Sandi</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-login"></div>
+</section>
+
+<footer class="main-bottom">
+    <div class="container">
+        <center><p>PT Sun Life Financial Indonesia. All rights reserved. | Version 1.0.0</p></center>
+    </div>
+</footer>
+

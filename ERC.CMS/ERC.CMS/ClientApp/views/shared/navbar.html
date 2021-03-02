@@ -1,0 +1,71 @@
+<header class="container-nav">
+    <div class="slnavbar">
+        <div class="slnavbar-left">
+            <div class="logo">
+                <a href="#!/"><img src="Content/assets/img/logo-menu-white.png" class="img-responsive"></a>
+            </div>
+        </div>
+        <div class="slnavbar-right" ng-controller="menuController">
+            <div class="menu-profile">
+                <ul>
+                    <!--<li><a href="#"><i class="fa fa-refresh" aria-hidden="true"></i></a></li>-->
+                    <li>
+                        <a href="#!/messages">
+                            <div class="notif" ng-show="displayNotif">
+                                <h6>{{totalInbox}}</h6>
+                            </div>
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li><a href="#!/addContact"><i class="fa  fa-user-plus" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</header>
+<div class="burger-menu">
+    <hamburger-toggle state="tgState" class="hamburger-toggle"></hamburger-toggle>
+    <a class="navbar-brand"></a>
+</div>
+<div class="sidenav" ng-class="{open: tgState}" ng-controller="logoutController">
+    <div class="side-avatar">
+        <img ng-show="Photo===null" src="../../../Content/Images/default-avatar.jpg" style="width:100%">
+        <img ng-show="Photo!==null" src="{{Photo}}" style="width:100%">
+    </div>
+    <div class="sideAvName">
+        <p>{{ DisplayName }}</p>
+    </div>
+    <div class="side-btn">
+        <!--<button class="btn btn-warning" ng-click="changePassword()">Ubah Kata Sandi</button>-->
+        <button class="btn btn-danger" style="width: 100%;" ng-click="logOut()">Keluar</button>        
+    </div>
+    <div class="side-menuList">
+        <a href="#!/contact" menu-close class="sidemenu-row">
+            Kontak
+            <img src="Content/assets/img/side-kontak.png">
+        </a>
+        <a href="#!/approvalForm" menu-close class="sidemenu-row">
+            Persetujuan
+            <img src="Content/assets/img/side-approval.png">
+        </a>
+        <a ng-click="gotoJadwalAaji()" style="display:none" menu-close class="sidemenu-row">
+            Lihat Jadwal AAJI
+            <img src="Content/assets/img/side-jadwal.png">
+        </a>
+        <a href="#!/faqFront" menu-close class="sidemenu-row">
+            FAQ
+            <img src="Content/assets/img/side-faq.png">
+        </a>
+        <a href="#!/pendingDocument" menu-close class="sidemenu-row">
+            Pending Dokumen
+            <img src="Content/assets/img/side-faq.png">
+        </a>
+
+        <!--<a ng-click="logOut()" menu-close class="sidemenu-row">
+            Keluar
+            <i class="fa fa fa-sign-out"></i>
+        </a>-->
+    </div>
+</div>
+<section ui-view="navbar"></section>

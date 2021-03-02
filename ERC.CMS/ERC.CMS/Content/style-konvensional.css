@@ -1,0 +1,17 @@
+
+.slnavbar {
+  border-top:3px solid rgb(234, 171, 0);
+}
+.sl-title {
+  background: rgba(253, 231, 173, 0.97);
+}
+.sl-title h2 {
+  color:#1a4e59;
+}
+.progress-content p {
+  margin:auto;
+  text-align:center;
+}
+.content-title {
+  background:url(../Content/Images/konvensional-ribbon.png) no-repeat top center;
+}

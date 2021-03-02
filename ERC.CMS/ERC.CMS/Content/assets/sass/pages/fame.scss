@@ -1,0 +1,21 @@
+// Hall of Fame Page
+
+.fame table {
+  width:100%;
+}
+.fame table tr td.fame-top {
+  color:$blue90;
+  padding: 9px 0px;
+  background: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.fame table tr td {
+  color:$blue90;
+  padding: 9px 10px;
+  background: rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid $yellow;
+  font-size: 18px;
+}

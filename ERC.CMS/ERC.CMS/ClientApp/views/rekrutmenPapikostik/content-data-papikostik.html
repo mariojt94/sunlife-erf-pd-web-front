@@ -1,0 +1,178 @@
+
+<div class="col-12 p-0 mt-7">
+    <div class="card br0 shadow h-100">
+        <div class="card-body nav-card-fix p-0">
+            <div class="container no-pad">
+                <div class="form-row erf-menu pl-5 pr-5 pt-4 pb-0">
+                    <a href="#!/data-pribadi" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-data-pribadi.svg" class="img-fluid menu-aktif">
+                        <br><label><strong>Data Pribadi</strong></label>
+                        <i ng-show="statusDataPribadi" class="m-done"></i>
+                    </a>
+                    <a href="#!/data-kontak" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-kontak.svg" class="img-fluid">
+                        <br><label><strong>Kontak</strong></label>
+                        <i ng-show="statusKontak" class="m-done"></i>
+                    </a>
+                    <a href="#!/data-keluarga" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-keluarga.svg" class="img-fluid">
+                        <br><label><strong>Data Keluarga</strong></label>
+                        <i ng-show="statusDataKeluarga" class="m-done"></i>
+                    </a>
+                    <a href="#!/data-pendidikan" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-pendidikan.svg" class="img-fluid">
+                        <br><label><strong>Pendidikan</strong></label>
+                        <i ng-show="statusDataPendidikan" class="m-done"></i>
+                    </a>
+                    <a href="#!/data-pekerjaan" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-pekerjaan.svg" class="img-fluid">
+                        <br><label><strong>Riwayat Pekerjaan</strong></label>
+                        <i ng-show="statusDataPekerjaan" class="m-done"></i>
+                    </a>
+                    <a href="#!/data-dokumen" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-dokumen.svg" class="img-fluid">
+                        <br><label><strong>Dokumen</strong></label>
+                        <i ng-show="statusDataDokumen" class="m-done"></i>
+                    </a>
+
+                    <a href="#!/data-ptkp" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-ptkp.svg" class="img-fluid">
+                        <br><label><strong>PTKP</strong></label>
+                        <i ng-show="statusDataPtkp" class="m-done"></i>
+                    </a>
+                    <!--<a href="#!/data-psikotes" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-psikotes.svg" class="img-fluid">
+                        <br><label><strong>Psikotes</strong></label>
+                        <i ng-show="statusDataPsikotes" class="m-done"></i>
+                    </a>-->
+                    <a href="#!/data-papikostik" class="form-group col text-center img-nav-v2 menu-aktif">
+                        <img src="Content/assets/img/ic-papikostick-2.svg" class="img-fluid">
+                        <br><label><strong>Papikostik</strong></label>
+
+                    </a>
+
+                    <a href="#!/data-review" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-review.svg" class="img-fluid">
+                        <br><label><strong>Review</strong></label>
+                        <i ng-show="statusDataReview" class="m-done"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid d-menu h-100" ng-show="papikostikPage">
+    <div class="container h-100 no-pad">
+
+        <div class="row h-100">
+            <div class="col-12 mb-4 d-link" style="height:65%">
+                <div class="card br10 shadow h-100">
+                    <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+
+                        <p class="text-center mt-auto">Ada 90 (sembilan puluh) pasang pernyataan, pilih salah satu dari setiap pasang tersebut<br>yang Anda anggap paling dekat menggambarkan diri Anda.<br>Bila tidak satupun dari pernyataan itu cocok, pilih yang Anda anggap paling mendekati.<br /><br />Kerjakan secepat mungkin dan pilihlah hanya satu pernyataan dari tiap pasang pernyataan.</p>
+
+                        <div class="form-row mt-auto">
+                            <div class="form-group col-md-4">
+                                <button onclick="window.location.href='#!/data-ptkp';" class="btn-secondary shadow-sm btn-blue btn-block">Kembali</button>
+                            </div>
+                            <div class="form-group col-md-4 ml-auto">
+                                <!--<button onclick="window.location.href='#!/data-papikostik-start';" class="btn-primary shadow-sm btn-blue btn-block">Mulai</button>-->
+                                <button class="btn-primary shadow-sm btn-blue btn-block" ng-click="startPapikostik()">Mulai</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<div class="container-fluid d-menu h-100 nopad-340px" ng-show="papikostikPageStart">
+    <div class="container h-100 nopad-340px">
+            <div class="row h-100">
+                <div class="col-12 mb-4 d-link" style="height: 65%">
+                    <div class="card br10 shadow h-100">
+                        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+
+                            <p class="text-center">{{pagingOptions.currentPage}}/18</p>
+
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12 col-12 soal-psiko">
+
+                                        <div ng-repeat="n in myDataFilter">
+                                            <div class="form-row">
+                                                <label class="erf-nomor"><!--{{$index+1}}-->{{n.SoalNo}}</label>
+                                                <div class="form-group col-md-10 col-sm-10 col-10 mb-0"><label>{{n.Pilihan1}}</label></div>
+                                                <div class="col-1.5">
+                                                    <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-sm-1 col-1 pls-nopad">
+                                                        <input type="radio" class="custom-control-input" id="papikostikA{{$index+1}}" name="per{{$index+1}}" ng-value="pilihA" ng-model="cookiesJawabanPapikostik[n.SoalNo-1]" ng-click="changeRowA1(n.SoalNo,pilihA,'true')">
+                                                        <label class="custom-control-label" for="papikostikA{{$index+1}}"></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-row">
+                                                <div class="form-group col-md-10 col-sm-10 col-10 mb-0"><label>{{n.Pilihan2}}</label></div>
+                                                <div class="col-1.5">
+                                                    <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-sm-1 col-1 pls-nopad">
+                                                        <input type="radio" class="custom-control-input" id="papikostikB{{$index+1}}" name="per{{$index+1}}" ng-value="pilihB" ng-model="cookiesJawabanPapikostik[n.SoalNo-1]" ng-click="changeRowA1(n.SoalNo,pilihB,'true')">
+                                                        <label class="custom-control-label" for="papikostikB{{$index+1}}"></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br />
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+
+</div>
+
+<!--FINISH-->
+<div ng-show="papikostikFinish" class="container-fluid d-menu h-100">
+                            <!--class="container-fluid d-body h-100 nopad-340px pt-10"-->
+    <div class="container h-100 nopad-340px">
+
+        <div class="row h-100">
+            <div class="col-12 mb-4 d-link" style="height:65%">
+                <div class="card br10 shadow h-100">
+                    <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4">
+
+                        <p class="text-center mt-auto">
+                            <img src="Content/assets/img/ic-done.svg" class="img-fluid mb-3" width="70"><br>
+                            Anda sudah menyelesaikan Online Papikostik test.
+                        </p>
+
+                        <div class="form-row mt-auto">
+                            <div class="form-group col-md-4">
+                                <button ng-click="firstBack()" class="btn-secondary shadow-sm btn-blue btn-block">Kembali</button>
+                            </div>
+                            <div class="form-group col-md-4 ml-auto">
+                                <button ng-click="nextToReview()" class="btn-primary shadow-sm btn-blue btn-block">Simpan</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,73 @@
+.slnavbar {
+  border-top:3px solid rgb(234, 171, 0);
+}
+.sl-title {
+  background: rgba(253, 231, 173, 0.97);
+}
+ul.sl-sidenav li a:hover {
+background:#f77400;
+color:#fff!important;
+}
+ul.sl-sidenav li.active {
+  background:#f77400;
+}
+ul.sl-sidenav li a:hover {
+background:#f77400;
+}
+.menu-profile ul li {
+  border-left-color:rgb(234, 171, 0);
+}
+.menu-profile ul li a {
+  color:rgb(234, 171, 0);
+}
+.menu-profile ul li i {
+  color:rgb(234, 171, 0);
+}
+ul.sl-sidenav li a span.icon-sunlife {
+  color:#003946;
+}
+ul.sl-sidenav li a:hover span.icon-sunlife  {
+  color:#003946;
+}
+.bg-dashboard {
+  background-image:url(../../assets/img/bg-dashboard-pd.jpg);
+  opacity: 0.4;
+}
+.sidenav {
+  background:#eaab00;
+}
+.content-title {
+  background:url(../../assets/img/pd-ribbon.png) no-repeat top center;
+}
+ul.sl-sidenav li a p, ul.sl-sidenav li a i {
+  color:#003946;
+}
+
+ul.sl-sidenav li.active a p, ul.sl-sidenav li.active a i {
+  color:#fff;
+}
+ul.sl-sidenav li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.avatar i,.dashboard-join,.content-left h2,.content-right h2 {
+  color:#003946;
+}
+.test {
+  width:100%;
+  height:30px;
+  background-color:orange;
+  position:absolute;
+  left:0;
+  right:0
+  top:0;
+  z-index:99999;
+}
+.btn-blue-100, .btn-blue-50 {
+background: #f77400;}
+.tab-elearning ul.nav-tabs.nav-justified > li > a {
+  background:#f77400;
+  color:#fff;
+}
+.sidenav {
+    background:#eaab00 url(../../assets/img/logo-menu-pd.png)no-repeat center bottom;
+}

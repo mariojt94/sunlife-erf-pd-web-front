@@ -1,0 +1,46 @@
+<div class="container-fluid d-body h-100">
+	<div class="container h-100">
+	  <div class="row h-100">
+	    <div class="col-12 mb-4 d-link h-95">
+	      <div class="card br10 shadow h-100">
+	        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4 .oy">
+	          		          	
+		        <ul class="timeline pl-5">
+
+                    <li ng-if="doesJadwalTrainingExist" class="garis">
+                        <strong>
+                            <p class="my-0">Anda dijadwalkan untuk mengikuti training pada hari {{getHariTraining}}, {{TanggalTraining}}</p>
+                            <p class="my-0">Di {{lokasi}}</p>
+                        </strong>
+                        <p class="mb-4">{{getHariTraining}}, {{TanggalTraining}} </p>
+                    </li>
+                    <li ng-if="doesJadwal2Exist" ng-class="doesJadwal2Exist ? 'garis aktif':'garis'">
+                        <strong>
+                            <p class="my-0">Anda dijadwalkan untuk mengikuti Interview kedua pada hari {{getHariInterview2}}, {{TanggalInterview2}}</p>
+                            <p class="my-0">Di {{lokasi2}}</p>
+                        </strong>
+                        <p class="mb-4">{{getHariInterview2}}, {{TanggalInterview2}} pukul {{JamInterview2}}</p>
+                    </li>
+                    <li ng-if="doesJadwal1Exist" ng-class="doesJadwal2Exist ? 'garis':'garis aktif'">
+                        <strong>
+                            <p class="my-0">Anda dijadwalkan untuk mengikuti Interview pertama pada hari {{getHariInterview1}}, {{TanggalInterview1}}</p>
+                            <p class="my-0">Di {{lokasi1}}</p>
+                        </strong>
+                        <p class="mb-4">{{getHariInterview1}}, {{TanggalInterview1}} pukul {{JamInterview1}}</p>
+                    </li>
+                    <li ng-class="doesJadwal1Exist ? 'garis':'garis aktif'" ng-show="viewSubmitAplikasi">
+                        <strong>
+                            <p class="my-0">Aplikasi anda berhasil disubmit</p>
+                        </strong>
+                        <p class="mb-4">{{getHari}}, {{Tanggal | date:'dd MMMM yyyy'}} {{Jam}}:{{Menit}}</p>
+                    </li>
+				</ul>
+
+	        </div>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+
+</div>

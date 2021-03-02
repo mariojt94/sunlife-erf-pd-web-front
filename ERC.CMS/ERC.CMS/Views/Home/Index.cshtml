@@ -1,0 +1,523 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html id="ng-app" ng-app="SunLifeApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <title>E-Recruitment ERF-PD</title>
+    @*highcart*@
+    @*<script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>*@
+
+    <script src="~/Scripts/highcharts.js"></script>
+    <script src="~/Scripts/highcharts-3d.js"></script>
+    <script src="~/Scripts/exporting.js"></script>
+    @*end high chart*@
+
+    @* tes encrypt *@
+    <script src="~/Scripts/aes.js"></script>
+
+
+    @* load sweetAlert css *@
+    <link href="~/Content/sweetalert2.css" rel="stylesheet" />
+
+
+    <!--Bootsrap only css styles -->
+    @*<link rel="stylesheet" type="text/css" href="~/Content/assets/lib/angular-ui-bootstrap/bootstrap.css">*@
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/lib/angular-menu/angular-hamburger-toggle.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/lib/angular-swiper/angular-ui-swiper.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/bower_components/Ionicons/css/ionicons.min.css">
+
+    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+
+    <!-- stylesheet with sass dont edit without sass ya -->
+    <link href="~/Content/assets/fonts/font-awesome/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/style-sass.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/style-new.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/sb-admin-2.css">
+
+    <link rel="stylesheet" ng-href="~/Content/assets/css/layout-{{layout}}.css">
+    <!-- AngularCSS stylesheets will be added here -->
+
+    <link href="~/Content/css/ng-grid.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+
+
+    <!-- load calendar css-->
+    <link href="~/Content/css/calendar/fullcalendar.css" rel="stylesheet" />
+    <!--<link href="~/Content/css/calendar/calendarDemo.css" rel="stylesheet" />-->
+    @*<link href="~/Content/css/style.css" rel="stylesheet" />*@
+    @*<link ng-href="~/Content/style-{{layout}}.css" rel="stylesheet" />*@
+    @*<script src="~/Scripts/native/native.js"></script>*@
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui.min.js"></script>
+    <script src="~/Scripts/jquery.inputmask.bundle.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-ui-router.min.js"></script>
+    <script src="~/Scripts/angular-base64.js"></script>
+    <script src="~/Scripts/angular-base64-upload.js"></script>
+    <script src="~/Scripts/angular-cookies.js"></script>
+    <script src="/Scripts/angular-animate.js"></script>
+    <script src="~/Scripts/angular-sanitize.js"></script>
+    <script src="~/Scripts/angular-local-storage.min.js"></script>
+    <script src="~/Scripts/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+    <script src="~/Scripts/angular-filter.js"></script>
+    <script src="~/Scripts/ng-grid.js"></script>
+    <script src="~/Library/angular-css/angular-css.min.js"></script>
+    <script src="~/Library/angular-menu/angular-hamburger-toggle.min.js"></script>
+    <script src="~/Library/angular-swiper/angular-ui-swiper.min.js"></script>
+    <script src="~/Library/tinymce/tinymce.min.js"></script>
+    <script src="~/Library/angular-tinymce/tinymce.js"></script>
+    <!-- Load Char Js // Wildan -->
+    <script src="~/Scripts/chart/chart.js"></script>
+    <script src="~/Scripts/chart/angular-chart.js"></script>
+
+    <script src="~/Scripts/ui-mask.js"></script>
+    <script src="~/Scripts/moment.min.js"></script>
+
+    <!-- load calendar js -->
+    <script src="~/Scripts/calendar/moment.js"></script>
+    <script src="~/Scripts/calendar/fullcalendar.js"></script>
+    <script src="~/Scripts/calendar/gcal.js"></script>
+    <script src="~/Scripts/calendar/calendar.js"></script>
+
+    <!-- load signature pad js -->
+    @*<script src="~/Scripts/signature_pad/js/signature_pad.js"></script>*@
+
+    <!-- cache buster -->
+    @*<script src="~/Scripts/angular-cache-buster.js"></script>*@
+
+    <!-- angular idle timeout -->
+    <script src="~/Scripts/angular-idle.min.js"></script>
+    <script src="~/Scripts/jquery.qrcode.min.js"></script>
+
+    <!--  Input mask-->
+    <script src="~/Scripts/inputmask.min.js"></script>
+    <script src="~/Scripts/angular-input-masks/releases/angular-input-masks-standalone.min.js"></script>
+
+    <style>
+        #ng-app {
+            overflow-x: hidden;
+        }
+
+        .spinner {
+            display: block;
+            width: 100px;
+            height: 100px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            background-size: 300px;
+            text-align: center;
+            padding: 10px;
+            font: normal 16px Tahoma, Geneva, sans-serif;
+            margin-left: -50px;
+            margin-top: -50px;
+            z-index: 99999;
+            overflow: auto;
+        }
+
+        .OverlaySpinner {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99998;
+            width: 100%;
+            height: 100%;
+            background-color: #ebebeb;
+            Opacity: 0.5;
+        }
+
+        .OverlaySpinnerPdf {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99998;
+            width: 100%;
+            height: 100%;
+            background-color: #ebebeb;
+            Opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    @*<div class="themes-switch" ng-hide="myVar">
+            <p> Switch Themes</p>
+            <form>
+                <select class="" ng-model="layout" ng-options="layout.url as layout.name for layout in layouts"></select>
+            </form>
+        </div>*@
+    @*<div ui-view>
+
+        </div>*@
+
+    <img class="spinner" src="../../../Content/Images/loading-circle.gif" />
+    <div class="OverlaySpinner"></div>
+    <div class="OverlaySpinnerPdf"></div>
+
+    <section ui-view="header"></section>
+    <section ui-view="content">
+<div class="col-12 p-0 mt-7 ng-scope">
+    <div class="card br0 shadow h-100">
+        <div class="card-body p-0">
+            <div class="container">
+                <div class="form-row erf-menu pl-5 pr-5 pt-4 pb-0">
+                    <a href="#!/data-pribadi" class="form-group col text-center menu-aktif">
+                        <img src="Content/assets/img/ic-ak-data-pribadi.svg" class="img-fluid menu-aktif">
+                        <br><label><strong>Data Pribadi</strong></label>
+                        <!--<i class="m-error"></i>-->
+                      <!--  <i ng-show="statusDataPribadi" class="m-done"></i>-->
+                    </a>
+                    <a href="#!/data-kontak" class="form-group col text-center">
+                        <img src="Content/assets/img/ic-kontak.svg" class="img-fluid">
+                        <br><label><strong>Kontak</strong></label>
+                        <i ng-show="statusKontak" class="m-done" style=""></i>
+ <!--                       <div ng-if="statusKontak=='true'">
+                            <i class="m-done" ></i>
+                        </div>-->
+                    </a>
+                    <a href="#!/data-keluarga" class="form-group col text-center">
+                        <img src="Content/assets/img/ic-keluarga.svg" class="img-fluid">
+                        <br><label><strong>Data Keluarga</strong></label>
+                        <i ng-show="statusDataKeluarga" class="m-done" style=""></i>
+                    </a>
+                    <a href="#!/data-pendidikan" class="form-group col text-center">
+                        <img src="Content/assets/img/ic-pendidikan.svg" class="img-fluid">
+                        <br><label><strong>Pendidikan</strong></label>
+                        <i ng-show="statusDataPendidikan" class="m-done" style=""></i>
+                    </a>
+                    <a href="#!/data-pekerjaan" class="form-group col text-center">
+                        <img src="Content/assets/img/ic-pekerjaan.svg" class="img-fluid">
+                        <br><label><strong>Riwayat Pekerjaan</strong></label>
+                        <i ng-show="statusDataPekerjaan" class="m-done" style=""></i>
+                    </a>
+                    <a href="#!/data-dokumen" class="form-group col text-center">
+                        <img src="Content/assets/img/ic-dokumen.svg" class="img-fluid">
+                        <br><label><strong>Dokumen</strong></label>
+                        <i ng-show="statusDataDokumen" class="m-done" style=""></i>
+                    </a>
+                    <a class="form-group col text-center">
+                        <img src="Content/assets/img/ic-psikotes.svg" class="img-fluid" ng-click="ToPsikotes()">
+                        <br><label><strong>Psikotes</strong></label>
+                        <i ng-show="statusDataPsikotes" class="m-done" style=""></i>
+                    </a>
+                    <a href="#!/data-review" class="form-group col text-center">
+                        <img src="Content/assets/img/ic-review.svg" class="img-fluid">
+                        <br><label><strong>Review</strong></label>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid d-body d-menu h-100 ng-scope">
+    <div class="container h-100">
+
+
+        <div class="row h-100">
+            <div class="col-12 mb-4 d-link" style="height:65%">
+                <div class="card br10 shadow h-100">
+                    <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+
+                        <form name="myForm" class="ng-valid-min ng-valid ng-valid-required ng-dirty ng-valid-number" style="">
+                            <label><strong>Data Pribadi Sesuai KTP</strong></label>
+                            <div class="form-row">
+                                <div class="form-group col-md-8">
+                                    <input name="NamaLengkap" type="text" ng-model="field.namaLengkap" class="form-control ng-pristine ng-untouched ng-not-empty ng-valid ng-valid-required" placeholder="Nama Lengkap" required="" style="">
+                                    <!--<label style="color: red" ng-show="myForm.NamaLengkap.$error.required">*</label>-->
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <select class="form-control ng-pristine ng-untouched ng-not-empty ng-valid ng-valid-required" id="recruitment" ng-model="field.jenisKelamin" ng-options="res.GenderCode as res.Gender for res in listGender" required="" style=""><option value="" class="">--Pilih Jenis Kelamin--</option><option label="MALE" value="string:M" selected="selected">MALE</option><option label="FEMALE" value="string:F">FEMALE</option></select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" ng-model="field.alamat" class="form-control ng-pristine ng-untouched ng-not-empty ng-valid ng-valid-required" placeholder="Alamat" required="" style="">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-2">
+                                    <input type="number" ng-model="field.rt" class="form-control ng-valid-min ng-not-empty ng-valid ng-valid-required ng-dirty ng-valid-number ng-touched" placeholder="RT" min="0" oninput="validity.valid||(value='');" required="" style="">
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <input type="number" ng-model="field.rw" class="form-control ng-pristine ng-untouched ng-valid-min ng-not-empty ng-valid ng-valid-required" placeholder="RW" min="0" oninput="validity.valid||(value='');" required="" style="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <select class="form-control ng-pristine ng-untouched ng-not-empty ng-valid ng-valid-required" id="recruitment" ng-model="field.provinsi" ng-options="res.ProvinceCode as res.ProvinceName for res in listProvince" ng-change="changeProvince()" required="" style=""><option value="" class="">--Pilih Provinsi--</option><option label="ACEH" value="string:AC">ACEH</option><option label="BALI" value="string:BA">BALI</option><option label="BANGKA BELITUNG" value="string:BL">BANGKA BELITUNG</option><option label="BANTEN" value="string:BT">BANTEN</option><option label="BENGKULU" value="string:BE">BENGKULU</option><option label="DKI JAKARTA" value="string:JKT">DKI JAKARTA</option><option label="IRIAN JAYA" value="string:IJ">IRIAN JAYA</option><option label="JAKARTA" value="string:JA">JAKARTA</option><option label="JAMBI" value="string:JM">JAMBI</option><option label="JAWA BARAT" value="string:WJ" selected="selected">JAWA BARAT</option><option label="JAWA TENGAH" value="string:CJ">JAWA TENGAH</option><option label="JAWA TIMUR" value="string:EJ">JAWA TIMUR</option><option label="KALIMANTAN BARAT" value="string:WK">KALIMANTAN BARAT</option><option label="KALIMANTAN SELATAN" value="string:SK">KALIMANTAN SELATAN</option><option label="KALIMANTAN TENGAH" value="string:CK">KALIMANTAN TENGAH</option><option label="KALIMANTAN TIMUR" value="string:EK">KALIMANTAN TIMUR</option><option label="KALIMANTAN UTARA" value="string:NK">KALIMANTAN UTARA</option><option label="LAMPUNG" value="string:LA">LAMPUNG</option><option label="MALUKU" value="string:MA">MALUKU</option><option label="NATUNA" value="string:NA">NATUNA</option><option label="NUSA TENGGARA BARAT" value="string:NB">NUSA TENGGARA BARAT</option><option label="NUSA TENGGARA TIMUR" value="string:NT">NUSA TENGGARA TIMUR</option><option label="RIAU" value="string:RI">RIAU</option><option label="SULAWESI SELATAN" value="string:SW">SULAWESI SELATAN</option><option label="SULAWESI TENGAH" value="string:CS">SULAWESI TENGAH</option><option label="SULAWESI TENGGARA" value="string:SE">SULAWESI TENGGARA</option><option label="SULAWESI UTARA" value="string:NW">SULAWESI UTARA</option><option label="SUMATERA BARAT" value="string:WS">SUMATERA BARAT</option><option label="SUMATERA SELATAN" value="string:SS">SUMATERA SELATAN</option><option label="SUMATRA UTARA" value="string:NS">SUMATRA UTARA</option><option label="TIMOR TIMUR" value="string:ET">TIMOR TIMUR</option><option label="YOGYAKARTA" value="string:YK">YOGYAKARTA</option></select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <select class="form-control ng-pristine ng-untouched ng-not-empty ng-valid ng-valid-required" id="recruitment" ng-model="field.kota" ng-options="res.CityCode as res.Name for res in listCity" required="" style=""><option value="" class="">--Pilih Kota--</option><option label="JAKARTA BARAT" value="string:JKTB">JAKARTA BARAT</option><option label="AILEU" value="string:AIL">AILEU</option><option label="AINARO" value="string:AIN">AINARO</option><option label="AMBON" value="string:AMB">AMBON</option><option label="AMLAPURA/KARANG ASEM" value="string:AMM">AMLAPURA/KARANG ASEM</option><option label="ARGAMAKMUR" value="string:ARR">ARGAMAKMUR</option><option label="BATANG" value="string:BAA">BATANG</option><option label="BAU-BAU" value="string:BAB">BAU-BAU</option><option label="BANDAR LAMPUNG" value="string:BAD">BANDAR LAMPUNG</option><option label="BANTENG" value="string:BAE">BANTENG</option><option label="BANDUNG" value="string:BAG">BANDUNG</option><option label="BANDA ACEH" value="string:BAH">BANDA ACEH</option><option label="BATANGHARI" value="string:BAI">BATANGHARI</option><option label="BATURAJA" value="string:BAJ">BATURAJA</option><option label="BALIKPAPAN" value="string:BAK">BALIKPAPAN</option><option label="BANJARNEGARA" value="string:BAN">BANJARNEGARA</option><option label="BANGKO" value="string:BAO">BANGKO</option><option label="BARITO KUALA" value="string:BAR">BARITO KUALA</option><option label="BANTUL" value="string:BAT">BANTUL</option><option label="BANDURA" value="string:BAU">BANDURA</option><option label="BEKASI" value="string:BEI">BEKASI</option><option label="BENGKALIS" value="string:BEN">BENGKALIS</option><option label="BEKASI TIMUR" value="string:BET">BEKASI TIMUR</option><option label="BENGKULU" value="string:BEU">BENGKULU</option><option label="BINJAI" value="string:BIJ">BINJAI</option><option label="BIAK" value="string:BIK">BIAK</option><option label="BIMA" value="string:BIM">BIMA</option><option label="BANJARBARU" value="string:BJR">BANJARBARU</option><option label="BANGKALAN" value="string:BKL">BANGKALAN</option><option label="BANGKINANG" value="string:BKN">BANGKINANG</option><option label="BLITAR" value="string:BLI">BLITAR</option><option label="BULUKUMBA" value="string:BLM">BULUKUMBA</option><option label="BLORA" value="string:BLO">BLORA</option><option label="BANJARMASIN" value="string:BNJ">BANJARMASIN</option><option label="BANGLI" value="string:BNL">BANGLI</option><option label="BOYOLALI" value="string:BOI">BOYOLALI</option><option label="BOJONEGORO" value="string:BOO">BOJONEGORO</option><option label="BOGOR" value="string:BOR">BOGOR</option><option label="BONDOWOSO" value="string:BOW">BONDOWOSO</option><option label="BREBES" value="string:BRE">BREBES</option><option label="BARRU" value="string:BRR">BARRU</option><option label="BATAM" value="string:BTM">BATAM</option><option label="BATU" value="string:BTU">BATU</option><option label="BUKITTINGGI" value="string:BUK">BUKITTINGGI</option><option label="BUNTOK" value="string:BUN">BUNTOK</option><option label="BAUKAU" value="string:BUU">BAUKAU</option><option label="BANYUWANGI" value="string:BYW">BANYUWANGI</option><option label="CIBINONG" value="string:CIG">CIBINONG</option><option label="CIMAHI" value="string:CII">CIMAHI</option><option label="CIKAMPEK" value="string:CIK">CIKAMPEK</option><option label="CILACAP" value="string:CIL">CILACAP</option><option label="CILEGON" value="string:CIN">CILEGON</option><option label="CIREBON" value="string:CIO">CIREBON</option><option label="CIPUTAT" value="string:CIP">CIPUTAT</option><option label="CIANJUR" value="string:CIR">CIANJUR</option><option label="CIAMIS" value="string:CIS">CIAMIS</option><option label="CURUP" value="string:CUP">CURUP</option><option label="DEMAK" value="string:DEM">DEMAK</option><option label="DEPOK" value="string:DEO" selected="selected">DEPOK</option><option label="DENPASAR" value="string:DER">DENPASAR</option><option label="DILI" value="string:DII">DILI</option><option label="DOMPU" value="string:DOM">DOMPU</option><option label="DUMAI" value="string:DUI">DUMAI</option><option label="ENAROTELI" value="string:ENI">ENAROTELI</option><option label="ENREKANG" value="string:ENR">ENREKANG</option><option label="ERMERA" value="string:ERM">ERMERA</option><option label="DILI" value="string:ET">DILI</option><option label="FAK FAK" value="string:FAK">FAK FAK</option><option label="GARUT" value="string:GAT">GARUT</option><option label="GIANYAR" value="string:GIA">GIANYAR</option><option label="GORONTALO" value="string:GOR">GORONTALO</option><option label="GRESIK" value="string:GRE">GRESIK</option><option label="GUNUNG SITOLI" value="string:GUN">GUNUNG SITOLI</option><option label="INDRAMAYU" value="string:INU">INDRAMAYU</option><option label="JAYAPURA" value="string:JAA">JAYAPURA</option><option label="JAKARTA BARAT" value="string:JAB">JAKARTA BARAT</option><option label="JAMBI" value="string:JAI">JAMBI</option><option label="JANTHO" value="string:JAO">JANTHO</option><option label="JAKARTA PUSAT" value="string:JAP">JAKARTA PUSAT</option><option label="JAKARTA SELATAN" value="string:JAS">JAKARTA SELATAN</option><option label="JAKARTA TIMUR" value="string:JAT">JAKARTA TIMUR</option><option label="JAKARTA UTARA" value="string:JAU">JAKARTA UTARA</option><option label="JEPARA" value="string:JEA">JEPARA</option><option label="JEMBER" value="string:JEM">JEMBER</option><option label="JENEPONTO" value="string:JEN">JENEPONTO</option><option label="JOMBANG" value="string:JOM">JOMBANG</option><option label="KARANG ANYAR" value="string:KAA">KARANG ANYAR</option><option label="KARAWANG" value="string:KAG">KARAWANG</option><option label="KALIANDA" value="string:KAI">KALIANDA</option><option label="KABANJAHE" value="string:KAJ">KABANJAHE</option><option label="KANDANGAN" value="string:KAN">KANDANGAN</option><option label="KARANGANYAR" value="string:KAR">KARANGANYAR</option><option label="KEDIRI" value="string:KED">KEDIRI</option><option label="KENDARI" value="string:KEI">KENDARI</option><option label="KENDAL" value="string:KEL">KENDAL</option><option label="KEBUMEN" value="string:KEN">KEBUMEN</option><option label="KERTOSONO" value="string:KER">KERTOSONO</option><option label="KETAPANG" value="string:KET">KETAPANG</option><option label="KISARAN" value="string:KIS">KISARAN</option><option label="KLATEN" value="string:KLA">KLATEN</option><option label="KLUNGKUNG" value="string:KLU">KLUNGKUNG</option><option label="KOLAKA" value="string:KOA">KOLAKA</option><option label="KOTABUMI" value="string:KOI">KOTABUMI</option><option label="KOPANG" value="string:KOP">KOPANG</option><option label="KOTAMOBAGU" value="string:KOU">KOTAMOBAGU</option><option label="KUALAKAPUAS" value="string:KUA">KUALAKAPUAS</option><option label="KUDUS" value="string:KUD">KUDUS</option><option label="KUTACANE" value="string:KUE">KUTACANE</option><option label="KUALATUNGKOL" value="string:KUL">KUALATUNGKOL</option><option label="KUPANG" value="string:KUP">KUPANG</option><option label="KUTA" value="string:KUT">KUTA</option><option label="LANGSA" value="string:LAA">LANGSA</option><option label="LAHAT" value="string:LAH">LAHAT</option><option label="LAMONGAN" value="string:LAM">LAMONGAN</option><option label="LARANTUKA" value="string:LAU">LARANTUKA</option><option label="LAWANG" value="string:LAW">LAWANG</option><option label="LHOKSEUMAWE" value="string:LHE">LHOKSEUMAWE</option><option label="LIKISIA" value="string:LII">LIKISIA</option><option label="LIMBOTO" value="string:LIM">LIMBOTO</option><option label="LOS PALOS" value="string:LOS">LOS PALOS</option><option label="LUMAJANG" value="string:LUA">LUMAJANG</option><option label="LUBUKPAKAM" value="string:LUB">LUBUKPAKAM</option><option label="LUBUKLINGGAU" value="string:LUK">LUBUKLINGGAU</option><option label="LUWUK" value="string:LUW">LUWUK</option><option label="MANNA" value="string:MAA">MANNA</option><option label="MAGELANG" value="string:MAE">MAGELANG</option><option label="MAURO SINJUNJUNG" value="string:MAG">MAURO SINJUNJUNG</option><option label="MANOKWARI" value="string:MAI">MANOKWARI</option><option label="MAJALENGKA" value="string:MAJ">MAJALENGKA</option><option label="MAKALE" value="string:MAK">MAKALE</option><option label="MALIANA" value="string:MAL">MALIANA</option><option label="MATARAM" value="string:MAM">MATARAM</option><option label="MAGETAN" value="string:MAN">MAGETAN</option><option label="MANADO" value="string:MAO">MANADO</option><option label="MARABAHAN" value="string:MAR">MARABAHAN</option><option label="MAROS" value="string:MAS">MAROS</option><option label="MAMUJU" value="string:MAU">MAMUJU</option><option label="MADIUN" value="string:MDN">MADIUN</option><option label="MEDAN" value="string:MED">MEDAN</option><option label="MERAUKE" value="string:MEE">MERAUKE</option><option label="MEULABOH" value="string:MEH">MEULABOH</option><option label="MEMPAWAH" value="string:MEM">MEMPAWAH</option><option label="METRO" value="string:MEO">METRO</option><option label="MINAHASA" value="string:MIA">MINAHASA</option><option label="MAJENE" value="string:MJN">MAJENE</option><option label="MALANG" value="string:MLG">MALANG</option><option label="MOJOKERTO" value="string:MOJ">MOJOKERTO</option><option label="MARTAPURA" value="string:MTP">MARTAPURA</option><option label="MANATUTO" value="string:MTT">MANATUTO</option><option label="MUNGKID" value="string:MUD">MUNGKID</option><option label="MUARATEWE" value="string:MUE">MUARATEWE</option><option label="MUARA ENIM" value="string:MUM">MUARA ENIM</option><option label="MUARABULIAN" value="string:MUN">MUARABULIAN</option><option label="MUARABUNGO" value="string:MUO">MUARABUNGO</option><option label="NABIRE" value="string:NAE">NABIRE</option><option label="NGANJUK" value="string:NGA">NGANJUK</option><option label="NGAWI" value="string:NGW">NGAWI</option><option label="PALANGKARAYA" value="string:PAA">PALANGKARAYA</option><option label="PACITAN" value="string:PAC">PACITAN</option><option label="PADEGELANG" value="string:PAD">PADEGELANG</option><option label="PAMEKASAN" value="string:PAE">PAMEKASAN</option><option label="PAYAKUMBUH" value="string:PAH">PAYAKUMBUH</option><option label="PATI" value="string:PAI">PATI</option><option label="PALU" value="string:PAL">PALU</option><option label="PARIAMAN" value="string:PAM">PARIAMAN</option><option label="PADANG" value="string:PAN">PADANG</option><option label="PALOPO" value="string:POP">PALOPO</option><option label="PARE" value="string:PAR">PARE</option><option label="PADANG SIDEMPUAN" value="string:PAS">PADANG SIDEMPUAN</option><option label="PANGKALANBUN" value="string:PAU">PANGKALANBUN</option><option label="PEMALANG" value="string:PEG">PEMALANG</option><option label="PEMATANG SIANTAR" value="string:PEI">PEMATANG SIANTAR</option><option label="PEKALONGAN" value="string:PEK">PEKALONGAN</option><option label="PEKANBARU" value="string:PEU">PEKANBARU</option><option label="PAGARALAM" value="string:PGA">PAGARALAM</option><option label="PALEMBANG" value="string:PGE">PALEMBANG</option><option label="PINRANG" value="string:PIG">PINRANG</option><option label="PELAIHARI" value="string:PLH">PELAIHARI</option><option label="PANGKAJENE" value="string:PNE">PANGKAJENE</option><option label="PANGKALPINANG-BANGKA" value="string:PNG">PANGKALPINANG-BANGKA</option><option label="PAINAN" value="string:PNN">PAINAN</option><option label="PONOROGO" value="string:POG">PONOROGO</option><option label="POLEWALI" value="string:POL">POLEWALI</option><option label="PONTIANAK" value="string:PON">PONTIANAK</option><option label="POSO" value="string:POS">POSO</option><option label="PRAYA" value="string:PRA">PRAYA</option><option label="PRABUMULIH" value="string:PRI">PRABUMULIH</option><option label="PROBOLINGGO" value="string:PRO">PROBOLINGGO</option><option label="PARE-PARE" value="string:PRR">PARE-PARE</option><option label="PASURUAN" value="string:PSR">PASURUAN</option><option label="PURWAKARTA" value="string:PUA">PURWAKARTA</option><option label="PURWODADI" value="string:PUI">PURWODADI</option><option label="PURWOKERTO" value="string:PUK">PURWOKERTO</option><option label="PURWOREJO" value="string:PUO">PURWOREJO</option><option label="PURBOLINGGO" value="string:PUR">PURBOLINGGO</option><option label="PUTUSSIBAU" value="string:PUU">PUTUSSIBAU</option><option label="RABA" value="string:RAB">RABA</option><option label="RANGKASBITUNG" value="string:RAG">RANGKASBITUNG</option><option label="RAHA" value="string:RAH">RAHA</option><option label="RANTAU" value="string:RAU">RANTAU</option><option label="RENGAT" value="string:REA">RENGAT</option><option label="REMBANG" value="string:REG">REMBANG</option><option label="RANTAUPRAPAT" value="string:RTT">RANTAUPRAPAT</option><option label="RUTENG" value="string:RUT">RUTENG</option><option label="SALATIGA" value="string:SAA">SALATIGA</option><option label="SAMARINDA" value="string:SAD">SAMARINDA</option><option label="SAME" value="string:SAE">SAME</option><option label="SABANG" value="string:SAG">SABANG</option><option label="SAWAH LUNTO" value="string:SAO">SAWAH LUNTO</option><option label="SAMPIT" value="string:SAT">SAMPIT</option><option label="SAUI" value="string:SAU">SAUI</option><option label="SUBANG" value="string:SBG">SUBANG</option><option label="SIDOARJO" value="string:SDJ">SIDOARJO</option><option label="SEMARANG" value="string:SEA">SEMARANG</option><option label="SERANG" value="string:SEG">SERANG</option><option label="SERUI" value="string:SEI">SERUI</option><option label="SELONG" value="string:SEL">SELONG</option><option label="SENGKANG" value="string:SEN">SENGKANG</option><option label="SEKAYU" value="string:SEY">SEKAYU</option><option label="SINGARAJA" value="string:SIA">SINGARAJA</option><option label="SIBOLGA" value="string:SIB">SIBOLGA</option><option label="SIDENRENG" value="string:SID">SIDENRENG</option><option label="SIDIKALANG" value="string:SIG">SIDIKALANG</option><option label="SIGLI" value="string:SII">SIGLI</option><option label="SINJAI" value="string:SIJ">SINJAI</option><option label="SINTANG" value="string:SIN">SINTANG</option><option label="SITUBONDO" value="string:SIT">SITUBONDO</option><option label="SINGKAWANG" value="string:SIW">SINGKAWANG</option><option label="SLAWI" value="string:SLA">SLAWI</option><option label="SLEMAN" value="string:SLE">SLEMAN</option><option label="SAMPANG" value="string:SMP">SAMPANG</option><option label="SANGGAU" value="string:SNG">SANGGAU</option><option label="SORONG" value="string:SOG">SORONG</option><option label="SOLOK" value="string:SOK">SOLOK</option><option label="SOLO" value="string:SOL">SOLO</option><option label="SRAGEN" value="string:SRA">SRAGEN</option><option label="SURABAYA" value="string:SRB">SURABAYA</option><option label="SURAKARTA" value="string:SUA">SURAKARTA</option><option label="SUMBAWA BESAR" value="string:SUB">SUMBAWA BESAR</option><option label="SUMENEP" value="string:SUE">SUMENEP</option><option label="SUMEDANG" value="string:SUG">SUMEDANG</option><option label="SUNGAIPENUH" value="string:SUH">SUNGAIPENUH</option><option label="SUKABUMI" value="string:SUI">SUKABUMI</option><option label="SUKOHARJO" value="string:SUK">SUKOHARJO</option><option label="SUMBER" value="string:SUM">SUMBER</option><option label="SUNGGUMINASA" value="string:SUN">SUNGGUMINASA</option><option label="SUNGAILIAT" value="string:SUT">SUNGAILIAT</option><option label="TANGERANG" value="string:TAA">TANGERANG</option><option label="TANJUNG JABUNG" value="string:TAG">TANJUNG JABUNG</option><option label="TAHUNA" value="string:TAH">TAHUNA</option><option label="TANJUNG BALAI" value="string:TAI">TANJUNG BALAI</option><option label="TANJUNG KARANG" value="string:TAJ">TANJUNG KARANG</option><option label="TASIK MALAYA" value="string:TAM">TASIK MALAYA</option><option label="TAKENGON" value="string:TAN">TAKENGON</option><option label="TAPAKTUAN" value="string:TAP">TAPAKTUAN</option><option label="TARAKAN" value="string:TAR">TARAKAN</option><option label="TARUTUNG" value="string:TAU">TARUTUNG</option><option label="TEBINGTINGGI" value="string:TBT">TEBINGTINGGI</option><option label="TEGAL" value="string:TEA">TEGAL</option><option label="TELUK BETUNG" value="string:TEG">TELUK BETUNG</option><option label="TEMBILAHAN" value="string:TEI">TEMBILAHAN</option><option label="TEBANAN" value="string:TEN">TEBANAN</option><option label="TERNATE" value="string:TER">TERNATE</option><option label="TEMANGGUNG" value="string:TEU">TEMANGGUNG</option><option label="TANJUNGPANDAN" value="string:TJP">TANJUNGPANDAN</option><option label="TAKALAR" value="string:TKL">TAKALAR</option><option label="TANJUNG PINANG" value="string:TNP">TANJUNG PINANG</option><option label="TOLI-TOLI" value="string:TOI">TOLI-TOLI</option><option label="TONDANO" value="string:TON">TONDANO</option><option label="TRENGGALEK" value="string:TRE">TRENGGALEK</option><option label="TUAL" value="string:TUA">TUAL</option><option label="TUBAN" value="string:TUB">TUBAN</option><option label="TULUNG AGUNG" value="string:TUL">TULUNG AGUNG</option><option label="UJUNG PANDANG" value="string:UJU">UJUNG PANDANG</option><option label="UNGARAN" value="string:UNG">UNGARAN</option><option label="VIKEKE" value="string:VIK">VIKEKE</option><option label="WAMENA" value="string:WAA">WAMENA</option><option label="WATANSOPPENG" value="string:WAE">WATANSOPPENG</option><option label="WAINGAPU" value="string:WAI">WAINGAPU</option><option label="WATES" value="string:WAS">WATES</option><option label="WATAMPONE" value="string:WAT">WATAMPONE</option><option label="WONOGIRI" value="string:WOI">WONOGIRI</option><option label="WONOSARI" value="string:WON">WONOSARI</option><option label="WONOSOBO" value="string:WOO">WONOSOBO</option><option label="YOGYAKARTA" value="string:YOG">YOGYAKARTA</option><option label="TEREMPA" value="string:TRM">TEREMPA</option><option label="BELITUNG" value="string:BEL">BELITUNG</option><option label="KOTA BARU" value="string:KOT">KOTA BARU</option><option label="LEBAK" value="string:LB">LEBAK</option><option label="PAPUA" value="string:PAP">PAPUA</option><option label="BULELENG" value="string:BLL">BULELENG</option><option label="BADUNG" value="string:BDG">BADUNG</option><option label="KARANGASEM" value="string:KAS">KARANGASEM</option><option label="NUSA DUA" value="string:NUD">NUSA DUA</option><option label="LOMBOK BARAT" value="string:LOB">LOMBOK BARAT</option><option label="PURBALINGGA" value="string:PBL">PURBALINGGA</option><option label="MAKASSAR" value="string:MKS">MAKASSAR</option><option label="LOMBOK TENGAH" value="string:LOT">LOMBOK TENGAH</option><option label="ROKAN HILIR" value="string:RHR">ROKAN HILIR</option><option label="LOMBOK UTARA" value="string:LOU">LOMBOK UTARA</option><option label="LOMBOK TIMUR" value="string:LOR">LOMBOK TIMUR</option><option label="BANGKA SELATAN" value="string:BAS">BANGKA SELATAN</option><option label="NIAS" value="string:NIS">NIAS</option><option label="BONTANG" value="string:BON">BONTANG</option><option label="TABALONG" value="string:TBL">TABALONG</option><option label="KEPULAUAN RIAU" value="string:KRU">KEPULAUAN RIAU</option><option label="SUMBAWA BARAT" value="string:SBB">SUMBAWA BARAT</option><option label="DELI SERDANG" value="string:DSG">DELI SERDANG</option><option label="NUSA TENGGARA TIMUR" value="string:NTT">NUSA TENGGARA TIMUR</option><option label="KAPUAS" value="string:KAP">KAPUAS</option><option label="KUNINGAN" value="string:KUN">KUNINGAN</option><option label="SIMALUNGUN" value="string:SIM">SIMALUNGUN</option><option label="BANYUMAS" value="string:BMS">BANYUMAS</option><option label="TANAH BUMBU" value="string:THB">TANAH BUMBU</option><option label="KALIMANTAN" value="string:KAL">KALIMANTAN</option><option label="NEGARA" value="string:NEG">NEGARA</option><option label="GOWA" value="string:GOW">GOWA</option><option label="LUWU TIMUR" value="string:LUT">LUWU TIMUR</option><option label="PAMULANG" value="string:PMG">PAMULANG</option><option label="LANGKAT" value="string:LAN">LANGKAT</option><option label="MUNA" value="string:MUA">MUNA</option><option label="TANJUNG SELOR" value="string:TNS">TANJUNG SELOR</option><option label="KUBU RAYA" value="string:KBR">KUBU RAYA</option></select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <input type="number" ng-model="field.kodePos" class="form-control ng-pristine ng-untouched ng-valid-min ng-not-empty ng-valid ng-valid-required" placeholder="Kode Pos" min="0" oninput="validity.valid||(value='');" required="" style="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="text" ng-model="field.tempatLahir" class="form-control ng-pristine ng-untouched ng-not-empty ng-valid ng-valid-required" placeholder="tempat lahir" required="" style="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <div class="input-group mb-2 ">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">Tgl Lahir</div>
+                                        </div>
+                                        <input type="date" class="form-control ng-pristine ng-untouched ng-not-empty ng-valid ng-valid-required" ng-model="field.tanggalLahir" placeholder="Tanggal Lahir" required="" style="">
+                                    </div>
+                                </div>
+                             <!--   <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">+62</div>
+                                    </div>
+                                    <input type="number" ng-model="account.PhoneNo" class="form-control" min="0" placeholder="Nomor Telepon" required>
+                                </div>-->
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <select class="form-control ng-pristine ng-untouched ng-not-empty ng-valid ng-valid-required" id="recruitment" ng-model="field.agama" ng-options="res.IDAgama as res.Agama for res in listAgama" required="" style=""><option value="" class="">--Pilih agama--</option><option label="ISLAM" value="string:IS" selected="selected">ISLAM</option><option label="KRISTEN PROTESTAN" value="string:KP">KRISTEN PROTESTAN</option><option label="KRISTEN KATOLIK" value="string:KK">KRISTEN KATOLIK</option><option label="HINDU" value="string:HI">HINDU</option><option label="BUDHA" value="string:BU">BUDHA</option><option label="OTHER" value="string:OT">OTHER</option></select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <select class="form-control ng-pristine ng-untouched ng-not-empty ng-valid ng-valid-required" id="recruitment" ng-model="field.statusPernikahan" ng-options="res.MarriageStatusCode as res.StatusPernikahan for res in listStatusPerkawinan" required="" style=""><option value="" class="">--Pilih Status Pernikahan--</option><option label="SINGLE" value="string:S" selected="selected">SINGLE</option><option label="MARRIED" value="string:M">MARRIED</option></select>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <input type="number" ng-model="field.tinggiBadan" class="form-control ng-pristine ng-untouched ng-valid-min ng-not-empty ng-valid ng-valid-required" placeholder="tinggi Badan" min="0" oninput="validity.valid||(value='');" required="" style="">
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <input type="number" ng-model="field.beratBadan" class="form-control ng-pristine ng-untouched ng-valid-min ng-not-empty ng-valid ng-valid-required" placeholder="Berat Badan" min="0" oninput="validity.valid||(value='');" required="" style="">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <select class="form-control ng-pristine ng-not-empty ng-valid ng-valid-required ng-touched" id="recruitment" ng-model="field.bank" ng-options="res.BankCode as res.BankName for res in listBank" required="" style=""><option value="" class="">--Pilih bank--</option><option label="BANK EKSPOR INDONESIA" value="string:BF2">BANK EKSPOR INDONESIA</option><option label="BANK MANDIRI" value="string:BF3">BANK MANDIRI</option><option label="BANK BNI 46" value="string:BF4">BANK BNI 46</option><option label="BNI UUS" value="string:BF5">BNI UUS</option><option label="BANK DANAMON INDONESIA" value="string:BF6">BANK DANAMON INDONESIA</option><option label="BANK DANAMON SYARIAH" value="string:BF7">BANK DANAMON SYARIAH</option><option label="BANK PERMATA" value="string:BF8">BANK PERMATA</option><option label="BCA (BANK CENTRAL ASIA)" value="string:BF9">BCA (BANK CENTRAL ASIA)</option><option label="MAYBANK INDONESIA" value="string:BF10">MAYBANK INDONESIA</option><option label="BANK PANIN" value="string:BF11">BANK PANIN</option><option label="NIAGA" value="string:BF12" selected="selected">NIAGA</option><option label="BANK BUANA" value="string:BF13">BANK BUANA</option><option label="LIPPO" value="string:BF14">LIPPO</option><option label="OCBC NISP" value="string:BF15">OCBC NISP</option><option label="CITIBANK" value="string:BF16">CITIBANK</option><option label="CHASE" value="string:BF17">CHASE</option><option label="BOA" value="string:BF18">BOA</option><option label="BANK WINDU KENTJANA INTERNATIONAL" value="string:BF19">BANK WINDU KENTJANA INTERNATIONAL</option><option label="BANK ARTHA GRAHA" value="string:BF20">BANK ARTHA GRAHA</option><option label="HSBC" value="string:BF21">HSBC</option><option label="BOT" value="string:BF22">BOT</option><option label="BANK SUMITOMO" value="string:BF23">BANK SUMITOMO</option><option label="DBS" value="string:BF24">DBS</option><option label="RESONA PERDANIA" value="string:BF25">RESONA PERDANIA</option><option label="BANK MIZUHO" value="string:BF26">BANK MIZUHO</option><option label="STANDARD CHARTERED BANK" value="string:BF27">STANDARD CHARTERED BANK</option><option label="ABN AMRO" value="string:BF28">ABN AMRO</option><option label="BANK CAPITAL" value="string:BF29">BANK CAPITAL</option><option label="BNP PARIBAS" value="string:BF30">BNP PARIBAS</option><option label="UOB BUANA" value="string:BF31">UOB BUANA</option><option label="KEB INDONESIA" value="string:BF32">KEB INDONESIA</option><option label="ANZ PANIN" value="string:BF33">ANZ PANIN</option><option label="DEUTSCHE" value="string:BF34">DEUTSCHE</option><option label="BANK WOORI" value="string:BF35">BANK WOORI</option><option label="BANK OF CHINA" value="string:BF36">BANK OF CHINA</option><option label="BANK BUMI ARTA" value="string:BF37">BANK BUMI ARTA</option><option label="BANK EKONOMI" value="string:BF38">BANK EKONOMI</option><option label="BANK COMMONWEALTH" value="string:BF39">BANK COMMONWEALTH</option><option label="RABOBANK" value="string:BF40">RABOBANK</option><option label="BANK MUTIARA (D/H CENTURY)" value="string:BF41">BANK MUTIARA (D/H CENTURY)</option><option label="BANK MAYAPADA INTERNATIONAL" value="string:BF42">BANK MAYAPADA INTERNATIONAL</option><option label="BPD JABAR" value="string:BF43">BPD JABAR</option><option label="BANK DKI" value="string:BF44">BANK DKI</option><option label="BPD JATENG" value="string:BF45">BPD JATENG</option><option label="BPD JATIM UUS" value="string:BF46">BPD JATIM UUS</option><option label="BANK NAGARI" value="string:BF47">BANK NAGARI</option><option label="BPD SUMBAR" value="string:BF48">BPD SUMBAR</option><option label="BPD KALSEL UUS" value="string:BF49">BPD KALSEL UUS</option><option label="BPD KALBAR UUS" value="string:BF50">BPD KALBAR UUS</option><option label="BANK NUSANTARA PARAHYANGAN" value="string:BF51">BANK NUSANTARA PARAHYANGAN</option><option label="BANK SWADESI" value="string:BF52">BANK SWADESI</option><option label="BANK MUAMALAT" value="string:BF53">BANK MUAMALAT</option><option label="BANK MESTIKA" value="string:BF54">BANK MESTIKA</option><option label="BANK METRO EKPRESS" value="string:BF55">BANK METRO EKPRESS</option><option label="BANK SINAR MAS" value="string:BF56">BANK SINAR MAS</option><option label="BANK MASPION" value="string:BF57">BANK MASPION</option><option label="BANK GANESHA" value="string:BF58">BANK GANESHA</option><option label="ICBC" value="string:BF59">ICBC</option><option label="KESAWAN" value="string:BF60">KESAWAN</option><option label="BTN" value="string:BF61">BTN</option><option label="BANK HS 1906" value="string:BF62">BANK HS 1906</option><option label="BANK TABUNGAN PESIUNAN NEGARA" value="string:BF63">BANK TABUNGAN PESIUNAN NEGARA</option><option label="SYARIAH BRI" value="string:BF64">SYARIAH BRI</option><option label="BANK MEGA" value="string:BF65">BANK MEGA</option><option label="BANK BUKOPIN" value="string:BF66">BANK BUKOPIN</option><option label="SYARIAH MANDIRI" value="string:BF67">SYARIAH MANDIRI</option><option label="BANK BISNIS" value="string:BF68">BANK BISNIS</option><option label="BANK SRI PARTHA" value="string:BF69">BANK SRI PARTHA</option><option label="BANK JASA JAKARTA" value="string:BF70">BANK JASA JAKARTA</option><option label="BANK HANA" value="string:BF71">BANK HANA</option><option label="BANK MNC INTERNASIONAL" value="string:BF72">BANK MNC INTERNASIONAL</option><option label="BANK YUDHA BHAKTI" value="string:BF73">BANK YUDHA BHAKTI</option><option label="BANK MITRANIAGA" value="string:BF74">BANK MITRANIAGA</option><option label="BANK BRI AGRONIAGA" value="string:BF75">BANK BRI AGRONIAGA</option><option label="BANK INDOMONEX" value="string:BF76">BANK INDOMONEX</option><option label="BANK ROYAL" value="string:BF77">BANK ROYAL</option><option label="BANK NATIONALNOBU" value="string:BF78">BANK NATIONALNOBU</option><option label="SYARIAH MEGA" value="string:BF79">SYARIAH MEGA</option><option label="BANK INA" value="string:BF80">BANK INA</option><option label="PANIN SYARIAH" value="string:BF81">PANIN SYARIAH</option><option label="BANK PRIMA MASTER" value="string:BF82">BANK PRIMA MASTER</option><option label="SYARIAH BUKOPIN" value="string:BF83">SYARIAH BUKOPIN</option><option label="BANK SAHABAT SAMPOERNA" value="string:BF84">BANK SAHABAT SAMPOERNA</option><option label="BANK AKITA" value="string:BF85">BANK AKITA</option><option label="PT BANK DINAR INDONESIA" value="string:BF86">PT BANK DINAR INDONESIA</option><option label="LIMAN SLOMPRETAN SURABAYA" value="string:BF87">LIMAN SLOMPRETAN SURABAYA</option><option label="BANK ANGLOMAS" value="string:BF88">BANK ANGLOMAS</option><option label="BANK KESEJAHTERAAN EKONOMI" value="string:BF89">BANK KESEJAHTERAAN EKONOMI</option><option label="BANK UIB" value="string:BF90">BANK UIB</option><option label="BANK ARTOS" value="string:BF91">BANK ARTOS</option><option label="BANK PURBA DANARTA" value="string:BF92">BANK PURBA DANARTA</option><option label="BANK MULTIARTA SENTOSA" value="string:BF93">BANK MULTIARTA SENTOSA</option><option label="BANK MAYORA" value="string:BF94">BANK MAYORA</option><option label="BANK INDEX SELINDO" value="string:BF95">BANK INDEX SELINDO</option><option label="BPD BANTEN" value="string:BF96">BPD BANTEN</option><option label="CENTRATAMA NASIONAL BANK" value="string:BF97">CENTRATAMA NASIONAL BANK</option><option label="BANK FAMA" value="string:BF98">BANK FAMA</option><option label="BANK SINAR HARAPAN BALI" value="string:BF99">BANK SINAR HARAPAN BALI</option><option label="BANK VICTORIA" value="string:BF100">BANK VICTORIA</option><option label="BANK HARDA" value="string:BF101">BANK HARDA</option><option label="BANK AGRIS" value="string:BF102">BANK AGRIS</option><option label="MAYBANK" value="string:BF103">MAYBANK</option><option label="BANK OCBC" value="string:BF104">BANK OCBC</option><option label="BANK CHINATRUST" value="string:BF105">BANK CHINATRUST</option><option label="ARTAJASA" value="string:BF106">ARTAJASA</option><option label="KSEI" value="string:BF107">KSEI</option><option label="POS" value="string:BF108">POS</option><option label="BPD SUMUT" value="string:BF109">BPD SUMUT</option><option label="BPD KALTIM" value="string:BF110">BPD KALTIM</option><option label="BANK JATIM" value="string:BF111">BANK JATIM</option><option label="BPD NTB" value="string:BF112">BPD NTB</option><option label="BPD SULAWESI TENGGARA" value="string:BF113">BPD SULAWESI TENGGARA</option><option label="BANGKOK" value="string:BF114">BANGKOK</option><option label="BANGKOK" value="string:BF147">BANGKOK</option><option label="JP MORGAN" value="string:BF148">JP MORGAN</option><option label="DKI UUS" value="string:BF149">DKI UUS</option><option label="NAGARI UUS" value="string:BF150">NAGARI UUS</option><option label="BANK ANTAR DAERAH" value="string:BF115">BANK ANTAR DAERAH</option><option label="PERMATA SYARIAH" value="string:BF151">PERMATA SYARIAH</option><option label="UOB BUANA" value="string:BF152">UOB BUANA</option><option label="BANK VICTORIA SYARIAH" value="string:BF153">BANK VICTORIA SYARIAH</option><option label="BANK DIPO" value="string:BF116">BANK DIPO</option><option label="BANK JABAR BANTEN SYARIAH" value="string:BF117">BANK JABAR BANTEN SYARIAH</option><option label="HSBC SYARIAH" value="string:BF154">HSBC SYARIAH</option><option label="RBS" value="string:BF155">RBS</option><option label="IFI" value="string:BF156">IFI</option><option label="BANK OCBC" value="string:BF118">BANK OCBC</option><option label="BNP PARIBAS" value="string:BF157">BNP PARIBAS</option><option label="BCA SYARIAH" value="string:BF159">BCA SYARIAH</option><option label="BPD JATENG UUS" value="string:BF160">BPD JATENG UUS</option><option label="BANK SBI INDONESIA" value="string:BF119">BANK SBI INDONESIA</option><option label="BTPN SYARIAH" value="string:BF161">BTPN SYARIAH</option><option label="BII SYARIAH" value="string:BF120">BII SYARIAH</option><option label="ICBC INDONESIA (BANK HALIM)" value="string:BF162">ICBC INDONESIA (BANK HALIM)</option><option label="BPD ACEH" value="string:BF121">BPD ACEH</option><option label="BPD ACEH UUS" value="string:BF122">BPD ACEH UUS</option><option label="BPD BALI" value="string:BF123">BPD BALI</option><option label="PT BANK ACEH SYARIAH" value="string:BF124">PT BANK ACEH SYARIAH</option><option label="BPD BENGKULU" value="string:BF125">BPD BENGKULU</option><option label="BPD DIY" value="string:BF126">BPD DIY</option><option label="INDONESIA EXIM BANK" value="string:BF163">INDONESIA EXIM BANK</option><option label="BPD JAMBI" value="string:BF127">BPD JAMBI</option><option label="MAYBANK INDONESIA SYARIAH" value="string:BF164">MAYBANK INDONESIA SYARIAH</option><option label="BPD KALBAR" value="string:BF128">BPD KALBAR</option><option label="BPD KALSEL" value="string:BF129">BPD KALSEL</option><option label="BPD KALTENG" value="string:BF130">BPD KALTENG</option><option label="BPD KALTIM UUS" value="string:BF131">BPD KALTIM UUS</option><option label="BPD LAMPUNG" value="string:BF132">BPD LAMPUNG</option><option label="BPD MALUKU" value="string:BF133">BPD MALUKU</option><option label="BPD NTT" value="string:BF134">BPD NTT</option><option label="BPD PAPUA" value="string:BF135">BPD PAPUA</option><option label="BPD RIAU" value="string:BF136">BPD RIAU</option><option label="BPD SULAWESI TENGAH" value="string:BF137">BPD SULAWESI TENGAH</option><option label="BPD SULSEL" value="string:BF138">BPD SULSEL</option><option label="BPD SULUT" value="string:BF139">BPD SULUT</option><option label="BPD SUMSEL" value="string:BF140">BPD SUMSEL</option><option label="BPD SUMSEL UUS" value="string:BF141">BPD SUMSEL UUS</option><option label="BPD SUMUT UUS" value="string:BF142">BPD SUMUT UUS</option><option label="BTN SYARIAH" value="string:BF143">BTN SYARIAH</option><option label="BTPN" value="string:BF144">BTPN</option><option label="CNB KANTOR PUSAT" value="string:BF145">CNB KANTOR PUSAT</option><option label="DBS INDONESIA" value="string:BF146">DBS INDONESIA</option><option label="BANK RAKYAT INDONESIA (BRI)" value="string:BF1">BANK RAKYAT INDONESIA (BRI)</option></select>
+                                </div>
+                            </div>
+
+                            <label class="mt-4"><strong>Data Domisili</strong></label>
+                            <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input ng-pristine ng-untouched ng-valid ng-empty" ng-model="sameData" ng-checked="getSameData()" type="checkbox" name="remember"> Jika Data sama dengan data di KTP
+                                </label>
+                            </div>
+                            <div ng-show="domisiliForm" class="">
+                                <div class="form-group">
+                                    <input type="text" ng-model="fieldSama.alamat" class="form-control ng-pristine ng-untouched ng-valid ng-not-empty" placeholder="Alamat" style="">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-2">
+                                        <input type="number" ng-model="fieldSama.rt" class="form-control ng-pristine ng-untouched ng-valid-min ng-not-empty ng-valid ng-valid-required" placeholder="RT" min="0" oninput="validity.valid||(value='');" required="" style="">
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <input type="number" ng-model="fieldSama.rw" class="form-control ng-pristine ng-untouched ng-valid-min ng-not-empty ng-valid ng-valid-required" placeholder="RW" min="0" oninput="validity.valid||(value='');" required="" style="">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <select class="form-control ng-pristine ng-untouched ng-not-empty ng-valid ng-valid-required" id="recruitment" ng-model="fieldSama.provinsi" ng-options="res.ProvinceCode as res.ProvinceName for res in listProvince" ng-change="changeProvince()" required="" style=""><option value="" class="">Pilih Provinsi</option><option label="ACEH" value="string:AC">ACEH</option><option label="BALI" value="string:BA">BALI</option><option label="BANGKA BELITUNG" value="string:BL">BANGKA BELITUNG</option><option label="BANTEN" value="string:BT">BANTEN</option><option label="BENGKULU" value="string:BE">BENGKULU</option><option label="DKI JAKARTA" value="string:JKT">DKI JAKARTA</option><option label="IRIAN JAYA" value="string:IJ">IRIAN JAYA</option><option label="JAKARTA" value="string:JA">JAKARTA</option><option label="JAMBI" value="string:JM">JAMBI</option><option label="JAWA BARAT" value="string:WJ" selected="selected">JAWA BARAT</option><option label="JAWA TENGAH" value="string:CJ">JAWA TENGAH</option><option label="JAWA TIMUR" value="string:EJ">JAWA TIMUR</option><option label="KALIMANTAN BARAT" value="string:WK">KALIMANTAN BARAT</option><option label="KALIMANTAN SELATAN" value="string:SK">KALIMANTAN SELATAN</option><option label="KALIMANTAN TENGAH" value="string:CK">KALIMANTAN TENGAH</option><option label="KALIMANTAN TIMUR" value="string:EK">KALIMANTAN TIMUR</option><option label="KALIMANTAN UTARA" value="string:NK">KALIMANTAN UTARA</option><option label="LAMPUNG" value="string:LA">LAMPUNG</option><option label="MALUKU" value="string:MA">MALUKU</option><option label="NATUNA" value="string:NA">NATUNA</option><option label="NUSA TENGGARA BARAT" value="string:NB">NUSA TENGGARA BARAT</option><option label="NUSA TENGGARA TIMUR" value="string:NT">NUSA TENGGARA TIMUR</option><option label="RIAU" value="string:RI">RIAU</option><option label="SULAWESI SELATAN" value="string:SW">SULAWESI SELATAN</option><option label="SULAWESI TENGAH" value="string:CS">SULAWESI TENGAH</option><option label="SULAWESI TENGGARA" value="string:SE">SULAWESI TENGGARA</option><option label="SULAWESI UTARA" value="string:NW">SULAWESI UTARA</option><option label="SUMATERA BARAT" value="string:WS">SUMATERA BARAT</option><option label="SUMATERA SELATAN" value="string:SS">SUMATERA SELATAN</option><option label="SUMATRA UTARA" value="string:NS">SUMATRA UTARA</option><option label="TIMOR TIMUR" value="string:ET">TIMOR TIMUR</option><option label="YOGYAKARTA" value="string:YK">YOGYAKARTA</option></select>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <select class="form-control ng-pristine ng-untouched ng-not-empty ng-valid ng-valid-required" id="recruitment" ng-model="fieldSama.kota" ng-options="res.CityCode as res.Name for res in listCity" required="" style=""><option value="" class="">Pilih Kota</option><option label="JAKARTA BARAT" value="string:JKTB">JAKARTA BARAT</option><option label="AILEU" value="string:AIL">AILEU</option><option label="AINARO" value="string:AIN">AINARO</option><option label="AMBON" value="string:AMB">AMBON</option><option label="AMLAPURA/KARANG ASEM" value="string:AMM">AMLAPURA/KARANG ASEM</option><option label="ARGAMAKMUR" value="string:ARR">ARGAMAKMUR</option><option label="BATANG" value="string:BAA">BATANG</option><option label="BAU-BAU" value="string:BAB">BAU-BAU</option><option label="BANDAR LAMPUNG" value="string:BAD">BANDAR LAMPUNG</option><option label="BANTENG" value="string:BAE">BANTENG</option><option label="BANDUNG" value="string:BAG">BANDUNG</option><option label="BANDA ACEH" value="string:BAH">BANDA ACEH</option><option label="BATANGHARI" value="string:BAI">BATANGHARI</option><option label="BATURAJA" value="string:BAJ">BATURAJA</option><option label="BALIKPAPAN" value="string:BAK">BALIKPAPAN</option><option label="BANJARNEGARA" value="string:BAN">BANJARNEGARA</option><option label="BANGKO" value="string:BAO">BANGKO</option><option label="BARITO KUALA" value="string:BAR">BARITO KUALA</option><option label="BANTUL" value="string:BAT">BANTUL</option><option label="BANDURA" value="string:BAU">BANDURA</option><option label="BEKASI" value="string:BEI">BEKASI</option><option label="BENGKALIS" value="string:BEN">BENGKALIS</option><option label="BEKASI TIMUR" value="string:BET">BEKASI TIMUR</option><option label="BENGKULU" value="string:BEU">BENGKULU</option><option label="BINJAI" value="string:BIJ">BINJAI</option><option label="BIAK" value="string:BIK">BIAK</option><option label="BIMA" value="string:BIM">BIMA</option><option label="BANJARBARU" value="string:BJR">BANJARBARU</option><option label="BANGKALAN" value="string:BKL">BANGKALAN</option><option label="BANGKINANG" value="string:BKN">BANGKINANG</option><option label="BLITAR" value="string:BLI">BLITAR</option><option label="BULUKUMBA" value="string:BLM">BULUKUMBA</option><option label="BLORA" value="string:BLO">BLORA</option><option label="BANJARMASIN" value="string:BNJ">BANJARMASIN</option><option label="BANGLI" value="string:BNL">BANGLI</option><option label="BOYOLALI" value="string:BOI">BOYOLALI</option><option label="BOJONEGORO" value="string:BOO">BOJONEGORO</option><option label="BOGOR" value="string:BOR">BOGOR</option><option label="BONDOWOSO" value="string:BOW">BONDOWOSO</option><option label="BREBES" value="string:BRE">BREBES</option><option label="BARRU" value="string:BRR">BARRU</option><option label="BATAM" value="string:BTM">BATAM</option><option label="BATU" value="string:BTU">BATU</option><option label="BUKITTINGGI" value="string:BUK">BUKITTINGGI</option><option label="BUNTOK" value="string:BUN">BUNTOK</option><option label="BAUKAU" value="string:BUU">BAUKAU</option><option label="BANYUWANGI" value="string:BYW">BANYUWANGI</option><option label="CIBINONG" value="string:CIG">CIBINONG</option><option label="CIMAHI" value="string:CII">CIMAHI</option><option label="CIKAMPEK" value="string:CIK">CIKAMPEK</option><option label="CILACAP" value="string:CIL">CILACAP</option><option label="CILEGON" value="string:CIN">CILEGON</option><option label="CIREBON" value="string:CIO">CIREBON</option><option label="CIPUTAT" value="string:CIP">CIPUTAT</option><option label="CIANJUR" value="string:CIR">CIANJUR</option><option label="CIAMIS" value="string:CIS">CIAMIS</option><option label="CURUP" value="string:CUP">CURUP</option><option label="DEMAK" value="string:DEM">DEMAK</option><option label="DEPOK" value="string:DEO" selected="selected">DEPOK</option><option label="DENPASAR" value="string:DER">DENPASAR</option><option label="DILI" value="string:DII">DILI</option><option label="DOMPU" value="string:DOM">DOMPU</option><option label="DUMAI" value="string:DUI">DUMAI</option><option label="ENAROTELI" value="string:ENI">ENAROTELI</option><option label="ENREKANG" value="string:ENR">ENREKANG</option><option label="ERMERA" value="string:ERM">ERMERA</option><option label="DILI" value="string:ET">DILI</option><option label="FAK FAK" value="string:FAK">FAK FAK</option><option label="GARUT" value="string:GAT">GARUT</option><option label="GIANYAR" value="string:GIA">GIANYAR</option><option label="GORONTALO" value="string:GOR">GORONTALO</option><option label="GRESIK" value="string:GRE">GRESIK</option><option label="GUNUNG SITOLI" value="string:GUN">GUNUNG SITOLI</option><option label="INDRAMAYU" value="string:INU">INDRAMAYU</option><option label="JAYAPURA" value="string:JAA">JAYAPURA</option><option label="JAKARTA BARAT" value="string:JAB">JAKARTA BARAT</option><option label="JAMBI" value="string:JAI">JAMBI</option><option label="JANTHO" value="string:JAO">JANTHO</option><option label="JAKARTA PUSAT" value="string:JAP">JAKARTA PUSAT</option><option label="JAKARTA SELATAN" value="string:JAS">JAKARTA SELATAN</option><option label="JAKARTA TIMUR" value="string:JAT">JAKARTA TIMUR</option><option label="JAKARTA UTARA" value="string:JAU">JAKARTA UTARA</option><option label="JEPARA" value="string:JEA">JEPARA</option><option label="JEMBER" value="string:JEM">JEMBER</option><option label="JENEPONTO" value="string:JEN">JENEPONTO</option><option label="JOMBANG" value="string:JOM">JOMBANG</option><option label="KARANG ANYAR" value="string:KAA">KARANG ANYAR</option><option label="KARAWANG" value="string:KAG">KARAWANG</option><option label="KALIANDA" value="string:KAI">KALIANDA</option><option label="KABANJAHE" value="string:KAJ">KABANJAHE</option><option label="KANDANGAN" value="string:KAN">KANDANGAN</option><option label="KARANGANYAR" value="string:KAR">KARANGANYAR</option><option label="KEDIRI" value="string:KED">KEDIRI</option><option label="KENDARI" value="string:KEI">KENDARI</option><option label="KENDAL" value="string:KEL">KENDAL</option><option label="KEBUMEN" value="string:KEN">KEBUMEN</option><option label="KERTOSONO" value="string:KER">KERTOSONO</option><option label="KETAPANG" value="string:KET">KETAPANG</option><option label="KISARAN" value="string:KIS">KISARAN</option><option label="KLATEN" value="string:KLA">KLATEN</option><option label="KLUNGKUNG" value="string:KLU">KLUNGKUNG</option><option label="KOLAKA" value="string:KOA">KOLAKA</option><option label="KOTABUMI" value="string:KOI">KOTABUMI</option><option label="KOPANG" value="string:KOP">KOPANG</option><option label="KOTAMOBAGU" value="string:KOU">KOTAMOBAGU</option><option label="KUALAKAPUAS" value="string:KUA">KUALAKAPUAS</option><option label="KUDUS" value="string:KUD">KUDUS</option><option label="KUTACANE" value="string:KUE">KUTACANE</option><option label="KUALATUNGKOL" value="string:KUL">KUALATUNGKOL</option><option label="KUPANG" value="string:KUP">KUPANG</option><option label="KUTA" value="string:KUT">KUTA</option><option label="LANGSA" value="string:LAA">LANGSA</option><option label="LAHAT" value="string:LAH">LAHAT</option><option label="LAMONGAN" value="string:LAM">LAMONGAN</option><option label="LARANTUKA" value="string:LAU">LARANTUKA</option><option label="LAWANG" value="string:LAW">LAWANG</option><option label="LHOKSEUMAWE" value="string:LHE">LHOKSEUMAWE</option><option label="LIKISIA" value="string:LII">LIKISIA</option><option label="LIMBOTO" value="string:LIM">LIMBOTO</option><option label="LOS PALOS" value="string:LOS">LOS PALOS</option><option label="LUMAJANG" value="string:LUA">LUMAJANG</option><option label="LUBUKPAKAM" value="string:LUB">LUBUKPAKAM</option><option label="LUBUKLINGGAU" value="string:LUK">LUBUKLINGGAU</option><option label="LUWUK" value="string:LUW">LUWUK</option><option label="MANNA" value="string:MAA">MANNA</option><option label="MAGELANG" value="string:MAE">MAGELANG</option><option label="MAURO SINJUNJUNG" value="string:MAG">MAURO SINJUNJUNG</option><option label="MANOKWARI" value="string:MAI">MANOKWARI</option><option label="MAJALENGKA" value="string:MAJ">MAJALENGKA</option><option label="MAKALE" value="string:MAK">MAKALE</option><option label="MALIANA" value="string:MAL">MALIANA</option><option label="MATARAM" value="string:MAM">MATARAM</option><option label="MAGETAN" value="string:MAN">MAGETAN</option><option label="MANADO" value="string:MAO">MANADO</option><option label="MARABAHAN" value="string:MAR">MARABAHAN</option><option label="MAROS" value="string:MAS">MAROS</option><option label="MAMUJU" value="string:MAU">MAMUJU</option><option label="MADIUN" value="string:MDN">MADIUN</option><option label="MEDAN" value="string:MED">MEDAN</option><option label="MERAUKE" value="string:MEE">MERAUKE</option><option label="MEULABOH" value="string:MEH">MEULABOH</option><option label="MEMPAWAH" value="string:MEM">MEMPAWAH</option><option label="METRO" value="string:MEO">METRO</option><option label="MINAHASA" value="string:MIA">MINAHASA</option><option label="MAJENE" value="string:MJN">MAJENE</option><option label="MALANG" value="string:MLG">MALANG</option><option label="MOJOKERTO" value="string:MOJ">MOJOKERTO</option><option label="MARTAPURA" value="string:MTP">MARTAPURA</option><option label="MANATUTO" value="string:MTT">MANATUTO</option><option label="MUNGKID" value="string:MUD">MUNGKID</option><option label="MUARATEWE" value="string:MUE">MUARATEWE</option><option label="MUARA ENIM" value="string:MUM">MUARA ENIM</option><option label="MUARABULIAN" value="string:MUN">MUARABULIAN</option><option label="MUARABUNGO" value="string:MUO">MUARABUNGO</option><option label="NABIRE" value="string:NAE">NABIRE</option><option label="NGANJUK" value="string:NGA">NGANJUK</option><option label="NGAWI" value="string:NGW">NGAWI</option><option label="PALANGKARAYA" value="string:PAA">PALANGKARAYA</option><option label="PACITAN" value="string:PAC">PACITAN</option><option label="PADEGELANG" value="string:PAD">PADEGELANG</option><option label="PAMEKASAN" value="string:PAE">PAMEKASAN</option><option label="PAYAKUMBUH" value="string:PAH">PAYAKUMBUH</option><option label="PATI" value="string:PAI">PATI</option><option label="PALU" value="string:PAL">PALU</option><option label="PARIAMAN" value="string:PAM">PARIAMAN</option><option label="PADANG" value="string:PAN">PADANG</option><option label="PALOPO" value="string:POP">PALOPO</option><option label="PARE" value="string:PAR">PARE</option><option label="PADANG SIDEMPUAN" value="string:PAS">PADANG SIDEMPUAN</option><option label="PANGKALANBUN" value="string:PAU">PANGKALANBUN</option><option label="PEMALANG" value="string:PEG">PEMALANG</option><option label="PEMATANG SIANTAR" value="string:PEI">PEMATANG SIANTAR</option><option label="PEKALONGAN" value="string:PEK">PEKALONGAN</option><option label="PEKANBARU" value="string:PEU">PEKANBARU</option><option label="PAGARALAM" value="string:PGA">PAGARALAM</option><option label="PALEMBANG" value="string:PGE">PALEMBANG</option><option label="PINRANG" value="string:PIG">PINRANG</option><option label="PELAIHARI" value="string:PLH">PELAIHARI</option><option label="PANGKAJENE" value="string:PNE">PANGKAJENE</option><option label="PANGKALPINANG-BANGKA" value="string:PNG">PANGKALPINANG-BANGKA</option><option label="PAINAN" value="string:PNN">PAINAN</option><option label="PONOROGO" value="string:POG">PONOROGO</option><option label="POLEWALI" value="string:POL">POLEWALI</option><option label="PONTIANAK" value="string:PON">PONTIANAK</option><option label="POSO" value="string:POS">POSO</option><option label="PRAYA" value="string:PRA">PRAYA</option><option label="PRABUMULIH" value="string:PRI">PRABUMULIH</option><option label="PROBOLINGGO" value="string:PRO">PROBOLINGGO</option><option label="PARE-PARE" value="string:PRR">PARE-PARE</option><option label="PASURUAN" value="string:PSR">PASURUAN</option><option label="PURWAKARTA" value="string:PUA">PURWAKARTA</option><option label="PURWODADI" value="string:PUI">PURWODADI</option><option label="PURWOKERTO" value="string:PUK">PURWOKERTO</option><option label="PURWOREJO" value="string:PUO">PURWOREJO</option><option label="PURBOLINGGO" value="string:PUR">PURBOLINGGO</option><option label="PUTUSSIBAU" value="string:PUU">PUTUSSIBAU</option><option label="RABA" value="string:RAB">RABA</option><option label="RANGKASBITUNG" value="string:RAG">RANGKASBITUNG</option><option label="RAHA" value="string:RAH">RAHA</option><option label="RANTAU" value="string:RAU">RANTAU</option><option label="RENGAT" value="string:REA">RENGAT</option><option label="REMBANG" value="string:REG">REMBANG</option><option label="RANTAUPRAPAT" value="string:RTT">RANTAUPRAPAT</option><option label="RUTENG" value="string:RUT">RUTENG</option><option label="SALATIGA" value="string:SAA">SALATIGA</option><option label="SAMARINDA" value="string:SAD">SAMARINDA</option><option label="SAME" value="string:SAE">SAME</option><option label="SABANG" value="string:SAG">SABANG</option><option label="SAWAH LUNTO" value="string:SAO">SAWAH LUNTO</option><option label="SAMPIT" value="string:SAT">SAMPIT</option><option label="SAUI" value="string:SAU">SAUI</option><option label="SUBANG" value="string:SBG">SUBANG</option><option label="SIDOARJO" value="string:SDJ">SIDOARJO</option><option label="SEMARANG" value="string:SEA">SEMARANG</option><option label="SERANG" value="string:SEG">SERANG</option><option label="SERUI" value="string:SEI">SERUI</option><option label="SELONG" value="string:SEL">SELONG</option><option label="SENGKANG" value="string:SEN">SENGKANG</option><option label="SEKAYU" value="string:SEY">SEKAYU</option><option label="SINGARAJA" value="string:SIA">SINGARAJA</option><option label="SIBOLGA" value="string:SIB">SIBOLGA</option><option label="SIDENRENG" value="string:SID">SIDENRENG</option><option label="SIDIKALANG" value="string:SIG">SIDIKALANG</option><option label="SIGLI" value="string:SII">SIGLI</option><option label="SINJAI" value="string:SIJ">SINJAI</option><option label="SINTANG" value="string:SIN">SINTANG</option><option label="SITUBONDO" value="string:SIT">SITUBONDO</option><option label="SINGKAWANG" value="string:SIW">SINGKAWANG</option><option label="SLAWI" value="string:SLA">SLAWI</option><option label="SLEMAN" value="string:SLE">SLEMAN</option><option label="SAMPANG" value="string:SMP">SAMPANG</option><option label="SANGGAU" value="string:SNG">SANGGAU</option><option label="SORONG" value="string:SOG">SORONG</option><option label="SOLOK" value="string:SOK">SOLOK</option><option label="SOLO" value="string:SOL">SOLO</option><option label="SRAGEN" value="string:SRA">SRAGEN</option><option label="SURABAYA" value="string:SRB">SURABAYA</option><option label="SURAKARTA" value="string:SUA">SURAKARTA</option><option label="SUMBAWA BESAR" value="string:SUB">SUMBAWA BESAR</option><option label="SUMENEP" value="string:SUE">SUMENEP</option><option label="SUMEDANG" value="string:SUG">SUMEDANG</option><option label="SUNGAIPENUH" value="string:SUH">SUNGAIPENUH</option><option label="SUKABUMI" value="string:SUI">SUKABUMI</option><option label="SUKOHARJO" value="string:SUK">SUKOHARJO</option><option label="SUMBER" value="string:SUM">SUMBER</option><option label="SUNGGUMINASA" value="string:SUN">SUNGGUMINASA</option><option label="SUNGAILIAT" value="string:SUT">SUNGAILIAT</option><option label="TANGERANG" value="string:TAA">TANGERANG</option><option label="TANJUNG JABUNG" value="string:TAG">TANJUNG JABUNG</option><option label="TAHUNA" value="string:TAH">TAHUNA</option><option label="TANJUNG BALAI" value="string:TAI">TANJUNG BALAI</option><option label="TANJUNG KARANG" value="string:TAJ">TANJUNG KARANG</option><option label="TASIK MALAYA" value="string:TAM">TASIK MALAYA</option><option label="TAKENGON" value="string:TAN">TAKENGON</option><option label="TAPAKTUAN" value="string:TAP">TAPAKTUAN</option><option label="TARAKAN" value="string:TAR">TARAKAN</option><option label="TARUTUNG" value="string:TAU">TARUTUNG</option><option label="TEBINGTINGGI" value="string:TBT">TEBINGTINGGI</option><option label="TEGAL" value="string:TEA">TEGAL</option><option label="TELUK BETUNG" value="string:TEG">TELUK BETUNG</option><option label="TEMBILAHAN" value="string:TEI">TEMBILAHAN</option><option label="TEBANAN" value="string:TEN">TEBANAN</option><option label="TERNATE" value="string:TER">TERNATE</option><option label="TEMANGGUNG" value="string:TEU">TEMANGGUNG</option><option label="TANJUNGPANDAN" value="string:TJP">TANJUNGPANDAN</option><option label="TAKALAR" value="string:TKL">TAKALAR</option><option label="TANJUNG PINANG" value="string:TNP">TANJUNG PINANG</option><option label="TOLI-TOLI" value="string:TOI">TOLI-TOLI</option><option label="TONDANO" value="string:TON">TONDANO</option><option label="TRENGGALEK" value="string:TRE">TRENGGALEK</option><option label="TUAL" value="string:TUA">TUAL</option><option label="TUBAN" value="string:TUB">TUBAN</option><option label="TULUNG AGUNG" value="string:TUL">TULUNG AGUNG</option><option label="UJUNG PANDANG" value="string:UJU">UJUNG PANDANG</option><option label="UNGARAN" value="string:UNG">UNGARAN</option><option label="VIKEKE" value="string:VIK">VIKEKE</option><option label="WAMENA" value="string:WAA">WAMENA</option><option label="WATANSOPPENG" value="string:WAE">WATANSOPPENG</option><option label="WAINGAPU" value="string:WAI">WAINGAPU</option><option label="WATES" value="string:WAS">WATES</option><option label="WATAMPONE" value="string:WAT">WATAMPONE</option><option label="WONOGIRI" value="string:WOI">WONOGIRI</option><option label="WONOSARI" value="string:WON">WONOSARI</option><option label="WONOSOBO" value="string:WOO">WONOSOBO</option><option label="YOGYAKARTA" value="string:YOG">YOGYAKARTA</option><option label="TEREMPA" value="string:TRM">TEREMPA</option><option label="BELITUNG" value="string:BEL">BELITUNG</option><option label="KOTA BARU" value="string:KOT">KOTA BARU</option><option label="LEBAK" value="string:LB">LEBAK</option><option label="PAPUA" value="string:PAP">PAPUA</option><option label="BULELENG" value="string:BLL">BULELENG</option><option label="BADUNG" value="string:BDG">BADUNG</option><option label="KARANGASEM" value="string:KAS">KARANGASEM</option><option label="NUSA DUA" value="string:NUD">NUSA DUA</option><option label="LOMBOK BARAT" value="string:LOB">LOMBOK BARAT</option><option label="PURBALINGGA" value="string:PBL">PURBALINGGA</option><option label="MAKASSAR" value="string:MKS">MAKASSAR</option><option label="LOMBOK TENGAH" value="string:LOT">LOMBOK TENGAH</option><option label="ROKAN HILIR" value="string:RHR">ROKAN HILIR</option><option label="LOMBOK UTARA" value="string:LOU">LOMBOK UTARA</option><option label="LOMBOK TIMUR" value="string:LOR">LOMBOK TIMUR</option><option label="BANGKA SELATAN" value="string:BAS">BANGKA SELATAN</option><option label="NIAS" value="string:NIS">NIAS</option><option label="BONTANG" value="string:BON">BONTANG</option><option label="TABALONG" value="string:TBL">TABALONG</option><option label="KEPULAUAN RIAU" value="string:KRU">KEPULAUAN RIAU</option><option label="SUMBAWA BARAT" value="string:SBB">SUMBAWA BARAT</option><option label="DELI SERDANG" value="string:DSG">DELI SERDANG</option><option label="NUSA TENGGARA TIMUR" value="string:NTT">NUSA TENGGARA TIMUR</option><option label="KAPUAS" value="string:KAP">KAPUAS</option><option label="KUNINGAN" value="string:KUN">KUNINGAN</option><option label="SIMALUNGUN" value="string:SIM">SIMALUNGUN</option><option label="BANYUMAS" value="string:BMS">BANYUMAS</option><option label="TANAH BUMBU" value="string:THB">TANAH BUMBU</option><option label="KALIMANTAN" value="string:KAL">KALIMANTAN</option><option label="NEGARA" value="string:NEG">NEGARA</option><option label="GOWA" value="string:GOW">GOWA</option><option label="LUWU TIMUR" value="string:LUT">LUWU TIMUR</option><option label="PAMULANG" value="string:PMG">PAMULANG</option><option label="LANGKAT" value="string:LAN">LANGKAT</option><option label="MUNA" value="string:MUA">MUNA</option><option label="TANJUNG SELOR" value="string:TNS">TANJUNG SELOR</option><option label="KUBU RAYA" value="string:KBR">KUBU RAYA</option></select>
+                                    </div>
+                                </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <input type="number" ng-model="fieldSama.kodePos" class="form-control ng-pristine ng-untouched ng-valid-min ng-not-empty ng-valid ng-valid-required" placeholder="Kode Pos" min="0" oninput="validity.valid||(value='');" required="" style="">
+                                </div>
+                            </div>
+                               <!-- <div class="form-row">
+                                    <div class="form-group col-md-8">
+                                        <input name="NamaLengkap" type="text" ng-model="fieldSama.namaLengkap" class="form-control" placeholder="Nama Lengkap" required>
+                                        $1$<label style="color: red" ng-show="myForm.NamaLengkap.$error.required">*</label>#1#
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <select class="form-control" id="recruitment" ng-model="fieldSama.jenisKelamin" ng-options="res.GenderCode as res.Gender for res in listGender" required>
+                                            <option value="" selected="selected">Jenis Kelamin</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <input type="number" ng-model="fieldSama.kodePos" class="form-control" placeholder="Kode Pos" required>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <input type="text" ng-model="fieldSama.tempatLahir" class="form-control" placeholder="tempat lahir" required>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <div class="input-group mb-2 ">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">Tgl Lahir</div>
+                                            </div>
+                                            <input type="date" class="form-control" ng-model="fieldSama.tanggalLahir" placeholder="Tanggal Lahir" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <select class="form-control" id="recruitment" ng-model="fieldSama.agama" ng-options="res.IDAgama as res.Agama for res in listAgama" required>
+                                            <option value="" selected="selected">agama</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <select class="form-control" id="recruitment" ng-model="fieldSama.statusPernikahan" ng-options="res.MarriageStatusCode as res.StatusPernikahan for res in listStatusPerkawinan" required>
+                                            <option value="" selected="selected">statusPernikahan</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <input type="number" ng-model="fieldSama.tinggiBadan" class="form-control" placeholder="tinggi Badan" required>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <input type="number" ng-model="fieldSama.beratBadan" class="form-control" placeholder="Berat Badan" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <select class="form-control" id="recruitment" ng-model="fieldSama.bank" ng-options="res.BankCode as res.BankName for res in listBank" required>
+                                            <option value="" selected="selected">bank</option>
+                                        </select>
+                                    </div>
+                                </div>-->
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4 ml-auto">
+                                    <button ng-click="submitDataPribadi()" type="submit" class="btn-primary shadow-sm btn-blue btn-block">Simpan</button>
+                                    <!--ng-disabled="myForm.$invalid"-->
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div></section>
+    <section ui-view="footer"></section>
+
+
+    <!-- AngularJS core and dependencies (from CDN) -->
+    @*<script src="~/Content/assets/lib/angular/angular.js"></script>
+        <script src="~/Content/assets/lib/angular/angular-ui-router.js"></script>*@
+
+    <!-- AngularCSS library  -->
+    @*<script src="~/Content/assets/lib/angular/angular-animate.js"></script>
+        <script src="~/Content/assets/lib/angular/angular-sanitize.js"></script>
+        <script src="~/Content/assets/lib/angular-ui-bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+        <script src="~/Content/assets/lib/angular-menu/angular-hamburger-toggle.min.js"></script>
+        <script src="~/Content/assets/lib/angular-swiper/angular-ui-swiper.min.js"></script>
+        <script src="http://static.videogular.com/scripts/videogular/latest/videogular.js"></script>
+        <script src="http://static.videogular.com/scripts/controls/latest/vg-controls.js"></script>
+        <script src="http://static.videogular.com/scripts/overlay-play/latest/vg-overlay-play.js"></script>*@
+
+    <!-- Load app main script -->
+    <script src="~/ClientApp/app.js"></script>
+
+    <!-- directives -->
+    <script src="~/ClientApp/directives/directive.js"></script>
+
+    <!-- Load services -->
+    <script src="~/ClientApp/services/authInterceptorService.js"></script>
+    <script src="~/ClientApp/services/authService.js"></script>
+
+    @* sweet alert *@
+    <script src="~/Scripts/sweetalert2.all.js"></script>
+    <script src="~/ClientApp/services/swalAlert.js"></script>
+    <script src="~/ClientApp/services/pdfService.js"></script>
+    <script src="~/ClientApp/services/aesService.js"></script>
+    <!--script src="~/ClientApp/services/roleService.js"></script -->
+
+    <!-- Load controllers -->
+    @*<script src="~/ClientApp/controllers/rootCtrl.js"></script>*@
+@*    <script src="~/ClientApp/controllers/approvalFormController.js"></script>*@
+    <script src="~/ClientApp/controllers/recruitmentFormController.js"></script>
+    <script src="~/ClientApp/controllers/changePasswordController.js"></script>
+ @*   <script src="~/ClientApp/controllers/contactController.js"></script>*@
+    <script src="~/ClientApp/controllers/dashboardController.js"></script>
+@*    <script src="~/ClientApp/controllers/dashboardFameController.js"></script>
+    <script src="~/ClientApp/controllers/faqControlller.js"></script>*@
+    <script src="~/ClientApp/controllers/accountController.js"></script>
+    <script src="~/ClientApp/controllers/loginController.js"></script>
+    <script src="~/ClientApp/controllers/logoutController.js"></script>
+    <script src="~/ClientApp/controllers/menuCtrl.js"></script>
+ @*   <script src="~/ClientApp/controllers/profilingController.js"></script>*@
+    <script src="~/ClientApp/controllers/cityController.js"></script>
+    <script src="~/ClientApp/controllers/fileUploadController.js"></script>
+ @*   <script src="~/ClientApp/controllers/profilingAgentController.js"></script>
+    <script src="~/ClientApp/controllers/homePageController.js"></script>
+    <script src="~/ClientApp/controllers/CalendarCtrl.js"></script>
+    <script src="~/ClientApp/controllers/detailContactController.js"></script>
+    <script src="~/ClientApp/controllers/resultProfilingAgentController.js"></script>
+    <script src="~/ClientApp/controllers/messagesController.js"></script>
+    <script src="~/ClientApp/controllers/jadwalAajiCmsController.js"></script>
+    <script src="~/ClientApp/controllers/faqFrontController.js"></script>*@
+    <script src="~/ClientApp/controllers/bankController.js"></script>
+    <script src="~/ClientApp/controllers/countryController.js"></script>
+@*    <script src="~/ClientApp/controllers/hierarkiController.js"></script>
+    <script src="~/ClientApp/controllers/approvalRulesController.js"></script>
+    <script src="~/ClientApp/controllers/detailApprovalFormController.js"></script>
+    <script src="~/ClientApp/controllers/teamController.js"></script>
+    <script src="~/ClientApp/controllers/locationController.js"></script>
+    <script src="~/ClientApp/controllers/examLocationController.js"></script>*@
+    <script src="~/ClientApp/controllers/menuController.js"></script>
+@*    <script src="~/ClientApp/controllers/roleController.js"></script>
+    <script src="~/ClientApp/controllers/documentCheckController.js"></script>
+    <script src="~/ClientApp/controllers/documentCheckDetailController.js"></script>
+    <script src="~/ClientApp/controllers/pendingDocumentController.js"></script>*@
+    <script src="~/ClientApp/controllers/globalConfigurationController.js"></script>
+@*    <script src="~/ClientApp/controllers/profilingMatrixController.js"></script>
+    <script src="~/ClientApp/controllers/groupController.js"></script>
+    <script src="~/ClientApp/controllers/usergroupController.js"></script>
+    <script src="~/ClientApp/controllers/groupMenuController.js"></script>
+    <script src="~/ClientApp/controllers/provinceController.js"></script>*@
+@*    <script src="~/ClientApp/controllers/examResultController.js"></script>
+    <script src="~/ClientApp/controllers/agentActiveController.js"></script>
+    <script src="~/ClientApp/controllers/approvalAajiController.js"></script>
+    <script src="~/ClientApp/controllers/approvalTrackingController.js"></script>
+    <script src="~/ClientApp/controllers/roleHierarkiController.js"></script>
+    <script src="~/ClientApp/controllers/homePageCMSController.js"></script>*@
+    <script src="~/ClientApp/controllers/testPdfcontroller.js"></script>
+    <script src="~/ClientApp/controllers/versionCmsController.js"></script>
+    <script src="~/ClientApp/controllers/applicantStatusController.js"></script>
+@*    <script src="~/ClientApp/controllers/userRoleController.js"></script>
+    <script src="~/ClientApp/controllers/uploadCmsController.js"></script>
+    <script src="~/ClientApp/controllers/downloadController.js"></script>
+    <script src="~/ClientApp/controllers/amlController.js"></script>
+    <script src="~/ClientApp/controllers/googleController.js"></script>
+    <script src="~/ClientApp/controllers/aajiController.js"></script>
+    <script src="~/ClientApp/controllers/seminarController.js"></script>
+    <script src="~/ClientApp/controllers/seminarInvitationController.js"></script>*@
+    <script src="~/ClientApp/controllers/createAccountController.js"></script>
+    <script src="~/ClientApp/controllers/forgotPasswordController.js"></script>
+    <script src="~/ClientApp/controllers/changePasswordFromSettingController.js"></script>
+    <script src="~/ClientApp/controllers/rekrutmenDataPribadiController.js"></script> 
+    <script src="~/ClientApp/controllers/rekrutmenKontakController.js"></script> 
+    <script src="~/ClientApp/controllers/rekrutmenDataKeluargaController.js"></script> 
+    <script src="~/ClientApp/controllers/rekrutmenDataPendidikanController.js"></script> 
+    <script src="~/ClientApp/controllers/rekrutmenDataPekerjaanController.js"></script> 
+    <script src="~/ClientApp/controllers/rekrutmenDataDokumenController.js"></script> 
+    <script src="~/ClientApp/controllers/rekrutmenPsikotesMulaiController.js"></script> 
+    <script src="~/ClientApp/controllers/profileAccountController.js"></script> 
+    <script src="~/ClientApp/controllers/statusAplikasiController.js"></script> 
+    <script src="~/ClientApp/controllers/rekrutmenDashboardController.js"></script> 
+    <script src="~/ClientApp/controllers/rekrutmenDataPTKPController.js"></script> 
+    <script src="~/ClientApp/controllers/tentangSunlifeController.js"></script> 
+    <script src="~/ClientApp/controllers/rekrutmenPapikostikMulaiController.js"></script> 
+
+    
+
+
+<script src="../../../Scripts/jspdf.debug.js"></script>
+    <script src="../../../Scripts/dom-to-image.min.js"></script>
+</body>
+</html>
+<script>
+    $('.spinner').hide();
+    $(".OverlaySpinner").hide();
+    $(".OverlaySpinnerPdf").hide();
+</script>

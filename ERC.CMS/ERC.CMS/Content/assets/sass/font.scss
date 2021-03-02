@@ -1,0 +1,69 @@
+@import "../fonts/font-awesome/font-awesome.css";
+@font-face {
+  font-family: 'agenda-regular';
+  src:  url('../fonts/agenda-regular/agenda-regular.eot');
+  src:  url('../fonts/agenda-regular/agenda-regular.eot#iefix') format('embedded-opentype'),
+    url('../fonts/agenda-regular/agenda-regular.ttf') format('truetype'),
+    url('../fonts/agenda-regular/agenda-regular.woff') format('woff'),
+    url('../fonts/agenda-regular/agenda-regular.svg#agenda-regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'agenda-medium';
+  src:  url('../fonts/agenda-medium/agenda-medium.eot');
+  src:  url('../fonts/agenda-medium/agenda-medium.eot#iefix') format('embedded-opentype'),
+    url('../fonts/agenda-medium/agenda-medium.ttf') format('truetype'),
+    url('../fonts/agenda-medium/agenda-medium.woff') format('woff'),
+    url('../fonts/agenda-medium/agenda-medium.svg#agenda-medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'agenda-bold';
+  src:  url('../fonts/agenda-bold/agenda-bold.eot');
+  src:  url('../fonts/agenda-bold/agenda-bold.eot#iefix') format('embedded-opentype'),
+    url('../fonts/agenda-bold/agenda-bold.ttf') format('truetype'),
+    url('../fonts/agenda-bold/agenda-bold.woff') format('woff'),
+    url('../fonts/agenda-bold/agenda-bold.svg#agenda-bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'sunlife';
+  src:  url('../fonts/sunlife/sunlife.eot');
+  src:  url('../fonts/sunlife/sunlife.eot#iefix') format('embedded-opentype'),
+    url('../fonts/sunlife/sunlife.ttf') format('truetype'),
+    url('../fonts/sunlife/sunlife.woff') format('woff'),
+    url('../fonts/sunlife/sunlife.svg#sunlife') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'sunlife' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-sunlife:before {
+  content: "\e900";
+  font-size: 68px;
+  position: absolute;
+  width:120px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 7px;
+}

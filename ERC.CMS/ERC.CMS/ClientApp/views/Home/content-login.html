@@ -1,0 +1,57 @@
+<section>
+    <div class="d-md-flex h-md-100 align-items-center">
+        <div class="col-sm-60 p-0 bg-indigo h-md-100">
+            <img src="Content/assets/img/img-login.png" class="img-fluid img-login">
+        </div>
+        <div class="col-sm-40 p-0 bg-white h-md-100 loginarea">
+            <div class="d-md-flex align-items-center h-md-100 p-5 justify-content-center">
+                <form class="rounded" ng-submit="login()">
+                    <a href="#"><img src="Content/assets/img/sunlife-logo.svg" class="img-fluid logo"></a>
+                    <h2 class="text-center">Partnership Distribution</h2>
+                    <h3 class="mb-4 text-center">Digital Recruitment</h3>
+
+                    <div class="alert alert-danger alert-dismissible" ng-hide="true">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        Maaf User ID dan Password Anda tidak ditemukan
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" ng-style="myObj" class="form-control" ng-model="loginData.userName" id="loginName" placeholder="User ID" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control-password" ng-model="loginData.password" id="password-field" placeholder="Password" required>
+                        <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                    </div>
+
+                    <div class="row p-3">
+                        <div class="col-sm-8 f-sandi">
+                            <a href="#!/forgotPassword">Lupa Kata Sandi?</a>
+                        </div>
+                        <div class="col-sm-4 b-login">
+                            <button type="submit" ng-click="login()" class="btn btn-primary btn-block shadow-sm btn-blue">Masuk</button>
+                        </div>
+                    </div>
+
+                    <div class="f-login">
+                        <hr>
+                        <a href="#!/createAccount">Daftar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    $(".toggle-password").click(function () {
+
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+        } else {
+            input.attr("type", "password");
+        }
+    });
+</script>

@@ -1,0 +1,76 @@
+<header class="container-nav">
+    <div class="slnavbar">
+        <div class="slnavbar-left">
+            <div class="logo">
+                <a href="#!/account"><img src="Content/assets/img/logo-menu-white.png" class="img-responsive"></a>
+            </div>
+        </div>
+        <div class="slnavbar-right">
+            <div class="menu-profile menu-profile-cms">
+                <ul>
+                    <!--<li><a href="#"><i class="fa fa-refresh" aria-hidden="true"></i></a></li>-->
+                    <li class="menu-button-side">
+                        <a>
+                            <i class="fa fa-home" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <!--<li>
+                        <a href="#/login">
+                            <div class="notif" ng-show="displayNotif">
+                                <h6>{{totalInbox}}</h6>
+                            </div>
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </a>
+                    </li>-->
+                    <!--<li><a href="#!/addContact"><i class="fa  fa-user-plus" aria-hidden="true"></i></a></li>-->
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</header>
+<div class="burger-menu" style="display:none">
+    <hamburger-toggle state="tgState" class="hamburger-toggle"></hamburger-toggle>
+    <a class="navbar-brand"></a>
+</div>
+<nav class="side-menu" ng-controller="menuCtrl" >
+    <ul>
+        <li class="menu-button-side" ng-show="cekIsAllow('Upload')"><span><i class="fa fa-cloud-upload"></i></span><a>Upload</a></li>
+        <li class="menu-button-side" ng-show="cekIsAllow('Dokumen Cek')"><span><i class="fa fa-file-text"></i></span><a>Dokumen Cek</a></li>
+        <li class="menu-button-side" ng-show="cekIsAllow('Download')"><span><i class="fa fa-download"></i></span><a>Download</a></li>
+        <li class="menu-button-side" ng-show="cekIsAllow('Dokumen Status')"><span><i class="fa fa-download"></i></span><a>Dokumen Status</a></li>
+        <li class="menu-button-side" ng-show="cekIsAllow('User Role')"><span><i class="fa fa-user-circle-o"></i></span><a>User Role</a></li>
+        <li ng-controller="logoutController" ng-click="logOut()"><span><i class="fa fa-sign-out"></i></span><a>Keluar</a></li>
+        <!--<li class="menu-button-side"><span><i class="fa fa-cloud-upload"></i></span><a href="#!/location">upload</a></li>
+        <li class="menu-button-side"><span><i class="fa fa-file-text"></i></span><a href="#!/documentCheck">Dokumen cek</a></li>
+        <li class="menu-button-side"><span><i class="fa fa-download"></i></span><a href="#!/DownloadCms">Download</a></li>
+        <li class="menu-button-side"><span><i class="fa fa-user-circle-o"></i></span><a href="#!/UserRoleCms">user role</a></li>
+        <li ng-controller="logoutController"  ng-click="logOut()"><span><i class="fa fa-sign-out"></i></span><a href="#">keluar</a></li>-->
+    </ul>
+</nav>
+<div class="sidenav" style="overflow:scroll;" ng-controller="menuCtrl" ng-class="{open: tgState}">
+    <div class="side-menuList" ng-repeat="item in listLink">
+        <div class="icon-sidemenu">
+            <img src="">
+        </div>
+        <a menu-close class="sidemenu-row" ng-href="{{ item.Link }}"><p>{{ item.MenuName }}</p></a>
+    </div>
+    <div class="side-menuList" ng-controller="logoutController">
+        <a menu-close class="sidemenu-row" ng-click="logOut()"><p>Keluar</p></a>
+    </div>
+</div>
+
+<style>
+    .menu-profile ul li {
+     padding-right:12px;
+    }
+    .menu-profile ul li i{
+        font-size:46px;
+    }
+    .menu-profile ul li {
+        cursor : pointer;
+    }
+    .side-menu ul li {
+        cursor : pointer;
+    }
+</style>

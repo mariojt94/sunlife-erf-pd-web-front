@@ -1,0 +1,81 @@
+/* Profile */
+.bg-profile {
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/bg-setting.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 0;
+    opacity:0.5
+}
+.profile-detil {
+  text-align:center;
+  padding:30px 20px 0px 20px;
+  width:50%;
+  margin:auto;
+}
+.profile-detil .circle {
+  border-radius:50%;
+  background:rgba(255,255,255,0.5);
+  width:90px;
+  height:90px;
+  margin:auto;
+  text-align:center;
+}
+.profile-detil .circle i {
+  font-size:45px;
+  color:$blue90;
+  margin:20px auto;
+}
+.profile-detil h2 {
+  font-size:26px;
+  color:$blue90;
+}
+.profile-detil p {
+  font-size:18px;
+  color:$blue90;
+}
+.profile-detil p.last-login {
+    color: #424242;
+    font-size: 14px;
+}
+.setting-title {
+  margin:20px auto;
+  text-align:center;
+  width:50%;
+}
+.setting-title h2 {
+  font-size: 37px;
+  color: #1a4e59;
+  margin: 0px auto;
+  border-top: 1px solid #1a4e59;
+  border-left: none;
+  border-bottom: 1px solid #1a4e59;
+  border-right: none;
+  padding: 10px 0px;
+}
+.change-password {
+
+}
+.change-password-wrap {
+  padding:30px;
+  background:rgba(255,255,255,0.5)
+
+}
+.change-password p {
+  text-align:center;
+  font-size:18px;
+  color:$blue90;
+  margin:10px auto;
+}
+.setting-title form {
+  text-align:left;
+  font-size:16px;
+  color:$blue100;
+}

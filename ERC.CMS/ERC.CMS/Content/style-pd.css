@@ -1,0 +1,54 @@
+.slnavbar {
+  border-top:3px solid rgb(234, 171, 0);
+}
+.sl-title {
+  background: rgba(253, 231, 173, 0.97);
+}
+ul.sl-sidenav li a:hover {
+background:#f77400;
+color:#fff!important;
+}
+ul.sl-sidenav li.active {
+  background:#f77400;
+}
+ul.sl-sidenav li a:hover {
+background:#f77400;
+}
+.menu-profile ul li {
+  border-left-color:rgb(234, 171, 0);
+}
+.menu-profile ul li a {
+  color:rgb(234, 171, 0);
+}
+.menu-profile ul li i {
+  color:rgb(234, 171, 0);
+}
+ul.sl-sidenav li a span.icon-sunlife {
+  color:#003946;
+}
+ul.sl-sidenav li a:hover span.icon-sunlife  {
+  color:#003946;
+}
+.bg-dashboard {
+  background-image:url(../Content/Images/bg-dashboard-pd.jpg);
+  opacity: 0.4;
+}
+.sidenav {
+  background:#eaab00;
+}
+.content-title {
+  background:url(../Content/Images/pd-ribbon.png) no-repeat top center;
+}
+ul.sl-sidenav li a p, ul.sl-sidenav li a i {
+  color:#003946;
+}
+
+ul.sl-sidenav li.active a p, ul.sl-sidenav li.active a i {
+  color:#fff;
+}
+ul.sl-sidenav li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.avatar i,.dashboard-join,.content-left h2,.content-right h2 {
+  color:#003946;
+}

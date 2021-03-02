@@ -1,0 +1,62 @@
+Candidate ID : 2089
+======================= Pertanyaan =======================
+ID: 41 - Pertanyaan: Kemampuan komunikasi - ID Jawaban: 90
+===== Jawaban =====
+ID: 87 - Description: Kurang lancar dalam berbicara, tampak tidak percaya diri - Point: 1
+ID: 88 - Description: Lancar dalam berbicara, tapi masih ragu-ragu dalam berpendapat - Point: 2
+ID: 89 - Description: Lancar dalam berbicara, dan dapat meyakinkan lawan bicara - Point: 3
+ID: 90 - Description: Lancar dan aktif dalam berbicara, meyakinkan dalam berpendapat dan menyenangkan - Point: 4
+ID: 42 - Pertanyaan: Kemampuan Interpersonal - ID Jawaban: 94
+===== Jawaban =====
+ID: 91 - Description: Pemalu, kurang percayadiri, dan tidak berani untuk menjalin hubungan dengan orang lain - Point: 1
+ID: 92 - Description: Harus ada inisiatif dari orang lain untuk bisa bereaksi, terkadang sulit memulai hubungan di awal, namun jika sudah berjalan hubungan akan sangat baik - Point: 2
+ID: 93 - Description: Luwes, dapat menjalin dan membina hubungan baik dan harmonis dengan orang lain - Point: 2
+ID: 94 - Description: Menjadi pusat pengaruh, sangat mudah bergaul dan beradaptasi dengan orang lain - Point: 4
+ID: 44 - Pertanyaan: Sikap dan Penampilan - ID Jawaban: 98
+===== Jawaban =====
+ID: 95 - Description: Rapi tetapi kurang memperhatikan sopan santun - Point: 1
+ID: 96 - Description: Rapi dan sopan, tetapi penampilan tidak formal (small casual) - Point: 2
+ID: 97 - Description: Rapi, sopan dan penampilan yang formal (business like) - Point: 3
+ID: 98 - Description: Terlihat menarik dan rapi, penampilan formal (business like) dan sopan - Point: 4
+ID: 45 - Pertanyaan: Kedisiplinan  Diri - ID Jawaban: 102
+===== Jawaban =====
+ID: 99 - Description: Tidak komitmen terhadap waktu dan janji yang sudah dibuat - Point: 1
+ID: 100 - Description: Memenuhi janji yang sudah dibuat namun datang terlambat dari waktu yang disepakati - Point: 2
+ID: 101 - Description: Komitmen terhadap waktu dan janji yang sudah dibuat, datang tepat waktu - Point: 3
+ID: 102 - Description: Komitmen terhadap waktu dan janji yang sudah dibuat, hadir sebelum waktu yang ditentukan - Point: 4
+ID: 46 - Pertanyaan: Mentalitas Pemenang - ID Jawaban: 106
+===== Jawaban =====
+ID: 103 - Description: Belum pernah berkompetisi dalam hal apapun dan tidak memiliki keinginan untuk bersaing dengan orang lain - Point: 1
+ID: 104 - Description: Memiliki keinginan untuk menang dalam suatu kompetisi, dan pernah ikut kompetisi tetapi belum pernah menang - Point: 2
+ID: 105 - Description: Pernah memenangkan kompetisi dan kejuaraan tertentu dan pernah meraih penghargaan - Point: 3
+ID: 106 - Description: Selalu ingin jadi pemenang dan juara dalam segala hal dan sering meraih penghargaan - Point: 4
+ID: 47 - Pertanyaan: Jiwa Kewirausahaan - ID Jawaban: 110
+===== Jawaban =====
+ID: 107 - Description: Lebih senang menjadi karyawan dan mendapat penghasilan tetap - Point: 1
+ID: 108 - Description: Tertarik jika ada kesempatan untuk mencari sumber pendapatan lain selain penghasilan tetap - Point: 2
+ID: 109 - Description: Punya keinginan yang besar untuk memiliki usaha sendiri, namun masih menunggu waktu yang tepat - Point: 2
+ID: 110 - Description: Sekarang sudah memiliki bisnis sendiri atau dalam tahap membangun bisnis sendiri - Point: 4
+ID: 48 - Pertanyaan: Pengembangan Pribadi dan Profesional - ID Jawaban: 114
+===== Jawaban =====
+ID: 111 - Description: Merasa cukup dengan keterampilan yang ada dan keinginan untuk maju rendah - Point: 1
+ID: 112 - Description: Mau menambah ilmu dan keterampilan jika ada orang lain yang memberikan dukungan - Point: 2
+ID: 113 - Description: Menambah ilmu dan keterampilan jika pada saat dibutuhkan dalam suatu tugas atau pekerjaan - Point: 3
+ID: 114 - Description: Haus ilmu dan selalu ingin menambah ilmunya dengan hal-hal baru, suka berbagi ilmu kepada orang lain - Point: 4
+ID: 49 - Pertanyaan: Kontak / Aktivitas Sosial - ID Jawaban: 118
+===== Jawaban =====
+ID: 115 - Description: Introvert, dan lebih nyaman bergaul dengan orang-orang dekat - Point: 1
+ID: 116 - Description: Pernah bergabung dalam suatu organisasi sosial - Point: 2
+ID: 117 - Description: Memiliki jaringan yang luas dan kontak sosial yang memiliki potensi untuk dijadikan klien - Point: 3
+ID: 118 - Description: Memiliki database klien didapat dari pekerjaan dan jaringan bisnis yang sebelumnya - Point: 4
+ID: 50 - Pertanyaan: Alat Transportasi - ID Jawaban: 122
+===== Jawaban =====
+ID: 119 - Description: Tidak memiliki transportasi pribadi - Point: 1
+ID: 120 - Description: Menggunakan kendaraan umum - Point: 1
+ID: 121 - Description: Memiliki sepeda motor - Point: 3
+ID: 122 - Description: Memiliki mobil dinas / pribadi - Point: 4
+ID: 51 - Pertanyaan: Segmentasi Pasar Calon Prospek / bulan (Rp) - ID Jawaban: 126
+===== Jawaban =====
+ID: 123 - Description: < Rp 3 juta - Point: 1
+ID: 124 - Description: Rp 3 - 5 juta - Point: 2
+ID: 125 - Description: Rp 5 - 7 juta - Point: 3
+ID: 126 - Description: > Rp 7 juta - Point: 4

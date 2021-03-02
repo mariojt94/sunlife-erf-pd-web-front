@@ -1,0 +1,67 @@
+<section>
+  <div class="d-md-flex h-md-100 align-items-center">
+    <div class="col-sm-60 p-0 bg-indigo h-md-100">
+      <img src="Content/assets/img/img-create.png" class="img-fluid  img-login">
+    </div>
+    <div class="col-sm-40 p-0 bg-white h-md-100 loginarea">
+          <div class="rounded  my-0 mx-auto">
+              <a href="#"><img src="Content/assets/img/sunlife-logo.svg" class="img-fluid logo"></a>
+              <form class="f-create">
+                  <h3 class="mb-4 text-center">Create Your Account</h3>
+                  <div class="form-group">
+                      <input type="text" id="namaDepan" ng-model="account.NamaDepan" class="form-control" placeholder="Nama Depan" required>
+                  </div>
+                  <div class="form-group">
+                      <input type="text" id="namaBelakang" ng-model="account.NamaBelakang" class="form-control" placeholder="Nama Belakang" required>
+                  </div>
+                  <div class="form-group">
+                      <input type="email" id="email" ng-model="account.Email" class="form-control" placeholder="Alamat Email" required>
+                  </div>
+                  <div class="form-group">
+                      <div class="input-group mb-2">
+                          <div class="input-group-prepend">
+                              <div class="input-group-text">+62</div>
+                          </div>
+                          <input type="number" id="telp" ng-model="account.PhoneNo" class="form-control" min="0" ng-keyup="hapusNol()" placeholder="Nomor Telepon" required>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <select class="form-control" ng-model="account.SourceCandidate" ng-options="res.RefCode as res.RefName for res in listRecruitmentSource" id="recruitment">
+                          <option value="" selected="selected">--Pilih Recruitment Source--</option>
+                      </select>
+
+                  </div>
+                  <div class="form-group">
+                      <input type="password" ng-model="account.Password" class="form-control-password" id="password" placeholder="Kata Sandi" required>
+                      <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                  </div>
+                  <div class="form-group">
+                      <input type="password" ng-model="account.RePassword" class="form-control-password" id="repassword" placeholder="Konfirmasi Kata Sandi" required>
+                      <span toggle="#repassword" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                  </div>
+                  <div class="form-group form-check">
+                      <label class="form-check-label">
+                          <input class="form-check-input" type="checkbox" name="remember" ng-model="SyaratKetentuan" required /> Saya Setuju dan mengetahui bahwa data yang saya isi sudah benar, dan telah membaca <a href="https://erecruitmentpd.sunrecruit-app.com/ERFPDFiles/syarat.pdf" target="_blank">syarat & ketentuan</a> yang berlaku.
+                      </label>
+                  </div>
+                  <div class="form-group row p-3">
+                      <button class="btn btn-primary shadow-sm btn-secondary col-4" onclick="window.location.href = '#';">Batal</button>
+                      <button type="submit" ng-click="ok(account);submitted = true;" class="btn-primary shadow-sm btn-blue col-4 ml-auto">Buat Account</button>
+                  </div>
+              </form>
+          </div>
+    </div>
+  </div>
+</section>
+
+<script>
+    $(".toggle-password").click(function () {
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+        } else {
+            input.attr("type", "password");
+        }
+    });
+</script>

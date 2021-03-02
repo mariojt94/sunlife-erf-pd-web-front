@@ -1,0 +1,73 @@
+.btn-blue{
+	background:$dark-blue !important;
+	border:solid 1px $dark-blue !important;
+	border-radius:10px !important;
+	font-weight: bold !important;
+	height:42px !important;
+}
+.btn-red{
+	background:$light-red !important;
+	border:solid 1px $light-red !important;
+	border-radius:10px !important;
+	font-weight: bold !important;
+	height:42px !important;
+}.btn-secondary{
+	background:$white !important;
+	border:solid 1px $dark-blue !important;
+	border-radius:10px !important;
+	font-weight: bold !important;
+	height:42px !important;
+	color:$dark-blue !important;
+}
+.btn-dokumen{
+	background:$ijo !important;
+	border:solid 1px $ijo !important;
+	border-radius:10px !important;
+	font-weight: bold !important;
+	height:42px !important;
+	color:$white !important;
+}
+.btn-data{
+	background:$light-yellow !important;
+	border:solid 1px $light-yellow !important;
+	border-radius:10px !important;
+	font-weight: bold !important;
+	height:32px !important;
+	color:$white !important;
+}
+
+.form-group{
+	span{
+		border-radius:10px;
+		color:$gray;
+		font-weight: bold;
+	}
+}
+.form-control{
+	height:42px;
+	border-radius:10px;
+	input:placeholder{font-style: normal !important;}
+}
+.alert-danger {
+    color: $red;
+    background-color: $white;
+    border-color: $red;
+}
+.form-control.f-danger{
+	border-color: $red;
+}
+
+.erf-menu a{
+	color:$dark-blue;
+}
+.erf-menu a.menu-aktif{
+	color: $light-yellow !important;
+}
+.erf-menu a:hover{
+	color:light-yellow !important;
+	cursor:pointer;
+}
+.erf-nomor{	
+    position: absolute;
+    left: -5px;
+}

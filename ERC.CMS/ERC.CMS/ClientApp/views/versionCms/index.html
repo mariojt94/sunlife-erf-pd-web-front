@@ -1,0 +1,95 @@
+﻿<div class="content-container">
+        <div class="modal-demo">
+            <div class="sl-title">
+                <h2>Master Version</h2>
+            </div>
+
+            <div class="general-layoutfixed-container">
+                <div class="general-layoutfixed">
+                    <!--Pop Up Master usergroup-->
+                    <script type="text/ng-template" id="versionContent.html">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Update Version</h4>
+                            <p></p>
+                        </div>
+                        <div class="modal-body">
+                            <form name="formSubmit">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Version</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" ng-model="$ctrl.data.Version" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Description</label>
+                                        <div class="col-md-10">
+                                            <input class="form-control" ng-model="$ctrl.data.Description" readonly />
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="form-group">
+                                <button class="btn btn-primary" ng-disabled="formSubmit.$invalid" ng-click="$ctrl.ok($ctrl.data)">Save</button>
+                                <button class="btn btn-danger" id="cancelBtn" ng-click="$ctrl.cancel()">Batal</button>
+                            </div>
+                        </div>
+                    </script>
+                    <!--End Pop Up -->
+                    <!--Primary Grid-->
+                    <!--    di hide yay-->
+                    <div class="col-md-12" style="display:none">
+                        <div class="form-horizontal col-md-6">
+                            <div class="form-group">
+                                <label for="loginName1">LoginName</label>
+
+                                <input type="text" ng-model="filterOptions.loginname" class="form-control">
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="groupName">GroupName</label>
+
+                                <input type="text" ng-model="filterOptions.groupname" class="form-control">
+
+                            </div>
+                            <div class="form-group" style="height: auto">
+                                <div class="col-md-14">
+                                    <button class="btn btn-primary" id="SearchBtn" ng-click="search(filterOptions.loginname,filterOptions.groupname)" style="display: inline-block">Pencarian</button>
+                                    <button class="btn btn-danger" id="ClearBtn" ng-click="clearFilter(10,1)" style="display: inline-block">Hapus Pencarian</button>
+                                    <button class="btn btn-success" id="CreateBtn" ng-click="openpopup()" style="display: inline-block">Tambah Data</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="gridStyle" ng-grid="gridOptions"></div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+<style>
+    .gridStyle {
+        border: 1px solid rgb(212,212,212);
+        width: 100%;
+        height: 410px;
+    }
+
+    .modal-dialog {
+        width: 1000px;
+        height: 700px;
+    }
+
+    .app-modal-window .modal-dialog {
+        width: 500px;
+        height: 200px;
+    }
+
+    /*Hide Page Size Di Grid*/
+    .ngRowCountPicker {
+        display: none;
+    }
+</style>

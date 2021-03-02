@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A8951222-D1D3-4F99-8C8B-8D7F190A0DFC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ERC.Repository</RootNamespace>
+    <AssemblyName>ERC.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net45\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enum\Enums.cs" />
+    <Compile Include="Helper\GenerateCode.cs" />
+    <Compile Include="Helper\ReadExcelHelper.cs" />
+    <Compile Include="Helper\NotificationHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AesRepository.cs" />
+    <Compile Include="Repository\ApprovalFormRepository.cs" />
+    <Compile Include="Repository\BankRepository.cs" />
+    <Compile Include="Repository\CandidateStatusRepository.cs" />
+    <Compile Include="Repository\GenerateToken.cs" />
+    <Compile Include="Repository\PsikotesRepository.cs" />
+    <Compile Include="Repository\RecruiterRepository.cs" />
+    <Compile Include="Repository\DocumentCheckRepository.cs" />
+    <Compile Include="Repository\GlobalConfigurationRepository.cs" />
+    <Compile Include="Repository\ProvinceRepository.cs" />
+    <Compile Include="Repository\MenuRepository.cs" />
+    <Compile Include="Repository\CityRepository.cs" />
+    <Compile Include="Repository\ContactRepository.cs" />
+    <Compile Include="Repository\FileUploadRepository.cs" />
+    <Compile Include="Repository\HomePageRepository.cs" />
+    <Compile Include="Repository\ProfilingRepository.cs" />
+    <Compile Include="Repository\RecruitmentFormRepository.cs" />
+    <Compile Include="Repository\VersionRepository.cs" />
+    <Compile Include="Repository\BaseRepository.cs" />
+    <Compile Include="Repository\OAuthClientRepository.cs" />
+    <Compile Include="Repository\RijndaelManagedEncryption.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
+    <Compile Include="Resources\DbQuery.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbQuery.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\DbQueryPortal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbQueryPortal.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\AajiViewModel.cs" />
+    <Compile Include="ViewModel\AgamaViewModel.cs" />
+    <Compile Include="ViewModel\AgenProfileListViewModel.cs" />
+    <Compile Include="ViewModel\CandidateDataDomisiliViewModel.cs" />
+    <Compile Include="ViewModel\CandidateDataKondisiKesehatanViewModel.cs" />
+    <Compile Include="ViewModel\CandidateDataPribadiViewModel.cs" />
+    <Compile Include="ViewModel\CandidateDataPTKPViewModel.cs" />
+    <Compile Include="ViewModel\SavePapikostikViewModel.cs" />
+    <Compile Include="ViewModel\CandidatePapikostikSoalViewModel.cs" />
+    <Compile Include="ViewModel\CandidatePapikostikJawabanViewModel.cs" />
+    <Compile Include="ViewModel\DataPTKPViewModel.cs" />
+    <Compile Include="ViewModel\CandidateDataRekeningNpwpViewModel.cs" />
+    <Compile Include="ViewModel\CandidateDataRencanaPribadiViewModel.cs" />
+    <Compile Include="ViewModel\CandidateDokumenViewModel.cs" />
+    <Compile Include="ViewModel\CandidateExperienceAllVIewModel.cs" />
+    <Compile Include="ViewModel\CandidateExperienceBahasaViewModel.cs" />
+    <Compile Include="ViewModel\CandidateExperienceKeahlianViewModel.cs" />
+    <Compile Include="ViewModel\CandidateExperienceMinatViewModel.cs" />
+    <Compile Include="ViewModel\CandidateExperienceOrganisasiViewModel.cs" />
+    <Compile Include="ViewModel\CandidateExperiencePekerjaanViewModel.cs" />
+    <Compile Include="ViewModel\CandidateExperiencePlusMinViewModel.cs" />
+    <Compile Include="ViewModel\CandidateExperiencePrestasiViewModel.cs" />
+    <Compile Include="ViewModel\CandidateKeluargaViewModel.cs" />
+    <Compile Include="ViewModel\CandidateKontakDaruratViewModel.cs" />
+    <Compile Include="ViewModel\CandidatePendidikanViewModel.cs" />
+    <Compile Include="ViewModel\CandidatePsikotesHasilViewModel.cs" />
+    <Compile Include="ViewModel\CandidatePsikotesJawabanViewModel.cs" />
+    <Compile Include="ViewModel\ChartViewModel.cs" />
+    <Compile Include="ViewModel\ApprovalFormViewModel.cs" />
+    <Compile Include="ViewModel\ApprovalRuleViewModel.cs" />
+    <Compile Include="ViewModel\AvailableLevelViewModel.cs" />
+    <Compile Include="ViewModel\BankViewModel.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\CandidateAajiExamViewModel.cs" />
+    <Compile Include="ViewModel\CandidateDependencyViewModel.cs" />
+    <Compile Include="ViewModel\CandidateEducationViewModel.cs" />
+    <Compile Include="ViewModel\CandidateExperienceViewModel.cs" />
+    <Compile Include="ViewModel\CandidateFileViewModel.cs" />
+    <Compile Include="ViewModel\CandidateLevelViewModel.cs" />
+    <Compile Include="ViewModel\CandidateManagerVewModel.cs" />
+    <Compile Include="ViewModel\CandidateReferenceViewModel.cs" />
+    <Compile Include="ViewModel\CandidateRelationInInsuranceViewModel.cs" />
+    <Compile Include="ViewModel\CandidateScoreViewModel.cs" />
+    <Compile Include="ViewModel\CandidateStatusViewModel.cs" />
+    <Compile Include="ViewModel\CandidateViewModel.cs" />
+    <Compile Include="ViewModel\CandidateWorkExperienceInInsuranceViewModel.cs" />
+    <Compile Include="ViewModel\DataTrainingViewModel.cs" />
+    <Compile Include="ViewModel\ForgotPasswordViewModel.cs" />
+    <Compile Include="ViewModel\FormRecruitmntForPDFViewModel.cs" />
+    <Compile Include="ViewModel\GenderViewModel.cs" />
+    <Compile Include="ViewModel\GetContactViewModel.cs" />
+    <Compile Include="ViewModel\JadwalInterviewViewModel.cs" />
+    <Compile Include="ViewModel\LevelPendidikanViewModel.cs" />
+    <Compile Include="ViewModel\LokasiDanHirarkiViewModelPDF.cs" />
+    <Compile Include="ViewModel\PDFCandidateDataKeluargaViewModel.cs" />
+    <Compile Include="ViewModel\PDFCandidateDataKondisiKesehatanViewModel.cs" />
+    <Compile Include="ViewModel\PDFCandidateDataPribadiViewModel.cs" />
+    <Compile Include="ViewModel\PDFCandidateDataRencanaPribadiViewModel.cs" />
+    <Compile Include="ViewModel\PDFCandidateExperienceBahasaViewModel.cs" />
+    <Compile Include="ViewModel\PDFCandidateExperienceKeahlianViewModel.cs" />
+    <Compile Include="ViewModel\PDFCandidateExperienceMinatViewModel.cs" />
+    <Compile Include="ViewModel\PDFCandidateExperienceOrganisasiViewModel.cs" />
+    <Compile Include="ViewModel\PDFCandidateExperiencePekerjaanViewModel.cs" />
+    <Compile Include="ViewModel\PDFCandidateExperiencePlusMinViewModel.cs" />
+    <Compile Include="ViewModel\PDFCandidateExperiencePrestasiViewModel.cs" />
+    <Compile Include="ViewModel\PDFCandidateKontakDaruratViewModel.cs" />
+    <Compile Include="ViewModel\PDFCandidatePendidikanViewModel.cs" />
+    <Compile Include="ViewModel\PDFCandidateViewModel.cs" />
+    <Compile Include="ViewModel\ProfillingViewModel.cs" />
+    <Compile Include="ViewModel\RecruiterViewModel.cs" />
+    <Compile Include="ViewModel\ReferralCodeViewModel.cs" />
+    <Compile Include="ViewModel\CityViewModel.cs" />
+    <Compile Include="ViewModel\DashboardActivitySummaryViewModel.cs" />
+    <Compile Include="ViewModel\DashboardCandidateProcessViewModel.cs" />
+    <Compile Include="ViewModel\DetailApprovalFormViewModel.cs" />
+    <Compile Include="ViewModel\DetailContactViewModel.cs" />
+    <Compile Include="ViewModel\DocumentCheckViewModel.cs" />
+    <Compile Include="ViewModel\ExamLocationViewModel.cs" />
+    <Compile Include="ViewModel\GlobalConfigurationViewModel.cs" />
+    <Compile Include="ViewModel\GroupViewModel.cs" />
+    <Compile Include="ViewModel\HierarkiViewModel.cs" />
+    <Compile Include="ViewModel\CountryViewModel.cs" />
+    <Compile Include="ViewModel\ListExamResult.cs" />
+    <Compile Include="ViewModel\ProvinceViewModel.cs" />
+    <Compile Include="ViewModel\MenuViewModel.cs" />
+    <Compile Include="ViewModel\PTKPViewModel.cs" />
+    <Compile Include="ViewModel\QuickContactViewModel.cs" />
+    <Compile Include="ViewModel\FileUploadViewModel.cs" />
+    <Compile Include="ViewModel\OAuthClientViewModel.cs" />
+    <Compile Include="ViewModel\ProcessResult.cs" />
+    <Compile Include="ViewModel\ProcessResultT.cs" />
+    <Compile Include="ViewModel\ProfilingOptionViewModel.cs" />
+    <Compile Include="ViewModel\ProfilingQuetionViewModel.cs" />
+    <Compile Include="ViewModel\RecruiterAgentCodeViewModel.cs" />
+    <Compile Include="ViewModel\ResultTestViewModel.cs" />
+    <Compile Include="ViewModel\RoleMenuViewModel.cs" />
+    <Compile Include="ViewModel\RoleViewModel.cs" />
+    <Compile Include="ViewModel\LocationViewModel.cs" />
+    <Compile Include="ViewModel\StatusPerkawinanViewModel.cs" />
+    <Compile Include="ViewModel\SunAdvisorResult.cs" />
+    <Compile Include="ViewModel\TotalRecruitmentViewModel.cs" />
+    <Compile Include="ViewModel\UserViewModel.cs" />
+    <Compile Include="ViewModel\VersionViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\DbQuery.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>DbQuery.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\DbQueryPortal.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DbQueryPortal.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

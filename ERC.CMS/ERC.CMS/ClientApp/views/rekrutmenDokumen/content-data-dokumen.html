@@ -1,0 +1,223 @@
+  <div class="col-12 p-0 mt-7">
+    <div class="card br0 shadow h-100">
+      <div class="card-body nav-card-fix p-0">
+        <div class="container no-pad">
+            <div class="form-row erf-menu pl-5 pr-5 pt-4 pb-0">
+                <a href="#!/data-pribadi" class="form-group col text-center img-nav-v2">
+                    <img src="Content/assets/img/ic-data-pribadi.svg" class="img-fluid menu-aktif">
+                    <br><label><strong>Data Pribadi</strong></label>
+                    <i ng-show="statusDataPribadi" class="m-done"></i>
+                </a>
+                <a href="#!/data-kontak" class="form-group col text-center img-nav-v2">
+                    <img src="Content/assets/img/ic-kontak.svg" class="img-fluid">
+                    <br><label><strong>Kontak</strong></label>
+                    <i ng-show="statusKontak" class="m-done"></i>
+                </a>
+                <a href="#!/data-keluarga" class="form-group col text-center img-nav-v2">
+                    <img src="Content/assets/img/ic-keluarga.svg" class="img-fluid">
+                    <br><label><strong>Data Keluarga</strong></label>
+                    <i ng-show="statusDataKeluarga" class="m-done"></i>
+                </a>
+                <a href="#!/data-pendidikan" class="form-group col text-center img-nav-v2">
+                    <img src="Content/assets/img/ic-pendidikan.svg" class="img-fluid">
+                    <br><label><strong>Pendidikan</strong></label>
+                    <i ng-show="statusDataPendidikan" class="m-done"></i>
+                </a>
+                <a href="#!/data-pekerjaan" class="form-group col text-center img-nav-v2">
+                    <img src="Content/assets/img/ic-pekerjaan.svg" class="img-fluid">
+                    <br><label><strong>Riwayat Pekerjaan</strong></label>
+                    <i ng-show="statusDataPekerjaan" class="m-done"></i>
+                </a>
+
+                <a href="#!/data-dokumen" class="form-group col text-center img-nav-v2 menu-aktif">
+                    <img src="Content/assets/img/ic-ak-dokumen.svg" class="img-fluid">
+                    <br><label><strong>Dokumen</strong></label>
+                    <!--<i class="m-error"></i>-->
+                </a>
+                <a href="#!/data-ptkp" class="form-group col text-center img-nav-v2">
+                    <img src="Content/assets/img/ic-ptkp.svg" class="img-fluid">
+                    <br><label><strong>PTKP</strong></label>
+                    <i ng-show="statusDataPtkp" class="m-done"></i>
+                </a>
+                <!--<a class="form-group col text-center img-nav-v2">
+                    <img src="Content/assets/img/ic-psikotes.svg" class="img-fluid" ng-click="ToPsikotes()">
+                    <br><label><strong>Psikotes</strong></label>
+                    <i ng-show="statusDataPsikotes" class="m-done"></i>
+                </a>-->
+                <a class="form-group col text-center img-nav-v2">
+                    <img src="Content/assets/img/ic-papikostick-1.svg" class="img-fluid" ng-click="ToPapikostik()">
+                    <br><label><strong>Papikostik</strong></label>
+                    <i ng-show="statusDataPapikostik" class="m-done"></i>
+                </a>
+                <a href="#!/data-review" class="form-group col text-center img-nav-v2">
+                    <img src="Content/assets/img/ic-review.svg" class="img-fluid">
+                    <br><label><strong>Review</strong></label>
+                    <i ng-show="statusDataReview" class="m-done"></i>
+                </a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid d-menu h-100 nopad-340px">
+      <div class="container h-100 nopad-340px">
+
+          <div class="row h-100">
+              <div class="col-12 mb-4 d-link" style="height:65%">
+                  <div class="card br10 shadow h-100">
+                      <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4"style="overflow-y: scroll;">
+	          		          	
+                          <form>
+                              <label><strong>Upload Dokumen</strong></label> 
+
+                              <div class="row mb-3">
+                                  <!--CV-->
+                                  <div class="col-sm-6">
+                                      <label class="d-flex justify-content-between">Upload CV  <i style="font-size:smaller; color:red;">Ukuran maksimal {{maxSize}} MB</i></label>
+                                      <div class="card updoc" >
+                                          <div class="card-body">
+                                              <div class="img-thumbnail mr-3" ng-repeat="item in stepsModelCV track by $index">
+                                                  <img class="img-fluid imgdoc" ng-src={{item}} ng-click="openCV($index)">
+
+                                                  <img class="img-delete" src="Content/assets/img/ic-delete.svg" ng-click="deleteImageCV($index)">
+                                              </div>
+                                              <label for="uploadCV" class="btn btn-warning button-icon d-flex align-items-center br10" style="cursor: pointer">
+                                                  <i class="fa fa-plus"></i>
+                                              </label>
+
+                                              <input type="file" class="select-file-hide" file-model="myFile" accept="image/*,application/pdf" id="uploadCV" onclick="this.value=null" onchange="angular.element(this).scope().imageUploadCV(event)" multiple required> <!--onchange="angular.element(this).scope().imageUploadCV(event)"-->
+                                              <!-- <a ng-click="uploadFile()" class="btn btn-warning button-icon d-flex align-items-center br10"><i class="fa fa-plus"></i></a>-->
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <!--IJAZAH-->
+                                  <div class="col-sm-6" id='ijazah'>
+                                      <label class="d-flex justify-content-between">Upload  Ijazah/Transkrip <i style="font-size:smaller; color:red;">Ukuran maksimal {{maxSize}} MB</i></label>
+                                      <div class="card updoc">
+                                          <div class="card-body">
+                                              <div class="img-thumbnail mr-3" ng-repeat="item in stepsModelIjazah track by $index">
+                                                  <img class="img-fluid imgdoc" ng-src={{item}} ng-click="openIjazah($index)">
+                                                  <img class="img-delete" src="Content/assets/img/ic-delete.svg" ng-click="deleteImageIjazah($index)">
+                                              </div>
+                                              <label for="uploadIjazah" class="btn btn-warning button-icon d-flex align-items-center br10" style="cursor: pointer">
+                                                  <i class="fa fa-plus"></i>
+                                              </label>
+                                              <input type="file" class="select-file-hide" file-model="myFile" accept="image/*,application/pdf" id="uploadIjazah" onclick="this.value=null" onchange="angular.element(this).scope().imageUploadIjazah(event)" multiple required>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="row mb-3">
+                                  <!--FOTO-->
+                                  <div class="col-sm-6">
+                                      <label class="d-flex justify-content-between">Upload Foto <i style="font-size:smaller; color:red;">Ukuran maksimal {{maxSize}} MB</i></label>
+                                      <div class="card updoc">
+                                          <div class="card-body">
+                                              <div class="img-thumbnail mr-3" ng-repeat="item in stepsModelFoto  track by $index">
+                                                  <img class="img-fluid imgdoc" ng-src={{item}} ng-click="openFoto($index)">
+                                                  <img class="img-delete" src="Content/assets/img/ic-delete.svg" ng-click="deleteImageFoto($index)">
+                                              </div>
+                                              <label for="uploadFoto" class="btn btn-warning button-icon d-flex align-items-center br10" style="cursor:pointer">
+                                                  <i class="fa fa-plus"></i>
+                                              </label>
+                                              <input type="file" class="select-file-hide" file-model="myFile" accept="image/*" id="uploadFoto" onclick="this.value=null" onchange="angular.element(this).scope().imageUploadFoto(event)" multiple required>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <!--KTP-->
+                                  <div class="col-sm-6">
+                                      <label class="d-flex justify-content-between">Upload KTP <i style="font-size:smaller; color:red;">Ukuran maksimal {{maxSize}} MB</i></label>
+                                      <div class="card updoc">
+                                          <div class="card-body">
+                                              <div class="img-thumbnail mr-3" ng-repeat="item in stepsModelKTP track by $index">
+                                                  <img class=" img-fluid imgdoc" ng-src={{item}} ng-click="openKTP($index)">
+                                                  <img class="img-delete" src="Content/assets/img/ic-delete.svg" ng-click="deleteImageKTP($index)">
+                                              </div>
+                                              <label for="uploadKtp" class="btn btn-warning button-icon d-flex align-items-center br10" style="cursor:pointer">
+                                                  <i class="fa fa-plus"></i>
+                                              </label>
+                                              <input type="file" class="select-file-hide" file-model="myFile" accept="image/*,application/pdf" id="uploadKtp" onclick="this.value=null" onchange="angular.element(this).scope().imageUploadKTP(event)" required>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="row mb-3">
+                                  <!--  REKENING-->
+                                  <div class="col-sm-6">
+                                      <label class="d-flex justify-content-between">Upload Rekening <i style="font-size:smaller; color:red;">Ukuran maksimal {{maxSize}} MB</i></label>
+                                      <div class="card updoc">
+                                          <div class="card-body">
+                                              <div class="img-thumbnail mr-3" ng-repeat="item in stepsModelRek track by $index">
+                                                  <img class="img-fluid imgdoc" ng-src={{item}} ng-click="openRek($index)">
+                                                  <img class="img-delete" src="Content/assets/img/ic-delete.svg" ng-click="deleteImageRek($index)">
+                                              </div>
+                                              <label for="uploadRekening" class="btn btn-warning button-icon d-flex align-items-center br10" style="cursor:pointer">
+                                                  <i class="fa fa-plus"></i>
+                                              </label>
+                                              <input type="file" class="select-file-hide" file-model="myFile" accept="image/*,application/pdf" id="uploadRekening" onclick="this.value=null" onchange="angular.element(this).scope().imageUploadRek(event)" multiple required>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <!--Dokumen NPWP-->
+                                  <div class="col-sm-6">
+                                      <label class="d-flex justify-content-between">Upload NPWP <i style="font-size:smaller; color:red;">Ukuran maksimal {{maxSize}} MB </i></label>
+                                      <div class="card updoc">
+                                          <div class="card-body">
+                                              <div class="img-thumbnail mr-3" ng-repeat="item in stepsModelNpwp track by $index">
+                                                  <img class="img-fluid imgdoc" ng-src={{item}} ng-click="openNpwp($index)">
+                                                  <img class="img-delete" src="Content/assets/img/ic-delete.svg" ng-click="deleteImageNpwp($index)">
+                                              </div>
+
+                                              <label for="uploadNpwp" class="btn btn-warning button-icon d-flex align-items-center br10" style="cursor: pointer">
+                                                  <i class="fa fa-plus"></i>
+                                              </label>
+                                              <input type="file" class="select-file-hide" file-model="myFile" accept="image/*,application/pdf" id="uploadNpwp" onclick="this.value=null" onchange="angular.element(this).scope().imageUploadNpwp(event)" required>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                    
+                              <div class="row mb-3">
+                                  <!--Dokumen lain-->
+                                  <div class="col-sm-6">
+                                      <label class="d-flex justify-content-between">Upload Dokumen Lainnya <i style="font-size:small; color:red;">Ukuran maksimal {{maxSize}} MB </i></label>
+                                      <div class="card updoc">
+                                          <div class="card-body">
+                                              <!--<div class="img-thumbnail mr-3" ng-repeat="item in lstSudahAda">
+                                                  <img class="img-fluid imgdoc" ng-src={{item}}>
+                                              </div>-->
+
+                                              <div class="img-thumbnail mr-3" ng-repeat="item in stepsModelLain track by $index">
+                                                  <img class="img-fluid imgdoc" ng-src={{item}} ng-click="openLain($index)">
+                                                  <img class="img-delete" src="Content/assets/img/ic-delete.svg" ng-click="deleteImageLain($index)">
+                                              </div>
+
+                                              <label for="uploadLain" class="btn btn-warning button-icon d-flex align-items-center br10" style="cursor: pointer">
+                                                  <i class="fa fa-plus"></i>
+                                              </label>
+                                              <input type="file" class="select-file-hide" file-model="myFile" accept="image/*,application/pdf" id="uploadLain" onclick="this.value=null" onchange="angular.element(this).scope().imageUploadLain(event)" multiple required>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </form>
+
+                          <div class="form-row mt-4">
+                              <div class="form-group col-md-4">
+                                  <button onclick="window.location.href='#!/data-pekerjaan';" type="submit" class="btn-secondary shadow-sm btn-blue btn-block">Kembali</button>
+                              </div>
+                              <div class="form-group col-md-4 ml-auto">
+                                  <button ng-click="uploadFile()" type="submit" class="btn-primary shadow-sm btn-blue btn-block">Simpan</button>
+                              </div>
+                          </div>
+
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+  </div>

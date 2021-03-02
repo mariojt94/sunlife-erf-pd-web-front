@@ -1,0 +1,128 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html ng-app="SunLifeApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>E-Recruitment</title>
+    
+    
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/css/ng-grid.css" rel="stylesheet" />
+    <link href="~/Content/css/fontawesome/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/css/style-sass.css" rel="stylesheet" />
+    <link href="~/Library/angular-menu/angular-hamburger-toggle.css" rel="stylesheet" />
+    <link href="~/Library/angular-swiper/angular-ui-swiper.css" rel="stylesheet" />
+
+    <!-- load calendar css-->
+    <link href="~/Content/css/calendar/fullcalendar.css" rel="stylesheet" />
+    <!--<link href="~/Content/css/calendar/calendarDemo.css" rel="stylesheet" />-->
+
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    @*<link ng-href="~/Content/style-{{layout}}.css" rel="stylesheet" />*@
+    @*<script src="~/Scripts/native/native.js"></script>*@
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-ui-router.min.js"></script>
+    <script src="~/Scripts/angular-base64.js"></script>
+    <script src="~/Scripts/angular-base64-upload.js"></script>
+    <script src="~/Scripts/angular-cookies.js"></script>
+    <script src="/Scripts/angular-animate.js"></script>
+    <script src="~/Scripts/angular-sanitize.js"></script>
+    <script src="~/Scripts/angular-local-storage.min.js"></script>
+    <script src="~/Scripts/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="~/Scripts/angular-filter.js"></script>
+    <script src="~/Scripts/ng-grid.js"></script>
+    <script src="~/Library/angular-css/angular-css.min.js"></script>
+    <script src="~/Library/angular-menu/angular-hamburger-toggle.min.js"></script>
+    <script src="~/Library/angular-swiper/angular-ui-swiper.min.js"></script>
+    <script src="~/Library/tinymce/tinymce.min.js"></script>
+    <script src="~/Library/angular-tinymce/tinymce.js"></script>
+    <!-- Load Char Js // Wildan -->
+    <script src="~/Scripts/chart/chart.js"></script>
+    <script src="~/Scripts/chart/angular-chart.js"></script>
+
+    <!-- load calendar js -->
+    <script src="~/Scripts/calendar/moment.js"></script>
+    <script src="~/Scripts/calendar/fullcalendar.js"></script>
+    <script src="~/Scripts/calendar/gcal.js"></script>
+    <script src="~/Scripts/calendar/calendar.js"></script>
+
+    <!-- load signature pad js -->
+    <script src="~/Scripts/signature_pad/js/signature_pad.js"></script>
+
+
+</head>
+<body>
+    <div ui-view>
+
+    </div>
+
+
+
+    <!-- Load app main script -->
+    <script src="~/ClientApp/app.js"></script>
+
+    <!-- directives -->
+    <script src="~/ClientApp/directives/directive.js"></script>
+
+    <!-- Load services -->
+    <script src="~/ClientApp/services/authInterceptorService.js"></script>
+    <script src="~/ClientApp/services/authService.js"></script>
+
+    <!-- Load controllers -->
+    @*<script src="~/ClientApp/controllers/rootCtrl.js"></script>*@
+    <script src="~/ClientApp/controllers/approvalFormController.js"></script>
+    <script src="~/ClientApp/controllers/recruitmentFormController.js"></script>
+    <script src="~/ClientApp/controllers/changePasswordController.js"></script>
+    <script src="~/ClientApp/controllers/profileController.js"></script>
+    <script src="~/ClientApp/controllers/contactController.js"></script>
+    <script src="~/ClientApp/controllers/dashboardController.js"></script>
+    <script src="~/ClientApp/controllers/dashboardFameController.js"></script>
+    <script src="~/ClientApp/controllers/faqControlller.js"></script>
+    <script src="~/ClientApp/controllers/accountController.js"></script>
+    <script src="~/ClientApp/controllers/loginController.js"></script>
+    <script src="~/ClientApp/controllers/logoutController.js"></script>
+    <script src="~/ClientApp/controllers/menuCtrl.js"></script>
+    <script src="~/ClientApp/controllers/profilingController.js"></script>
+    <script src="~/ClientApp/controllers/cityController.js"></script>
+    <script src="~/ClientApp/controllers/fileUploadController.js"></script>
+    <script src="~/ClientApp/controllers/profilingAgentController.js"></script>
+    <script src="~/ClientApp/controllers/homePageController.js"></script>
+    <script src="~/ClientApp/controllers/CalendarCtrl.js"></script>
+    <script src="~/ClientApp/controllers/detailContactController.js"></script>
+    <script src="~/ClientApp/controllers/resultProfilingAgentController.js"></script>
+    <script src="~/ClientApp/controllers/messagesController.js"></script>
+    <script src="~/ClientApp/controllers/jadwalAajiCmsController.js"></script>
+    <script src="~/ClientApp/controllers/faqFrontController.js"></script>
+    <script src="~/ClientApp/controllers/bankController.js"></script>
+    <script src="~/ClientApp/controllers/countryController.js"></script>
+    <script src="~/ClientApp/controllers/hierarkiController.js"></script>
+    <script src="~/ClientApp/controllers/approvalRulesController.js"></script>    
+    <script src="~/ClientApp/controllers/detailApprovalFormController.js"></script>
+    <script src="~/ClientApp/controllers/teamController.js"></script>
+    <script src="~/ClientApp/controllers/locationController.js"></script>
+    <script src="~/ClientApp/controllers/examLocationController.js"></script>
+    <script src="~/ClientApp/controllers/menuController.js"></script>
+    <script src="~/ClientApp/controllers/roleController.js"></script>
+    <script src="~/ClientApp/controllers/documentCheckController.js"></script>
+    <script src="~/ClientApp/controllers/documentCheckDetailController.js"></script>
+    <script src="~/ClientApp/controllers/pendingDocumentController.js"></script>
+    <script src="~/ClientApp/controllers/globalConfigurationController.js"></script>
+    <script src="~/ClientApp/controllers/profilingMatrixController.js"></script>
+    <script src="~/ClientApp/controllers/groupController.js"></script>
+    <script src="~/ClientApp/controllers/usergroupController.js"></script>
+    <script src="~/ClientApp/controllers/groupMenuController.js"></script>
+    <script src="~/ClientApp/controllers/provinceController.js"></script>
+    <script src="~/ClientApp/controllers/examResultController.js"></script>
+    <script src="~/ClientApp/controllers/agentActiveController.js"></script>
+    <script src="~/ClientApp/controllers/approvalAajiController.js"></script>
+    <script src="~/ClientApp/controllers/approvalTrackingController.js"></script>
+
+    <!-- js signature -->
+    @*<script src="~/Scripts/signature_pad/js/signature_pad.js"></script>*@
+</body>
+</html>

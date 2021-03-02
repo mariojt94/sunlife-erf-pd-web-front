@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>ERF_PD.database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{ee0bb832-fcd6-45a9-9980-7ef503ed9b71}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>ERF_PD.database</RootNamespace>
+    <AssemblyName>ERF_PD.database</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\User Defined Types\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\AajiExam.sql" />
+    <Build Include="dbo\Tables\AajiExamDetail.sql" />
+    <Build Include="dbo\Tables\AajiStatus.sql" />
+    <Build Include="dbo\Tables\Account.sql" />
+    <Build Include="dbo\Tables\ActivityLog.sql" />
+    <Build Include="dbo\Tables\ApprovalHierarki.sql" />
+    <Build Include="dbo\Tables\ApprovalHierarkiManagement.sql" />
+    <Build Include="dbo\Tables\ApprovalList.sql" />
+    <Build Include="dbo\Tables\ApprovalRules.sql" />
+    <Build Include="dbo\Tables\Bank.sql" />
+    <Build Include="dbo\Tables\Candidate.sql" />
+    <Build Include="dbo\Tables\CandidateDependencies.sql" />
+    <Build Include="dbo\Tables\CandidateEducation.sql" />
+    <Build Include="dbo\Tables\CandidateExperience.sql" />
+    <Build Include="dbo\Tables\CandidateFile.sql" />
+    <Build Include="dbo\Tables\CandidateInformasiPribadi.sql" />
+    <Build Include="dbo\Tables\CandidateProfilingAnswer.sql" />
+    <Build Include="dbo\Tables\CandidateProfilingHeader.sql" />
+    <Build Include="dbo\Tables\CandidateProfilingOption.sql" />
+    <Build Include="dbo\Tables\CandidateReference.sql" />
+    <Build Include="dbo\Tables\CandidateRelationInInsurance.sql" />
+    <Build Include="dbo\Tables\CandidateStatus.sql" />
+    <Build Include="dbo\Tables\CandidateWorkExperienceInInsurance.sql" />
+    <Build Include="dbo\Tables\City.sql" />
+    <Build Include="dbo\Tables\Country.sql" />
+    <Build Include="dbo\Tables\DocumentCheck.sql" />
+    <Build Include="dbo\Tables\eLibrary.sql" />
+    <Build Include="dbo\Tables\eLibraryCategory.sql" />
+    <Build Include="dbo\Tables\eLibraryDocument.sql" />
+    <Build Include="dbo\Tables\eLibraryDocumentType.sql" />
+    <Build Include="dbo\Tables\ExamLocation.sql" />
+    <Build Include="dbo\Tables\Faq.sql" />
+    <Build Include="dbo\Tables\FileUpload.sql" />
+    <Build Include="dbo\Tables\GlobalConfiguration.sql" />
+    <Build Include="dbo\Tables\Group.sql" />
+    <Build Include="dbo\Tables\GroupLevel.sql" />
+    <Build Include="dbo\Tables\GroupMenu.sql" />
+    <Build Include="dbo\Tables\Inbox.sql" />
+    <Build Include="dbo\Tables\JadwalInterview.sql" />
+    <Build Include="dbo\Tables\Location.sql" />
+    <Build Include="dbo\Tables\LoginHistory.sql" />
+    <Build Include="dbo\Tables\Menu.sql" />
+    <Build Include="dbo\Tables\OAuthClient.sql" />
+    <Build Include="dbo\Tables\ProfilingMatrix.sql" />
+    <Build Include="dbo\Tables\ProfilingOption.sql" />
+    <Build Include="dbo\Tables\ProfilingQuestion.sql" />
+    <Build Include="dbo\Tables\Province.sql" />
+    <Build Include="dbo\Tables\PTKP.sql" />
+    <Build Include="dbo\Tables\ResultExam.sql" />
+    <Build Include="dbo\Tables\Role.sql" />
+    <Build Include="dbo\Tables\RoleHierarki.sql" />
+    <Build Include="dbo\Tables\seminar.sql" />
+    <Build Include="dbo\Tables\seminarDetail.sql" />
+    <Build Include="dbo\Tables\Team.sql" />
+    <Build Include="dbo\Tables\UserGroup.sql" />
+    <Build Include="dbo\Tables\Version.sql" />
+    <Build Include="dbo\Stored Procedures\GetCandidateManager.sql" />
+    <Build Include="dbo\Stored Procedures\GetContactDetail.sql" />
+    <Build Include="dbo\Stored Procedures\GetContactDetailold.sql" />
+    <Build Include="dbo\Stored Procedures\GetDataChart.sql" />
+    <Build Include="dbo\Stored Procedures\GetDataChart_Old.sql" />
+    <Build Include="dbo\Stored Procedures\GetDataForChart2.sql" />
+    <Build Include="dbo\Stored Procedures\GetDataForChartAdmin.sql" />
+    <Build Include="dbo\Stored Procedures\GetManager.sql" />
+    <Build Include="dbo\Stored Procedures\GetMaxChangeDate.sql" />
+    <Build Include="dbo\Stored Procedures\GetProfilingQuestion.sql" />
+    <Build Include="dbo\Stored Procedures\GetTotalRecruitmentAgent.sql" />
+    <Build Include="dbo\Stored Procedures\GetTotalRecruitmentAgentCMS.sql" />
+    <Build Include="dbo\Stored Procedures\Update_Account.sql" />
+    <Build Include="dbo\Stored Procedures\Update_ApprovalHierarki.sql" />
+    <Build Include="dbo\Stored Procedures\UPDATE_APPROVALHIERARKIMANAGEMENT.sql" />
+    <Build Include="dbo\User Defined Types\AccountType.sql" />
+    <Build Include="dbo\User Defined Types\ApprovalHierarkiManagementType.sql" />
+    <Build Include="dbo\User Defined Types\ApprovalHierarkiType.sql" />
+    <Build Include="dbo\Tables\CandidateDataDomisili.sql" />
+    <Build Include="dbo\Tables\CandidateKontakDarurat.sql" />
+    <Build Include="dbo\Tables\CandidateDataKeluarga.sql" />
+    <Build Include="dbo\Tables\CandidateDataPendidikan.sql" />
+    <Build Include="dbo\Tables\CandidateExperiencePekerjaan.sql" />
+    <Build Include="dbo\Tables\CandidateExperienceOrganisasi.sql" />
+    <Build Include="dbo\Tables\CandidateExperiencePrestasi.sql" />
+    <Build Include="dbo\Tables\CandidateExperienceBahasa.sql" />
+    <Build Include="dbo\Tables\CandidateExperienceKeahlian.sql" />
+    <Build Include="dbo\Tables\CandidateExperienceMinat.sql" />
+    <Build Include="dbo\Tables\CandidateExperiencePlusMin.sql" />
+    <Build Include="dbo\Tables\CandidateDataDokumen.sql" />
+    <Build Include="dbo\Tables\CandidateDataPribadi.sql" />
+    <Build Include="dbo\Tables\Agama.sql" />
+    <Build Include="dbo\Tables\Gender.sql" />
+    <Build Include="dbo\Tables\StatusPerkawinan.sql" />
+    <Build Include="dbo\Tables\Level Pendidikan.sql" />
+  </ItemGroup>
+</Project>

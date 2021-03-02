@@ -1,0 +1,87 @@
+//// signature ke 1
+
+
+////yang signature 2 di pindahin ke angular untuk test
+
+//// signature ke 2
+////var wrapper2 = document.getElementById("signature-pad2");
+////var clearButton2 = wrapper2.querySelector("[data-action=clear]");
+////var saveJPGButton2 = wrapper2.querySelector("[data-action=save-jpg]");
+////var canvas2 = wrapper2.querySelector("canvas");
+
+//// signature ke 1
+
+
+//// signature ke 2
+////var signaturePad2 = new SignaturePad(canvas2, {
+////    backgroundColor: 'rgb(255, 255, 255)'
+////});
+
+//function resizeCanvas() {
+//    var ratio = Math.max(window.devicePixelRatio || 1, 1);
+
+
+//    //canvas2.width = canvas2.offsetWidth * ratio;
+//    //canvas2.height = canvas2.offsetHeight * ratio;
+//    //canvas2.getContext("2d").scale(ratio, ratio);
+//    //signaturePad2.clear();
+//}
+
+//window.onresize = resizeCanvas;
+//resizeCanvas();
+
+//function download(dataURL, filename) {
+//  var blob = dataURLToBlob(dataURL);
+//  var url = window.URL.createObjectURL(blob);
+
+//  var a = document.createElement("a");
+//  a.style = "display: none";
+//  a.href = url;
+//  a.download = filename;
+
+//  document.body.appendChild(a);
+//  a.click();
+
+//  window.URL.revokeObjectURL(url);
+//}
+
+//function dataURLToBlob(dataURL) {
+//  // Code taken from https://github.com/ebidel/filer.js
+//  var parts = dataURL.split(';base64,');
+//  var contentType = parts[0].split(":")[1];
+//  var raw = window.atob(parts[1]);
+//  var rawLength = raw.length;
+//  var uInt8Array = new Uint8Array(rawLength);
+
+//  for (var i = 0; i < rawLength; ++i) {
+//    uInt8Array[i] = raw.charCodeAt(i);
+//  }
+
+//  return new Blob([uInt8Array], { type: contentType });
+//}
+
+////action button signature 1
+
+
+////saveJPGButton.addEventListener("click", function (event) {
+////  if (signaturePad.isEmpty()) {
+////    alert("Please provide a signature first.");
+////  } else {
+////    var dataURL = signaturePad.toDataURL("image/jpeg");
+////    download(dataURL, "signature.jpg");
+////  }
+////});
+
+////action button signature 2
+////clearButton2.addEventListener("click", function (event) {
+////    signaturePad2.clear();
+////});
+
+////saveJPGButton2.addEventListener("click", function (event) {
+////    if (signaturePad2.isEmpty()) {
+////        alert("Please provide a signature first.");
+////    } else {
+////        var dataURL = signaturePad2.toDataURL("image/jpeg");
+////        download(dataURL, "signature.jpg");
+////    }
+////});

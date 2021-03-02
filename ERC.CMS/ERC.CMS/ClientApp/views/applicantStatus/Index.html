@@ -1,0 +1,274 @@
+﻿<div class="content-container content-container-cms">
+    <div class="sl-title">
+        <h2>Master Dokumen Cek</h2>
+    </div>
+    <div class="general-layoutfixed-container body-cms">
+        <div class="general-layoutfixed">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Nama Calon Agen</label>
+                        <div class="input-group fw">
+                            <input type="text" class="form-control" ng-model="filterOptions.CandidateName" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Level</label>
+                        <div class="input-group fw">
+                            <select class="form-control" ng-model="filterOptions.Level">
+                                <option val=""></option>
+                                <option val="FC">FC</option>
+                                <option val="AM">AM</option>
+                                <option val="SAM">SAM</option>
+                                <option val="AD">AD</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group fw">
+                        <label>Kode Recruiter</label>
+                        <div class="input-group fw">
+                            <input type="text" class="form-control" ng-model="filterOptions.RecruiterAgentCode" />
+                        </div>
+                    </div>
+                    <div class="form-group fw">
+                        <label>Nama Recruiter</label>
+                        <div class="input-group fw">
+                            <input type="text" class="form-control" ng-model="filterOptions.RecruiterAgentName" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group ">
+                        <label>Dari Tanggal</label>
+                        <div class="input-group fw">
+                            <input type="text" id="dtFromDate" style="position: relative; z-index: 100000;" ng-model="filterOptions.FromDate" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label>Sampai Tanggal</label>
+                        <div class="input-group fw">
+                            <input type="text" id="dtToDate" style="position: relative; z-index: 100000;" ng-model="filterOptions.ToDate" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Nama Branch</label>
+                        <div class="input-group fw">
+                            <input type="text" ng-model="filterOptions.NamaBranch" class="form-control" />
+                        </div>
+                        <!--<div class="input-group fw">
+                            <input type="hidden" class="form-control" ng-model="filterOptions.TeamId" />
+                            <input type="hidden" class="form-control" ng-model="filterOptions.TeamCode" />
+                            <input type="text" class="form-control" ng-model="filterOptions.TeamName" readonly />
+                            <div class="input-group-btn">
+                                <button class="btn btn-primary" style="width:100px" ng-click="lookupTeam()">Pilih Branch</button>
+                            </div>
+                        </div>-->
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <div class="input-group fw">
+                            <select class="form-control" ng-model="filterOptions.StatusDoc">
+                                <option val=null></option>
+                                <option val="NEW">NEW</option>
+                                <option val="PENDING">PENDING</option>
+                                <option val="REJECT">REJECT</option>
+                                <option val="APPROVE">APPROVE</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="display:none">
+                <div class="col-md-6">
+                    <div class="form-group fw">
+                        <label>Agen Rekruiter</label>
+                        <div class="input-group">
+                            <input type="hidden" class="form-control" ng-model="filterOptions.RecruiterAgentCode" />
+                            <input type="text" class="form-control" ng-model="filterOptions.RecruiterAgentName" readonly />
+                            <div class="input-group-btn">
+                                <button class="btn btn-primary" style="width:100px" ng-click="lookupAgent()">Pilih Agen</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="display:none">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Nama Kandidat</label>
+                        <input type="text" ng-model="filterOptions.CandidateName" class="form-control" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" style="height: auto">
+                <div class="col-md-14">
+                    <button class="btn btn-primary" ng-click="search(filterOptions.TeamCode,filterOptions.RecruiterAgentCode,filterOptions.RecruiterAgentName,filterOptions.CandidateName,filterOptions.Level,filterOptions.FromDate,filterOptions.ToDate,filterOptions.NamaBranch,filterOptions.StatusDoc )" style="width:110px">Pencarian</button>
+                    <button class="btn btn-danger" ng-click="clearFilter(10,1)">Hapus Pencarian</button>
+                    <button class="btn btn-info" ng-click="downloadExcel()">Unduh Excel</button> 
+                </div>
+            </div>
+
+            <div class="col-md-14">
+                <script type="text/ng-template" id="applicantStatusContent.html">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Nama Kota</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <label>Nama Kota</label>
+                                    <input type="text" class="form-control" ng-model="$ctrl.city.Name" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Nama Provinsi</label>
+                                    <input type="text" class="form-control" ng-model="$ctrl.city.Province" />
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="checkbox" ng-model="$ctrl.city.IsActive" /> Aktif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="form-group">
+                            <button class="btn btn-primary" ng-click="$ctrl.ok($ctrl.city)">Simpan</button>
+                            <button class="btn btn-danger" id="cancelBtn" ng-click="$ctrl.cancel()">Batal</button>
+                        </div>
+                    </div>
+                </script>
+            </div>
+
+            <!--Primary Grid-->
+
+            <div class="gridStyle main" ng-grid="gridOptions"></div>
+
+            <!--Pop Up Team-->
+            <script type="text/ng-template" id="teamPopup.html">
+                <div class="modal-header">
+                    <h3 class="modal-title">Branch</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="lblName" class="col-md-4 control-label">Kode Branch</label>
+                            <div class="col-md-8">
+                                <input type="text" ng-model="filterOptions2.TeamCode" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lblName" class="col-md-4 control-label">Nama Branch</label>
+                            <div class="col-md-8">
+                                <input type="text" ng-model="filterOptions2.TeamName" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <button class="btn btn-primary" id="SearchBtn" ng-click="search2(filterOptions2.TeamCode, filterOptions2.TeamName)">Pencarian</button>
+                                <button class="btn btn-danger" id="SearchBtn" ng-click="clearFilter2(10,1)">Hapus Pencarian</button>
+                            </div>
+                        </div>
+                        <div class="gridStyle" ng-grid="grid2Options"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <button class="btn btn-primary" id="submitManagerBtn" ng-click="okTeam()">Pilih</button>
+                        <button class="btn btn-danger" id="cancelManagerBtn" ng-click="cancelTeam()">Batal</button>
+                    </div>
+                </div>
+            </script>
+
+            <!--Pop Up Recruiter Agent-->
+            <script type="text/ng-template" id="agentPopup.html">
+                <div class="modal-header">
+                    <h3 class="modal-title">Agen Rekruiter</h3>
+                </div>
+
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="lblName" class="col-md-4 control-label">Kode Agen</label>
+                            <div class="col-md-8">
+                                <input type="text" ng-model="filterOptions3.AgentCode" id="agentcode" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lblName" class="col-md-4 control-label">Display Nama</label>
+                            <div class="col-md-8">
+                                <input type="text" ng-model="filterOptions3.DisplayName" id="displayname" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <button class="btn btn-primary" id="SearchBtn" ng-click="search3(filterOptions3.TeamId, filterOptions3.AgentCode, filterOptions3.DisplayName)">Pencarian</button>
+                                <button class="btn btn-danger" id="SearchBtn" ng-click="clearFilter3(10,1)">Hapus Pencarian</button>
+                            </div>
+                        </div>
+                        <div class="gridStyle" ng-grid="grid2Options"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <button class="btn btn-primary" id="submitManagerBtn" ng-click="okAgent()">Pilih</button>
+                        <button class="btn btn-danger" id="cancelManagerBtn" ng-click="cancelAgent()">Batal</button>
+                    </div>
+                </div>
+            </script>
+        </div>
+    </div>
+</div>
+
+<style>
+    /*.gridStyle.main.ngGrid.unselectable {
+        margin-left: -61px;
+    }*/
+    .fw {
+        width: 100%;
+    }
+
+    .gridStyle.main {
+        border: 1px solid rgb(212,212,212);
+        width: 100%;
+        height: 560px;
+    }
+
+    .gridStyle {
+        border: 1px solid rgb(212,212,212);
+        width: 100%;
+        height: 560px;
+    }
+
+    .modal-dialog {
+        width: 1000px;
+        height: 700px;
+    }
+
+    .app-modal-window .modal-dialog {
+        width: 500px;
+        height: 200px;
+    }
+</style>
+
+<script>
+    $(function () {
+        $("#dtFromDate, #dtToDate").datepicker({
+            showButtonPanel: true,
+            changeMonth: true,
+            changeYear: true,
+            showOtherMonths: true,
+            selectOtherMonths: true,
+            yearRange: "-90:+00"
+        });
+    });
+</script>

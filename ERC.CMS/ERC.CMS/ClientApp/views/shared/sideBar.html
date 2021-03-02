@@ -1,0 +1,56 @@
+﻿<div class="burger-menu">
+    <hamburger-toggle state="tgState" class="hamburger-toggle"></hamburger-toggle>
+    <a class="navbar-brand"></a>
+</div>
+
+<div class="sidenav" ng-class="{open: tgState}">
+    <div ng-controller="menuCtrl as $ctrl" class="modal-demo">
+        <ul class="sl-sidenav" style="overflow-y:scroll; overflow-x:hidden; height:700px; width:150px;">
+            <li ng-repeat="item in listLink">
+                
+                <a ng-href="{{ item.Link }}"><span class="{{ item.Icon }}"></span><br><p>{{ item.MenuName }}</p></a>
+            </li>
+        </ul>
+    </div>
+    <ul class="sl-sidenav" style="overflow-y:scroll; overflow-x:hidden; height:700px; width:150px;">
+        <li role="presentation" class="active" ng-click="tgState = !tgState"><a href="#!/pendingDocument"><i class="fa fa-home" aria-hidden="true"></i><br><br><p>Pending Dokumen</p></a><div class="arrow-left"></div></li>
+    </ul>    
+        <!--<div ng-show="roleName == 'User'">
+            <ul class="sl-sidenav" style="overflow-y:scroll; overflow-x:hidden; height:700px; width:150px;">
+                <li role="presentation" class="active" ng-click="tgState = !tgState"><a href="#!/"><i class="fa fa-home" aria-hidden="true"></i><br><br><p>Beranda</p></a><div class="arrow-left"></div></li>
+                <li role="presentation" ng-click="tgState = !tgState"><a href="#!/profile"><i class="fa fa-file-text" aria-hidden="true"></i><br><p>Profile</p></a></li>
+                <li role="presentation" ng-click="tgState = !tgState"><a href="#!/changePassword"><i class="fa fa-users" aria-hidden="true"></i><br><p>Change Password</p></a></li>
+                <li role="presentation" ng-click="tgState = !tgState"><a href="#!/contact"><span class="icon-sunlife"></span><br><p>Contact</p></a></li>
+                <li role="presentation" ng-click="tgState = !tgState"><a href="#!/messages"><i class="fa fa-book" aria-hidden="true"></i><br><p>Message</p></a></li>
+            </ul>
+        </div>
+        <div ng-show="roleName == 'Admin'">
+            <ul class="menu-list" style="overflow-y:scroll; overflow-x:hidden; height:700px; width:150px;">
+                <li role="presentation" class="active" ng-click="tgState = !tgState"><a href="#!/account"><i class="bebas" aria-hidden="true"></i><br><br><p>Akun Pengguna</p></a></li>
+                <li role="presentation" ng-click="tgState = !tgState"><a href="#!/backgroundQuestion"><i class="bebas" aria-hidden="true"></i><br><p>Background Question</p></a></li>
+                <li role="presentation" ng-click="tgState = !tgState"><a href="#!/city"><i class="bebas" aria-hidden="true"></i><br><p>City</p></a></li>
+                <li role="presentation" ng-click="tgState = !tgState"><a href="#!/faq"><i class="bebas" aria-hidden="true"></i><br><p>FAQ</p></a></li>
+                <li role="presentation" ng-click="tgState = !tgState"><a href="#!/fileupload"><i class="bebas" aria-hidden="true"></i><br><p>Upload File</p></a></li>
+                <li role="presentation" ng-click="tgState = !tgState"><a href="#!/profiling"><i class="bebas" aria-hidden="true"></i><br><p>Profiling</p></a></li>
+                <li role="presentation" ng-click="tgState = !tgState"><a href="#!/aboutcms"><i class="bebas" aria-hidden="true"></i><br><p>About</p></a></li>
+                <li role="presentation" ng-click="tgState = !tgState"><a href="#!/testimonialcms"><i class="bebas" aria-hidden="true"></i><br><p>Testimonial</p></a></li>
+                <li role="presentation" ng-click="tgState = !tgState"><a href="#!/contactcms"><i class="bebas" aria-hidden="true"></i><br><p>Contact</p></a></li>
+                <li role="presentation" ng-click="tgState = !tgState"><a href="#!/branch"><i class="bebas" aria-hidden="true"></i><br><p>Cabang</p></a></li>
+                <li role="presentation" ng-click="tgState = !tgState"><a href="#!/jadwalAajiCms"><i class="bebas" aria-hidden="true"></i><br><p>Jadwal Aaji</p></a></li>
+                <li role="presentation" ng-click="tgState = !tgState"><a href="#!/bank"><i class="bebas" aria-hidden="true"></i><br><p>Bank</p></a></li>
+                <li role="presentation" ng-click="tgState = !tgState"><a href="#!/country"><i class="bebas" aria-hidden="true"></i><br><p>Country</p></a></li>
+                <li role="presentation" ng-click="tgState = !tgState"><a href="#!/branch"><i class="bebas" aria-hidden="true"></i><br><p>Cabang</p></a></li>
+                <li role="presentation" ng-click="tgState = !tgState"><a href="#!/team"><i class="bebas" aria-hidden="true"></i><br><p>Tim</p></a></li>
+                <li role="presentation" ng-click="tgState = !tgState"><a href="#!/location"><i class="bebas" aria-hidden="true"></i><br><p>Agent Location</p></a></li>
+                <li role="presentation" ng-click="tgState = !tgState"><a href="#!/roleMenu"><i class="bebas" aria-hidden="true"></i><br><p>Role Menu</p></a></li>
+                <li role="presentation" ng-click="tgState = !tgState"><a href="#!/menu"><i class="bebas" aria-hidden="true"></i><br><p>Menu</p></a></li>
+                <li role="presentation" ng-click="tgState = !tgState"><a href="#!/role"><i class="bebas" aria-hidden="true"></i><br><p>Role</p></a></li>
+            </ul>
+        </div>
+        <div ng-show="roleName == 'Manager'">
+            <ul class="menu-list" style="overflow-y:scroll; overflow-x:hidden; height:700px; width:150px;">
+                <li role="presentation" ng-click="tgState = !tgState"><a href="#!/messages"><i class="#" aria-hidden="true"></i><br><p>Message</p></a></li>
+                <li role="presentation" ng-click="tgState = !tgState"><a href="#!/approvalForm"><i class="#" aria-hidden="true"></i><br><p>List Approval</p></a></li>
+            </ul>
+        </div>-->
+</div>

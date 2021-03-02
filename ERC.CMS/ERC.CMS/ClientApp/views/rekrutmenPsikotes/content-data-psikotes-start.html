@@ -1,0 +1,2421 @@
+<!--MENU YG ATAS-->
+<div class="col-12 p-0 mt-7">
+    <div class="card br0 shadow h-100">
+        <div class="card-body nav-card-fix p-0">
+            <div class="container no-pad">
+                <div class="form-row erf-menu pl-5 pr-5 pt-4 pb-0">
+                    <a href="#!/data-pribadi" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-data-pribadi.svg" class="img-fluid menu-aktif">
+                        <br><label><strong>Data Pribadi</strong></label>
+                        <i ng-show="statusDataPribadi" class="m-done"></i>
+                    </a>
+                    <a href="#!/data-kontak" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-kontak.svg" class="img-fluid">
+                        <br><label><strong>Kontak</strong></label>
+                        <i ng-show="statusKontak" class="m-done"></i>
+                    </a>
+                    <a href="#!/data-keluarga" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-keluarga.svg" class="img-fluid">
+                        <br><label><strong>Data Keluarga</strong></label>
+                        <i ng-show="statusDataKeluarga" class="m-done"></i>
+                    </a>
+                    <a href="#!/data-pendidikan" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-pendidikan.svg" class="img-fluid">
+                        <br><label><strong>Pendidikan</strong></label>
+                        <i ng-show="statusDataPendidikan" class="m-done"></i>
+                    </a>
+                    <a href="#!/data-pekerjaan" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-pekerjaan.svg" class="img-fluid">
+                        <br><label><strong>Riwayat Pekerjaan</strong></label>
+                        <i ng-show="statusDataPekerjaan" class="m-done"></i>
+                    </a>
+                    <a href="#!/data-dokumen" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-dokumen.svg" class="img-fluid">
+                        <br><label><strong>Dokumen</strong></label>
+                        <i ng-show="statusDataDokumen" class="m-done"></i>
+                    </a>
+                    <a href="#!/data-ptkp" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-ptkp.svg" class="img-fluid">
+                        <br><label><strong>PTKP</strong></label>
+                        <i ng-show="statusDataPtkp" class="m-done"></i>
+                    </a>
+                    <a href="#!/data-psikotes" class="form-group col text-center img-nav-v2 menu-aktif">
+                        <img src="Content/assets/img/ic-ak-psikotes.svg" class="img-fluid">
+                        <br><label><strong>Psikotes</strong></label>
+                    </a>
+                    <a class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-papikostick-1.svg" class="img-fluid" ng-click="ToPapikostik()">
+                        <br><label><strong>Papikostik</strong></label>
+                        <i ng-show="statusDataPapikostik" class="m-done"></i>
+                    </a>
+                    <a href="#!/data-review" class="form-group col text-center img-nav-v2">
+                        <img src="Content/assets/img/ic-review.svg" class="img-fluid">
+                        <br><label><strong>Review</strong></label>
+                        <i ng-show="statusDataReview" class="m-done"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid d-menu h-100 nopad-340px">
+    <div class="container h-100 nopad-340px">
+        <!--PERTANYAAN 1-->
+        <div ng-show="gantiPertanyaan1">
+            <div class="row h-100">
+                <div class="col-12 mb-4 d-link" style="height: 65%">
+                    <div class="card br10 shadow h-100">
+                        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+
+                            <p class="text-center">1/24</p>
+
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <label>M <p>( Most )</p></label>
+                                        <label>L <p>( Least )</p></label>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12 col-12 soal-psiko">
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label></label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>M<br></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>L<br></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <label class="erf-nomor">1.</label>
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Mudah bergaul, ramah, mudah setuju</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr1" name="per1" value="1" ng-model="row1" ng-change="changeRow1()">
+                                                    <label class="custom-control-label" for="cr1"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr2" name="per1" value="2" ng-model="row1" ng-change="changeRow1()">
+                                                    <label class="custom-control-label" for="cr2"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Mempercayai, percaya pada orang lain</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr11" name="per2" value="1" ng-model="row2" ng-change="changeRow2()">
+                                                    <label class="custom-control-label" for="cr11"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr21" name="per2" value="2" ng-model="row2" ng-change="changeRow2()">
+                                                    <label class="custom-control-label" for="cr21"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Petualang, suka mengambil resiko</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr31" name="per3" value="1" ng-model="row3" ng-change="changeRow3()">
+                                                    <label class="custom-control-label" for="cr31"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr32" name="per3" value="2" ng-model="row3" ng-change="changeRow3()">
+                                                    <label class="custom-control-label" for="cr32"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Penuh toleransi, menghormati orang lain</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr41" name="per4" value="1" ng-model="row4" ng-change="changeRow4()">
+                                                    <label class="custom-control-label" for="cr41"></label>
+
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr42" name="per4" value="2" ng-model="row4" ng-change="changeRow4()">
+                                                    <label class="custom-control-label" for="cr42"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--PERTANYAAN 2-->
+        <div ng-show="gantiPertanyaan2">
+            <div class="row h-100">
+                <div class="col-12 mb-4 d-link" style="height: 65%">
+                    <div class="card br10 shadow h-100">
+                        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+
+                            <p class="text-center">2/24</p>
+
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <label>M <p>( Most )</p></label>
+                                        <label>L <p>( Least )</p></label>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12 col-12 soal-psiko">
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label></label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>M<br></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>L<br></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <label class="erf-nomor">2.</label>
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>yang penting adalah hasil</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr1a" name="per1a" value="1" ng-model="row1a" ng-change="changeRow1a()">
+                                                    <label class="custom-control-label" for="cr1a"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr2a" name="per1a" value="2" ng-model="row1a" ng-change="changeRow1a()">
+                                                    <label class="custom-control-label" for="cr2a"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Kerjakakan dengan benar, ketepatan sangat penting</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr11a" name="per2a" value="1" ng-model="row2a" ng-change="changeRow2a()">
+                                                    <label class="custom-control-label" for="cr11a"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr21a" name="per2a" value="2" ng-model="row2a" ng-change="changeRow2a()">
+                                                    <label class="custom-control-label" for="cr21a"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Buat agar menyenangkan</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr31a" name="per3a" value="1" ng-model="row3a" ng-change="changeRow3a()">
+                                                    <label class="custom-control-label" for="cr31a"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr32a" name="per3a" value="2" ng-model="row3a" ng-change="changeRow3a()">
+                                                    <label class="custom-control-label" for="cr32a"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Kerjakan bersama sama</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr41a" name="per4a" value="1" ng-model="row4a" ng-change="changeRow4a()">
+                                                    <label class="custom-control-label" for="cr41a"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr42a" name="per4a" value="2" ng-model="row4a" ng-change="changeRow4a()">
+                                                    <label class="custom-control-label" for="cr42a"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--PERTANYAAN 3-->
+        <div ng-show="gantiPertanyaan3">
+            <div class="row h-100">
+                <div class="col-12 mb-4 d-link" style="height: 65%">
+                    <div class="card br10 shadow h-100">
+                        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+
+                            <p class="text-center">3/24</p>
+
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <label>M <p>( Most )</p></label>
+                                        <label>L <p>( Least )</p></label>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12 col-12 soal-psiko">
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label></label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>M<br></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>L<br></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <label class="erf-nomor">3.</label>
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Pendidikan, Kebudayaan</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr1b" name="per1b" value="1" ng-model="row1b" ng-change="changeRow1b()">
+                                                    <label class="custom-control-label" for="cr1b"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr2b" name="per1b" value="2" ng-model="row1b" ng-change="changeRow1b()">
+                                                    <label class="custom-control-label" for="cr2b"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Prestasi, penghargaan</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr11b" name="per2b" value="1" ng-model="row2b" ng-change="changeRow2b()">
+                                                    <label class="custom-control-label" for="cr11b"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr21b" name="per2b" value="2" ng-model="row2b" ng-change="changeRow2b()">
+                                                    <label class="custom-control-label" for="cr21b"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Keselamatan, keamanan</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr31b" name="per3b" value="1" ng-model="row3b" ng-change="changeRow3b()">
+                                                    <label class="custom-control-label" for="cr31b"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr32b" name="per3b" value="2" ng-model="row3b" ng-change="changeRow3b()">
+                                                    <label class="custom-control-label" for="cr32b"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Sosial, pertemuan kelompok</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr41b" name="per4b" value="1" ng-model="row4b" ng-change="changeRow4b()">
+                                                    <label class="custom-control-label" for="cr41b"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr42b" name="per4b" value="2" ng-model="row4b" ng-change="changeRow4b()">
+                                                    <label class="custom-control-label" for="cr42b"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--PERTANYAAN 4-->
+        <div ng-show="gantiPertanyaan4">
+            <div class="row h-100">
+                <div class="col-12 mb-4 d-link" style="height: 65%">
+                    <div class="card br10 shadow h-100">
+                        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+
+                            <p class="text-center">4/24</p>
+
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <label>M <p>( Most )</p></label>
+                                        <label>L <p>( Least )</p></label>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12 col-12 soal-psiko">
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label></label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>M<br></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>L<br></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <label class="erf-nomor">4.</label>
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Lembut, tertutup</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr1c" name="per1c" value="1" ng-model="row1c" ng-change="changeRow1c()">
+                                                    <label class="custom-control-label" for="cr1c"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr2c" name="per1c" value="2" ng-model="row1c" ng-change="changeRow1c()">
+                                                    <label class="custom-control-label" for="cr2c"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Visionary/pandangan kedepan</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr11c" name="per2c" value="1" ng-model="row2c" ng-change="changeRow22c()">
+                                                    <label class="custom-control-label" for="cr11c"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr21c" name="per2c" value="2" ng-model="row2c" ng-change="changeRow22c()">
+                                                    <label class="custom-control-label" for="cr21c"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Pusat perhatian, suka bersosialisasi</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr31c" name="per3c" value="1" ng-model="row3c" ng-change="changeRow33c()">
+                                                    <label class="custom-control-label" for="cr31c"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr32c" name="per3c" value="2" ng-model="row3c" ng-change="changeRow33c()">
+                                                    <label class="custom-control-label" for="cr32c"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Pendamai, membawa ketenangan</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr41c" name="per4c" value="1" ng-model="row4c" ng-change="changeRow44c()">
+                                                    <label class="custom-control-label" for="cr41c"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr42c" name="per4c" value="2" ng-model="row4c" ng-change="changeRow44c()">
+                                                    <label class="custom-control-label" for="cr42c"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--PERTANYAAN 5-->
+        <div ng-show="gantiPertanyaan5">
+            <div class="row h-100">
+                <div class="col-12 mb-4 d-link" style="height: 65%">
+                    <div class="card br10 shadow h-100">
+                        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+
+                            <p class="text-center">5/24</p>
+
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <label>M <p>( Most )</p></label>
+                                        <label>L <p>( Least )</p></label>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12 col-12 soal-psiko">
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label></label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>M<br></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>L<br></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <label class="erf-nomor">5.</label>
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Menahan diri, bisa hidup tanpa memiliki</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr1d" name="per1d" value="1" ng-model="row1d" ng-change="changeRow1d()">
+                                                    <label class="custom-control-label" for="cr1d"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr2d" name="per1d" value="2" ng-model="row1d" ng-change="changeRow1d()">
+                                                    <label class="custom-control-label" for="cr2d"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Membeli karena dorongan/impulse</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr11d" name="per2d" value="1" ng-model="row2d" ng-change="changeRow2d()">
+                                                    <label class="custom-control-label" for="cr11d"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr21d" name="per2d" value="2" ng-model="row2d" ng-change="changeRow2d()">
+                                                    <label class="custom-control-label" for="cr21d"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Akan menunggu, tanpa tekanan</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr31d" name="per3d" value="1" ng-model="row3d" ng-change="changeRow3d()">
+                                                    <label class="custom-control-label" for="cr31d"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr32d" name="per3d" value="2" ng-model="row3d" ng-change="changeRow3d()">
+                                                    <label class="custom-control-label" for="cr32d"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>AKan membeli apa yang diinginkan</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr41d" name="per4d" value="1" ng-model="row4d" ng-change="changeRow4d()">
+                                                    <label class="custom-control-label" for="cr41d"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr42d" name="per4d" value="2" ng-model="row4d" ng-change="changeRow4d()">
+                                                    <label class="custom-control-label" for="cr42d"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--PERTANYAAN 6-->
+        <div ng-show="gantiPertanyaan6">
+            <div class="row h-100">
+                <div class="col-12 mb-4 d-link" style="height: 65%">
+                    <div class="card br10 shadow h-100">
+                        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+
+                            <p class="text-center">6/24</p>
+
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <label>M <p>( Most )</p></label>
+                                        <label>L <p>( Least )</p></label>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12 col-12 soal-psiko">
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label></label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>M<br></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>L<br></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <label class="erf-nomor">6.</label>
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Mengambil kendali, bersikap langsung/direct</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr1e" name="per1e" value="1" ng-model="row1e" ng-change="changeRow1e()">
+                                                    <label class="custom-control-label" for="cr1e"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr2e" name="per1e" value="2" ng-model="row1e" ng-change="changeRow1e()">
+                                                    <label class="custom-control-label" for="cr2e"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Suka bergaul, antusias</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr11e" name="per2e" value="1" ng-model="row2e" ng-change="changeRow2e()">
+                                                    <label class="custom-control-label" for="cr11e"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr21e" name="per2e" value="2" ng-model="row2e" ng-change="changeRow2e()">
+                                                    <label class="custom-control-label" for="cr21e"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Mudah ditebak, konsisten</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr31e" name="per3e" value="1" ng-model="row3e" ng-change="changeRow3e()">
+                                                    <label class="custom-control-label" for="cr31e"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr32e" name="per3e" value="2" ng-model="row3e" ng-change="changeRow3e()">
+                                                    <label class="custom-control-label" for="cr32e"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Waspada, berhati-hari</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr41e" name="per4e" value="1" ng-model="row4e" ng-change="changeRow4e()">
+                                                    <label class="custom-control-label" for="cr41e"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr42e" name="per4e" value="2" ng-model="row4e" ng-change="changeRow4e()">
+                                                    <label class="custom-control-label" for="cr42e"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--PERTANYAAN 7-->
+        <div ng-show="gantiPertanyaan7">
+            <div class="row h-100">
+                <div class="col-12 mb-4 d-link" style="height: 65%">
+                    <div class="card br10 shadow h-100">
+                        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+
+                            <p class="text-center">7/24</p>
+
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <label>M <p>( Most )</p></label>
+                                        <label>L <p>( Least )</p></label>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12 col-12 soal-psiko">
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label></label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>M<br></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>L<br></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <label class="erf-nomor">7.</label>
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Menyemangati orang lain</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr1f" name="per1f" value="1" ng-model="row1f" ng-change="changeRow1f()">
+                                                    <label class="custom-control-label" for="cr1f"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr2f" name="per1f" value="2" ng-model="row1f" ng-change="changeRow1f()">
+                                                    <label class="custom-control-label" for="cr2f"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Berusaha Mencapai kesempurnaan</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr11f" name="per2f" value="1" ng-model="row2f" ng-change="changeRow2f()">
+                                                    <label class="custom-control-label" for="cr11f"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr21f" name="per2f" value="2" ng-model="row2f" ng-change="changeRow2f()">
+                                                    <label class="custom-control-label" for="cr21f"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Menjadi bagian dari tim/kelompok</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr31f" name="per3f" value="1" ng-model="row3f" ng-change="changeRow3f()">
+                                                    <label class="custom-control-label" for="cr31f"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr32f" name="per3f" value="2" ng-model="row3f" ng-change="changeRow3f()">
+                                                    <label class="custom-control-label" for="cr32f"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Ingin menetapkan goal/tujuan</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr41f" name="per4f" value="1" ng-model="row4f" ng-change="changeRow4f()">
+                                                    <label class="custom-control-label" for="cr41f"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr42f" name="per4f" value="2" ng-model="row4f" ng-change="changeRow4f()">
+                                                    <label class="custom-control-label" for="cr42f"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--PERTANYAAN 8-->
+        <div ng-show="gantiPertanyaan8">
+            <div class="row h-100">
+                <div class="col-12 mb-4 d-link" style="height: 65%">
+                    <div class="card br10 shadow h-100">
+                        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+
+                            <p class="text-center">8/24</p>
+
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <label>M <p>( Most )</p></label>
+                                        <label>L <p>( Least )</p></label>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12 col-12 soal-psiko">
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label></label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>M<br></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>L<br></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <label class="erf-nomor">8.</label>
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Bersahabat, mudah bergaul</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr1g" name="per1g" value="1" ng-model="row1g" ng-change="changeRow1g()">
+                                                    <label class="custom-control-label" for="cr1g"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr2g" name="per1g" value="2" ng-model="row1g" ng-change="changeRow1g()">
+                                                    <label class="custom-control-label" for="cr2g"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Unik, bosan pada rutinitas</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr11g" name="per2g" value="1" ng-model="row2g" ng-change="changeRow2g()">
+                                                    <label class="custom-control-label" for="cr11g"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr21g" name="per2g" value="2" ng-model="row2g" ng-change="changeRow2g()">
+                                                    <label class="custom-control-label" for="cr21g"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Aktif melakukan perubahan</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr31g" name="per3g" value="1" ng-model="row3g" ng-change="changeRow3g()">
+                                                    <label class="custom-control-label" for="cr31g"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr32g" name="per3g" value="2" ng-model="row3g" ng-change="changeRow3g()">
+                                                    <label class="custom-control-label" for="cr32g"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Ingin melakukan segala sesuatu akurat dan pasti</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr41g" name="per4g" value="1" ng-model="row4g" ng-change="changeRow4g()">
+                                                    <label class="custom-control-label" for="cr41g"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr42g" name="per4g" value="2" ng-model="row4g" ng-change="changeRow4g()">
+                                                    <label class="custom-control-label" for="cr42g"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--PERTANYAAN 9-->
+        <div ng-show="gantiPertanyaan9">
+            <div class="row h-100">
+                <div class="col-12 mb-4 d-link" style="height: 65%">
+                    <div class="card br10 shadow h-100">
+                        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+
+                            <p class="text-center">9/24</p>
+
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <label>M <p>( Most )</p></label>
+                                        <label>L <p>( Least )</p></label>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12 col-12 soal-psiko">
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label></label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>M<br></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>L<br></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <label class="erf-nomor">9.</label>
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Sulit dikalahkan / ditundukan</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr1h" name="per1h" value="1" ng-model="row1h" ng-change="changeRow1h()">
+                                                    <label class="custom-control-label" for="cr1h"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr2h" name="per1h" value="2" ng-model="row1h" ng-change="changeRow1h()">
+                                                    <label class="custom-control-label" for="cr2h"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Melaksanakan sesuai perintah</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr11h" name="per2h" value="1" ng-model="row2h" ng-change="changeRow2h()">
+                                                    <label class="custom-control-label" for="cr11h"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr21h" name="per2h" value="2" ng-model="row2h" ng-change="changeRow2h()">
+                                                    <label class="custom-control-label" for="cr21h"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Bersemangat, riang</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr31h" name="per3h" value="1" ng-model="row3h" ng-change="changeRow3h()">
+                                                    <label class="custom-control-label" for="cr31h"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr32h" name="per3h" value="2" ng-model="row3h" ng-change="changeRow3h()">
+                                                    <label class="custom-control-label" for="cr32h"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Ingin keteraturan, rapi</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr41h" name="per4h" value="1" ng-model="row4h" ng-change="changeRow4h()">
+                                                    <label class="custom-control-label" for="cr41h"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr42h" name="per4h" value="2" ng-model="row4h" ng-change="changeRow4h()">
+                                                    <label class="custom-control-label" for="cr42h"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--PERTANYAAN 10-->
+        <div ng-show="gantiPertanyaan10">
+            <div class="row h-100">
+                <div class="col-12 mb-4 d-link" style="height: 65%">
+                    <div class="card br10 shadow h-100">
+                        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+
+                            <p class="text-center">10/24</p>
+
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <label>M <p>( Most )</p></label>
+                                        <label>L <p>( Least )</p></label>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12 col-12 soal-psiko">
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label></label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>M<br></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>L<br></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <label class="erf-nomor">10.</label>
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Menjadi frustasi</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr1i" name="per1i" value="1" ng-model="row1i" ng-change="changeRow1i()">
+                                                    <label class="custom-control-label" for="cr1i"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr2i" name="per1i" value="2" ng-model="row1i" ng-change="changeRow1i()">
+                                                    <label class="custom-control-label" for="cr2i"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Memendam perasaan dihati</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr11i" name="per2i" value="1" ng-model="row2i" ng-change="changeRow2i()">
+                                                    <label class="custom-control-label" for="cr11i"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr21i" name="per2i" value="2" ng-model="row2i" ng-change="changeRow2i()">
+                                                    <label class="custom-control-label" for="cr21i"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Menyampaikan sudut pandang pribadi</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr31i" name="per3i" value="1" ng-model="row3i" ng-change="changeRow3i()">
+                                                    <label class="custom-control-label" for="cr31i"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr32i" name="per3i" value="2" ng-model="row3i" ng-change="changeRow3i()">
+                                                    <label class="custom-control-label" for="cr32i"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Berani menghadapi oposisi</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr41i" name="per4i" value="1" ng-model="row4i" ng-change="changeRow4i()">
+                                                    <label class="custom-control-label" for="cr41i"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr42i" name="per4i" value="2" ng-model="row4i" ng-change="changeRow4i()">
+                                                    <label class="custom-control-label" for="cr42i"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--PERTANYAAN 11-->
+        <div ng-show="gantiPertanyaan11">
+            <div class="row h-100">
+                <div class="col-12 mb-4 d-link" style="height: 65%">
+                    <div class="card br10 shadow h-100">
+                        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+
+                            <p class="text-center">11/24</p>
+
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <label>M <p>( Most )</p></label>
+                                        <label>L <p>( Least )</p></label>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12 col-12 soal-psiko">
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label></label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>M<br></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>L<br></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <label class="erf-nomor">11.</label>
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Mengalah tidak suka pertentangan</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr1j" name="per1j" value="1" ng-model="row1j" ng-change="changeRow1j()">
+                                                    <label class="custom-control-label" for="cr1j"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr2j" name="per1j" value="2" ng-model="row1j" ng-change="changeRow1j()">
+                                                    <label class="custom-control-label" for="cr2j"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Penuh dengan hal-hal kecil/detil</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr11j" name="per2j" value="1" ng-model="row2j" ng-change="changeRow2j()">
+                                                    <label class="custom-control-label" for="cr11j"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr21j" name="per2j" value="2" ng-model="row2j" ng-change="changeRow2j()">
+                                                    <label class="custom-control-label" for="cr21j"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Berubah pada menit-menit akhir</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr31j" name="per3j" value="1" ng-model="row3j" ng-change="changeRow3j()">
+                                                    <label class="custom-control-label" for="cr31j"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr32j" name="per3j" value="2" ng-model="row3j" ng-change="changeRow3j()">
+                                                    <label class="custom-control-label" for="cr32j"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Mendesak/memaksa agak kasar</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr41j" name="per4j" value="1" ng-model="row4j" ng-change="changeRow4j()">
+                                                    <label class="custom-control-label" for="cr41j"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr42j" name="per4j" value="2" ng-model="row4j" ng-change="changeRow4j()">
+                                                    <label class="custom-control-label" for="cr42j"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--PERTANYAAN 12-->
+        <div ng-show="gantiPertanyaan12">
+            <div class="row h-100">
+                <div class="col-12 mb-4 d-link" style="height: 65%">
+                    <div class="card br10 shadow h-100">
+                        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+
+                            <p class="text-center">12/24</p>
+
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <label>M <p>( Most )</p></label>
+                                        <label>L <p>( Least )</p></label>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12 col-12 soal-psiko">
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label></label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>M<br></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>L<br></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <label class="erf-nomor">12.</label>
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Saya akan pindah mereka</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr1k" name="per1k" value="1" ng-model="row1k" ng-change="changeRow1k()">
+                                                    <label class="custom-control-label" for="cr1k"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr2k" name="per1k" value="2" ng-model="row1k" ng-change="changeRow1k()">
+                                                    <label class="custom-control-label" for="cr2k"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Saya akan ikut/mengikuti</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr11k" name="per2k" value="1" ng-model="row2k" ng-change="changeRow2k()">
+                                                    <label class="custom-control-label" for="cr11k"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr21k" name="per2k" value="2" ng-model="row2k" ng-change="changeRow2k()">
+                                                    <label class="custom-control-label" for="cr21k"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Saya akan pengaruhi/bujuk mereka</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr31k" name="per3k" value="1" ng-model="row3k" ng-change="changeRow3k()">
+                                                    <label class="custom-control-label" for="cr31k"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr32k" name="per3k" value="2" ng-model="row3k" ng-change="changeRow3k()">
+                                                    <label class="custom-control-label" for="cr32k"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Saya akan mendapatkan fakta-faktanya</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr41k" name="per4k" value="1" ng-model="row4k" ng-change="changeRow4k()">
+                                                    <label class="custom-control-label" for="cr41k"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr42k" name="per4k" value="2" ng-model="row4k" ng-change="changeRow4k()">
+                                                    <label class="custom-control-label" for="cr42k"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--PERTANYAAN 13-->
+        <div ng-show="gantiPertanyaan13">
+            <div class="row h-100">
+                <div class="col-12 mb-4 d-link" style="height: 65%">
+                    <div class="card br10 shadow h-100">
+                        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+
+                            <p class="text-center">13/24</p>
+
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <label>M <p>( Most )</p></label>
+                                        <label>L <p>( Least )</p></label>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12 col-12 soal-psiko">
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label></label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>M<br></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>L<br></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <label class="erf-nomor">13.</label>
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Hidup/lincah banyak bicara</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr1l" name="per1l" value="1" ng-model="row1l" ng-change="changeRow1l()">
+                                                    <label class="custom-control-label" for="cr1l"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr2l" name="per1l" value="2" ng-model="row1l" ng-change="changeRow1l()">
+                                                    <label class="custom-control-label" for="cr2l"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>cepat, penuh keyakinan</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr11l" name="per2l" value="1" ng-model="row2l" ng-change="changeRow2l()">
+                                                    <label class="custom-control-label" for="cr11l"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr21l" name="per2l" value="2" ng-model="row2l" ng-change="changeRow2l()">
+                                                    <label class="custom-control-label" for="cr21l"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Berusaha menjaga keseimbangan</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr31l" name="per3l" value="1" ng-model="row3l" ng-change="changeRow3l()">
+                                                    <label class="custom-control-label" for="cr31l"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr32l" name="per3l" value="2" ng-model="row3l" ng-change="changeRow3l()">
+                                                    <label class="custom-control-label" for="cr32l"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Berusaha patuh pada peraturan</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr41l" name="per4l" value="1" ng-model="row4l" ng-change="changeRow4l()">
+                                                    <label class="custom-control-label" for="cr41l"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr42l" name="per4l" value="2" ng-model="row4l" ng-change="changeRow4l()">
+                                                    <label class="custom-control-label" for="cr42l"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--PERTANYAAN 14-->
+        <div ng-show="gantiPertanyaan14">
+            <div class="row h-100">
+                <div class="col-12 mb-4 d-link" style="height: 65%">
+                    <div class="card br10 shadow h-100">
+                        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+
+                            <p class="text-center">14/24</p>
+
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <label>M <p>( Most )</p></label>
+                                        <label>L <p>( Least )</p></label>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12 col-12 soal-psiko">
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label></label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>M<br></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>L<br></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <label class="erf-nomor">14.</label>
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Ingin kemajuan / peningkatan</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr1m" name="per1m" value="1" ng-model="row1m" ng-change="changeRow1m()">
+                                                    <label class="custom-control-label" for="cr1m"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr2m" name="per1m" value="2" ng-model="row1m" ng-change="changeRow1m()">
+                                                    <label class="custom-control-label" for="cr2m"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Puas dengan keadaan, Tenang/mudah puas</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr11m" name="per2m" value="1" ng-model="row2m" ng-change="changeRow2m()">
+                                                    <label class="custom-control-label" for="cr11m"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr21m" name="per2m" value="2" ng-model="row2m" ng-change="changeRow2m()">
+                                                    <label class="custom-control-label" for="cr21m"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Menunjukan perasaan terbuka</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr31m" name="per3m" value="1" ng-model="row3m" ng-change="changeRow3m()">
+                                                    <label class="custom-control-label" for="cr31m"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr32m" name="per3m" value="2" ng-model="row3m" ng-change="changeRow3m()">
+                                                    <label class="custom-control-label" for="cr32m"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Rendah diri, sederhana</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr41m" name="per4m" value="1" ng-model="row4m" ng-change="changeRow4m()">
+                                                    <label class="custom-control-label" for="cr41m"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr42m" name="per4m" value="2" ng-model="row4m" ng-change="changeRow4m()">
+                                                    <label class="custom-control-label" for="cr42m"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--PERTANYAAN 15-->
+        <div ng-show="gantiPertanyaan15">
+            <div class="row h-100">
+                <div class="col-12 mb-4 d-link" style="height: 65%">
+                    <div class="card br10 shadow h-100">
+                        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+
+                            <p class="text-center">15/24</p>
+
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <label>M <p>( Most )</p></label>
+                                        <label>L <p>( Least )</p></label>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12 col-12 soal-psiko">
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label></label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>M<br></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>L<br></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <label class="erf-nomor">15.</label>
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Mementingkan orang lain dahulu</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr1n" name="per1n" value="1" ng-model="row1n" ng-change="changeRow1n()">
+                                                    <label class="custom-control-label" for="cr1n"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr2n" name="per1n" value="2" ng-model="row1n" ng-change="changeRow1n()">
+                                                    <label class="custom-control-label" for="cr2n"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Suka bersaing / kompetitif, suka tantangan</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr11n" name="per2n" value="1" ng-model="row2n" ng-change="changeRow2n()">
+                                                    <label class="custom-control-label" for="cr11n"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr21n" name="per2n" value="2" ng-model="row2n" ng-change="changeRow2n()">
+                                                    <label class="custom-control-label" for="cr21n"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Optimis, berpikir positif</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr31n" name="per3n" value="1" ng-model="row3n" ng-change="changeRow3n()">
+                                                    <label class="custom-control-label" for="cr31n"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr32n" name="per3n" value="2" ng-model="row3n" ng-change="changeRow3n()">
+                                                    <label class="custom-control-label" for="cr32n"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Sistematis, berpikir logis</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr41n" name="per4n" value="1" ng-model="row4n" ng-change="changeRow4n()">
+                                                    <label class="custom-control-label" for="cr41n"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr42n" name="per4n" value="2" ng-model="row4n" ng-change="changeRow4n()">
+                                                    <label class="custom-control-label" for="cr42n"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--PERTANYAAN 16-->
+        <div ng-show="gantiPertanyaan16">
+            <div class="row h-100">
+                <div class="col-12 mb-4 d-link" style="height: 65%">
+                    <div class="card br10 shadow h-100">
+                        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+
+                            <p class="text-center">16/24</p>
+
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <label>M <p>( Most )</p></label>
+                                        <label>L <p>( Least )</p></label>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12 col-12 soal-psiko">
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label></label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>M<br></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>L<br></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <label class="erf-nomor">16.</label>
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Mengelola waktu dengan efisien</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr1o" name="per1o" value="1" ng-model="row1o" ng-change="changeRow1o()">
+                                                    <label class="custom-control-label" for="cr1o"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr2o" name="per1o" value="2" ng-model="row1o" ng-change="changeRow1o()">
+                                                    <label class="custom-control-label" for="cr2o"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>sering terburu-buru, merasa tertekan</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr11o" name="per2o" value="1" ng-model="row2o" ng-change="changeRow2o()">
+                                                    <label class="custom-control-label" for="cr11o"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr21o" name="per2o" value="2" ng-model="row2o" ng-change="changeRow2o()">
+                                                    <label class="custom-control-label" for="cr21o"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>hal-hal sosial adalah penting</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr31o" name="per3o" value="1" ng-model="row3o" ng-change="changeRow3o()">
+                                                    <label class="custom-control-label" for="cr31o"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr32o" name="per3o" value="2" ng-model="row3o" ng-change="changeRow3o()">
+                                                    <label class="custom-control-label" for="cr32o"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Suka menyelsaikan hal yang sudah dimulai</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr41o" name="per4o" value="1" ng-model="row4o" ng-change="changeRow4o()">
+                                                    <label class="custom-control-label" for="cr41o"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr42o" name="per4o" value="2" ng-model="row4o" ng-change="changeRow4o()">
+                                                    <label class="custom-control-label" for="cr42o"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--PERTANYAAN 17-->
+        <div ng-show="gantiPertanyaan17">
+            <div class="row h-100">
+                <div class="col-12 mb-4 d-link" style="height: 65%">
+                    <div class="card br10 shadow h-100">
+                        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+
+                            <p class="text-center">17/24</p>
+
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <label>M <p>( Most )</p></label>
+                                        <label>L <p>( Least )</p></label>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12 col-12 soal-psiko">
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label></label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>M<br></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>L<br></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <label class="erf-nomor">17.</label>
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Tenang, pendiam, tertutup</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr1p" name="per1p" value="1" ng-model="row1p" ng-change="changeRow1p()">
+                                                    <label class="custom-control-label" for="cr1p"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr2p" name="per1p" value="2" ng-model="row1p" ng-change="changeRow1p()">
+                                                    <label class="custom-control-label" for="cr2p"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Gembira, bebas, riang</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr11p" name="per2p" value="1" ng-model="row2p" ng-change="changeRow2p()">
+                                                    <label class="custom-control-label" for="cr11p"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr21p" name="per2p" value="2" ng-model="row2p" ng-change="changeRow2p()">
+                                                    <label class="custom-control-label" for="cr21p"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Menyenangkan, baik hati</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr31p" name="per3p" value="1" ng-model="row3p" ng-change="changeRow3p()">
+                                                    <label class="custom-control-label" for="cr31p"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr32p" name="per3p" value="2" ng-model="row3p" ng-change="changeRow3p()">
+                                                    <label class="custom-control-label" for="cr32p"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Menyolok, berani</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr41p" name="per4p" value="1" ng-model="row4p" ng-change="changeRow4p()">
+                                                    <label class="custom-control-label" for="cr41p"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr42p" name="per4p" value="2" ng-model="row4p" ng-change="changeRow4p()">
+                                                    <label class="custom-control-label" for="cr42p"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--PERTANYAAN 18-->
+        <div ng-show="gantiPertanyaan18">
+            <div class="row h-100">
+                <div class="col-12 mb-4 d-link" style="height: 65%">
+                    <div class="card br10 shadow h-100">
+                        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+
+                            <p class="text-center">18/24</p>
+
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <label>M <p>( Most )</p></label>
+                                        <label>L <p>( Least )</p></label>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12 col-12 soal-psiko">
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label></label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>M<br></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>L<br></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <label class="erf-nomor">18.</label>
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Menyenangkan orang lain, ramah, penurut</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr1q" name="per1q" value="1" ng-model="row1q" ng-change="changeRow1q()">
+                                                    <label class="custom-control-label" for="cr1q"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr2q" name="per1q" value="2" ng-model="row1q" ng-change="changeRow1q()">
+                                                    <label class="custom-control-label" for="cr2q"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Tertawa lepas, hidup</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr11q" name="per2q" value="1" ng-model="row2q" ng-change="changeRow2q()">
+                                                    <label class="custom-control-label" for="cr11q"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr21q" name="per2q" value="2" ng-model="row2q" ng-change="changeRow2q()">
+                                                    <label class="custom-control-label" for="cr21q"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Pemberani, tegas</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr31q" name="per3q" value="1" ng-model="row3q" ng-change="changeRow3q()">
+                                                    <label class="custom-control-label" for="cr31q"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr32q" name="per3q" value="2" ng-model="row3q" ng-change="changeRow3q()">
+                                                    <label class="custom-control-label" for="cr32q"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Pendiam, tertutup, tenang</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr41q" name="per4q" value="1" ng-model="row4q" ng-change="changeRow4q()">
+                                                    <label class="custom-control-label" for="cr41q"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr42q" name="per4q" value="2" ng-model="row4q" ng-change="changeRow4q()">
+                                                    <label class="custom-control-label" for="cr42q"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--PERTANYAAN 19-->
+        <div ng-show="gantiPertanyaan19">
+            <div class="row h-100">
+                <div class="col-12 mb-4 d-link" style="height: 65%">
+                    <div class="card br10 shadow h-100">
+                        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+
+                            <p class="text-center">19/24</p>
+
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <label>M <p>( Most )</p></label>
+                                        <label>L <p>( Least )</p></label>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12 col-12 soal-psiko">
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label></label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>M<br></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>L<br></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <label class="erf-nomor">19.</label>
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Menolak perubahan mendadak</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr1r" name="per1r" value="1" ng-model="row1r" ng-change="changeRow1r()">
+                                                    <label class="custom-control-label" for="cr1r"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr2r" name="per1r" value="2" ng-model="row1r" ng-change="changeRow1r()">
+                                                    <label class="custom-control-label" for="cr2r"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Cenderung terlalu banyak berjanji</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr11r" name="per2r" value="1" ng-model="row2r" ng-change="changeRow2r()">
+                                                    <label class="custom-control-label" for="cr11r"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr21r" name="per2r" value="2" ng-model="row2r" ng-change="changeRow2r()">
+                                                    <label class="custom-control-label" for="cr21r"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Mundur apabila berada dibawah tekanan</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr31r" name="per3r" value="1" ng-model="row3r" ng-change="changeRow3r()">
+                                                    <label class="custom-control-label" for="cr31r"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr32r" name="per3r" value="2" ng-model="row3r" ng-change="changeRow3r()">
+                                                    <label class="custom-control-label" for="cr32r"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Tidak takut untuk berkelahi</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr41r" name="per4r" value="1" ng-model="row4r" ng-change="changeRow4r()">
+                                                    <label class="custom-control-label" for="cr41r"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr42r" name="per4r" value="2" ng-model="row4r" ng-change="changeRow4r()">
+                                                    <label class="custom-control-label" for="cr42r"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--PERTANYAAN 20-->
+        <div ng-show="gantiPertanyaan20">
+            <div class="row h-100">
+                <div class="col-12 mb-4 d-link" style="height: 65%">
+                    <div class="card br10 shadow h-100">
+                        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+                            <p class="text-center">20/24</p>
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <label>M <p>( Most )</p></label>
+                                        <label>L <p>( Least )</p></label>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12 col-12 soal-psiko">
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label></label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>M<br></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>L<br></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <label class="erf-nomor">20.</label>
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Menyediakan waktu untuk orang lain</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr1s" name="per1r" value="1" ng-model="row1s" ng-change="changeRow1s()">
+                                                    <label class="custom-control-label" for="cr1s"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr2s" name="per1s" value="2" ng-model="row1s" ng-change="changeRow1s()">
+                                                    <label class="custom-control-label" for="cr2s"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Merencanakan masa depan, bersiap - siap</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr11s" name="per2s" value="1" ng-model="row2s" ng-change="changeRow2s()">
+                                                    <label class="custom-control-label" for="cr11s"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr21s" name="per2s" value="2" ng-model="row2s" ng-change="changeRow2s()">
+                                                    <label class="custom-control-label" for="cr21s"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Menuju petualangan baru</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr31s" name="per3s" value="1" ng-model="row3s" ng-change="changeRow3s()">
+                                                    <label class="custom-control-label" for="cr31s"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr32s" name="per3s" value="2" ng-model="row3s" ng-change="changeRow3s()">
+                                                    <label class="custom-control-label" for="cr32s"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Menerima penghargaan atas pencapaian target</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr41s" name="per4s" value="1" ng-model="row4s" ng-change="changeRow4s()">
+                                                    <label class="custom-control-label" for="cr41s"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr42s" name="per4s" value="2" ng-model="row4s" ng-change="changeRow4s()">
+                                                    <label class="custom-control-label" for="cr42s"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--PERTANYAAN 21-->
+        <div ng-show="gantiPertanyaan21">
+            <div class="row h-100">
+                <div class="col-12 mb-4 d-link" style="height: 65%">
+                    <div class="card br10 shadow h-100">
+                        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+                            <p class="text-center">21/24</p>
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <label>M <p>( Most )</p></label>
+                                        <label>L <p>( Least )</p></label>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12 col-12 soal-psiko">
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label></label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>M<br></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>L<br></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <label class="erf-nomor">21.</label>
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Ingin wewenang lebih/kekuasaan lebih</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr1t" name="per1t" value="1" ng-model="row1t" ng-change="changeRow1t()">
+                                                    <label class="custom-control-label" for="cr1t"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr2t" name="per1t" value="2" ng-model="row1t" ng-change="changeRow1t()">
+                                                    <label class="custom-control-label" for="cr2t"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Ingin kesempatan baru</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr11t" name="per2t" value="1" ng-model="row2t" ng-change="changeRow2t()">
+                                                    <label class="custom-control-label" for="cr11t"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr21t" name="per2t" value="2" ng-model="row2t" ng-change="changeRow2t()">
+                                                    <label class="custom-control-label" for="cr21t"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Menghindari perselisihan/konflik apapun</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr31t" name="per3t" value="1" ng-model="row3t" ng-change="changeRow3t()">
+                                                    <label class="custom-control-label" for="cr31t"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr32t" name="per3t" value="2" ng-model="row3t" ng-change="changeRow3t()">
+                                                    <label class="custom-control-label" for="cr32t"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Ingin arahan yang jelas</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr41t" name="per4t" value="1" ng-model="row4t" ng-change="changeRow4t()">
+                                                    <label class="custom-control-label" for="cr41t"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr42t" name="per4t" value="2" ng-model="row4t" ng-change="changeRow4t()">
+                                                    <label class="custom-control-label" for="cr42t"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--PERTANYAAN 22-->
+        <div ng-show="gantiPertanyaan22">
+            <div class="row h-100">
+                <div class="col-12 mb-4 d-link" style="height: 65%">
+                    <div class="card br10 shadow h-100">
+                        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+                            <p class="text-center">22/24</p>
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <label>M <p>( Most )</p></label>
+                                        <label>L <p>( Least )</p></label>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12 col-12 soal-psiko">
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label></label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>M<br></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>L<br></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <label class="erf-nomor">22.</label>
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Penyemangat / pendukung yang baik</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr1u" name="per1u" value="1" ng-model="row1u" ng-change="changeRow1u()">
+                                                    <label class="custom-control-label" for="cr1u"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr2u" name="per1u" value="2" ng-model="row1u" ng-change="changeRow1u()">
+                                                    <label class="custom-control-label" for="cr2u"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Pendengar yang baik</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr11u" name="per2u" value="1" ng-model="row2u" ng-change="changeRow2u()">
+                                                    <label class="custom-control-label" for="cr11u"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr21u" name="per2u" value="2" ng-model="row2u" ng-change="changeRow2u()">
+                                                    <label class="custom-control-label" for="cr21u"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Penganalisa yang baik</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr31u" name="per3u" value="1" ng-model="row3u" ng-change="changeRow3u()">
+                                                    <label class="custom-control-label" for="cr31u"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr32u" name="per3u" value="2" ng-model="row3u" ng-change="changeRow3u()">
+                                                    <label class="custom-control-label" for="cr32u"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Pendelegasi yang baik, pandai membagi tugas</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr41u" name="per4u" value="1" ng-model="row4u" ng-change="changeRow4u()">
+                                                    <label class="custom-control-label" for="cr41u"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr42u" name="per4u" value="2" ng-model="row4u" ng-change="changeRow4u()">
+                                                    <label class="custom-control-label" for="cr42u"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--PERTANYAAN 23-->
+        <div ng-show="gantiPertanyaan23">
+            <div class="row h-100">
+                <div class="col-12 mb-4 d-link" style="height: 65%">
+                    <div class="card br10 shadow h-100">
+                        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+                            <p class="text-center">23/24</p>
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <label>M <p>( Most )</p></label>
+                                        <label>L <p>( Least )</p></label>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12 col-12 soal-psiko">
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label></label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>M<br></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>L<br></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <label class="erf-nomor">23.</label>
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Peraturan perlu diuji</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr1v" name="per1v" value="1" ng-model="row1v" ng-change="changeRow1v()">
+                                                    <label class="custom-control-label" for="cr1v"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr2v" name="per1v" value="2" ng-model="row1v" ng-change="changeRow1v()">
+                                                    <label class="custom-control-label" for="cr2v"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Peraturan membuat menjadi adil</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr11v" name="per2v" value="1" ng-model="row2v" ng-change="changeRow2v()">
+                                                    <label class="custom-control-label" for="cr11v"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr21v" name="per2v" value="2" ng-model="row2v" ng-change="changeRow2v()">
+                                                    <label class="custom-control-label" for="cr21v"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Peraturan membuat menjadi membosankan</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr31v" name="per3v" value="1" ng-model="row3v" ng-change="changeRow3v()">
+                                                    <label class="custom-control-label" for="cr31v"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr32v" name="per3v" value="2" ng-model="row3v" ng-change="changeRow3v()">
+                                                    <label class="custom-control-label" for="cr32v"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Peraturan membuat menjadi aman</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr41v" name="per4v" value="1" ng-model="row4v" ng-change="changeRow4v()">
+                                                    <label class="custom-control-label" for="cr41v"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr42v" name="per4v" value="2" ng-model="row4v" ng-change="changeRow4v()">
+                                                    <label class="custom-control-label" for="cr42v"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--PERTANYAAN 24-->
+        <div ng-show="gantiPertanyaan24">
+            <div class="row h-100">
+                <div class="col-12 mb-4 d-link" style="height: 65%">
+                    <div class="card br10 shadow h-100">
+                        <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4" style="overflow-y: scroll;">
+                            <p class="text-center">24/24</p>
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-12 text-center">
+                                        <label>M <p>( Most )</p></label>
+                                        <label>L <p>( Least )</p></label>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12 col-12 soal-psiko">
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label></label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>M<br></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 text-center mostlieast">
+                                                    <label>L<br></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <label class="erf-nomor">24.</label>
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Dapat dipercaya dan diandalkan</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr1w" name="per1w" value="1" ng-model="row1w" ng-change="changeRow1w()">
+                                                    <label class="custom-control-label" for="cr1w"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr2w" name="per1w" value="2" ng-model="row1w" ng-change="changeRow1w()">
+                                                    <label class="custom-control-label" for="cr2w"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Kreatif, unik</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr11w" name="per2w" value="1" ng-model="row2w" ng-change="changeRow2w()">
+                                                    <label class="custom-control-label" for="cr11w"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr21w" name="per2w" value="2" ng-model="row2w" ng-change="changeRow2w()">
+                                                    <label class="custom-control-label" for="cr21w"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Berorientasi pada hasil/profit/untung</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr31w" name="per3w" value="1" ng-model="row3w" ng-change="changeRow3w()">
+                                                    <label class="custom-control-label" for="cr31w"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr32w" name="per3w" value="2" ng-model="row3w" ng-change="changeRow3w()">
+                                                    <label class="custom-control-label" for="cr32w"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-8 col-sm-8 col-8 mb-0"><label>Memegang teguh standar yang tinggi, akurat</label></div>
+                                            <div class="col-4">
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr41w" name="per4w" value="1" ng-model="row4w" ng-change="changeRow4w()">
+                                                    <label class="custom-control-label" for="cr41w"></label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline col-md-1 col-sm-1 col-1 pls-nopad">
+                                                    <input type="radio" class="custom-control-input" id="cr42w" name="per4w" value="2" ng-model="row4w" ng-change="changeRow4w()">
+                                                    <label class="custom-control-label" for="cr42w"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--FINISH-->
+        <div ng-show="psikotesFinish" class="container-fluid d-body h-100 nopad-340px pt-10">
+            <div class="container h-100 nopad-340px">
+
+                <div class="row h-100">
+                    <div class="col-12 mb-4 d-link" style="height:65%">
+                        <div class="card br10 shadow h-100">
+                            <div class="card-body d-flex flex-column pl-5 pr-5 pt-4 pb-4">
+
+                                <p class="text-center mt-auto">
+                                    <img src="Content/assets/img/ic-done.svg" class="img-fluid mb-3" width="70"><br>
+                                    Anda sudah menyelesaikan Online Psikotest.
+                                </p>
+
+                                <div class="form-row mt-auto">
+                                    <div class="form-group col-md-4">
+                                        <button ng-click="firstBack()" class="btn-secondary shadow-sm btn-blue btn-block">Kembali</button>
+                                    </div>
+                                    <div class="form-group col-md-4 ml-auto">
+                                        <button ng-click="simpanPsikotes()" class="btn-primary shadow-sm btn-blue btn-block">Simpan</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
